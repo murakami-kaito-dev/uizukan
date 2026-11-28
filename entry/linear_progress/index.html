@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Linear Progress Indicator（進捗バー（プログレスバー）） — UI図鑑</title>
+<meta name="description" content="横に伸びるバーで進捗（％）を示す。">
+<link rel="canonical" href="https://uizukan.dev/entry/linear_progress/">
+<meta property="og:title" content="Linear Progress Indicator（進捗バー（プログレスバー）） — UI図鑑">
+<meta property="og:description" content="横に伸びるバーで進捗（％）を示す。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/linear_progress/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/linear_progress.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Linear Progress Indicator</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Feedback &amp; Status · 04 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Linear Progress Indicator</h1>
+  <p class="lead" style="margin-top:6px">進捗バー（プログレスバー）</p>
+  <div class="demo-plate">
+    <div class="head"><code>linear_progress</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-linear_progress" role="group" aria-label="Linear Progress Indicator のデモ"><div class="fb-lp"><div class="fb-r"><div class="fb-bar fb-det"><i></i></div><span class="fb-pc">45%</span></div><div class="fb-bar fb-ind"><i></i><i></i></div><div class="fb-btns"><button class="m-btn m-outlined fb-dn">−20%</button><button class="m-btn m-outlined fb-up">+20%</button></div></div></div><style>#wd-linear_progress .fb-lp{width:100%;max-width:300px}
+#wd-linear_progress .fb-r{display:flex;align-items:center}
+#wd-linear_progress .fb-bar{position:relative;flex:1;overflow:hidden;background:var(--accent-soft)}
+#wd-linear_progress .fb-det{height:8px;border-radius:4px}
+#wd-linear_progress .fb-det i{position:absolute;left:0;top:0;bottom:0;width:100%;border-radius:4px;background:var(--m-primary);transform-origin:left;transform:scaleX(.45);transition:transform .3s linear}
+#wd-linear_progress .fb-pc{width:48px;text-align:right;flex:none}
+#wd-linear_progress .fb-ind{height:4px;margin-top:8px}
+#wd-linear_progress .fb-ind i{position:absolute;top:0;bottom:0;left:0;width:0;background:var(--m-primary)}
+#wd-linear_progress .fb-btns{display:flex;justify-content:center;gap:8px;margin-top:12px}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";function cubic(a, b, c, d) {
+  function ev(p, q, m) { return 3 * p * (1 - m) * (1 - m) * m + 3 * q * (1 - m) * m * m + m * m * m; }
+  return function (t) {
+    if (t <= 0) return 0; if (t >= 1) return 1;
+    let s = 0, e = 1;
+    for (;;) { const m = (s + e) / 2, x = ev(a, c, m); if (Math.abs(t - x) < 0.0005) return ev(b, d, m); if (x < t) s = m; else e = m; }
+  };
+}
+function interval(a, b, f) { return function (t) { return f(Math.min(Math.max((t - a) / (b - a), 0), 1)); }; }
+const fill = root.querySelector('.fb-det i'), pc = root.querySelector('.fb-pc');
+let v = 0.45;
+function set(n) { v = Math.min(Math.max(Math.round(n * 100) / 100, 0), 1); fill.style.transform = 'scaleX(' + v + ')'; pc.textContent = Math.round(v * 100) + '%'; }
+root.querySelector('.fb-dn').addEventListener('click', function () { set(v - 0.2); });
+root.querySelector('.fb-up').addEventListener('click', function () { set(v + 0.2); });
+// 不定：2 本の棒（Flutter の 1.8 秒の動きと同じ曲線）
+const D = 1800;
+const h1 = interval(0, 750 / D, cubic(0.2, 0, 0.8, 1)), t1 = interval(333 / D, 1083 / D, cubic(0.4, 0, 1, 1));
+const h2 = interval(1000 / D, 1567 / D, cubic(0, 0, 0.65, 1)), t2 = interval(1267 / D, 1, cubic(0.1, 0, 0.45, 1));
+const bars = root.querySelectorAll('.fb-ind i'), ind = root.querySelector('.fb-ind');
+const t0 = performance.now();
+(function step(now) {
+  const a = ((now - t0) % D) / D, W = ind.clientWidth;
+  [[h1, t1], [h2, t2]].forEach(function (f, i) {
+    const x = W * f[1](a), w = W * f[0](a) - x;
+    bars[i].style.transform = 'translateX(' + x + 'px)'; bars[i].style.width = Math.max(w, 0) + 'px';
+  });
+  if (root.isConnected) requestAnimationFrame(step);
+})(t0);})(document.getElementById("wd-linear_progress"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Progress Bar</span><span class="tag">Loading Bar</span><span class="tag">Determinate Progress</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Linear progress indicator</dd></div><div><dt>Material 2</dt><dd class="">Linear progress indicator</dd></div><div><dt>Android (Compose)</dt><dd class="">LinearProgressIndicator</dd></div><div><dt>iOS (HIG)</dt><dd class="">Progress indicators（Progress bar）</dd></div><div><dt>SwiftUI</dt><dd class="">ProgressView(value:)（.linear）</dd></div><div><dt>Web</dt><dd class="">&lt;progress&gt;</dd></div><div><dt>Flutter</dt><dd class="mono">LinearProgressIndicator</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>アップロード・ダウンロード・学習の達成率などを横棒で表す。値が分からなければ左右に流れる <a class="term" href="/glossary/indeterminate/">indeterminate</a>。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>進捗が数値で分かる処理、ステップ式フォームの進み具合。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/circular_progress/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Circular Progress Indicator</a><a class="chip" href="/entry/stepper_progress/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Progress Stepper</a><a class="chip" href="/entry/animated_counter/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Animated Counter</a><a class="chip" href="/glossary/indeterminate/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>不確定・確定</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/paywall/"><span class="ic s" style="--i:url(/assets/icons/scene-paywall.png)"></span>ペイウォール</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="アップロードの進捗を Linear Progress Indicator で表示して。値が変わるとバーが滑らかに伸びるアニメーション付きで、右に「45%」を出して。" data-en="Show upload progress with a Linear Progress Indicator that animates smoothly when the value changes, with &quot;45%&quot; text on the right.">アップロードの進捗を Linear Progress Indicator で表示して。値が変わるとバーが滑らかに伸びるアニメーション付きで、右に「45%」を出して。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Linear Progress Indicator / 進捗バー（プログレスバー）
+
+- id: `linear_progress`  URL: https://uizukan.dev/entry/linear_progress/
+- 種別: 表示 / Feedback &amp; Status
+- 別名: Progress Bar, Loading Bar, Determinate Progress
+- 呼び名: Material 3=Linear progress indicator / Material 2=Linear progress indicator / Android (Compose)=LinearProgressIndicator / iOS (HIG)=Progress indicators（Progress bar） / SwiftUI=ProgressView(value:)（.linear） / Web=&lt;progress&gt; / Flutter=LinearProgressIndicator
+- Flutter: `LinearProgressIndicator`
+- 関連: circular_progress, stepper_progress, animated_counter
+
+**説明**: アップロード・ダウンロード・学習の達成率などを横棒で表す。値が分からなければ左右に流れる indeterminate。
+
+**使いどころ**: 進捗が数値で分かる処理、ステップ式フォームの進み具合。
+
+**AI への伝え方（日本語）**: アップロードの進捗を Linear Progress Indicator で表示して。値が変わるとバーが滑らかに伸びるアニメーション付きで、右に「45%」を出して。
+
+**Prompt (English)**: Show upload progress with a Linear Progress Indicator that animates smoothly when the value changes, with "45%" text on the right.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Menu (Popup / Overflow)（ポップアップメニュー（⋮ メニュー）） — UI図鑑</title>
+<meta name="description" content="⋮ や ⋯ を押すと、その場に浮かぶ小さなメニュー。">
+<link rel="canonical" href="https://uizukan.dev/entry/popup_menu/">
+<meta property="og:title" content="Menu (Popup / Overflow)（ポップアップメニュー（⋮ メニュー）） — UI図鑑">
+<meta property="og:description" content="⋮ や ⋯ を押すと、その場に浮かぶ小さなメニュー。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/popup_menu/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/popup_menu.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Menu (Popup / Overflow)</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Surfaces &amp; Overlays · 07 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Menu (Popup / Overflow)</h1>
+  <p class="lead" style="margin-top:6px">ポップアップメニュー（⋮ メニュー）</p>
+  <div class="demo-plate">
+    <div class="head"><code>popup_menu</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-popup_menu" role="group" aria-label="Menu (Popup / Overflow) のデモ"><div class="m-card sf-pc"><div class="sf-lt"><div class="sf-tx"><div class="sf-t">カードのタイトル</div><div class="sf-s">右の <i class="mi" style="--i:url(/assets/icons/mi-materialicons-e402.png);width:16px;height:16px" aria-hidden="true"></i> をタップ</div></div>
+<button class="m-icon-btn sf-mb" aria-label="メニューを開く" aria-haspopup="menu" aria-expanded="false"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e402.png);width:24px;height:24px" aria-hidden="true"></i></button></div></div>
+<div class="sf-pm" hidden><div class="sf-bar"></div><div class="sf-mnu"><div class="sf-in" role="menu">
+<button class="sf-it sf-ink" role="menuitem"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f00d.png);width:24px;height:24px" aria-hidden="true"></i><span>編集</span></button>
+<button class="sf-it sf-ink" role="menuitem"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-ef7f.png);width:24px;height:24px" aria-hidden="true"></i><span>複製</span></button>
+<button class="sf-it sf-ink sf-del" role="menuitem"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e1bb.png);width:24px;height:24px" aria-hidden="true"></i><span>削除</span></button>
+</div></div></div></div><style>#wd-popup_menu .sf-ink{position:relative;cursor:pointer}
+#wd-popup_menu .sf-ink::after{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--ink);opacity:0;pointer-events:none;transition:opacity .2s}
+@media (hover:hover){#wd-popup_menu .sf-ink:hover::after{opacity:.03}}
+#wd-popup_menu .sf-ink.sf-down::after{opacity:.04}
+
+#wd-popup_menu .sf-pc{width:280px;max-width:100%}
+#wd-popup_menu .sf-lt{display:flex;align-items:center;min-height:72px;padding:8px 20px}
+#wd-popup_menu .sf-tx{flex:1;min-width:0}
+#wd-popup_menu .sf-t{font-size:15px;line-height:1.3;color:var(--ink)}
+#wd-popup_menu .sf-s{font-size:13px;line-height:1.4;color:var(--ink2);margin-top:1px;display:flex;align-items:center;white-space:nowrap}
+#wd-popup_menu .sf-s .mi{margin:0 2px}
+#wd-popup_menu .sf-mb{flex:none;margin-left:16px;color:var(--ink2)}
+#wd-popup_menu .sf-pm{position:fixed;inset:0;z-index:1000}
+#wd-popup_menu .sf-pm[hidden]{display:none}
+#wd-popup_menu .sf-bar{position:absolute;inset:0}
+#wd-popup_menu .sf-mnu{position:fixed;overflow:hidden;background:var(--surface);border:1px solid var(--rule);border-radius:12px;box-shadow:var(--e2)}
+#wd-popup_menu .sf-in{position:absolute;top:-1px;right:-1px;padding:8px 0;display:flex;flex-direction:column}
+#wd-popup_menu .sf-it{display:flex;align-items:center;gap:16px;min-height:56px;padding:0 12px;width:100%;text-align:left;font-size:15px;font-weight:500;line-height:1.2;color:var(--ink);white-space:nowrap}
+#wd-popup_menu .sf-it .mi{color:var(--ink2)}
+#wd-popup_menu .sf-it.sf-del,#wd-popup_menu .sf-it.sf-del .mi{color:#F44336}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const lock = (on) => { document.documentElement.style.overflow = on ? 'hidden' : ''; };
+const escKey = (fn) => { const h = (e) => { if (e.key === 'Escape') fn(); }; document.addEventListener('keydown', h); return () => document.removeEventListener('keydown', h); };
+const layer = (el, ms, outCls) => {
+  let shown = false, t = 0, off = null;
+  return {
+    get open() { return shown; },
+    show(close) {
+      if (shown) return false;
+      shown = true; clearTimeout(t); el.hidden = false; if (outCls) el.classList.remove(outCls); lock(true);
+      void el.offsetWidth; el.classList.add('sf-on'); off = escKey(close); return true;
+    },
+    hide() {
+      if (!shown) return false;
+      shown = false; if (outCls) el.classList.add(outCls); el.classList.remove('sf-on'); if (off) off();
+      t = setTimeout(() => { el.hidden = true; if (outCls) el.classList.remove(outCls); lock(false); }, ms); return true;
+    },
+  };
+};
+const press = (el) => {
+  const off = () => el.classList.remove('sf-down');
+  el.addEventListener('pointerdown', () => el.classList.add('sf-down'));
+  ['pointerup', 'pointercancel', 'pointerleave'].forEach((n) => el.addEventListener(n, off));
+};
+const pm = root.querySelector('.sf-pm'), menu = root.querySelector('.sf-mnu'), inner = root.querySelector('.sf-in'), mb = root.querySelector('.sf-mb');
+const items = [...root.querySelectorAll('.sf-it')];
+items.forEach(press);
+const n = items.length, unit = 1 / (n + 1.5);
+const cl = (v) => Math.max(0, Math.min(1, v));
+let W = 0, H = 0, t = 0, dir = 0, last = 0, raf = 0, off = null;
+// Flutter の _PopupMenu と同じ：幅は [0, unit]、高さは [0, unit*n]、全体の不透明度は [0, 1/3]、項目 i は [(i+1)unit, +1.5unit]
+const paint = () => {
+  const c = dir >= 0 ? t : Math.min(1, t / (2 / 3));
+  menu.style.width = (W * cl(c / unit)) + 'px';
+  menu.style.height = (H * cl(c / (unit * n))) + 'px';
+  menu.style.opacity = String(cl(c * 3));
+  items.forEach((it, i) => { it.style.opacity = String(cl((c - (i + 1) * unit) / (1.5 * unit))); });
+};
+const tick = (now) => {
+  const dt = now - last; last = now;
+  t = cl(t + dir * dt / 300);
+  paint();
+  if ((dir > 0 && t < 1) || (dir < 0 && t > 0)) raf = requestAnimationFrame(tick);
+  else if (dir < 0) { pm.hidden = true; dir = 0; }
+};
+const run = (d) => { dir = d; cancelAnimationFrame(raf); last = performance.now(); raf = requestAnimationFrame(tick); };
+// ボタンの上に重ねる（上端を揃える）。ボタンが右寄りなので右端を揃えて左へ伸びる。画面の端から 8 は空ける
+const place = () => {
+  const r = mb.getBoundingClientRect(), vw = document.documentElement.clientWidth, vh = window.innerHeight;
+  let right = Math.max(8, vw - r.right);
+  if (vw - right - W < 8) right = vw - 8 - W;
+  let top = r.top;
+  if (top + H > vh - 8) top = vh - 8 - H;
+  menu.style.right = right + 'px'; menu.style.top = Math.max(8, top) + 'px';
+};
+const open = () => {
+  if (!pm.hidden && dir > 0) return;
+  pm.hidden = false;
+  inner.style.width = 'max-content';
+  const w0 = inner.offsetWidth;
+  W = Math.min(280, Math.max(112, Math.ceil(w0 / 56) * 56));
+  inner.style.width = (W - 2) + 'px';
+  H = inner.offsetHeight + 2;
+  place();
+  mb.setAttribute('aria-expanded', 'true');
+  if (!off) { const h = (e) => { if (e.key === 'Escape') close(); }; document.addEventListener('keydown', h); off = () => document.removeEventListener('keydown', h); }
+  run(1);
+};
+const close = () => {
+  if (pm.hidden || dir < 0) return;
+  mb.setAttribute('aria-expanded', 'false');
+  if (off) { off(); off = null; }
+  run(-1);
+};
+mb.addEventListener('click', open);
+root.querySelector('.sf-bar').addEventListener('pointerdown', (e) => { e.preventDefault(); close(); });
+items.forEach((it) => it.addEventListener('click', close));
+// 画面の大きさが変わったら（回転・ツールバーの出入り）、ボタンに付いていく
+window.addEventListener('resize', () => { if (!pm.hidden) place(); });
+window.addEventListener('scroll', () => { if (!pm.hidden) place(); }, { passive: true });})(document.getElementById("wd-popup_menu"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Overflow Menu</span><span class="tag">Kebab Menu</span><span class="tag">Dropdown Menu (action)</span><span class="tag">Context Menu</span><span class="tag">More Menu</span><span class="tag">Pull-down Button</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Menus（Dropdown menu）</dd></div><div><dt>Material 2</dt><dd class="">Menus（Overflow / Popup menu）</dd></div><div><dt>Android (Compose)</dt><dd class="">DropdownMenu + DropdownMenuItem</dd></div><div><dt>iOS (HIG)</dt><dd class="">Menus（Pull-down buttons）</dd></div><div><dt>SwiftUI</dt><dd class="">Menu</dd></div><div><dt>Web</dt><dd class="">Menu Button（WAI-ARIA パターン。&lt;button aria-haspopup="menu"&gt;）</dd></div><div><dt>Flutter</dt><dd class="mono">PopupMenuButton / MenuAnchor</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>ボタンのそばに浮かぶ選択肢の一覧。App Bar 右端の「⋮（<a class="term" href="/glossary/menu_icons/">ケバブ</a>）」から出るものを Overflow Menu と呼ぶ。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>画面に出しきれない補助操作（編集・複製・報告・削除）。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/app_bar/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Top App Bar</a><a class="chip" href="/entry/context_menu/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Context Menu (Long-press Preview)</a><a class="chip" href="/entry/action_sheet/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Action Sheet</a><a class="chip" href="/entry/dropdown_menu/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Dropdown Menu</a><a class="chip" href="/glossary/menu_icons/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>ハンバーガー／ケバブ</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/feed/"><span class="ic s" style="--i:url(/assets/icons/scene-feed.png)"></span>フィード</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="カード右上の ⋮ を押すと「編集／複製／削除（赤）」の Popup Menu が出るようにして。" data-en="Tapping the ⋮ at the top-right of the card should open a Popup Menu with &quot;Edit / Duplicate / Delete (red)&quot;.">カード右上の ⋮ を押すと「編集／複製／削除（赤）」の Popup Menu が出るようにして。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Menu (Popup / Overflow) / ポップアップメニュー（⋮ メニュー）
+
+- id: `popup_menu`  URL: https://uizukan.dev/entry/popup_menu/
+- 種別: 表示 / Surfaces &amp; Overlays
+- 別名: Overflow Menu, Kebab Menu, Dropdown Menu (action), Context Menu, More Menu, Pull-down Button
+- 呼び名: Material 3=Menus（Dropdown menu） / Material 2=Menus（Overflow / Popup menu） / Android (Compose)=DropdownMenu + DropdownMenuItem / iOS (HIG)=Menus（Pull-down buttons） / SwiftUI=Menu / Web=Menu Button（WAI-ARIA パターン。&lt;button aria-haspopup="menu"&gt;） / Flutter=PopupMenuButton / MenuAnchor
+- Flutter: `PopupMenuButton / MenuAnchor`
+- 関連: app_bar, context_menu, action_sheet, dropdown_menu
+
+**説明**: ボタンのそばに浮かぶ選択肢の一覧。App Bar 右端の「⋮（ケバブ）」から出るものを Overflow Menu と呼ぶ。
+
+**使いどころ**: 画面に出しきれない補助操作（編集・複製・報告・削除）。
+
+**AI への伝え方（日本語）**: カード右上の ⋮ を押すと「編集／複製／削除（赤）」の Popup Menu が出るようにして。
+
+**Prompt (English)**: Tapping the ⋮ at the top-right of the card should open a Popup Menu with "Edit / Duplicate / Delete (red)".
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

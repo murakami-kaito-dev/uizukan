@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shake (Error Wiggle)（シェイク（エラー時の左右振動）） — UI図鑑</title>
+<meta name="description" content="入力が間違っていると、欄が左右に小刻みに揺れて「ダメ」を伝える。">
+<link rel="canonical" href="https://uizukan.dev/entry/shake/">
+<meta property="og:title" content="Shake (Error Wiggle)（シェイク（エラー時の左右振動）） — UI図鑑">
+<meta property="og:description" content="入力が間違っていると、欄が左右に小刻みに揺れて「ダメ」を伝える。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/shake/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/shake.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/actions/">アクション</a><span class="sep">/</span><span class="here">Shake (Error Wiggle)</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Motion &amp; Micro-interactions · 03 · アクション</div>
+  <h1 class="display" style="margin-top:10px">Shake (Error Wiggle)</h1>
+  <p class="lead" style="margin-top:6px">シェイク（エラー時の左右振動）</p>
+  <div class="demo-plate">
+    <div class="head"><code>shake</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-shake" role="group" aria-label="Shake (Error Wiggle) のデモ"><div class="mo-sk"><div class="mo-fw"><div class="mo-tf"><input type="password" autocomplete="off" aria-label="パスワード"><label>パスワード</label></div><div class="mo-er">パスワードが違います</div></div><button class="m-btn m-filled">ログイン（わざと失敗）</button></div></div><style>#wd-shake .mo-sk{width:280px;max-width:100%;display:flex;flex-direction:column;align-items:center}
+#wd-shake .mo-fw{width:100%}
+#wd-shake .mo-tf{position:relative;width:100%;background:var(--m-surface);border-radius:6px}
+#wd-shake .mo-tf::after{content:"";position:absolute;inset:0;border:1px solid var(--edge);border-radius:6px;pointer-events:none}
+#wd-shake .mo-tf:focus-within::after{border:1.5px solid var(--accent)}
+#wd-shake .mo-tf input{display:block;width:100%;border:0;outline:0;background:transparent;padding:14px;font-size:15px;line-height:24.75px;height:52.75px;color:var(--ink);caret-color:var(--accent);border-radius:6px;-webkit-user-select:text;user-select:text}
+#wd-shake .mo-tf label{position:absolute;left:14px;top:50%;transform:translateY(-50%);transform-origin:left center;font-size:13px;line-height:1;color:var(--ink2);pointer-events:none;z-index:1;padding:0;transition:top .167s cubic-bezier(.4,0,.2,1),transform .167s cubic-bezier(.4,0,.2,1),padding .167s}
+#wd-shake .mo-tf.mo-fl label{top:0;transform:translateY(-50%) scale(.75);padding:0 4px;background:linear-gradient(transparent 50%,var(--m-surface) 50%)}
+#wd-shake .mo-sk.mo-err .mo-tf::after{border:1px solid var(--danger);border-radius:4px}
+#wd-shake .mo-sk.mo-err .mo-tf:focus-within::after{border-width:2px}
+#wd-shake .mo-er{display:none;padding:4px 14px 0;font-size:13px;line-height:1.55;color:var(--danger)}
+#wd-shake .mo-sk.mo-err .mo-er{display:block}
+#wd-shake .m-btn{margin-top:12px}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const sk=root.querySelector('.mo-sk'), fw=root.querySelector('.mo-fw'), tf=root.querySelector('.mo-tf'), inp=tf.querySelector('input');
+const upd=()=>tf.classList.toggle('mo-fl',document.activeElement===inp||inp.value!=='');
+inp.addEventListener('focus',upd); inp.addEventListener('blur',upd);
+inp.addEventListener('input',()=>{ sk.classList.remove('mo-err'); upd(); });
+const kf=[]; for(let i=0;i<=48;i++){ const v=i/48; kf.push({transform:'translateX('+(Math.sin(v*Math.PI*4)*8).toFixed(3)+'px)'}); }
+let an=null;
+root.querySelector('button').addEventListener('click',async()=>{
+  sk.classList.add('mo-err');
+  if(an)an.cancel(); an=fw.animate(kf,{duration:400,easing:'linear'});
+  for(let i=0;i<3;i++){ UZ.haptic('heavy'); await UZ.wait(80); }
+});})(document.getElementById("wd-shake"),window.UZ);</script></div>
+    <a class="foot" href="https://apps.apple.com/jp/app/id6808997175" rel="noopener"><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i><span>本物の手触りは iOS アプリで</span><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a>
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Wiggle</span><span class="tag">Error Shake</span><span class="tag">Wrong Password Shake</span><span class="tag">Horizontal Shake</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="na">該当なし（M3 に無い）</dd></div><div><dt>Material 2</dt><dd class="na">該当なし（M2 に無い）</dd></div><div><dt>Android (Compose)</dt><dd class="">Animatable + keyframes</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（慣習。パスコード誤入力の揺れ）</dd></div><div><dt>SwiftUI</dt><dd class="">.keyframeAnimator / .offset + withAnimation</dd></div><div><dt>Web</dt><dd class="">CSS @keyframes</dd></div><div><dt>Flutter</dt><dd class="mono">AnimationController + Transform.translate（sin 波）</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>macOS のログイン画面で有名な、否定を表す左右の揺れ。±8dp 程度を 3〜4 往復、400ms 前後。エラー触覚と組み合わせると効果的。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>パスワード・PIN の誤り、必須項目未入力での送信、無効な操作。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/haptic_notification/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Notification Haptic (Success / Warning / Error)</a><a class="chip" href="/entry/otp_field/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>OTP / PIN Code Field</a><a class="chip" href="/entry/password_field/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Password Field with Visibility Toggle</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/login/"><span class="ic s" style="--i:url(/assets/icons/scene-login.png)"></span>ログイン</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="パスワードが間違っていたら、入力欄が左右に小刻みに揺れる Shake アニメーション（±8dp、約 400ms）をして、同時にエラー触覚を鳴らして。" data-en="If the password is wrong, play a horizontal Shake animation on the field (±8dp, ~400ms) and fire the error haptic at the same time.">パスワードが間違っていたら、入力欄が左右に小刻みに揺れる Shake アニメーション（±8dp、約 400ms）をして、同時にエラー触覚を鳴らして。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Shake (Error Wiggle) / シェイク（エラー時の左右振動）
+
+- id: `shake`  URL: https://uizukan.dev/entry/shake/
+- 種別: アクション / Motion &amp; Micro-interactions
+- 別名: Wiggle, Error Shake, Wrong Password Shake, Horizontal Shake
+- 呼び名: Material 3=該当なし（M3 に無い） / Material 2=該当なし（M2 に無い） / Android (Compose)=Animatable + keyframes / iOS (HIG)=該当なし（慣習。パスコード誤入力の揺れ） / SwiftUI=.keyframeAnimator / .offset + withAnimation / Web=CSS @keyframes / Flutter=AnimationController + Transform.translate（sin 波）
+- Flutter: `AnimationController + Transform.translate（sin 波）`
+- 関連: haptic_notification, otp_field, password_field
+
+**説明**: macOS のログイン画面で有名な、否定を表す左右の揺れ。±8dp 程度を 3〜4 往復、400ms 前後。エラー触覚と組み合わせると効果的。
+
+**使いどころ**: パスワード・PIN の誤り、必須項目未入力での送信、無効な操作。
+
+**AI への伝え方（日本語）**: パスワードが間違っていたら、入力欄が左右に小刻みに揺れる Shake アニメーション（±8dp、約 400ms）をして、同時にエラー触覚を鳴らして。
+
+**Prompt (English)**: If the password is wrong, play a horizontal Shake animation on the field (±8dp, ~400ms) and fire the error haptic at the same time.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

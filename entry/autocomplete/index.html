@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Autocomplete（オートコンプリート（入力候補）） — UI図鑑</title>
+<meta name="description" content="入力中の文字に合わせて候補が下に出る入力欄。">
+<link rel="canonical" href="https://uizukan.dev/entry/autocomplete/">
+<meta property="og:title" content="Autocomplete（オートコンプリート（入力候補）） — UI図鑑">
+<meta property="og:description" content="入力中の文字に合わせて候補が下に出る入力欄。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/autocomplete/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/autocomplete.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Autocomplete</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Inputs &amp; Selection · 16 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Autocomplete</h1>
+  <p class="lead" style="margin-top:6px">オートコンプリート（入力候補）</p>
+  <div class="demo-plate">
+    <div class="head"><code>autocomplete</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-autocomplete" role="group" aria-label="Autocomplete のデモ"><div class="in-col"><label class="in-tf in-fill"><span class="in-tf-pre"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e675.png);width:24px;height:24px" aria-hidden="true"></i></span><span class="in-tf-iw in-pe"><input type="text" placeholder="「しん」と入力してみて" autocomplete="off" aria-label="駅名"></span><span class="in-tf-lab" style="--lx:48px">駅名</span><button type="button" class="in-tf-suf in-clr" aria-label="消す" hidden><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e16a.png);width:18px;height:18px" aria-hidden="true"></i></button><fieldset aria-hidden="true"><legend><span>駅名</span></legend></fieldset></label><div class="in-wrap"><div class="in-box"></div></div>
+<template class="i-tr"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e67f.png);width:14px;height:14px" aria-hidden="true"></i></template><template class="i-pl"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f2ac.png);width:18px;height:18px" aria-hidden="true"></i></template><template class="i-nw"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e444.png);width:14px;height:14px" aria-hidden="true"></i></template></div></div><style>#wd-autocomplete [hidden]{display:none!important}
+#wd-autocomplete .in-tf{--r:6px;--bc:var(--ink3);--bw:1px;--lx:14px;position:relative;display:flex;align-items:center;width:100%;height:52px;border-radius:var(--r);cursor:text;font-size:15px}
+#wd-autocomplete .in-tf.in-fill{background:var(--surface)}
+#wd-autocomplete .in-tf fieldset{position:absolute;left:0;right:0;bottom:0;top:-5px;margin:0;padding:0 0 0 calc(10px - var(--bw));border:var(--bw) solid var(--bc);border-radius:var(--r);pointer-events:none;min-width:0;transition:border-color .167s}
+#wd-autocomplete .in-tf legend{display:block;float:none;width:auto;max-width:.01px;height:11px;padding:0;font-size:9.75px;line-height:11px;visibility:hidden;white-space:nowrap;overflow:hidden;transition:max-width 50ms}
+#wd-autocomplete .in-tf legend span{display:inline-block;padding:0 4px}
+#wd-autocomplete .in-tf.in-up legend{max-width:100%;transition:max-width 100ms 50ms}
+#wd-autocomplete .in-tf.in-f{--bc:var(--accent);--bw:1.5px}
+#wd-autocomplete .in-tf.in-e{--bc:var(--danger)}
+#wd-autocomplete .in-tf-lab{position:absolute;left:var(--lx);top:50%;transform:translateY(-50%);transform-origin:0 50%;font-size:13px;line-height:1;color:var(--ink2);white-space:nowrap;pointer-events:none;transition:left .167s cubic-bezier(.4,0,.2,1),top .167s cubic-bezier(.4,0,.2,1),transform .167s cubic-bezier(.4,0,.2,1)}
+#wd-autocomplete .in-tf.in-up .in-tf-lab{left:14px;top:0;transform:translateY(-50%) scale(.75)}
+#wd-autocomplete .in-tf-pre,#wd-autocomplete .in-tf-suf{flex:none;width:48px;height:48px;display:flex;align-items:center;justify-content:center;color:var(--ink);border-radius:999px}
+@media (hover:hover){#wd-autocomplete button.in-tf-suf:hover{background:color-mix(in srgb,var(--ink) 8%,transparent)}}
+#wd-autocomplete .in-tf-iw{position:relative;flex:1;min-width:0;align-self:stretch}
+#wd-autocomplete .in-tf-iw.in-ps{margin-left:14px}
+#wd-autocomplete .in-tf-iw.in-pe{margin-right:14px}
+#wd-autocomplete .in-tf-iw input{position:absolute;left:0;top:0;width:106.667%;height:100%;transform:scale(.9375);transform-origin:0 50%;border:0;outline:0;background:transparent;padding:0;margin:0;font:inherit;font-size:16px;line-height:normal;color:var(--ink);caret-color:var(--accent);-webkit-user-select:text;user-select:text;-webkit-appearance:none;appearance:none;border-radius:0;text-overflow:ellipsis}
+#wd-autocomplete .in-tf-iw input::placeholder{color:transparent;opacity:1;transition:color .167s}
+#wd-autocomplete .in-tf.in-f .in-tf-iw input::placeholder{color:var(--ink3)}
+#wd-autocomplete .in-tf-sub{padding:4px 14px 0;font-size:13px;line-height:1.55;color:var(--ink2)}
+#wd-autocomplete .in-tf-sub.in-err{color:var(--danger);animation:inp-sub .167s cubic-bezier(.4,0,.2,1)}
+@keyframes inp-sub{from{opacity:0;transform:translateY(-25%)}}
+#wd-autocomplete .in-col{width:100%;max-width:280px}
+#wd-autocomplete .in-tf .in-clr+fieldset{}
+#wd-autocomplete .in-tf:has(.in-clr:not([hidden])) .in-tf-iw.in-pe{margin-right:0}
+#wd-autocomplete .in-box{display:flow-root}
+#wd-autocomplete .in-wrap{overflow:hidden;transition:height .18s cubic-bezier(.215,.61,.355,1)}
+#wd-autocomplete .in-lst{margin-top:4px;background:var(--surface);border-radius:10px;border:1px solid var(--rule);box-shadow:0 4px 12px rgba(0,0,0,.08);overflow:hidden}
+#wd-autocomplete .in-hd{display:flex;align-items:center;gap:4px;padding:8px 12px 2px;font-size:11px;line-height:1.65;color:var(--ink2)}
+#wd-autocomplete .in-it{display:flex;align-items:center;width:100%;padding:10px 12px;text-align:left;font-size:15px;line-height:1.65;color:var(--ink)}
+#wd-autocomplete .in-it:active{background:color-mix(in srgb,var(--ink) 4%,transparent)}
+#wd-autocomplete .in-it>.mi:first-child{color:var(--accent);margin-right:10px}
+#wd-autocomplete .in-it>.mi:last-child{color:var(--ink2)}
+#wd-autocomplete .in-nm{flex:1;min-width:0}
+#wd-autocomplete .in-nm b{font-weight:800}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";function bindTf(tf){
+  const i=tf.querySelector('input');
+  const up=function(){tf.classList.toggle('in-up',document.activeElement===i||i.value!=='');};
+  i.addEventListener('focus',function(){tf.classList.add('in-f');up();});
+  i.addEventListener('blur',function(){tf.classList.remove('in-f');up();});
+  i.addEventListener('input',up);
+  tf.querySelectorAll('button').forEach(function(b){b.addEventListener('mousedown',function(e){e.preventDefault();});});
+  up();
+  return {input:i,up:up};
+}
+const ST=[['東京','とうきょう'],['新宿','しんじゅく'],['渋谷','しぶや'],['品川','しながわ'],['池袋','いけぶくろ'],['上野','うえの'],['新橋','しんばし'],['秋葉原','あきはばら'],['横浜','よこはま'],['大阪','おおさか'],['名古屋','なごや'],['京都','きょうと'],['新大阪','しんおおさか'],['新横浜','しんよこはま'],['四ツ谷','よつや']];
+const POP=['東京','新宿','渋谷','横浜'];
+const I=function(n){return root.querySelector('template.i-'+n).innerHTML;};
+const tf=root.querySelector('.in-tf'),t=bindTf(tf),i=t.input,clr=root.querySelector('.in-clr'),wrap=root.querySelector('.in-wrap'),box=root.querySelector('.in-box');
+const hira=function(s){return s.replace(/[ァ-ヶ]/g,function(c){return String.fromCharCode(c.charCodeAt(0)-0x60);});};
+const esc=function(s){return s.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
+let picking=false,shown='';
+function opts(){const tx=i.value.trim(),q=hira(tx);if(!q)return document.activeElement===i?POP:[];return ST.filter(function(s){return s[0].indexOf(tx)>=0||s[1].indexOf(q)===0;}).map(function(s){return s[0];}).slice(0,5);}
+function hl(n,tx){const at=tx?n.indexOf(tx):-1;if(at<0)return esc(n);return esc(n.slice(0,at))+'<b>'+esc(tx)+'</b>'+esc(n.slice(at+tx.length));}
+function render(){
+  const o=opts(),tx=i.value.trim();
+  clr.hidden=tx==='';
+  const show=o.length>0&&!(o.length===1&&o[0]===tx);
+  const html=show?'<div class="in-lst">'+(tx?'':'<div class="in-hd">'+I('tr')+'<span>よく使われる駅</span></div>')+o.map(function(n){return '<button type="button" class="in-it" data-n="'+esc(n)+'">'+I('pl')+'<span class="in-nm">'+hl(n,tx)+'</span>'+I('nw')+'</button>';}).join('')+'</div>':'';
+  if(html===shown)return;
+  shown=html;
+  const from=wrap.offsetHeight;
+  box.innerHTML=html;
+  const to=box.offsetHeight;
+  if(from!==to){wrap.style.transition='none';wrap.style.height=from+'px';wrap.offsetHeight;wrap.style.transition='';wrap.style.height=to+'px';}
+  else wrap.style.height=to+'px';
+}
+i.addEventListener('input',render);
+i.addEventListener('focus',render);
+i.addEventListener('blur',function(){if(!picking)render();});
+box.addEventListener('pointerdown',function(){picking=true;});
+box.addEventListener('mousedown',function(e){e.preventDefault();});
+box.addEventListener('click',function(e){
+  const b=e.target.closest('.in-it');picking=false;if(!b)return;
+  UZ.haptic('selection');i.value=b.dataset.n;t.up();i.blur();render();
+});
+document.addEventListener('pointerup',function(){setTimeout(function(){if(picking){picking=false;render();}},0);});
+clr.addEventListener('click',function(e){e.preventDefault();i.value='';t.up();render();});
+render();})(document.getElementById("wd-autocomplete"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Typeahead</span><span class="tag">Suggest Input</span><span class="tag">Combobox with Suggestions</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="na">該当なし（Search の suggestions で表現）</dd></div><div><dt>Material 2</dt><dd class="na">該当なし（Exposed dropdown menu で近似）</dd></div><div><dt>Android (Compose)</dt><dd class="na">該当なし（TextField + DropdownMenu で自作）</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（Search fields の suggestions）</dd></div><div><dt>SwiftUI</dt><dd class="">.searchable + .searchSuggestions</dd></div><div><dt>Web</dt><dd class="">&lt;input list&gt; + &lt;datalist&gt; / Combobox（WAI-ARIA パターン）</dd></div><div><dt>Flutter</dt><dd class="mono">Autocomplete / RawAutocomplete</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>入力文字列で候補を絞り込み、リストから選べる。検索の補助、住所・タグ入力で使う。<a class="term" href="/glossary/debounce/">Debounce</a>（入力停止後に検索）と組み合わせることが多い。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>候補が多く、自由入力も許したい場面（タグ、駅名、ユーザー名）。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/search_bar/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Search Bar</a><a class="chip" href="/entry/dropdown_menu/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Dropdown Menu</a><a class="chip" href="/entry/chips/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Chip</a><a class="chip" href="/glossary/debounce/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>デバウンス</a></div></section>
+  
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="駅名を入力すると候補が下に出る Autocomplete 入力欄を作って。候補は入力の前方一致で絞り込み、タップで確定して。" data-en="Create an Autocomplete field for station names: suggestions appear below as the user types, filtered by prefix match, and tapping one fills the field.">駅名を入力すると候補が下に出る Autocomplete 入力欄を作って。候補は入力の前方一致で絞り込み、タップで確定して。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Autocomplete / オートコンプリート（入力候補）
+
+- id: `autocomplete`  URL: https://uizukan.dev/entry/autocomplete/
+- 種別: 表示 / Inputs &amp; Selection
+- 別名: Typeahead, Suggest Input, Combobox with Suggestions
+- 呼び名: Material 3=該当なし（Search の suggestions で表現） / Material 2=該当なし（Exposed dropdown menu で近似） / Android (Compose)=該当なし（TextField + DropdownMenu で自作） / iOS (HIG)=該当なし（Search fields の suggestions） / SwiftUI=.searchable + .searchSuggestions / Web=&lt;input list&gt; + &lt;datalist&gt; / Combobox（WAI-ARIA パターン） / Flutter=Autocomplete / RawAutocomplete
+- Flutter: `Autocomplete / RawAutocomplete`
+- 関連: search_bar, dropdown_menu, chips
+
+**説明**: 入力文字列で候補を絞り込み、リストから選べる。検索の補助、住所・タグ入力で使う。Debounce（入力停止後に検索）と組み合わせることが多い。
+
+**使いどころ**: 候補が多く、自由入力も許したい場面（タグ、駅名、ユーザー名）。
+
+**AI への伝え方（日本語）**: 駅名を入力すると候補が下に出る Autocomplete 入力欄を作って。候補は入力の前方一致で絞り込み、タップで確定して。
+
+**Prompt (English)**: Create an Autocomplete field for station names: suggestions appear below as the user types, filtered by prefix match, and tapping one fills the field.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

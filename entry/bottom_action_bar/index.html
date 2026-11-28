@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sticky Bottom Action Bar（下部固定 CTA バー） — UI図鑑</title>
+<meta name="description" content="商品ページなどで、スクロールしても下に固定される「カートに入れる」バー。">
+<link rel="canonical" href="https://uizukan.dev/entry/bottom_action_bar/">
+<meta property="og:title" content="Sticky Bottom Action Bar（下部固定 CTA バー） — UI図鑑">
+<meta property="og:description" content="商品ページなどで、スクロールしても下に固定される「カートに入れる」バー。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/bottom_action_bar/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/bottom_action_bar.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Sticky Bottom Action Bar</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Surfaces &amp; Overlays · 11 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Sticky Bottom Action Bar</h1>
+  <p class="lead" style="margin-top:6px">下部固定 CTA バー</p>
+  <div class="demo-plate">
+    <div class="head"><code>bottom_action_bar</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-bottom_action_bar" role="group" aria-label="Sticky Bottom Action Bar のデモ"><div class="sf-col">
+<div class="sf-phn"><div class="sf-scr">
+<div class="sf-sc">
+<div class="sf-pic"><img src="/assets/images/products/1_sneakers.jpg" alt="" draggable="false"></div>
+<div class="sf-info"><div class="sf-nm">キャンバス スニーカー</div><div class="sf-stars"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f01d4.png);width:14px;height:14px" aria-hidden="true"></i><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f01d4.png);width:14px;height:14px" aria-hidden="true"></i><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f01d4.png);width:14px;height:14px" aria-hidden="true"></i><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f01d4.png);width:14px;height:14px" aria-hidden="true"></i><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f01d4.png);width:14px;height:14px" aria-hidden="true"></i></div>
+<div class="sf-lines"><i style="width:200px"></i><i style="width:180px"></i><i style="width:210px"></i><i style="width:150px"></i><i style="width:190px"></i><i style="width:170px"></i><i style="width:205px"></i><i style="width:120px"></i><i style="width:185px"></i><i style="width:160px"></i></div></div>
+</div>
+<div class="sf-bar"><div class="sf-prc"><div class="sf-p">¥4,980</div><div class="sf-n">税込・送料無料</div></div>
+<button class="m-btn m-filled sf-cta"><span class="sf-l">カートに入れる</span></button></div>
+</div></div>
+<div class="sf-hint"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f0673.png);width:16px;height:16px" aria-hidden="true"></i><span>スクロールしても下のバーは動かない</span></div>
+</div></div><style>#wd-bottom_action_bar .sf-col{display:flex;flex-direction:column;align-items:center}
+#wd-bottom_action_bar .sf-phn{width:250px;height:440px;padding:7px;background:#1C1C1E;border-radius:34px}
+#wd-bottom_action_bar .sf-scr{height:100%;border-radius:28px;overflow:hidden;background:var(--surface);display:flex;flex-direction:column}
+#wd-bottom_action_bar .sf-sc{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding-bottom:12px;scrollbar-width:none;touch-action:pan-y}
+#wd-bottom_action_bar .sf-sc::-webkit-scrollbar{display:none}
+#wd-bottom_action_bar .sf-pic{aspect-ratio:1.15}
+#wd-bottom_action_bar .sf-pic img{width:100%;height:100%;object-fit:cover;display:block}
+#wd-bottom_action_bar .sf-info{padding:12px 14px 0}
+#wd-bottom_action_bar .sf-nm{font-size:15px;font-weight:800;line-height:1.65}
+#wd-bottom_action_bar .sf-stars{display:flex;margin-top:4px;height:14px;color:#F59E0B}
+#wd-bottom_action_bar .sf-lines{margin-top:12px}
+#wd-bottom_action_bar .sf-lines i{display:block;max-width:100%;height:10px;margin-bottom:8px;border-radius:4px;background:var(--m-s-highest)}
+#wd-bottom_action_bar .sf-bar{flex:none;position:relative;display:flex;align-items:center;gap:8px;padding:10px 14px 12px;background:var(--surface);border-top:1px solid var(--rule);box-shadow:0 -4px 12px rgba(0,0,0,.08)}
+#wd-bottom_action_bar .sf-prc{flex:1;min-width:0;line-height:1.65}
+#wd-bottom_action_bar .sf-p{font-size:17px;font-weight:800}
+#wd-bottom_action_bar .sf-n{font-size:10px}
+#wd-bottom_action_bar .sf-cta{flex:none;width:120px;min-height:40px;padding:0 10px;font-size:13px;display:grid;place-items:center}
+#wd-bottom_action_bar .sf-cta .sf-l{grid-area:1/1;transition:opacity .2s linear;white-space:nowrap}
+#wd-bottom_action_bar .sf-hint{display:flex;align-items:center;gap:4px;width:250px;max-width:100%;margin-top:10px;font-size:12px;color:var(--ink2)}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const sc = root.querySelector('.sf-sc'), cta = root.querySelector('.sf-cta');
+// 「カートに入れる」⇄「追加しました」（AnimatedSwitcher：古い文字が消えながら新しい文字が出る）
+let added = false;
+cta.addEventListener('click', () => {
+  added = !added;
+  cta.querySelectorAll('.sf-l').forEach((o) => { o.style.opacity = '0'; setTimeout(() => o.remove(), 210); });
+  const n = document.createElement('span');
+  n.className = 'sf-l'; n.style.opacity = '0'; n.textContent = added ? '追加しました' : 'カートに入れる';
+  cta.appendChild(n); void n.offsetWidth; n.style.opacity = '1';
+});
+// Curves.easeInOutCubic = cubic-bezier(.645,.045,.355,1)
+const bez = (x1, y1, x2, y2) => (x) => {
+  let lo = 0, hi = 1, t = x;
+  for (let i = 0; i < 24; i++) {
+    t = (lo + hi) / 2;
+    const cx = 3 * (1 - t) * (1 - t) * t * x1 + 3 * (1 - t) * t * t * x2 + t * t * t;
+    if (cx < x) lo = t; else hi = t;
+  }
+  return 3 * (1 - t) * (1 - t) * t * y1 + 3 * (1 - t) * t * t * y2 + t * t * t;
+};
+const ease = bez(0.645, 0.045, 0.355, 1);
+// 0.7 秒待つ → 1.4 秒で下まで → 0.5 秒 → 1 秒で上へ（全 3.6 秒）
+const pos = (ms) => {
+  if (ms < 700) return 0;
+  if (ms < 2100) return ease((ms - 700) / 1400);
+  if (ms < 2600) return 1;
+  if (ms < 3600) return 1 - ease((ms - 2600) / 1000);
+  return 0;
+};
+let stop = false;
+['pointerdown', 'wheel', 'touchstart'].forEach((n) => sc.addEventListener(n, () => { stop = true; }, { passive: true }));
+const tour = () => {
+  const t0 = performance.now();
+  const step = (now) => {
+    if (stop) return;
+    const ms = now - t0;
+    sc.scrollTop = pos(ms) * (sc.scrollHeight - sc.clientHeight);
+    if (ms < 3600) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+};
+const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!reduce) {
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { io.disconnect(); tour(); } }, { threshold: 0.6 });
+    io.observe(root.querySelector('.sf-phn'));
+  } else tour();
+}})(document.getElementById("wd-bottom_action_bar"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Sticky Footer</span><span class="tag">Bottom CTA</span><span class="tag">Persistent Footer</span><span class="tag">Checkout Bar</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Docked toolbar（M3 Expressive）</dd></div><div><dt>Material 2</dt><dd class="na">該当なし（Bottom app bar で代替）</dd></div><div><dt>Android (Compose)</dt><dd class="na">該当なし（Scaffold(bottomBar:) で自作）</dd></div><div><dt>iOS (HIG)</dt><dd class="">Toolbars</dd></div><div><dt>SwiftUI</dt><dd class="">.toolbar(placement: .bottomBar) / .safeAreaInset(edge: .bottom)</dd></div><div><dt>Web</dt><dd class="na">該当なし（Sticky footer / Action bar）</dd></div><div><dt>Flutter</dt><dd class="mono">Scaffold.bottomNavigationBar / persistentFooterButtons</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>本文はスクロールするが、価格と主要ボタンは画面下部に常に見えるバー。上に薄い影や線を付けて本文と区別する。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>商品詳細、購入フロー、フォームの「次へ」など、主要操作を常に押せるようにしたい画面。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/filled_button/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Filled Button</a><a class="chip" href="/entry/bottom_app_bar/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Bottom App Bar</a><a class="chip" href="/entry/stepper_input/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Quantity Stepper</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/product/"><span class="ic s" style="--i:url(/assets/icons/scene-product.png)"></span>商品と購入</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="商品ページの下部に、左に価格、右に「カートに入れる」の Filled Button を置いた Sticky Bottom Action Bar を固定して。SafeArea を考慮して。" data-en="Pin a Sticky Bottom Action Bar to the product page: price on the left, a Filled &quot;Add to cart&quot; button on the right, respecting SafeArea.">商品ページの下部に、左に価格、右に「カートに入れる」の Filled Button を置いた Sticky Bottom Action Bar を固定して。SafeArea を考慮して。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Sticky Bottom Action Bar / 下部固定 CTA バー
+
+- id: `bottom_action_bar`  URL: https://uizukan.dev/entry/bottom_action_bar/
+- 種別: 表示 / Surfaces &amp; Overlays
+- 別名: Sticky Footer, Bottom CTA, Persistent Footer, Checkout Bar
+- 呼び名: Material 3=Docked toolbar（M3 Expressive） / Material 2=該当なし（Bottom app bar で代替） / Android (Compose)=該当なし（Scaffold(bottomBar:) で自作） / iOS (HIG)=Toolbars / SwiftUI=.toolbar(placement: .bottomBar) / .safeAreaInset(edge: .bottom) / Web=該当なし（Sticky footer / Action bar） / Flutter=Scaffold.bottomNavigationBar / persistentFooterButtons
+- Flutter: `Scaffold.bottomNavigationBar / persistentFooterButtons`
+- 関連: filled_button, bottom_app_bar, stepper_input
+
+**説明**: 本文はスクロールするが、価格と主要ボタンは画面下部に常に見えるバー。上に薄い影や線を付けて本文と区別する。
+
+**使いどころ**: 商品詳細、購入フロー、フォームの「次へ」など、主要操作を常に押せるようにしたい画面。
+
+**AI への伝え方（日本語）**: 商品ページの下部に、左に価格、右に「カートに入れる」の Filled Button を置いた Sticky Bottom Action Bar を固定して。SafeArea を考慮して。
+
+**Prompt (English)**: Pin a Sticky Bottom Action Bar to the product page: price on the left, a Filled "Add to cart" button on the right, respecting SafeArea.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

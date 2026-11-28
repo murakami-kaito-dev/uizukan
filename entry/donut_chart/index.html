@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Donut Chart（ドーナツグラフ） — UI図鑑</title>
+<meta name="description" content="全体に対する内訳を、輪の長さで見せるグラフ。真ん中に合計を置ける。">
+<link rel="canonical" href="https://uizukan.dev/entry/donut_chart/">
+<meta property="og:title" content="Donut Chart（ドーナツグラフ） — UI図鑑">
+<meta property="og:description" content="全体に対する内訳を、輪の長さで見せるグラフ。真ん中に合計を置ける。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/donut_chart/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/donut_chart.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Donut Chart</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Data Display · 09 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Donut Chart</h1>
+  <p class="lead" style="margin-top:6px">ドーナツグラフ</p>
+  <div class="demo-plate">
+    <div class="head"><code>donut_chart</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-donut_chart" role="group" aria-label="Donut Chart のデモ"><div class="dp-dc"><div class="dp-ring"><svg></svg><div class="dp-ctr"><div class="dp-big">0.0</div><div class="dp-unit">/ 64 GB</div></div></div><div class="dp-hint">タップでもう一度</div></div></div><style>#wd-donut_chart .dp-dc{display:flex;flex-direction:column;align-items:center;cursor:pointer}
+#wd-donut_chart .dp-ring{position:relative;width:160px;height:160px}
+#wd-donut_chart svg{display:block}
+#wd-donut_chart .dp-track{fill:none;stroke:var(--rule);stroke-opacity:.35}
+#wd-donut_chart .dp-ctr{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+#wd-donut_chart .dp-big{font-size:28px;font-weight:800;line-height:1.1}
+#wd-donut_chart .dp-unit,#wd-donut_chart .dp-hint{font-size:12px}
+#wd-donut_chart .dp-hint{margin-top:10px}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const SL = [{l:'写真',v:21.4,c:'#6366F1'},{l:'アプリ',v:12.8,c:'#14B8A6'},{l:'書類',v:6.2,c:'#F59E0B'},{l:'その他',v:3.1,c:'#EC4899'}];
+const NS = 'http://www.w3.org/2000/svg';
+function donut(svg, size) {
+  const sw = size * 0.115, r = (size - sw) / 2, c = size / 2;
+  svg.setAttribute('viewBox', '0 0 ' + size + ' ' + size);
+  svg.setAttribute('width', size); svg.setAttribute('height', size);
+  const tr = document.createElementNS(NS, 'circle');
+  tr.setAttribute('cx', c); tr.setAttribute('cy', c); tr.setAttribute('r', r);
+  tr.setAttribute('class', 'dp-track'); tr.setAttribute('stroke-width', sw); svg.appendChild(tr);
+  const paths = SL.map(function (s) {
+    const p = document.createElementNS(NS, 'path');
+    p.setAttribute('stroke', s.c); p.setAttribute('stroke-width', sw); p.setAttribute('fill', 'none'); p.setAttribute('stroke-linecap', 'round');
+    svg.appendChild(p); return p;
+  });
+  return function (t) {
+    const vals = SL.map(function (s) { return s.v / 64; });
+    const extent = t * vals.reduce(function (a, b) { return a + b; }, 0);
+    let cur = 0;
+    vals.forEach(function (v, i) {
+      const vis = Math.min(Math.max(extent - cur, 0), v);
+      if (vis > 0.002) {
+        const a0 = -Math.PI / 2 + cur * Math.PI * 2, sweep = Math.max(vis * Math.PI * 2 - 0.03, 0.001), a1 = a0 + sweep;
+        paths[i].setAttribute('d', 'M' + (c + r * Math.cos(a0)) + ' ' + (c + r * Math.sin(a0)) + 'A' + r + ' ' + r + ' 0 ' + (sweep > Math.PI ? 1 : 0) + ' 1 ' + (c + r * Math.cos(a1)) + ' ' + (c + r * Math.sin(a1)));
+        paths[i].style.display = '';
+      } else paths[i].style.display = 'none';
+      cur += v;
+    });
+  };
+}
+function replay(el, draw) {
+  let raf = 0;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function run() {
+    cancelAnimationFrame(raf);
+    if (reduce) { draw(1); return; }
+    const t0 = performance.now();
+    draw(0);
+    (function step(now) {
+      const x = Math.min((now - t0) / 1200, 1);
+      draw(1 - Math.pow(1 - x, 3));
+      if (x < 1) raf = requestAnimationFrame(step);
+    })(t0);
+  }
+  el.addEventListener('click', run);
+  run();
+}
+const draw = donut(root.querySelector('svg'), 160), big = root.querySelector('.dp-big');
+replay(root.querySelector('.dp-dc'), function (t) { draw(t); big.textContent = (43.5 * t).toFixed(1); });})(document.getElementById("wd-donut_chart"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Doughnut Chart</span><span class="tag">Ring Chart</span><span class="tag">Pie Chart</span><span class="tag">Sector Chart</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="na">該当なし（Data visualization の指針のみで部品は無い）</dd></div><div><dt>Material 2</dt><dd class="na">該当なし（Data visualization の指針のみ）</dd></div><div><dt>Android (Compose)</dt><dd class="na">該当なし（Canvas.drawArc で自作）</dd></div><div><dt>iOS (HIG)</dt><dd class="">Charts（Swift Charts の扇形）</dd></div><div><dt>SwiftUI</dt><dd class="">Chart + SectorMark(angle:innerRadius:)</dd></div><div><dt>Web</dt><dd class="na">該当なし（SVG の円弧や Chart.js の doughnut で自作）</dd></div><div><dt>Flutter</dt><dd class="mono">自作（CustomPainter + Canvas.drawArc）</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>円グラフの真ん中をくり抜いた形。区分ごとに色を変えた弧を時計の 12 時から順に並べ、弧の長さで割合を示す。空いた真ん中に合計や使用率を大きく書けるのが円グラフとの違い。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>ストレージの使用量、支出の内訳、時間の使い方など「全体のうち何がどれだけか」を 2〜6 区分で見せるとき。区分が多い・値が近いときは棒グラフのほうが読みやすい。色だけで区別させず凡例（<a class="term" href="/entry/chart_legend/">Chart Legend</a>）を必ず添える。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/chart_legend/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Chart Legend</a><a class="chip" href="/entry/stat_tile/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Stat Tile</a><a class="chip" href="/entry/circular_progress/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Circular Progress Indicator</a><a class="chip" href="/entry/animated_counter/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Animated Counter</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/settings/"><span class="ic s" style="--i:url(/assets/icons/scene-settings.png)"></span>設定</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="ストレージ使用量を Donut Chart で見せて。写真・アプリ・書類・その他の 4 色の弧を 12 時から順に並べ、真ん中に「43.5 / 64 GB」。表示時に弧が伸びるアニメーション付きで。" data-en="Show storage usage as a Donut Chart: four colored arcs (Photos, Apps, Documents, Other) starting at 12 o'clock, with &quot;43.5 / 64 GB&quot; in the center, and animate the arcs growing in on appear.">ストレージ使用量を Donut Chart で見せて。写真・アプリ・書類・その他の 4 色の弧を 12 時から順に並べ、真ん中に「43.5 / 64 GB」。表示時に弧が伸びるアニメーション付きで。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Donut Chart / ドーナツグラフ
+
+- id: `donut_chart`  URL: https://uizukan.dev/entry/donut_chart/
+- 種別: 表示 / Data Display
+- 別名: Doughnut Chart, Ring Chart, Pie Chart, Sector Chart
+- 呼び名: Material 3=該当なし（Data visualization の指針のみで部品は無い） / Material 2=該当なし（Data visualization の指針のみ） / Android (Compose)=該当なし（Canvas.drawArc で自作） / iOS (HIG)=Charts（Swift Charts の扇形） / SwiftUI=Chart + SectorMark(angle:innerRadius:) / Web=該当なし（SVG の円弧や Chart.js の doughnut で自作） / Flutter=自作（CustomPainter + Canvas.drawArc）
+- Flutter: `自作（CustomPainter + Canvas.drawArc）`
+- 関連: chart_legend, stat_tile, circular_progress, animated_counter
+
+**説明**: 円グラフの真ん中をくり抜いた形。区分ごとに色を変えた弧を時計の 12 時から順に並べ、弧の長さで割合を示す。空いた真ん中に合計や使用率を大きく書けるのが円グラフとの違い。
+
+**使いどころ**: ストレージの使用量、支出の内訳、時間の使い方など「全体のうち何がどれだけか」を 2〜6 区分で見せるとき。区分が多い・値が近いときは棒グラフのほうが読みやすい。色だけで区別させず凡例（Chart Legend）を必ず添える。
+
+**AI への伝え方（日本語）**: ストレージ使用量を Donut Chart で見せて。写真・アプリ・書類・その他の 4 色の弧を 12 時から順に並べ、真ん中に「43.5 / 64 GB」。表示時に弧が伸びるアニメーション付きで。
+
+**Prompt (English)**: Show storage usage as a Donut Chart: four colored arcs (Photos, Apps, Documents, Other) starting at 12 o'clock, with "43.5 / 64 GB" in the center, and animate the arcs growing in on appear.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

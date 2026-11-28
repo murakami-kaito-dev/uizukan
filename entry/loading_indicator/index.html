@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Loading Indicator（ローディングインジケータ（形が変わる読み込み表示）） — UI図鑑</title>
+<meta name="description" content="形が次々に変わりながら回る、短い待ち時間用の読み込み表示。">
+<link rel="canonical" href="https://uizukan.dev/entry/loading_indicator/">
+<meta property="og:title" content="Loading Indicator（ローディングインジケータ（形が変わる読み込み表示）） — UI図鑑">
+<meta property="og:description" content="形が次々に変わりながら回る、短い待ち時間用の読み込み表示。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/loading_indicator/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/loading_indicator.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Loading Indicator</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Feedback &amp; Status · 08 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Loading Indicator</h1>
+  <p class="lead" style="margin-top:6px">ローディングインジケータ（形が変わる読み込み表示）</p>
+  <div class="demo-plate">
+    <div class="head"><code>loading_indicator</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-loading_indicator" role="group" aria-label="Loading Indicator のデモ"><div class="ex-li"><div class="ex-lit"><div class="ex-lib"><svg viewBox="-19 -19 38 38" width="38" height="38" role="progressbar" aria-label="読み込み中"><path></path></svg></div><div class="ex-lil">そのまま</div></div><div class="ex-lit"><div class="ex-lib ex-c"><svg viewBox="-19 -19 38 38" width="38" height="38" aria-hidden="true"><path></path></svg></div><div class="ex-lil">容器つき</div></div></div></div><style>#wd-loading_indicator .ex-li{display:flex;align-items:flex-start;gap:40px}
+#wd-loading_indicator .ex-lit{display:flex;flex-direction:column;align-items:center}
+#wd-loading_indicator .ex-lib{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+#wd-loading_indicator .ex-lib.ex-c{background:color-mix(in srgb,var(--m-primary) 14%,var(--surface))}
+#wd-loading_indicator .ex-lib svg{display:block;overflow:visible}
+#wd-loading_indicator .ex-lib path{fill:var(--m-primary)}
+#wd-loading_indicator .ex-lil{margin-top:8px;font-size:11px}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const paths = [...root.querySelectorAll('path')];
+const shapes = [[4, 0.10], [5, 0.07], [9, 0.045], [2, 0.14], [6, 0.085], [3, 0.12]], step = 650, R = 19, N = 96;
+const ease = (x) => x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+const rad = (s, a) => 1 - s[1] + s[1] * Math.cos(s[0] * a);
+const draw = (now) => {
+  const t = (now % (step * shapes.length)) / (step * shapes.length);
+  const x = t * shapes.length, i = Math.floor(x) % shapes.length, f = x - Math.floor(x);
+  const m = ease(Math.max(0, Math.min(1, (f - 0.6) / 0.4))), rot = t * 4 * Math.PI;
+  let d = '';
+  for (let k = 0; k <= N; k++) {
+    const a = k / N * 2 * Math.PI, r = R * (rad(shapes[i], a) * (1 - m) + rad(shapes[(i + 1) % shapes.length], a) * m);
+    d += (k ? 'L' : 'M') + (Math.cos(a + rot) * r).toFixed(2) + ' ' + (Math.sin(a + rot) * r).toFixed(2);
+  }
+  paths.forEach((p) => p.setAttribute('d', d + 'Z'));
+  requestAnimationFrame(draw);
+};
+requestAnimationFrame(draw);})(document.getElementById("wd-loading_indicator"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Expressive Loading Indicator</span><span class="tag">Shape Morph Loader</span><span class="tag">Loader</span><span class="tag">形が変わるぐるぐる</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Loading indicator</dd></div><div><dt>Material 2</dt><dd class="na">該当なし（Material 2 に無い。Circular progress indicator を使う）</dd></div><div><dt>Android (Compose)</dt><dd class="">LoadingIndicator / ContainedLoadingIndicator</dd></div><div><dt>iOS (HIG)</dt><dd class="">Progress indicators（Activity indicator）</dd></div><div><dt>SwiftUI</dt><dd class="">ProgressView()</dd></div><div><dt>Web</dt><dd class="">role="progressbar"（値なし）</dd></div><div><dt>Flutter</dt><dd class="mono">CustomPaint + AnimationController（専用の部品は無い。標準は CircularProgressIndicator）</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>丸や花のような形が、回りながら次の形へ滑らかに変わり続ける読み込み表示。丸い容器に入れる形と、そのまま出す形の 2 種。<a class="term" href="/glossary/material3/">Material 3</a> Expressive で加わり、5 秒未満の短い待ち時間では、ぐるぐる回る <a class="term" href="/entry/circular_progress/">Circular Progress Indicator</a> の代わりに使うとされている。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>引っ張って更新や、画面を開いた直後のような、5 秒未満で終わる読み込み。それより長い処理や、進み具合が分かる処理には、進捗のバーや円（Progress <a class="term" href="/glossary/indicator/">Indicator</a>）を使う。iOS らしい画面では Activity <a class="term" href="/glossary/indicator/">Indicator</a> のまま。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/circular_progress/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Circular Progress Indicator</a><a class="chip" href="/entry/linear_progress/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Linear Progress Indicator</a><a class="chip" href="/entry/skeleton/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Skeleton Screen</a><a class="chip" href="/entry/pull_to_refresh/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Pull to Refresh</a><a class="chip" href="/glossary/material3/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>Material 3</a><a class="chip" href="/glossary/indicator/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>インジケータ</a></div></section>
+  
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="一覧を読み込んでいる間、画面の中央に Material 3 の Loading Indicator（形が変わりながら回るもの）を容器つきで出して。" data-en="While the list loads, show a contained Material 3 Loading Indicator (the shape-morphing, rotating one) in the center of the screen.">一覧を読み込んでいる間、画面の中央に Material 3 の Loading Indicator（形が変わりながら回るもの）を容器つきで出して。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Loading Indicator / ローディングインジケータ（形が変わる読み込み表示）
+
+- id: `loading_indicator`  URL: https://uizukan.dev/entry/loading_indicator/
+- 種別: 表示 / Feedback &amp; Status
+- 別名: Expressive Loading Indicator, Shape Morph Loader, Loader, 形が変わるぐるぐる
+- 呼び名: Material 3=Loading indicator / Material 2=該当なし（Material 2 に無い。Circular progress indicator を使う） / Android (Compose)=LoadingIndicator / ContainedLoadingIndicator / iOS (HIG)=Progress indicators（Activity indicator） / SwiftUI=ProgressView() / Web=role="progressbar"（値なし） / Flutter=CustomPaint + AnimationController（専用の部品は無い。標準は CircularProgressIndicator）
+- Flutter: `CustomPaint + AnimationController（専用の部品は無い。標準は CircularProgressIndicator）`
+- 関連: circular_progress, linear_progress, skeleton, pull_to_refresh
+
+**説明**: 丸や花のような形が、回りながら次の形へ滑らかに変わり続ける読み込み表示。丸い容器に入れる形と、そのまま出す形の 2 種。Material 3 Expressive で加わり、5 秒未満の短い待ち時間では、ぐるぐる回る Circular Progress Indicator の代わりに使うとされている。
+
+**使いどころ**: 引っ張って更新や、画面を開いた直後のような、5 秒未満で終わる読み込み。それより長い処理や、進み具合が分かる処理には、進捗のバーや円（Progress Indicator）を使う。iOS らしい画面では Activity Indicator のまま。
+
+**AI への伝え方（日本語）**: 一覧を読み込んでいる間、画面の中央に Material 3 の Loading Indicator（形が変わりながら回るもの）を容器つきで出して。
+
+**Prompt (English)**: While the list loads, show a contained Material 3 Loading Indicator (the shape-morphing, rotating one) in the center of the screen.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

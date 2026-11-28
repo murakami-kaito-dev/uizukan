@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Slide Up (Modal Presentation)（下からせり上がる遷移（モーダル）） — UI図鑑</title>
+<meta name="description" content="画面が下から上に出てくる。作成・編集など「別の作業」に入る合図。">
+<link rel="canonical" href="https://uizukan.dev/entry/slide_up_modal/">
+<meta property="og:title" content="Slide Up (Modal Presentation)（下からせり上がる遷移（モーダル）） — UI図鑑">
+<meta property="og:description" content="画面が下から上に出てくる。作成・編集など「別の作業」に入る合図。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/slide_up_modal/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/slide_up_modal.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/actions/">アクション</a><span class="sep">/</span><span class="here">Slide Up (Modal Presentation)</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Transitions · 02 · アクション</div>
+  <h1 class="display" style="margin-top:10px">Slide Up (Modal Presentation)</h1>
+  <p class="lead" style="margin-top:6px">下からせり上がる遷移（モーダル）</p>
+  <div class="demo-plate">
+    <div class="head"><code>slide_up_modal</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-slide_up_modal" role="group" aria-label="Slide Up (Modal Presentation) のデモ"><div class="tr-fr"><div class="tr-pg tr-home"><button class="m-btn m-filled tr-go"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f00d.png);width:24px;height:24px" aria-hidden="true"></i><span>メモを作成</span></button><div class="tr-cap">タップすると、画面が下から出てきます</div></div><div class="tr-bar"></div><div class="tr-pg tr-p2" hidden><div class="tr-ab"><div class="tr-ld"><button class="m-icon-btn tr-cl" aria-label="閉じる"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e16a.png);width:22px;height:22px" aria-hidden="true"></i></button></div><div class="tr-ttl">新しいメモ</div><div class="tr-acts"><button class="m-btn m-text tr-sv">保存</button></div></div><div class="tr-bd tr-fm"><textarea rows="6" placeholder="メモを入力" aria-label="メモ"></textarea><div class="tr-tip"><i class="mi tr-tpi" style="--i:url(/assets/icons/mi-materialicons-e37c.png);width:20px;height:20px" aria-hidden="true"></i><div><div class="tr-tt">使いどころ</div><div class="tr-td">メモの作成や投稿の入力など、終わったら元の画面に戻る作業に使います。× か「保存」で閉じると、元の画面に戻ります。</div></div></div></div></div></div></div><style>#wd-slide_up_modal .tr-fr{position:relative;width:300px;max-width:100%;height:360px;border-radius:12px;overflow:hidden;isolation:isolate;-webkit-mask-image:-webkit-radial-gradient(white,black)}
+#wd-slide_up_modal .tr-fr::after{content:"";position:absolute;inset:0;border:1px solid var(--rule);border-radius:12px;pointer-events:none;z-index:10}
+#wd-slide_up_modal .tr-pg{position:absolute;inset:0;display:flex;flex-direction:column}
+#wd-slide_up_modal .tr-home{align-items:center;justify-content:center}
+#wd-slide_up_modal .tr-p2{background:var(--canvas);z-index:2;touch-action:pan-y;will-change:transform}
+#wd-slide_up_modal .tr-p2[hidden]{display:none}
+#wd-slide_up_modal .tr-sh{position:absolute;top:0;bottom:0;left:-12px;width:12px;background:linear-gradient(to left,rgba(0,0,0,.05),transparent);pointer-events:none;opacity:0}
+#wd-slide_up_modal .tr-bar{position:absolute;inset:0;background:rgba(0,0,0,.094);opacity:0;z-index:1;pointer-events:none}
+#wd-slide_up_modal .tr-ab{flex:none;display:flex;align-items:center;height:56px;background:var(--canvas)}
+#wd-slide_up_modal .tr-ld{flex:none;width:56px;display:flex;align-items:center;justify-content:center}
+#wd-slide_up_modal .tr-ttl{flex:1;min-width:0;padding-left:16px;font-size:18px;font-weight:600;line-height:1.3;letter-spacing:-.18px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#wd-slide_up_modal .tr-acts{flex:none;display:flex;align-items:center;padding-right:8px}
+#wd-slide_up_modal .tr-bd{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none}
+#wd-slide_up_modal .tr-bd::-webkit-scrollbar{display:none}
+#wd-slide_up_modal .tr-cap{margin-top:8px;font-size:12px;line-height:1.55;color:var(--ink2);text-align:center;padding:0 8px}
+
+#wd-slide_up_modal .tr-fm{padding:8px 20px 20px}
+#wd-slide_up_modal .tr-fm textarea{display:block;width:100%;resize:none;border:1px solid var(--edge);border-radius:6px;background:var(--m-surface);padding:14px;font-size:15px;line-height:1.65;color:var(--ink);outline:0;caret-color:var(--accent);-webkit-user-select:text;user-select:text}
+#wd-slide_up_modal .tr-fm textarea:focus{border-color:var(--accent);box-shadow:inset 0 0 0 .5px var(--accent)}
+#wd-slide_up_modal .tr-fm textarea::placeholder{color:var(--ink3)}
+#wd-slide_up_modal .tr-tip{margin-top:16px;display:flex;align-items:flex-start;gap:10px;padding:14px;border-radius:12px;background:var(--m-primary-c);color:var(--ink)}
+#wd-slide_up_modal .tr-tpi{color:var(--m-primary)}
+#wd-slide_up_modal .tr-tt{font-size:15px;font-weight:700;line-height:1.65}
+#wd-slide_up_modal .tr-td{margin-top:4px;font-size:13px;line-height:1.5}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";function cb(a,b,c,d){
+  const ev=(p1,p2,t)=>3*p1*(1-t)*(1-t)*t+3*p2*(1-t)*t*t+t*t*t;
+  return function(x){ if(x<=0)return 0; if(x>=1)return 1; let lo=0,hi=1;
+    for(let i=0;i<30;i++){const m=(lo+hi)/2; if(ev(a,c,m)<x)lo=m; else hi=m;} return ev(b,d,(lo+hi)/2); };
+}
+// Curves.fastEaseInToSlowEaseOut（ThreePointCubic）
+const G=(function(){
+  const mid=[.198,.541], A1=[.056,.024], B1=[.108,.3085], A2=[.3655,1], B2=[.5465,.989];
+  const c1=cb(A1[0]/mid[0],A1[1]/mid[1],B1[0]/mid[0],B1[1]/mid[1]);
+  const sx=1-mid[0], sy=1-mid[1];
+  const c2=cb((A2[0]-mid[0])/sx,(A2[1]-mid[1])/sy,(B2[0]-mid[0])/sx,(B2[1]-mid[1])/sy);
+  return t=>t<mid[0]?c1(t/mid[0])*mid[1]:c2((t-mid[0])/sx)*sy+mid[1];
+})();
+const L2E=cb(.35,.91,.33,.97), EIL=cb(.67,.03,.65,.09), EASE=cb(.25,.1,.25,1), FLSE=cb(.18,1,.04,1), FOSI=cb(.4,0,.2,1);
+function nav(fr,o){
+  const home=fr.querySelector('.tr-home'), bar=fr.querySelector('.tr-bar');
+  let page=null, v=0, raf=0, mode='fwd', anim=false;
+  function render(){
+    if(!page)return;
+    const lin=mode==='lin';
+    if(o.kind==='modal'){
+      const c=lin?v:(mode==='fwd'?L2E(v):1-L2E(1-v));
+      page.style.transform='translateY('+((1-c)*100)+'%)';
+    }else{
+      const c=lin?v:(mode==='fwd'?G(v):1-G(1-v));
+      const s=lin?v:(mode==='fwd'?L2E(v):EIL(v));
+      page.style.transform='translateX('+((1-c)*100)+'%)';
+      home.style.transform='translateX('+(-s*100/3)+'%)';
+      if(o.barrier)bar.style.opacity=EASE(v);
+      const sh=page.querySelector('.tr-sh'); if(sh)sh.style.opacity=lin?v:L2E(v);
+    }
+    if(o.onTick)o.onTick(v,mode);
+  }
+  function run(to,dur,m,curve,done){
+    cancelAnimationFrame(raf); anim=true; mode=m;
+    const from=v, t0=performance.now(), d=Math.max(1,dur);
+    const f=now=>{ const k=Math.min(1,(now-t0)/d); v=from+(to-from)*(curve?curve(k):k); render();
+      if(k<1)raf=requestAnimationFrame(f); else { anim=false; done&&done(); } };
+    raf=requestAnimationFrame(f);
+  }
+  function finishPop(){ const p=page; page=null; p.hidden=true; p.style.transform=''; home.style.transform=''; bar.style.opacity=0; home.inert=false; o.onDone&&o.onDone('pop',p); }
+  const api={
+    busy:()=>anim||drag!==null,
+    push(p){ if(api.busy()||page)return; page=p; v=0; p.hidden=false; home.inert=true; render();
+      o.onStart&&o.onStart('push',p);
+      run(1,o.dur,'fwd',null,()=>{ o.onDone&&o.onDone('push',p); }); },
+    pop(){ if(api.busy()||!page)return; o.onStart&&o.onStart('pop',page); run(0,o.dur,'rev',null,finishPop); },
+  };
+  // 左端 20px からのスワイプで戻る（Cupertino の戻るジェスチャー）
+  let drag=null;
+  if(o.kind!=='modal'){
+    fr.addEventListener('pointerdown',e=>{
+      if(!page||anim||e.button>0)return;
+      const r=page.getBoundingClientRect(); const sc=r.width/page.offsetWidth||1;
+      if((e.clientX-r.left)/sc>20)return;
+      drag={id:e.pointerId,x0:e.clientX,y0:e.clientY,on:false,w:r.width,hist:[]};
+    });
+    fr.addEventListener('pointermove',e=>{
+      if(!drag||e.pointerId!==drag.id)return;
+      const dx=e.clientX-drag.x0, dy=e.clientY-drag.y0;
+      if(!drag.on){ if(Math.abs(dx)<4&&Math.abs(dy)<4)return; if(Math.abs(dy)>Math.abs(dx)||dx<0){drag=null;return;} drag.on=true; try{fr.setPointerCapture(e.pointerId);}catch(_){} o.onStart&&o.onStart('gesture',page); }
+      mode='lin'; v=Math.max(0,Math.min(1,1-dx/drag.w)); render();
+      const now=performance.now(); drag.hist.push([now,e.clientX]); while(drag.hist.length>2&&now-drag.hist[0][0]>100)drag.hist.shift();
+      e.preventDefault();
+    });
+    const end=e=>{
+      if(!drag||e.pointerId!==drag.id)return; const d=drag; drag=null; if(!d.on)return;
+      let vel=0; if(d.hist.length>1){ const a=d.hist[0], b=d.hist[d.hist.length-1]; if(b[0]>a[0])vel=(b[1]-a[1])/(b[0]-a[0])*1000/d.w; }
+      const fwd=Math.abs(vel)>=1?vel<=0:v>.5;
+      if(fwd)run(1,Math.min(Math.floor(800*(1-v)),300),'lin',FLSE,()=>{mode='fwd'; o.onDone&&o.onDone('stay',page);});
+      else run(0,Math.floor(800*v),'lin',FLSE,finishPop);
+    };
+    fr.addEventListener('pointerup',end); fr.addEventListener('pointercancel',end);
+  }
+  return api;
+}
+const fr=root.querySelector('.tr-fr'), p2=fr.querySelector('.tr-p2');
+const n=nav(fr,{kind:'modal',dur:500,barrier:false,onStart:(k)=>{ if(k==='pop'){const t=p2.querySelector('textarea'); t.blur();} }});
+fr.querySelector('.tr-go').addEventListener('click',()=>n.push(p2));
+p2.querySelector('.tr-cl').addEventListener('click',()=>n.pop());
+p2.querySelector('.tr-sv').addEventListener('click',()=>n.pop());})(document.getElementById("wd-slide_up_modal"),window.UZ);</script></div>
+    <a class="foot" href="https://apps.apple.com/jp/app/id6808997175" rel="noopener"><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i><span>本物の手触りは iOS アプリで</span><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a>
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Present Modally</span><span class="tag">Bottom Slide</span><span class="tag">Cover Vertical</span><span class="tag">Sheet Presentation</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Dialogs（Full-screen dialog の遷移）</dd></div><div><dt>Material 2</dt><dd class="">Dialogs（Full-screen dialog の遷移）</dd></div><div><dt>Android (Compose)</dt><dd class="">NavHost enterTransition = slideInVertically</dd></div><div><dt>iOS (HIG)</dt><dd class="">Sheets（modal presentation）</dd></div><div><dt>SwiftUI</dt><dd class="">.sheet / .fullScreenCover</dd></div><div><dt>Web</dt><dd class="">&lt;dialog&gt; + CSS transition</dd></div><div><dt>Flutter</dt><dd class="mono">MaterialPageRoute(fullscreenDialog: true) / CupertinoPageRoute(fullscreenDialog: true)</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>横方向の <a class="term" href="/glossary/push_pop/">push</a> が「階層を進む」なのに対し、縦方向の slide up は「一時的な別作業」を意味する。iOS の pageSheet では背後の画面が少し縮んで奥に下がる。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>新規作成、フィルタ、ログイン、設定変更などの一時タスク。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/full_screen_dialog/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Full-screen Dialog</a><a class="chip" href="/entry/modal_bottom_sheet/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Bottom Sheet</a><a class="chip" href="/entry/push_slide/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Push Transition</a><a class="chip" href="/entry/drag_to_dismiss_sheet/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Drag to Dismiss</a><a class="chip" href="/glossary/push_pop/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>push / pop</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/paywall/"><span class="ic s" style="--i:url(/assets/icons/scene-paywall.png)"></span>ペイウォール</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="「新規作成」画面を下からせり上がるモーダルとして表示して。iOS では背後の画面が少し縮む pageSheet 風にして。" data-en="Present the &quot;Create&quot; screen as a modal sliding up from the bottom. On iOS mimic the pageSheet where the screen behind shrinks slightly.">「新規作成」画面を下からせり上がるモーダルとして表示して。iOS では背後の画面が少し縮む pageSheet 風にして。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Slide Up (Modal Presentation) / 下からせり上がる遷移（モーダル）
+
+- id: `slide_up_modal`  URL: https://uizukan.dev/entry/slide_up_modal/
+- 種別: アクション / Transitions
+- 別名: Present Modally, Bottom Slide, Cover Vertical, Sheet Presentation
+- 呼び名: Material 3=Dialogs（Full-screen dialog の遷移） / Material 2=Dialogs（Full-screen dialog の遷移） / Android (Compose)=NavHost enterTransition = slideInVertically / iOS (HIG)=Sheets（modal presentation） / SwiftUI=.sheet / .fullScreenCover / Web=&lt;dialog&gt; + CSS transition / Flutter=MaterialPageRoute(fullscreenDialog: true) / CupertinoPageRoute(fullscreenDialog: true)
+- Flutter: `MaterialPageRoute(fullscreenDialog: true) / CupertinoPageRoute(fullscreenDialog: true)`
+- 関連: full_screen_dialog, modal_bottom_sheet, push_slide, drag_to_dismiss_sheet
+
+**説明**: 横方向の push が「階層を進む」なのに対し、縦方向の slide up は「一時的な別作業」を意味する。iOS の pageSheet では背後の画面が少し縮んで奥に下がる。
+
+**使いどころ**: 新規作成、フィルタ、ログイン、設定変更などの一時タスク。
+
+**AI への伝え方（日本語）**: 「新規作成」画面を下からせり上がるモーダルとして表示して。iOS では背後の画面が少し縮む pageSheet 風にして。
+
+**Prompt (English)**: Present the "Create" screen as a modal sliding up from the bottom. On iOS mimic the pageSheet where the screen behind shrinks slightly.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Button Group（ボタングループ（つながって形が変わるボタンの並び）） — UI図鑑</title>
+<meta name="description" content="並んだボタンが、押すと幅が広がり、選ぶと丸く形が変わる。">
+<link rel="canonical" href="https://uizukan.dev/entry/button_group/">
+<meta property="og:title" content="Button Group（ボタングループ（つながって形が変わるボタンの並び）） — UI図鑑">
+<meta property="og:description" content="並んだボタンが、押すと幅が広がり、選ぶと丸く形が変わる。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/button_group/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/button_group.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Button Group</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Buttons · 15 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Button Group</h1>
+  <p class="lead" style="margin-top:6px">ボタングループ（つながって形が変わるボタンの並び）</p>
+  <div class="demo-plate">
+    <div class="head"><code>button_group</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-button_group" role="group" aria-label="Button Group のデモ"><div class="ex-bg" role="group" aria-label="表示の切り替え"><button class="ex-bgb" aria-pressed="false"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f495.png);width:20px;height:20px" aria-hidden="true"></i><span>日</span></button><button class="ex-bgb ex-sel" aria-pressed="true"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f49d.png);width:20px;height:20px" aria-hidden="true"></i><span>週</span></button><button class="ex-bgb" aria-pressed="false"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e124.png);width:20px;height:20px" aria-hidden="true"></i><span>月</span></button></div></div><style>#wd-button_group .ex-bg{display:flex;gap:2px;width:268px;height:48px}
+#wd-button_group .ex-bgb{display:flex;align-items:center;justify-content:center;gap:6px;width:88px;height:48px;flex:none;background:color-mix(in srgb,var(--m-primary) 14%,var(--surface));color:var(--ink);font-size:15px;font-weight:500;line-height:1.2;border-radius:8px;transition:width .18s cubic-bezier(.33,1,.68,1),border-radius .18s cubic-bezier(.33,1,.68,1),background-color .18s,color .18s;touch-action:manipulation}
+#wd-button_group .ex-bgb:first-child{border-radius:24px 8px 8px 24px}
+#wd-button_group .ex-bgb:last-child{border-radius:8px 24px 24px 8px}
+#wd-button_group .ex-bgb.ex-sel{background:var(--m-primary);color:var(--m-on-primary);border-radius:24px}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const bs = [...root.querySelectorAll('.ex-bgb')];
+const base = 88, grow = 12;
+// 押している間は自分が広がり、隣が同じだけ縮む（全体の幅は変わらない）
+const widths = (p) => bs.forEach((b, i) => {
+  b.style.width = (p == null ? base : p === i ? base + grow : Math.abs(p - i) === 1 ? base - (p === 1 ? grow / 2 : grow) : base) + 'px';
+});
+bs.forEach((b, i) => {
+  b.addEventListener('pointerdown', () => widths(i));
+  ['pointerup', 'pointercancel', 'pointerleave'].forEach((n) => b.addEventListener(n, () => widths(null)));
+  b.addEventListener('click', () => bs.forEach((x) => { const on = x === b; x.classList.toggle('ex-sel', on); x.setAttribute('aria-pressed', String(on)); }));
+});})(document.getElementById("wd-button_group"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Connected Button Group</span><span class="tag">Standard Button Group</span><span class="tag">Button Bar</span><span class="tag">ボタンの並び</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Button groups（Standard / Connected）</dd></div><div><dt>Material 2</dt><dd class="na">該当なし（Material 2 に無い。近いのは Toggle button）</dd></div><div><dt>Android (Compose)</dt><dd class="">ButtonGroup</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（iOS 標準には無い。近いのは Segmented controls）</dd></div><div><dt>SwiftUI</dt><dd class="">ControlGroup</dd></div><div><dt>Web</dt><dd class="">role="group"（WAI-ARIA。&lt;fieldset&gt; でも）</dd></div><div><dt>Flutter</dt><dd class="mono">Row + AnimatedContainer（専用の部品は無い。1 つ選ぶだけなら SegmentedButton）</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>関係のあるボタンを横に並べ、ボタン同士を反応させる入れ物。押している間はそのボタンの幅が広がって隣が縮み、選んだボタンは角が丸くなって色が濃くなる。間を空けて並べる Standard と、すき間 2dp でつなげる Connected の 2 種。<a class="term" href="/glossary/material3/">Material 3</a> Expressive で加わり、<a class="term" href="/entry/segmented_button/">Segmented Button</a> の後継とされている。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>表示の切り替え（日／週／月）や、書式（太字・斜体・下線）のように、同じ種類の選択肢を 2〜5 個並べるとき。関係のない操作を 1 つのグループにまとめない。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/segmented_button/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Segmented Button</a><a class="chip" href="/entry/toggle_buttons/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Toggle Button Group</a><a class="chip" href="/entry/split_button/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Split Button</a><a class="chip" href="/entry/chips/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Chip</a><a class="chip" href="/glossary/material3/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>Material 3</a></div></section>
+  
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="「日／週／月」の切り替えを Connected Button Group にして。選んだボタンは丸く濃い色に、押している間は幅が少し広がるように。" data-en="Make the &quot;Day / Week / Month&quot; switcher a Connected Button Group: the selected button becomes fully rounded and filled, and a pressed button widens slightly.">「日／週／月」の切り替えを Connected Button Group にして。選んだボタンは丸く濃い色に、押している間は幅が少し広がるように。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Button Group / ボタングループ（つながって形が変わるボタンの並び）
+
+- id: `button_group`  URL: https://uizukan.dev/entry/button_group/
+- 種別: 表示 / Buttons
+- 別名: Connected Button Group, Standard Button Group, Button Bar, ボタンの並び
+- 呼び名: Material 3=Button groups（Standard / Connected） / Material 2=該当なし（Material 2 に無い。近いのは Toggle button） / Android (Compose)=ButtonGroup / iOS (HIG)=該当なし（iOS 標準には無い。近いのは Segmented controls） / SwiftUI=ControlGroup / Web=role="group"（WAI-ARIA。&lt;fieldset&gt; でも） / Flutter=Row + AnimatedContainer（専用の部品は無い。1 つ選ぶだけなら SegmentedButton）
+- Flutter: `Row + AnimatedContainer（専用の部品は無い。1 つ選ぶだけなら SegmentedButton）`
+- 関連: segmented_button, toggle_buttons, split_button, chips
+
+**説明**: 関係のあるボタンを横に並べ、ボタン同士を反応させる入れ物。押している間はそのボタンの幅が広がって隣が縮み、選んだボタンは角が丸くなって色が濃くなる。間を空けて並べる Standard と、すき間 2dp でつなげる Connected の 2 種。Material 3 Expressive で加わり、Segmented Button の後継とされている。
+
+**使いどころ**: 表示の切り替え（日／週／月）や、書式（太字・斜体・下線）のように、同じ種類の選択肢を 2〜5 個並べるとき。関係のない操作を 1 つのグループにまとめない。
+
+**AI への伝え方（日本語）**: 「日／週／月」の切り替えを Connected Button Group にして。選んだボタンは丸く濃い色に、押している間は幅が少し広がるように。
+
+**Prompt (English)**: Make the "Day / Week / Month" switcher a Connected Button Group: the selected button becomes fully rounded and filled, and a pressed button widens slightly.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

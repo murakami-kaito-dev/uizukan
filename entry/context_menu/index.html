@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Context Menu (Long-press Preview)（コンテキストメニュー（長押しプレビュー）） — UI図鑑</title>
+<meta name="description" content="長押しすると対象が浮き上がって拡大され、その下にメニューが出る iOS の挙動。">
+<link rel="canonical" href="https://uizukan.dev/entry/context_menu/">
+<meta property="og:title" content="Context Menu (Long-press Preview)（コンテキストメニュー（長押しプレビュー）） — UI図鑑">
+<meta property="og:description" content="長押しすると対象が浮き上がって拡大され、その下にメニューが出る iOS の挙動。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/context_menu/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/context_menu.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/actions/">アクション</a><span class="sep">/</span><span class="here">Context Menu (Long-press Preview)</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Gestures · 09 · アクション</div>
+  <h1 class="display" style="margin-top:10px">Context Menu (Long-press Preview)</h1>
+  <p class="lead" style="margin-top:6px">コンテキストメニュー（長押しプレビュー）</p>
+  <div class="demo-plate">
+    <div class="head"><code>context_menu</code><span><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i> 振動は実機で</span></div>
+    <div class="stage"><div class="wd" id="wd-context_menu" role="group" aria-label="Context Menu (Long-press Preview) のデモ"><div class="gs-cm"><div class="gs-ph" role="button" aria-label="画像（長押しでメニュー）"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e4b4.png);width:48px;height:48px" aria-hidden="true"></i></div><div class="gs-lb">画像を長押し</div><div class="gs-ov"><div class="gs-bd"></div><div class="gs-pv"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e4b4.png);width:48px;height:48px" aria-hidden="true"></i></div><div class="gs-sh"><div class="gs-ac">共有<i class="mi" style="--i:url(/assets/icons/mi-cupertinoicons-f4ca.png);width:21px;height:21px" aria-hidden="true"></i></div><div class="gs-ac">保存<i class="mi" style="--i:url(/assets/icons/mi-cupertinoicons-f8c4.png);width:21px;height:21px" aria-hidden="true"></i></div><div class="gs-ac gs-del">削除<i class="mi" style="--i:url(/assets/icons/mi-cupertinoicons-f4c4.png);width:21px;height:21px" aria-hidden="true"></i></div></div></div></div></div><style>#wd-context_menu .gs-cm{display:flex;flex-direction:column;align-items:center}
+#wd-context_menu .gs-ph,#wd-context_menu .gs-pv{width:160px;height:120px;border-radius:12px;background:linear-gradient(90deg,var(--accent),var(--accent));color:rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center}
+#wd-context_menu .gs-ph{position:relative;z-index:1;cursor:pointer;-webkit-touch-callout:none;transition:transform 250ms cubic-bezier(.39,.575,.565,1),box-shadow 280ms linear}
+#wd-context_menu .gs-ph.gs-grow{transform:scale(1.15);box-shadow:0 0 10px .5px rgba(0,0,0,.25);transition:transform 470ms cubic-bezier(.39,.575,.565,1) 94ms,box-shadow 564ms linear}
+#wd-context_menu .gs-ph.gs-hid{visibility:hidden;transition:none}
+#wd-context_menu .gs-lb{margin-top:8px;font-size:11px;line-height:1.65}
+#wd-context_menu .gs-ov{position:fixed;inset:0;z-index:1000;display:none}
+#wd-context_menu .gs-ov.gs-on{display:block}
+#wd-context_menu .gs-bd{position:absolute;inset:0;background:rgba(4,4,15,.4);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);opacity:0;transition:opacity 335ms linear}
+#wd-context_menu .gs-pv{position:fixed;left:0;top:0;transform-origin:0 0}
+#wd-context_menu .gs-sh{position:fixed;left:0;top:0;width:250px;border-radius:13px;overflow:hidden;transform-origin:50% 0;opacity:0}
+#wd-context_menu .gs-ac{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:43px;padding:8px 17.5px 8px 15.5px;background:color-mix(in srgb,var(--ink) 6%,var(--surface));color:var(--ink);font-size:16px;line-height:1.3;cursor:pointer}
+#wd-context_menu .gs-ac:active{background:color-mix(in srgb,var(--ink) 16%,var(--surface))}
+#wd-context_menu .gs-ac+.gs-ac{box-shadow:inset 0 .4px 0 color-mix(in srgb,var(--ink) 35%,var(--surface))}
+#wd-context_menu .gs-ac.gs-del{color:#FF3B30}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const ph = root.querySelector('.gs-ph'), ov = root.querySelector('.gs-ov'), bd = root.querySelector('.gs-bd');
+const pv = root.querySelector('.gs-pv'), sh = root.querySelector('.gs-sh');
+const OPEN = 'cubic-bezier(.175,.885,.32,1.275)', CLOSE = 'cubic-bezier(.6,-.28,.735,.045)';
+let id = null, sx = 0, sy = 0, accepted = false, tMid = 0, tOpen = 0, opened = false, orig = null, end = null;
+const cancel = () => {
+  id = null;
+  if (accepted) return;
+  clearTimeout(tMid); clearTimeout(tOpen);
+  ph.classList.remove('gs-grow');
+};
+const tf = (el, r, base) => { el.style.transform = 'translate(' + r.left + 'px,' + r.top + 'px) scale(' + (r.width / base.width) + ')'; };
+const open = () => {
+  opened = true;
+  const big = ph.getBoundingClientRect();
+  ph.classList.remove('gs-grow'); ph.classList.add('gs-hid');
+  orig = ph.getBoundingClientRect();
+  ov.classList.add('gs-on');
+  const W = ov.clientWidth, H = ov.clientHeight, half = (H - 20) / 2;
+  end = { left: (W - 160) / 2, top: half - 120, width: 160, height: 120 };
+  // 写真：ふくらんだ位置 → 画面の上半分の下端（easeOutBack 335ms）
+  pv.style.transition = 'none'; tf(pv, big, end);
+  // メニュー：元の写真の下から、写真の 20px 下へ。大きさ 0 → 1
+  sh.style.transition = 'none';
+  sh.style.transform = 'translate(' + (W - 250) / 2 + 'px,' + orig.bottom + 'px) scale(0)'; sh.style.opacity = '0';
+  bd.style.opacity = '0';
+  void ov.offsetWidth;
+  pv.style.transition = 'transform 335ms ' + OPEN; tf(pv, end, end);
+  sh.style.transition = 'transform 335ms ' + OPEN + ',opacity 335ms linear';
+  sh.style.transform = 'translate(' + (W - 250) / 2 + 'px,' + (half + 20) + 'px) scale(1)'; sh.style.opacity = '1';
+  bd.style.opacity = '1';
+};
+const close = () => {
+  if (!opened) return;
+  opened = false;
+  const W = ov.clientWidth;
+  pv.style.transition = 'transform 335ms ' + CLOSE; tf(pv, orig, end);
+  sh.style.transition = 'transform 335ms ' + CLOSE + ',opacity 335ms linear';
+  sh.style.transform = 'translate(' + (W - 250) / 2 + 'px,' + orig.bottom + 'px) scale(0)'; sh.style.opacity = '0';
+  bd.style.opacity = '0';
+  setTimeout(() => { ov.classList.remove('gs-on'); ph.classList.remove('gs-hid'); }, 335);
+};
+ph.addEventListener('contextmenu', (e) => e.preventDefault());
+ph.addEventListener('pointerdown', (e) => {
+  if (e.button !== 0 || opened) return;
+  id = e.pointerId; sx = e.clientX; sy = e.clientY; accepted = false;
+  ph.classList.add('gs-grow');
+  // 半分（282ms）を過ぎたら指を離しても開く。564ms で開く
+  tMid = setTimeout(() => { accepted = true; }, 282);
+  tOpen = setTimeout(() => { id = null; open(); }, 564);
+});
+ph.addEventListener('pointermove', (e) => { if (e.pointerId === id && Math.hypot(e.clientX - sx, e.clientY - sy) > 18) cancel(); });
+ph.addEventListener('pointerup', (e) => { if (e.pointerId === id) cancel(); });
+ph.addEventListener('pointercancel', (e) => { if (e.pointerId === id) cancel(); });
+ov.addEventListener('click', (e) => { if (!sh.contains(e.target) || e.target.closest('.gs-ac')) close(); });
+ov.addEventListener('contextmenu', (e) => e.preventDefault());})(document.getElementById("wd-context_menu"),window.UZ);</script></div>
+    <a class="foot" href="https://apps.apple.com/jp/app/id6808997175" rel="noopener"><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i><span>振動と本物の手触りは iOS アプリで</span><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a>
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Peek and Pop</span><span class="tag">Haptic Touch Menu</span><span class="tag">3D Touch Menu</span><span class="tag">Long-press Menu</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Menus（Context menu）</dd></div><div><dt>Material 2</dt><dd class="">Menus（Context menu）</dd></div><div><dt>Android (Compose)</dt><dd class="">DropdownMenu を長押しで開く（View 系は ContextMenu）</dd></div><div><dt>iOS (HIG)</dt><dd class="">Context menus</dd></div><div><dt>SwiftUI</dt><dd class="">.contextMenu</dd></div><div><dt>Web</dt><dd class="">contextmenu イベント / Menu（WAI-ARIA パターン）</dd></div><div><dt>Flutter</dt><dd class="mono">CupertinoContextMenu</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>長押しで背景がぼけ、対象が <a class="term" href="/glossary/shared_element/">Hero</a> のように拡大表示され、「共有・コピー・削除」などのメニューが下に並ぶ。触覚も同時に鳴る。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>リンク・画像・カードに対する補助操作を、画面を汚さずに提供したいとき。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/long_press/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Long Press</a><a class="chip" href="/entry/popup_menu/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Menu (Popup / Overflow)</a><a class="chip" href="/entry/haptic_impact/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Impact Haptic (Light / Medium / Heavy)</a><a class="chip" href="/glossary/shared_element/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>共有要素の遷移</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/chat/"><span class="ic s" style="--i:url(/assets/icons/scene-chat.png)"></span>チャット</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="画像を長押しすると iOS 風の Context Menu が出るようにして。画像が浮き上がって拡大され、下に「共有／保存／削除」のメニュー。" data-en="Long-pressing an image should open an iOS-style Context Menu: the image lifts and enlarges with a blurred background and &quot;Share / Save / Delete&quot; actions below.">画像を長押しすると iOS 風の Context Menu が出るようにして。画像が浮き上がって拡大され、下に「共有／保存／削除」のメニュー。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Context Menu (Long-press Preview) / コンテキストメニュー（長押しプレビュー）
+
+- id: `context_menu`  URL: https://uizukan.dev/entry/context_menu/
+- 種別: アクション / Gestures
+- 別名: Peek and Pop, Haptic Touch Menu, 3D Touch Menu, Long-press Menu
+- 呼び名: Material 3=Menus（Context menu） / Material 2=Menus（Context menu） / Android (Compose)=DropdownMenu を長押しで開く（View 系は ContextMenu） / iOS (HIG)=Context menus / SwiftUI=.contextMenu / Web=contextmenu イベント / Menu（WAI-ARIA パターン） / Flutter=CupertinoContextMenu
+- Flutter: `CupertinoContextMenu`
+- 実機でのみ体験可（触覚など）
+- 関連: long_press, popup_menu, haptic_impact
+
+**説明**: 長押しで背景がぼけ、対象が Hero のように拡大表示され、「共有・コピー・削除」などのメニューが下に並ぶ。触覚も同時に鳴る。
+
+**使いどころ**: リンク・画像・カードに対する補助操作を、画面を汚さずに提供したいとき。
+
+**AI への伝え方（日本語）**: 画像を長押しすると iOS 風の Context Menu が出るようにして。画像が浮き上がって拡大され、下に「共有／保存／削除」のメニュー。
+
+**Prompt (English)**: Long-pressing an image should open an iOS-style Context Menu: the image lifts and enlarges with a blurred background and "Share / Save / Delete" actions below.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

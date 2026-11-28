@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Checkbox（チェックボックス） — UI図鑑</title>
+<meta name="description" content="複数選択できる四角いチェック。行全体をタップできる CheckboxListTile もある。">
+<link rel="canonical" href="https://uizukan.dev/entry/checkbox/">
+<meta property="og:title" content="Checkbox（チェックボックス） — UI図鑑">
+<meta property="og:description" content="複数選択できる四角いチェック。行全体をタップできる CheckboxListTile もある。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/checkbox/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/checkbox.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Checkbox</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Inputs &amp; Selection · 05 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Checkbox</h1>
+  <p class="lead" style="margin-top:6px">チェックボックス</p>
+  <div class="demo-plate">
+    <div class="head"><code>checkbox</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-checkbox" role="group" aria-label="Checkbox のデモ"><div class="in-col"><button type="button" class="in-cb-t" role="checkbox" aria-checked="false"><span class="in-cb-b"><span class="in-cb-box"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3.6 9.3l3.5 3.4 7.3-7.4"/></svg></span></span><span class="in-cb-l">利用規約に同意する</span></button><div style="height:8px"></div><button type="button" class="m-btn m-filled in-go" disabled><span class="in-lk"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e3b1.png);width:16px;height:16px" aria-hidden="true"></i></span><span class="in-ok" hidden><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e156.png);width:18px;height:18px" aria-hidden="true"></i></span><span>登録</span></button><div style="height:10px"></div><div class="in-hint"><span>チェックを入れると登録できます</span></div></div></div><style>#wd-checkbox [hidden]{display:none!important}
+#wd-checkbox .in-col{width:100%;max-width:300px;display:flex;flex-direction:column;align-items:center}
+#wd-checkbox .in-cb-t{display:flex;align-items:center;width:100%;min-height:56px;text-align:left}
+#wd-checkbox .in-cb-b{flex:none;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background-color .15s}
+@media (hover:hover){#wd-checkbox .in-cb-t:hover .in-cb-b{background:color-mix(in srgb,var(--ink) 8%,transparent)}}
+#wd-checkbox .in-cb-t:active .in-cb-b{background:color-mix(in srgb,var(--ink) 12%,transparent)}
+#wd-checkbox .in-cb-box{width:18px;height:18px;border-radius:2px;border:2px solid var(--ink2);display:flex;transition:background-color .2s,border-color .2s}
+#wd-checkbox .in-cb-box svg{width:100%;height:100%;margin:-2px;width:18px;height:18px;flex:none;fill:none;stroke:var(--m-on-primary);stroke-width:2;stroke-dasharray:17;stroke-dashoffset:17;transition:stroke-dashoffset .2s cubic-bezier(.4,0,.2,1)}
+#wd-checkbox .in-on .in-cb-box{background:var(--accent);border-color:var(--accent)}
+#wd-checkbox .in-on .in-cb-box svg{stroke-dashoffset:0}
+#wd-checkbox .in-cb-l{margin-left:16px;font-size:15px;line-height:1.3;color:var(--ink)}
+#wd-checkbox .in-go{width:200px;height:46px;min-height:46px;gap:6px;font-size:15px}
+#wd-checkbox .in-go:disabled{background:var(--surface);color:var(--ink2);box-shadow:inset 0 0 0 1.5px var(--ink3)}
+#wd-checkbox .in-go .in-lk .mi{width:16px;height:16px}
+#wd-checkbox .in-go>span{display:flex}
+#wd-checkbox .in-hint{display:grid;min-height:20px;font-size:12px;line-height:1.65;justify-items:center}
+#wd-checkbox .in-hint>span{grid-area:1/1;color:var(--ink2);animation:inp-fi .2s linear}
+#wd-checkbox .in-hint>span.in-done{color:#1E9E5A;font-weight:600}
+#wd-checkbox .in-hint>span.in-out{animation:inp-fo .2s linear forwards}
+@keyframes inp-fi{from{opacity:0}}
+@keyframes inp-fo{to{opacity:0}}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const t=root.querySelector('.in-cb-t'),go=root.querySelector('.in-go'),hint=root.querySelector('.in-hint');
+let agreed=false,registered=false,shown='チェックを入れると登録できます';
+function render(){
+  t.classList.toggle('in-on',agreed);t.setAttribute('aria-checked',agreed?'true':'false');
+  go.disabled=!agreed;
+  go.querySelector('.in-lk').hidden=agreed;go.querySelector('.in-ok').hidden=!registered;
+  const msg=registered?'登録しました':(agreed?'':'チェックを入れると登録できます');
+  if(msg!==shown){
+    shown=msg;
+    hint.querySelectorAll('span').forEach(function(s){if(s.classList.contains('in-out'))s.remove();else{s.classList.add('in-out');setTimeout(function(){s.remove();},200);}});
+    const s=document.createElement('span');s.textContent=msg;if(registered)s.className='in-done';hint.appendChild(s);
+  }
+}
+t.addEventListener('click',function(){UZ.haptic('selection');agreed=!agreed;registered=false;render();});
+go.addEventListener('click',function(){if(!agreed)return;UZ.haptic('light');registered=true;render();});})(document.getElementById("wd-checkbox"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Check Box</span><span class="tag">Tick Box</span><span class="tag">Checkbox List Tile</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Checkbox</dd></div><div><dt>Material 2</dt><dd class="">Checkbox（Selection controls）</dd></div><div><dt>Android (Compose)</dt><dd class="">Checkbox / TriStateCheckbox</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（iOS 標準には無い。iOS は Toggle、macOS は Checkbox）</dd></div><div><dt>SwiftUI</dt><dd class="">Toggle + .toggleStyle(.checkbox)（macOS）</dd></div><div><dt>Web</dt><dd class="">&lt;input type="checkbox"&gt;</dd></div><div><dt>Flutter</dt><dd class="mono">Checkbox / CheckboxListTile</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>四角の中にチェックマークが入る <a class="term" href="/glossary/toggle/">ON/OFF</a>。tristate で「一部選択（−）」も表せる。ラベル付き行にするなら CheckboxListTile。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>複数項目の同時選択（利用規約への同意、設定の複数 ON など）。単一の <a class="term" href="/glossary/toggle/">ON/OFF</a> なら Switch の方が自然。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/radio_button/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Radio Button</a><a class="chip" href="/entry/switch_toggle/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Toggle Switch</a><a class="chip" href="/entry/list_tile/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>List Item</a><a class="chip" href="/glossary/toggle/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>トグル</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/tasks/"><span class="ic s" style="--i:url(/assets/icons/scene-tasks.png)"></span>タスク一覧</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="「利用規約に同意する」を CheckboxListTile で作って。行全体をタップしてチェックできて、チェックが入るまで「登録」ボタンは無効にして。" data-en="Create an &quot;I agree to the Terms&quot; CheckboxListTile. The whole row should be tappable, and the &quot;Sign up&quot; button stays disabled until it is checked.">「利用規約に同意する」を CheckboxListTile で作って。行全体をタップしてチェックできて、チェックが入るまで「登録」ボタンは無効にして。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Checkbox / チェックボックス
+
+- id: `checkbox`  URL: https://uizukan.dev/entry/checkbox/
+- 種別: 表示 / Inputs &amp; Selection
+- 別名: Check Box, Tick Box, Checkbox List Tile
+- 呼び名: Material 3=Checkbox / Material 2=Checkbox（Selection controls） / Android (Compose)=Checkbox / TriStateCheckbox / iOS (HIG)=該当なし（iOS 標準には無い。iOS は Toggle、macOS は Checkbox） / SwiftUI=Toggle + .toggleStyle(.checkbox)（macOS） / Web=&lt;input type="checkbox"&gt; / Flutter=Checkbox / CheckboxListTile
+- Flutter: `Checkbox / CheckboxListTile`
+- 関連: radio_button, switch_toggle, list_tile
+
+**説明**: 四角の中にチェックマークが入る ON/OFF。tristate で「一部選択（−）」も表せる。ラベル付き行にするなら CheckboxListTile。
+
+**使いどころ**: 複数項目の同時選択（利用規約への同意、設定の複数 ON など）。単一の ON/OFF なら Switch の方が自然。
+
+**AI への伝え方（日本語）**: 「利用規約に同意する」を CheckboxListTile で作って。行全体をタップしてチェックできて、チェックが入るまで「登録」ボタンは無効にして。
+
+**Prompt (English)**: Create an "I agree to the Terms" CheckboxListTile. The whole row should be tappable, and the "Sign up" button stays disabled until it is checked.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

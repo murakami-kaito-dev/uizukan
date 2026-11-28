@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>手前に出るものの違い — UI図鑑</title>
+<meta name="description" content="決め手は「後ろの画面を触れるか」と「勝手に消えるか」の 2 つ。">
+<link rel="canonical" href="https://uizukan.dev/glossary/overlays/">
+<meta property="og:title" content="手前に出るものの違い — UI図鑑">
+<meta property="og:description" content="決め手は「後ろの画面を触れるか」と「勝手に消えるか」の 2 つ。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/glossary/overlays/">
+<meta property="og:image" content="https://uizukan.dev/icons/Icon-512.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/library/">ライブラリ</a><span class="sep">/</span><a href="/glossary/">用語集</a><span class="sep">/</span><span class="here">手前に出るものの違い</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="centered">
+<div class="eyebrow" style="margin-top:24px">用語集</div><h1 class="display" style="margin-top:10px">手前に出るものの違い</h1><p class="lead" style="margin-top:6px">モーダル・スナックバー・ポップアップ</p>
+<div class="plate" style="padding:20px;margin-top:20px;font-weight:500">決め手は「後ろの画面を触れるか」と「勝手に消えるか」の 2 つ。</div>
+<section class="section"><h2 class="heading">違いの早見表</h2><div class="plate" style="padding:16px 18px;margin-bottom:12px"><b style="font-weight:600">モーダル（ダイアログ・シート）</b><dl style="display:grid;grid-template-columns:7.5em 1fr;gap:4px 8px;margin:8px 0 0"><dt class="sm">後ろの画面</dt><dd style="margin:0;font-weight:500">触れない</dd><dt class="sm">勝手に消える？</dt><dd style="margin:0;font-weight:500">消えない（答えるまで残る）</dd></dl><p class="sm" style="margin:10px 0 0">答えが必要なときに使う。例：「削除しますか？」の確認、下から出る選択肢。</p><div class="chips" style="margin-top:10px"><a class="chip" href="/entry/alert_dialog/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Alert Dialog</a><a class="chip" href="/entry/modal_bottom_sheet/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Bottom Sheet</a><a class="chip" href="/entry/action_sheet/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Action Sheet</a><a class="chip" href="/entry/full_screen_dialog/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Full-screen Dialog</a></div></div><div class="plate" style="padding:16px 18px;margin-bottom:12px"><b style="font-weight:600">スナックバー（トースト）</b><dl style="display:grid;grid-template-columns:7.5em 1fr;gap:4px 8px;margin:8px 0 0"><dt class="sm">後ろの画面</dt><dd style="margin:0;font-weight:500">触れる</dd><dt class="sm">勝手に消える？</dt><dd style="margin:0;font-weight:500">数秒で消える</dd></dl><p class="sm" style="margin:10px 0 0">操作の結果を軽く知らせる。画面の下に出る。例：「削除しました［元に戻す］」。</p><div class="chips" style="margin-top:10px"><a class="chip" href="/entry/snackbar/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Snackbar</a><a class="chip" href="/entry/snackbar_undo/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Undo Pattern</a></div></div><div class="plate" style="padding:16px 18px;margin-bottom:12px"><b style="font-weight:600">バナー</b><dl style="display:grid;grid-template-columns:7.5em 1fr;gap:4px 8px;margin:8px 0 0"><dt class="sm">後ろの画面</dt><dd style="margin:0;font-weight:500">触れる</dd><dt class="sm">勝手に消える？</dt><dd style="margin:0;font-weight:500">消えない（閉じるまで残る）</dd></dl><p class="sm" style="margin:10px 0 0">画面の上に居座る知らせ。直すまで続く状態を伝える。例：「オフラインです」。</p><div class="chips" style="margin-top:10px"><a class="chip" href="/entry/banner/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Banner</a></div></div><div class="plate" style="padding:16px 18px;margin-bottom:12px"><b style="font-weight:600">メニュー・吹き出し（ポップアップと呼ばれがち）</b><dl style="display:grid;grid-template-columns:7.5em 1fr;gap:4px 8px;margin:8px 0 0"><dt class="sm">後ろの画面</dt><dd style="margin:0;font-weight:500">外を押すと閉じる</dd><dt class="sm">勝手に消える？</dt><dd style="margin:0;font-weight:500">消えない（Tooltip だけは少しで消える）</dd></dl><p class="sm" style="margin:10px 0 0">押した場所の近くに小さく出る。例：⋮ のメニュー、矢印つきの吹き出し、ボタンの説明。</p><div class="chips" style="margin-top:10px"><a class="chip" href="/entry/popup_menu/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Menu (Popup / Overflow)</a><a class="chip" href="/entry/popover/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Popover</a><a class="chip" href="/entry/tooltip/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Tooltip</a></div></div></section>
+<section class="section"><h2 class="heading">説明</h2><p>ダイアログ・シート・スナックバー・メニューなど、今の画面の手前に出てくるものは見分けにくい。見分けるときは「出ている間に後ろの画面を触れるか」と「放っておくと勝手に消えるか」の 2 つを見る。
+
+後ろを触れないものを<a class="term" href="/glossary/modal/">モーダル</a>と呼ぶ。答えが必要なとき（確認・選択・入力）だけに使う。<a class="term" href="/glossary/popup/">ポップアップ</a>は手前に出るもの全般の俗称で、指すものが人によって違う。AI に頼むときは、上の表の具体的な名前で伝えると確実。</p></section>
+
+<section class="section"><h2 class="heading">関連する用語</h2><div class="chips"><a class="chip" href="/glossary/modal/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>モーダル</a><a class="chip" href="/glossary/popup/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>ポップアップ</a><a class="chip" href="/glossary/scrim/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>scrim</a></div></section>
+</div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

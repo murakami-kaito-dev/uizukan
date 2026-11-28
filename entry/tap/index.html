@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tap（タップ） — UI図鑑</title>
+<meta name="description" content="指で一度触れて離す、最も基本の操作。">
+<link rel="canonical" href="https://uizukan.dev/entry/tap/">
+<meta property="og:title" content="Tap（タップ） — UI図鑑">
+<meta property="og:description" content="指で一度触れて離す、最も基本の操作。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/tap/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/tap.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/actions/">アクション</a><span class="sep">/</span><span class="here">Tap</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Gestures · 01 · アクション</div>
+  <h1 class="display" style="margin-top:10px">Tap</h1>
+  <p class="lead" style="margin-top:6px">タップ</p>
+  <div class="demo-plate">
+    <div class="head"><code>tap</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-tap" role="group" aria-label="Tap のデモ"><div class="gs-t" role="button">タップ回数: <span class="gs-n">0</span></div></div><style>#wd-tap .gs-t{width:240px;max-width:100%;height:90px;display:flex;align-items:center;justify-content:center;white-space:pre;background:var(--m-primary-c);color:var(--m-on-primary-c);border-radius:16px;font-size:18px;line-height:1.3;cursor:pointer;transition:opacity 80ms linear}
+#wd-tap .gs-t.gs-on{opacity:.7}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const t = root.querySelector('.gs-t'), n = root.querySelector('.gs-n');
+let count = 0, id = null, sx = 0, sy = 0;
+const off = () => { id = null; t.classList.remove('gs-on'); };
+t.addEventListener('pointerdown', (e) => {
+  if (e.button !== 0) return;
+  id = e.pointerId; sx = e.clientX; sy = e.clientY;
+  try { t.setPointerCapture(id); } catch (_) {}
+  t.classList.add('gs-on');
+});
+t.addEventListener('pointermove', (e) => { if (e.pointerId === id && Math.hypot(e.clientX - sx, e.clientY - sy) > 18) off(); });
+t.addEventListener('pointerup', (e) => { if (e.pointerId !== id) return; off(); count++; n.textContent = count; });
+t.addEventListener('pointercancel', off);})(document.getElementById("wd-tap"),window.UZ);</script></div>
+    <a class="foot" href="https://apps.apple.com/jp/app/id6808997175" rel="noopener"><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i><span>本物の手触りは iOS アプリで</span><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a>
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Click</span><span class="tag">Press</span><span class="tag">Single Tap</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Gestures（Tap）</dd></div><div><dt>Material 2</dt><dd class="">Gestures（Tap）</dd></div><div><dt>Android (Compose)</dt><dd class="">Modifier.clickable / detectTapGestures(onTap:)</dd></div><div><dt>iOS (HIG)</dt><dd class="">Tap</dd></div><div><dt>SwiftUI</dt><dd class="">.onTapGesture / TapGesture</dd></div><div><dt>Web</dt><dd class="">click / pointerup イベント</dd></div><div><dt>Flutter</dt><dd class="mono">GestureDetector(onTap:) / InkWell</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>触れて離した瞬間に発火する。押した瞬間（onTapDown）と離した瞬間（onTapUp）を分けて取れば、押している間の見た目変化が作れる。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>ほぼ全ての操作。ボタン部品は内部で処理済みなので、自作の面に付けるときに使う。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/double_tap/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Double Tap</a><a class="chip" href="/entry/long_press/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Long Press</a><a class="chip" href="/entry/ripple/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Ripple (Ink Splash)</a><a class="chip" href="/entry/press_scale/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Press Scale (Spring Bounce)</a></div></section>
+  
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="このカード全体をタップできるようにして。押している間は少し暗くなり、離したら詳細画面に遷移。" data-en="Make the whole card tappable: dim slightly while pressed, and navigate to the detail screen on release.">このカード全体をタップできるようにして。押している間は少し暗くなり、離したら詳細画面に遷移。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Tap / タップ
+
+- id: `tap`  URL: https://uizukan.dev/entry/tap/
+- 種別: アクション / Gestures
+- 別名: Click, Press, Single Tap
+- 呼び名: Material 3=Gestures（Tap） / Material 2=Gestures（Tap） / Android (Compose)=Modifier.clickable / detectTapGestures(onTap:) / iOS (HIG)=Tap / SwiftUI=.onTapGesture / TapGesture / Web=click / pointerup イベント / Flutter=GestureDetector(onTap:) / InkWell
+- Flutter: `GestureDetector(onTap:) / InkWell`
+- 関連: double_tap, long_press, ripple, press_scale
+
+**説明**: 触れて離した瞬間に発火する。押した瞬間（onTapDown）と離した瞬間（onTapUp）を分けて取れば、押している間の見た目変化が作れる。
+
+**使いどころ**: ほぼ全ての操作。ボタン部品は内部で処理済みなので、自作の面に付けるときに使う。
+
+**AI への伝え方（日本語）**: このカード全体をタップできるようにして。押している間は少し暗くなり、離したら詳細画面に遷移。
+
+**Prompt (English)**: Make the whole card tappable: dim slightly while pressed, and navigate to the detail screen on release.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

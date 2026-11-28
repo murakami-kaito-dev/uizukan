@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Collapsing Toolbar（縮むヘッダー（コラプシングツールバー）） — UI図鑑</title>
+<meta name="description" content="大きな画像ヘッダーが、スクロールに合わせて縮んで通常の App Bar になる。">
+<link rel="canonical" href="https://uizukan.dev/entry/collapsing_toolbar/">
+<meta property="og:title" content="Collapsing Toolbar（縮むヘッダー（コラプシングツールバー）） — UI図鑑">
+<meta property="og:description" content="大きな画像ヘッダーが、スクロールに合わせて縮んで通常の App Bar になる。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/collapsing_toolbar/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/collapsing_toolbar.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/actions/">アクション</a><span class="sep">/</span><span class="here">Collapsing Toolbar</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Scrolling Behaviors · 01 · アクション</div>
+  <h1 class="display" style="margin-top:10px">Collapsing Toolbar</h1>
+  <p class="lead" style="margin-top:6px">縮むヘッダー（コラプシングツールバー）</p>
+  <div class="demo-plate">
+    <div class="head"><code>collapsing_toolbar</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-collapsing_toolbar" role="group" aria-label="Collapsing Toolbar のデモ"><div class="sr-fit-o"><div class="sr-fit-i" style="width:300px"><div class="sr-fr" style="width:300px;height:240px"><div class="sr-sc"><div class="sr-hd"><div class="sr-bgw"><img src="/assets/images/products/7_satchel.jpg" alt="" class="sr-bgi" draggable="false"><i class="sr-grad"></i></div><div class="sr-tt"><span>キャンバス サッチェルバッグ</span></div></div><div class="sr-bd"><b class="sr-price">¥9,800</b><div class="sr-stars"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f01d4.png);width:14px;height:14px" aria-hidden="true"></i><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f01d4.png);width:14px;height:14px" aria-hidden="true"></i><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f01d4.png);width:14px;height:14px" aria-hidden="true"></i><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f01d4.png);width:14px;height:14px" aria-hidden="true"></i><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f01d0.png);width:14px;height:14px" aria-hidden="true"></i><span>4.5（128 件）</span></div><p class="sr-desc">丈夫な帆布でたっぷり入るバッグ。通勤にも休日にも合う、使うほどなじむ形です。</p></div><div class="sr-spec"><span class="sr-k">素材</span><span class="sr-v">コットンキャンバス（帆布）</span></div><div class="sr-spec"><span class="sr-k">サイズ</span><span class="sr-v">幅 36 × 高さ 27 × マチ 9 cm</span></div><div class="sr-spec"><span class="sr-k">重さ</span><span class="sr-v">約 720 g</span></div><div class="sr-spec"><span class="sr-k">カラー</span><span class="sr-v">マスタード</span></div><div class="sr-spec"><span class="sr-k">収納</span><span class="sr-v">13 インチのノート PC・A4 書類</span></div><div class="sr-spec"><span class="sr-k">ショルダー</span><span class="sr-v">長さ調節・取り外し可</span></div><div class="sr-spec"><span class="sr-k">配送</span><span class="sr-v">最短で翌日にお届け</span></div><div class="sr-spec"><span class="sr-k">返品</span><span class="sr-v">到着から 30 日以内は無料</span></div><div style="height:8px"></div></div></div></div></div></div><style>#wd-collapsing_toolbar .sr-fit-o{position:relative;flex:none}
+#wd-collapsing_toolbar .sr-fit-i{position:absolute;left:0;top:0;transform-origin:0 0}
+#wd-collapsing_toolbar .sr-fr{position:relative;overflow:hidden;border-radius:12px;isolation:isolate;text-align:left}
+#wd-collapsing_toolbar .sr-fr::after{content:"";position:absolute;inset:0;border:1px solid var(--rule);border-radius:12px;pointer-events:none;z-index:60}
+#wd-collapsing_toolbar .sr-sc{height:100%;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+#wd-collapsing_toolbar .sr-sc::-webkit-scrollbar{display:none}
+#wd-collapsing_toolbar .sr-fab{width:40px;height:40px;border-radius:12px;background:var(--accent-soft);color:var(--ink);display:flex;align-items:center;justify-content:center;box-shadow:var(--e3)}
+
+#wd-collapsing_toolbar .sr-hd{position:sticky;top:-104px;height:160px;background:#2B2420;overflow:hidden;z-index:2;color:#fff}
+#wd-collapsing_toolbar .sr-bgw{position:absolute;left:0;right:0;top:0;height:160px}
+#wd-collapsing_toolbar .sr-bgi{width:100%;height:100%;object-fit:cover;display:block}
+#wd-collapsing_toolbar .sr-grad{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(0,0,0,.7) 100%)}
+#wd-collapsing_toolbar .sr-tt{position:absolute;left:72px;bottom:16px;width:228px;transform-origin:0 100%}
+#wd-collapsing_toolbar .sr-tt span{display:block;font-size:14px;font-weight:600;line-height:1.15;letter-spacing:-.48px;white-space:nowrap}
+#wd-collapsing_toolbar .sr-bd{padding:12px 16px 4px}
+#wd-collapsing_toolbar .sr-price{display:block;font-size:18px;font-weight:800;line-height:1.65;margin-bottom:4px}
+#wd-collapsing_toolbar .sr-stars{display:flex;align-items:center;color:#F59E0B}
+#wd-collapsing_toolbar .sr-stars span{margin-left:6px;font-size:11px;line-height:1.65;color:var(--ink2)}
+#wd-collapsing_toolbar .sr-desc{margin:8px 0 0;font-size:12px;line-height:1.5}
+#wd-collapsing_toolbar .sr-spec{display:flex;align-items:flex-start;padding:9px 16px;font-size:12px;line-height:1.65}
+#wd-collapsing_toolbar .sr-k{width:72px;flex:none;color:var(--ink2)}
+#wd-collapsing_toolbar .sr-v{flex:1;text-align:right}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const fitO = root.querySelector('.sr-fit-o'), fitI = fitO.firstElementChild;
+let S = 1;
+const refit = () => {
+  const W = fitI.offsetWidth, H = fitI.offsetHeight, a = root.clientWidth || W;
+  S = Math.min(1, a / W);
+  fitI.style.transform = S < 1 ? 'scale(' + S + ')' : '';
+  fitO.style.width = W * S + 'px';
+  fitO.style.height = H * S + 'px';
+};
+refit();
+if (window.ResizeObserver) { const ro = new ResizeObserver(refit); ro.observe(root); ro.observe(fitI); }
+
+const sc = root.querySelector('.sr-sc'), bgw = root.querySelector('.sr-bgw'), tt = root.querySelector('.sr-tt');
+const FS = 1 - 56 / 104;
+const upd = () => {
+  const s = Math.max(0, Math.min(104, sc.scrollTop)), t = s / 104;
+  bgw.style.transform = 'translateY(' + (s - t * 26) + 'px)';
+  bgw.style.opacity = t <= FS ? 1 : 1 - (t - FS) / (1 - FS);
+  const k = 1.25 - 0.25 * t;
+  tt.style.transform = 'scale(' + k + ')';
+  tt.style.width = (228 / k) + 'px';
+};
+sc.addEventListener('scroll', upd, { passive: true });
+upd();})(document.getElementById("wd-collapsing_toolbar"),window.UZ);</script></div>
+    <a class="foot" href="https://apps.apple.com/jp/app/id6808997175" rel="noopener"><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i><span>本物の手触りは iOS アプリで</span><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a>
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Collapsing App Bar</span><span class="tag">Flexible Space</span><span class="tag">Expandable Header</span><span class="tag">Sliver App Bar</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Top app bar（scroll behavior: exit until collapsed）</dd></div><div><dt>Material 2</dt><dd class="">Collapsing toolbar（CollapsingToolbarLayout）</dd></div><div><dt>Android (Compose)</dt><dd class="">TopAppBarDefaults.exitUntilCollapsedScrollBehavior + LargeTopAppBar</dd></div><div><dt>iOS (HIG)</dt><dd class="">Navigation bars（Large title が縮む）</dd></div><div><dt>SwiftUI</dt><dd class="">.navigationBarTitleDisplayMode(.large)（自動）</dd></div><div><dt>Web</dt><dd class="">position: sticky + scroll-driven animations</dd></div><div><dt>Flutter</dt><dd class="mono">CustomScrollView + SliverAppBar</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>先頭に画像や大きなタイトルを置き、上スクロールで高さが減っていき、最終的に App Bar だけが残って固定される。引っ張ると画像が伸びる <a class="term" href="/glossary/collapse/">stretch</a> も付けられる。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>プロフィール、商品詳細、記事など、ヘッダー画像がある画面。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/large_title_app_bar/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Large Title App Bar</a><a class="chip" href="/entry/parallax_header/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Parallax Scrolling</a><a class="chip" href="/entry/app_bar/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Top App Bar</a><a class="chip" href="/entry/hero_transition/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Hero Transition (Shared Element)</a><a class="chip" href="/glossary/collapse/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>ヘッダーの折りたたみ</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/product/"><span class="ic s" style="--i:url(/assets/icons/scene-product.png)"></span>商品と購入</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="商品詳細の上に高さ 240 の画像ヘッダーを置き、スクロールすると縮んで App Bar に収まる Collapsing Toolbar にして。タイトルは縮んだときだけ表示。下に引っ張ると画像が伸びるように。" data-en="Put a 240dp image header above the product detail that collapses into the App Bar on scroll (Collapsing Toolbar). Show the title only when collapsed, and stretch the image on overscroll.">商品詳細の上に高さ 240 の画像ヘッダーを置き、スクロールすると縮んで App Bar に収まる Collapsing Toolbar にして。タイトルは縮んだときだけ表示。下に引っ張ると画像が伸びるように。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Collapsing Toolbar / 縮むヘッダー（コラプシングツールバー）
+
+- id: `collapsing_toolbar`  URL: https://uizukan.dev/entry/collapsing_toolbar/
+- 種別: アクション / Scrolling Behaviors
+- 別名: Collapsing App Bar, Flexible Space, Expandable Header, Sliver App Bar
+- 呼び名: Material 3=Top app bar（scroll behavior: exit until collapsed） / Material 2=Collapsing toolbar（CollapsingToolbarLayout） / Android (Compose)=TopAppBarDefaults.exitUntilCollapsedScrollBehavior + LargeTopAppBar / iOS (HIG)=Navigation bars（Large title が縮む） / SwiftUI=.navigationBarTitleDisplayMode(.large)（自動） / Web=position: sticky + scroll-driven animations / Flutter=CustomScrollView + SliverAppBar
+- Flutter: `CustomScrollView + SliverAppBar`
+- 関連: large_title_app_bar, parallax_header, app_bar, hero_transition
+
+**説明**: 先頭に画像や大きなタイトルを置き、上スクロールで高さが減っていき、最終的に App Bar だけが残って固定される。引っ張ると画像が伸びる stretch も付けられる。
+
+**使いどころ**: プロフィール、商品詳細、記事など、ヘッダー画像がある画面。
+
+**AI への伝え方（日本語）**: 商品詳細の上に高さ 240 の画像ヘッダーを置き、スクロールすると縮んで App Bar に収まる Collapsing Toolbar にして。タイトルは縮んだときだけ表示。下に引っ張ると画像が伸びるように。
+
+**Prompt (English)**: Put a 240dp image header above the product detail that collapses into the App Bar on scroll (Collapsing Toolbar). Show the title only when collapsed, and stretch the image on overscroll.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

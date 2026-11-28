@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Avatar（アバター（丸いプロフィール画像）） — UI図鑑</title>
+<meta name="description" content="丸く切り抜いたユーザー画像。画像がなければイニシャル。">
+<link rel="canonical" href="https://uizukan.dev/entry/avatar/">
+<meta property="og:title" content="Avatar（アバター（丸いプロフィール画像）） — UI図鑑">
+<meta property="og:description" content="丸く切り抜いたユーザー画像。画像がなければイニシャル。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/avatar/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/avatar.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Avatar</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Data Display · 01 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Avatar</h1>
+  <p class="lead" style="margin-top:6px">アバター（丸いプロフィール画像）</p>
+  <div class="demo-plate">
+    <div class="head"><code>avatar</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-avatar" role="group" aria-label="Avatar のデモ"><div class="dp-rw"><div class="dp-av-wrap"><span class="dp-av" style="background:#5C6BC0;color:#fff;font-weight:700">TM</span><span class="dp-dot"></span></div><span class="dp-av" style="background:#26A69A;color:#fff"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e491.png);width:24px;height:24px" aria-hidden="true"></i></span><img src="/assets/images/products/1_sneakers.jpg" alt="" class="dp-av dp-ph" draggable="false"><div class="dp-stack"><span class="dp-ring" style="left:0"><span class="dp-av dp-s" style="background:#7986CB">A</span></span><span class="dp-ring" style="left:20px"><span class="dp-av dp-s" style="background:#4DB6AC">B</span></span><span class="dp-ring" style="left:40px"><span class="dp-av dp-s" style="background:#FFB74D">C</span></span></div></div></div><style>#wd-avatar .dp-rw{display:flex;align-items:center;gap:20px}
+#wd-avatar .dp-av{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;line-height:1.3;color:var(--ink);flex:none;object-fit:cover}
+#wd-avatar .dp-av-wrap{position:relative;width:48px;height:48px}
+#wd-avatar .dp-dot{position:absolute;right:0;bottom:0;width:14px;height:14px;border-radius:50%;background:#4CAF50;border:2px solid var(--surface)}
+#wd-avatar .dp-stack{position:relative;width:88px;height:48px;flex:none}
+#wd-avatar .dp-ring{position:absolute;top:0;width:48px;height:48px;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center}
+#wd-avatar .dp-av.dp-s{width:42px;height:42px}
+@media (max-width:340px){#wd-avatar .dp-rw{gap:12px}}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Profile Picture</span><span class="tag">User Icon</span><span class="tag">Circle Avatar</span><span class="tag">Avatar Group</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="na">該当なし（List item の leading avatar として登場。独立部品ではない）</dd></div><div><dt>Material 2</dt><dd class="na">該当なし（List item の avatar）</dd></div><div><dt>Android (Compose)</dt><dd class="na">該当なし（Image + Modifier.clip(CircleShape)）</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（Image view を円形に）</dd></div><div><dt>SwiftUI</dt><dd class="">Image + .clipShape(Circle())</dd></div><div><dt>Web</dt><dd class="">&lt;img&gt;（Avatar。alt 必須）</dd></div><div><dt>Flutter</dt><dd class="mono">CircleAvatar</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>円形のユーザー画像。画像未設定時はイニシャルや人型アイコンを背景色付きで表示する。右下にオンライン状態の点を重ねることもある。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>ユーザーを表すあらゆる場所（コメント、チャット、メンバー一覧）。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/badge/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Badge</a><a class="chip" href="/entry/list_tile/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>List Item</a><a class="chip" href="/entry/chat_bubble/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Chat Bubble</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/feed/"><span class="ic s" style="--i:url(/assets/icons/scene-feed.png)"></span>フィード</a><a class="chip" href="/scenes/product/"><span class="ic s" style="--i:url(/assets/icons/scene-product.png)"></span>商品と購入</a><a class="chip" href="/scenes/chat/"><span class="ic s" style="--i:url(/assets/icons/scene-chat.png)"></span>チャット</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="直径 40dp の Avatar を作って。画像があれば表示、なければ名前のイニシャルを primaryContainer 背景で。右下にオンラインの緑の点を重ねて。" data-en="Create a 40dp Avatar: show the image if available, otherwise the name's initials on a primaryContainer background, with a green online dot at the bottom-right.">直径 40dp の Avatar を作って。画像があれば表示、なければ名前のイニシャルを primaryContainer 背景で。右下にオンラインの緑の点を重ねて。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Avatar / アバター（丸いプロフィール画像）
+
+- id: `avatar`  URL: https://uizukan.dev/entry/avatar/
+- 種別: 表示 / Data Display
+- 別名: Profile Picture, User Icon, Circle Avatar, Avatar Group
+- 呼び名: Material 3=該当なし（List item の leading avatar として登場。独立部品ではない） / Material 2=該当なし（List item の avatar） / Android (Compose)=該当なし（Image + Modifier.clip(CircleShape)） / iOS (HIG)=該当なし（Image view を円形に） / SwiftUI=Image + .clipShape(Circle()) / Web=&lt;img&gt;（Avatar。alt 必須） / Flutter=CircleAvatar
+- Flutter: `CircleAvatar`
+- 関連: badge, list_tile, chat_bubble
+
+**説明**: 円形のユーザー画像。画像未設定時はイニシャルや人型アイコンを背景色付きで表示する。右下にオンライン状態の点を重ねることもある。
+
+**使いどころ**: ユーザーを表すあらゆる場所（コメント、チャット、メンバー一覧）。
+
+**AI への伝え方（日本語）**: 直径 40dp の Avatar を作って。画像があれば表示、なければ名前のイニシャルを primaryContainer 背景で。右下にオンラインの緑の点を重ねて。
+
+**Prompt (English)**: Create a 40dp Avatar: show the image if available, otherwise the name's initials on a primaryContainer background, with a green online dot at the bottom-right.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

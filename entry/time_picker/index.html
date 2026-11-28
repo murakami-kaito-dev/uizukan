@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Time Picker（時刻ピッカー） — UI図鑑</title>
+<meta name="description" content="時計の文字盤や数値入力で時刻を選ぶダイアログ。">
+<link rel="canonical" href="https://uizukan.dev/entry/time_picker/">
+<meta property="og:title" content="Time Picker（時刻ピッカー） — UI図鑑">
+<meta property="og:description" content="時計の文字盤や数値入力で時刻を選ぶダイアログ。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/time_picker/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/time_picker.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Time Picker</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Inputs &amp; Selection · 12 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Time Picker</h1>
+  <p class="lead" style="margin-top:6px">時刻ピッカー</p>
+  <div class="demo-plate">
+    <div class="head"><code>time_picker</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-time_picker" role="group" aria-label="Time Picker のデモ"><div class="in-col"><button type="button" class="in-tile"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e072.png);width:24px;height:24px" aria-hidden="true"></i><span class="in-tt">リマインダー</span><span class="in-tv">7:00</span></button><button type="button" class="m-btn m-outlined in-ios">iOS 風（ドラム）で選ぶ</button>
+<div class="in-ov in-md" hidden><div class="in-dlg" role="dialog" aria-modal="true" aria-label="時間を選択"></div></div>
+<div class="in-cp" hidden><div class="in-sheet"><div class="in-cols"><div class="in-wh-band"></div><div class="in-c in-h"></div><div class="in-c in-m"></div></div></div></div>
+<template class="i-kb"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f144.png);width:24px;height:24px" aria-hidden="true"></i></template><template class="i-clock"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e03a.png);width:24px;height:24px" aria-hidden="true"></i></template></div></div><style>#wd-time_picker [hidden]{display:none!important}
+#wd-time_picker .in-tf{--r:6px;--bc:var(--ink3);--bw:1px;--lx:14px;position:relative;display:flex;align-items:center;width:100%;height:52px;border-radius:var(--r);cursor:text;font-size:15px}
+#wd-time_picker .in-tf.in-fill{background:var(--surface)}
+#wd-time_picker .in-tf fieldset{position:absolute;left:0;right:0;bottom:0;top:-5px;margin:0;padding:0 0 0 calc(10px - var(--bw));border:var(--bw) solid var(--bc);border-radius:var(--r);pointer-events:none;min-width:0;transition:border-color .167s}
+#wd-time_picker .in-tf legend{display:block;float:none;width:auto;max-width:.01px;height:11px;padding:0;font-size:9.75px;line-height:11px;visibility:hidden;white-space:nowrap;overflow:hidden;transition:max-width 50ms}
+#wd-time_picker .in-tf legend span{display:inline-block;padding:0 4px}
+#wd-time_picker .in-tf.in-up legend{max-width:100%;transition:max-width 100ms 50ms}
+#wd-time_picker .in-tf.in-f{--bc:var(--accent);--bw:1.5px}
+#wd-time_picker .in-tf.in-e{--bc:var(--danger)}
+#wd-time_picker .in-tf-lab{position:absolute;left:var(--lx);top:50%;transform:translateY(-50%);transform-origin:0 50%;font-size:13px;line-height:1;color:var(--ink2);white-space:nowrap;pointer-events:none;transition:left .167s cubic-bezier(.4,0,.2,1),top .167s cubic-bezier(.4,0,.2,1),transform .167s cubic-bezier(.4,0,.2,1)}
+#wd-time_picker .in-tf.in-up .in-tf-lab{left:14px;top:0;transform:translateY(-50%) scale(.75)}
+#wd-time_picker .in-tf-pre,#wd-time_picker .in-tf-suf{flex:none;width:48px;height:48px;display:flex;align-items:center;justify-content:center;color:var(--ink);border-radius:999px}
+@media (hover:hover){#wd-time_picker button.in-tf-suf:hover{background:color-mix(in srgb,var(--ink) 8%,transparent)}}
+#wd-time_picker .in-tf-iw{position:relative;flex:1;min-width:0;align-self:stretch}
+#wd-time_picker .in-tf-iw.in-ps{margin-left:14px}
+#wd-time_picker .in-tf-iw.in-pe{margin-right:14px}
+#wd-time_picker .in-tf-iw input{position:absolute;left:0;top:0;width:106.667%;height:100%;transform:scale(.9375);transform-origin:0 50%;border:0;outline:0;background:transparent;padding:0;margin:0;font:inherit;font-size:16px;line-height:normal;color:var(--ink);caret-color:var(--accent);-webkit-user-select:text;user-select:text;-webkit-appearance:none;appearance:none;border-radius:0;text-overflow:ellipsis}
+#wd-time_picker .in-tf-iw input::placeholder{color:transparent;opacity:1;transition:color .167s}
+#wd-time_picker .in-tf.in-f .in-tf-iw input::placeholder{color:var(--ink3)}
+#wd-time_picker .in-tf-sub{padding:4px 14px 0;font-size:13px;line-height:1.55;color:var(--ink2)}
+#wd-time_picker .in-tf-sub.in-err{color:var(--danger);animation:inp-sub .167s cubic-bezier(.4,0,.2,1)}
+@keyframes inp-sub{from{opacity:0;transform:translateY(-25%)}}
+#wd-time_picker .in-ov{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.54);animation:inp-fade .15s linear;-webkit-user-select:none;user-select:none;font:15px/1.65 var(--sans);color:var(--ink)}
+#wd-time_picker .in-ov.in-out{opacity:0;transition:opacity .1s linear}
+@keyframes inp-fade{from{opacity:0}}
+#wd-time_picker .in-dlg{background:var(--plate);border-radius:28px;box-shadow:var(--e3);overflow:hidden;max-height:calc(100vh - 32px);overflow-y:auto;animation:inp-pop .15s cubic-bezier(.2,0,0,1)}
+@keyframes inp-pop{from{transform:scale(.95)}}
+#wd-time_picker .in-dact{display:flex;justify-content:flex-end;align-items:center;gap:8px}
+#wd-time_picker .in-dact .m-btn{min-height:40px}
+#wd-time_picker .in-dlg .m-icon-btn{color:var(--ink2)}
+#wd-time_picker .in-dlg .m-icon-btn:disabled{opacity:.38;background:none;cursor:default}
+#wd-time_picker .in-cp{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0);transition:background-color .335s;font-family:var(--sans)}
+#wd-time_picker .in-cp.in-open{background:rgba(0,0,0,.2)}
+#wd-time_picker .in-cp .in-sheet{position:absolute;left:0;right:0;bottom:0;height:calc(260px + env(safe-area-inset-bottom));padding-bottom:env(safe-area-inset-bottom);background:var(--surface);transform:translateY(100%);transition:transform .335s cubic-bezier(.17,.67,.2,1)}
+#wd-time_picker .in-cp.in-open .in-sheet{transform:none}
+#wd-time_picker .in-cp .in-cols{position:relative;display:flex;justify-content:center;height:260px}
+#wd-time_picker .in-cp .in-cols .in-wh{font-size:21px;letter-spacing:-.4px}
+#wd-time_picker .in-wh{position:relative;overflow:hidden;touch-action:none;cursor:grab;color:var(--ink);font-family:var(--sans)}
+#wd-time_picker .in-wh:active{cursor:grabbing}
+#wd-time_picker .in-wh-l{position:absolute;inset:0}
+#wd-time_picker .in-wh-dim{opacity:.447}
+#wd-time_picker .in-wh-i{position:absolute;left:0;right:0;text-align:center;white-space:nowrap;will-change:transform}
+#wd-time_picker .in-wh-i.in-dis{color:var(--ink3)}
+#wd-time_picker .in-wh-band{position:absolute;left:9px;right:9px;top:50%;transform:translateY(-50%);border-radius:8px;background:color-mix(in srgb,var(--ink) 7%,transparent);pointer-events:none}
+#wd-time_picker .in-col{width:100%;max-width:300px;display:flex;flex-direction:column;align-items:center}
+#wd-time_picker .in-tile{display:flex;align-items:center;width:100%;min-height:56px;padding:0 20px;text-align:left}
+#wd-time_picker .in-tile:active{background:color-mix(in srgb,var(--ink) 4%,transparent)}
+#wd-time_picker .in-tile .mi{color:var(--ink2);margin-right:16px}
+#wd-time_picker .in-tt{flex:1;font-size:15px;line-height:1.3;color:var(--ink)}
+#wd-time_picker .in-tv{margin-left:16px;font-size:18px;line-height:1.65;color:var(--ink)}
+#wd-time_picker .in-dlg{width:min(310px,100%);padding:24px 24px 12px}
+#wd-time_picker .in-t-help{font-size:12px;font-weight:500;line-height:1.2;color:var(--ink2);margin-bottom:20px}
+#wd-time_picker .in-t-hm{display:flex;align-items:flex-start;justify-content:center}
+#wd-time_picker .in-hmb{width:114px;height:80px;border-radius:8px;background:var(--line);color:var(--ink);font-size:57px;line-height:80px;text-align:center;font-variant-numeric:tabular-nums}
+#wd-time_picker .in-hmb.in-on{background:var(--accent-soft)}
+#wd-time_picker .in-sep{width:24px;text-align:center;font-size:57px;line-height:80px;color:var(--ink)}
+#wd-time_picker .in-hmi{width:114px;height:72px;border-radius:8px;border:0;outline:0;background:var(--line);color:var(--ink);font:inherit;font-size:57px;line-height:72px;text-align:center;padding:0;-webkit-user-select:text;user-select:text;caret-color:var(--accent)}
+#wd-time_picker .in-hmi:focus{background:var(--accent-soft);box-shadow:inset 0 0 0 2px var(--accent)}
+#wd-time_picker .in-t-hm.in-in .in-sep{line-height:72px}
+#wd-time_picker .in-t-cap{font-size:12px;line-height:1.2;color:var(--ink2);margin-top:7px}
+#wd-time_picker .in-t-err{font-size:13px;color:var(--danger);margin-top:8px;text-align:left}
+#wd-time_picker .in-dial{position:relative;width:256px;height:256px;margin:36px auto 0;border-radius:50%;background:var(--line);touch-action:none;cursor:pointer}
+#wd-time_picker .in-dial svg{position:absolute;inset:0;overflow:visible}
+#wd-time_picker .in-dial .in-lb{position:absolute;width:48px;height:48px;margin:-24px 0 0 -24px;display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--ink);pointer-events:none}
+#wd-time_picker .in-dial .in-lb.in-in{font-size:13px}
+#wd-time_picker .in-dial .in-lb.in-on{color:var(--m-on-primary)}
+#wd-time_picker .in-dact{padding:24px 0 0}
+#wd-time_picker .in-dact .in-sp{flex:1}
+#wd-time_picker .in-cp .in-c{flex:none;width:80px}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";function wheel(host,o){
+  const ext=o.ext,H=o.h,R=H*0.42,K=R*1.09,n=o.count,loop=!!o.loop,mag=o.mag||1;
+  host.classList.add('in-wh');host.style.height=H+'px';
+  host.insertAdjacentHTML('afterbegin','<div class="in-wh-l in-wh-dim"></div><div class="in-wh-l in-wh-hi"></div>');
+  const layers=[host.querySelector('.in-wh-dim'),host.querySelector('.in-wh-hi')];
+  const V=Math.ceil((Math.PI/2)*K/ext)+1,bt=(H-ext)/2,bb=(H+ext)/2;
+  const nodes=layers.map(function(l){const a=[];for(let j=-V;j<=V;j++){const d=document.createElement('div');d.className='in-wh-i';d.style.top=bt+'px';d.style.height=ext+'px';d.style.lineHeight=ext+'px';if(o.align)d.style.textAlign=o.align;l.appendChild(d);a.push(d);}return a;});
+  layers[1].style.clipPath='inset('+bt+'px 0 '+bt+'px 0)';
+  const m='linear-gradient(#000 '+bt+'px,transparent '+bt+'px,transparent '+bb+'px,#000 '+bb+'px)';
+  layers[0].style.webkitMaskImage=m;layers[0].style.maskImage=m;
+  let off=(o.index||0)*ext,cur=o.index||0,anim=0;
+  const max=(n-1)*ext;
+  const norm=function(i){return ((i%n)+n)%n;};
+  const idxAt=function(){const b=Math.round(off/ext);return loop?norm(b):Math.max(0,Math.min(n-1,b));};
+  function draw(){
+    const base=Math.round(off/ext);
+    for(let L=0;L<2;L++){const arr=nodes[L];for(let j=-V;j<=V;j++){
+      const el=arr[j+V],idx=base+j;
+      if(!loop&&(idx<0||idx>=n)){el.style.visibility='hidden';continue;}
+      const th=(idx*ext-off)/K;
+      if(Math.abs(th)>=Math.PI/2){el.style.visibility='hidden';continue;}
+      el.style.visibility='';
+      const i=norm(idx),t=o.label(i);
+      if(el.textContent!==t)el.textContent=t;
+      el.classList.toggle('in-dis',!!(o.disabled&&o.disabled(i)));
+      const s=L===1?mag:1;
+      el.style.transform='translateY('+(R*Math.sin(th)).toFixed(2)+'px) scale('+s+','+(Math.cos(th)*s).toFixed(4)+')';
+    }}
+    const c=idxAt();
+    if(c!==cur){cur=c;if(o.onChange)o.onChange(c);}
+  }
+  function go(target,dur){
+    cancelAnimationFrame(anim);
+    const s=off,t0=performance.now();
+    const step=function(now){const p=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-p,3);off=s+(target-s)*e;draw();if(p<1)anim=requestAnimationFrame(step);else if(o.onSettle)o.onSettle(cur);};
+    anim=requestAnimationFrame(step);
+  }
+  function snap(idx,dur){if(!loop)idx=Math.max(0,Math.min(n-1,idx));go(idx*ext,dur||300);}
+  let pid=null,sy=0,so=0,moved=false,smp=[];
+  host.addEventListener('pointerdown',function(e){if(e.button>0)return;cancelAnimationFrame(anim);pid=e.pointerId;try{host.setPointerCapture(pid);}catch(_){}sy=e.clientY;so=off;moved=false;smp=[[e.timeStamp,e.clientY]];});
+  host.addEventListener('pointermove',function(e){
+    if(e.pointerId!==pid)return;
+    const dy=e.clientY-sy;if(Math.abs(dy)>4)moved=true;
+    let no=so-dy;
+    if(!loop){if(no<0)no*=0.4;if(no>max)no=max+(no-max)*0.4;}
+    off=no;draw();
+    smp.push([e.timeStamp,e.clientY]);while(smp.length>2&&e.timeStamp-smp[0][0]>100)smp.shift();
+  });
+  const up=function(e){
+    if(e.pointerId!==pid)return;pid=null;
+    if(!moved){const r=host.getBoundingClientRect(),y=e.clientY-r.top-H/2;const th=Math.asin(Math.max(-1,Math.min(1,y/R)));snap(Math.round((off+th*K)/ext),300);return;}
+    const a=smp[0],b=smp[smp.length-1],v=(b[1]-a[1])/Math.max(16,b[0]-a[0]);
+    const proj=off-v*320;
+    snap(Math.round(proj/ext),Math.min(900,260+Math.abs(v)*260));
+  };
+  host.addEventListener('pointerup',up);host.addEventListener('pointercancel',up);
+  let wt=0;
+  host.addEventListener('wheel',function(e){e.preventDefault();cancelAnimationFrame(anim);off+=e.deltaY*0.6;if(!loop)off=Math.max(0,Math.min(max,off));draw();clearTimeout(wt);wt=setTimeout(function(){snap(Math.round(off/ext),200);},120);},{passive:false});
+  draw();
+  return {
+    set:function(i){cancelAnimationFrame(anim);off=i*ext;cur=i;draw();},
+    to:function(i){let b=Math.round(off/ext);if(loop){const d=((i-norm(b))%n+n)%n;b+=d>n/2?d-n:d;}else b=i;snap(b,300);},
+    get:function(){return cur;},
+    redraw:draw
+  };
+}
+const $=function(s){return root.querySelector(s);};
+const I=function(n){return root.querySelector('template.i-'+n).innerHTML;};
+const pad=function(n){return String(n).padStart(2,'0');};
+const tv=$('.in-tv');
+let H=7,M=0;
+function setTime(h,m){H=h;M=m;tv.textContent=h+':'+pad(m);}
+// ---- Material 3 の時刻ダイアログ（日本語は 24 時間：外側 0〜11、内側 12〜23）
+const ov=$('.in-md'),dlg=ov.querySelector('.in-dlg');
+let th,tm,tmode,entry,terr=false;
+function dialHtml(){
+  const C=128,OUT=100,IN=72;
+  let sel,r,lbs='';
+  if(tmode==='hour'){
+    for(let h=0;h<24;h++){const a=(h%12)/12*2*Math.PI,rr=h>=12?IN:OUT;lbs+='<span class="in-lb'+(h>=12?' in-in':'')+(h===th?' in-on':'')+'" style="left:'+(C+rr*Math.sin(a)).toFixed(1)+'px;top:'+(C-rr*Math.cos(a)).toFixed(1)+'px">'+h+'</span>';}
+    sel=(th%12)/12*2*Math.PI;r=th>=12?IN:OUT;
+  }else{
+    for(let m=0;m<60;m+=5){const a=m/60*2*Math.PI;lbs+='<span class="in-lb'+(m===tm?' in-on':'')+'" style="left:'+(C+OUT*Math.sin(a)).toFixed(1)+'px;top:'+(C-OUT*Math.cos(a)).toFixed(1)+'px">'+pad(m)+'</span>';}
+    sel=tm/60*2*Math.PI;r=OUT;
+  }
+  const x=C+r*Math.sin(sel),y=C-r*Math.cos(sel);
+  return '<svg width="256" height="256" aria-hidden="true"><line x1="128" y1="128" x2="'+x.toFixed(1)+'" y2="'+y.toFixed(1)+'" stroke="var(--accent)" stroke-width="2"/><circle cx="128" cy="128" r="4" fill="var(--accent)"/><circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="24" fill="var(--accent)"/>'+(tmode==='minute'&&tm%5?'<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="2" fill="var(--m-on-primary)"/>':'')+'</svg>'+lbs;
+}
+function render(){
+  let h;
+  if(entry==='in-dial'){
+    h='<div class="in-t-help">時間を選択</div><div class="in-t-hm"><button type="button" class="in-hmb in-hb'+(tmode==='hour'?' in-on':'')+'" aria-label="時">'+th+'</button><span class="in-sep">:</span><button type="button" class="in-hmb in-mb'+(tmode==='minute'?' in-on':'')+'" aria-label="分">'+pad(tm)+'</button></div><div class="in-dial">'+dialHtml()+'</div>';
+  }else{
+    h='<div class="in-t-help">時間を入力</div><div class="in-t-hm in-in"><div><input class="in-hmi in-hi" type="text" inputmode="numeric" maxlength="2" autocomplete="off" aria-label="時" value="'+th+'"><div class="in-t-cap">時</div></div><span class="in-sep">:</span><div><input class="in-hmi in-mn" type="text" inputmode="numeric" maxlength="2" autocomplete="off" aria-label="分" value="'+pad(tm)+'"><div class="in-t-cap">分</div></div></div>'+(terr?'<div class="in-t-err">有効な時刻を入力してください</div>':'');
+  }
+  h+='<div class="in-dact"><button type="button" class="m-icon-btn in-ent" aria-label="'+(entry==='in-dial'?'入力モードに切り替え':'ダイヤル選択ツールモードに切り替え')+'">'+I(entry==='in-dial'?'kb':'clock')+'</button><span class="in-sp"></span><button type="button" class="m-btn m-text in-dx">キャンセル</button><button type="button" class="m-btn m-text in-dok">OK</button></div>';
+  dlg.innerHTML=h;
+  if(entry==='input')dlg.querySelector('.in-hi').focus({preventScroll:true});
+  else bindDial();
+}
+function bindDial(){
+  const d=dlg.querySelector('.in-dial');let pid=null;
+  const pick=function(e,tap){
+    const r=d.getBoundingClientRect(),dx=e.clientX-r.left-128,dy=e.clientY-r.top-128;
+    let a=Math.atan2(dx,-dy);if(a<0)a+=2*Math.PI;
+    if(tmode==='hour'){let h=Math.round(a/(2*Math.PI/12))%12;if(Math.hypot(dx,dy)<86)h+=12;th=h;}
+    else{let m=Math.round(a/(2*Math.PI/60))%60;if(tap)m=(Math.round(m/5)*5)%60;tm=m;}
+    d.innerHTML=dialHtml();dlg.querySelector('.in-hb').textContent=th;dlg.querySelector('.in-mb').textContent=pad(tm);
+  };
+  let moved=false;
+  d.addEventListener('pointerdown',function(e){pid=e.pointerId;moved=false;try{d.setPointerCapture(pid);}catch(_){}pick(e,false);});
+  d.addEventListener('pointermove',function(e){if(e.pointerId!==pid)return;moved=true;pick(e,false);});
+  const end=function(e){if(e.pointerId!==pid)return;pid=null;if(!moved&&tmode==='minute')pick(e,true);if(tmode==='hour'){tmode='minute';render();}};
+  d.addEventListener('pointerup',end);d.addEventListener('pointercancel',end);
+}
+function openDlg(){th=H;tm=M;tmode='hour';entry='in-dial';terr=false;render();ov.classList.remove('in-out');ov.hidden=false;}
+function closeDlg(){ov.classList.add('in-out');setTimeout(function(){ov.hidden=true;},100);}
+$('.in-tile').addEventListener('click',openDlg);
+ov.addEventListener('click',function(e){
+  if(e.target===ov){closeDlg();return;}
+  const b=e.target.closest('button');if(!b)return;
+  if(b.classList.contains('in-dx'))closeDlg();
+  else if(b.classList.contains('in-hb')){tmode='hour';render();}
+  else if(b.classList.contains('in-mb')){tmode='minute';render();}
+  else if(b.classList.contains('in-ent')){
+    if(entry==='input'){const v=readIn();if(v){th=v[0];tm=v[1];}}
+    entry=entry==='in-dial'?'input':'in-dial';terr=false;tmode='hour';render();
+  }
+  else if(b.classList.contains('in-dok')){
+    if(entry==='input'){const v=readIn();if(!v){terr=true;render();return;}th=v[0];tm=v[1];}
+    setTime(th,tm);closeDlg();
+  }
+});
+function readIn(){const h=dlg.querySelector('.in-hi').value.trim(),m=dlg.querySelector('.in-mn').value.trim();if(!/^\d{1,2}$/.test(h)||!/^\d{1,2}$/.test(m))return null;const hh=+h,mm=+m;return hh<24&&mm<60?[hh,mm]:null;}
+ov.addEventListener('keydown',function(e){if(e.key==='Escape')closeDlg();});
+// ---- iOS のドラム（CupertinoDatePicker の time、24 時間。時・分とも回り続ける）
+const cp=$('.in-cp');
+const wh=wheel(cp.querySelector('.in-c.in-h'),{count:24,ext:32,h:216,mag:1.1,loop:true,label:function(i){return String(i);},index:H,onChange:function(i){setTime(i,M);}});
+const wm=wheel(cp.querySelector('.in-c.in-m'),{count:60,ext:32,h:216,mag:1.1,loop:true,label:function(i){return pad(i);},index:M,onChange:function(i){setTime(H,i);}});
+cp.querySelector('.in-cols').style.alignItems='center';
+cp.querySelector('.in-wh-band').style.height='32px';
+function openCp(){wh.set(H);wm.set(M);cp.hidden=false;cp.getBoundingClientRect();cp.classList.add('in-open');}
+function closeCp(){cp.classList.remove('in-open');setTimeout(function(){cp.hidden=true;},335);}
+$('.in-ios').addEventListener('click',openCp);
+cp.addEventListener('click',function(e){if(e.target===cp)closeCp();});})(document.getElementById("wd-time_picker"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Clock Picker</span><span class="tag">Time Dialog</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Time pickers（Dial / Input）</dd></div><div><dt>Material 2</dt><dd class="">Time pickers</dd></div><div><dt>Android (Compose)</dt><dd class="">TimePicker / TimeInput</dd></div><div><dt>iOS (HIG)</dt><dd class="">Pickers（Time picker）</dd></div><div><dt>SwiftUI</dt><dd class="">DatePicker(displayedComponents: .hourAndMinute)</dd></div><div><dt>Web</dt><dd class="">&lt;input type="time"&gt;</dd></div><div><dt>Flutter</dt><dd class="mono">showTimePicker / CupertinoDatePicker(mode: .time)</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>Material は文字盤（dial）をなぞって選ぶ方式。iOS は時・分の<a class="term" href="/glossary/drum_picker/">ドラム</a>を回す方式。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>アラーム・リマインダー・予約時刻。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/date_picker/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Date Picker</a><a class="chip" href="/entry/cupertino_picker/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Wheel Picker</a><a class="chip" href="/glossary/drum_picker/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>ドラムロール</a></div></section>
+  
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="リマインダーの時刻を選ぶ Time Picker を作って。iOS では時・分のドラムを回す CupertinoDatePicker を Bottom Sheet で出して。" data-en="Create a Time Picker for a reminder. On iOS, present a CupertinoDatePicker in time mode inside a bottom sheet with hour/minute wheels.">リマインダーの時刻を選ぶ Time Picker を作って。iOS では時・分のドラムを回す CupertinoDatePicker を Bottom Sheet で出して。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Time Picker / 時刻ピッカー
+
+- id: `time_picker`  URL: https://uizukan.dev/entry/time_picker/
+- 種別: 表示 / Inputs &amp; Selection
+- 別名: Clock Picker, Time Dialog
+- 呼び名: Material 3=Time pickers（Dial / Input） / Material 2=Time pickers / Android (Compose)=TimePicker / TimeInput / iOS (HIG)=Pickers（Time picker） / SwiftUI=DatePicker(displayedComponents: .hourAndMinute) / Web=&lt;input type="time"&gt; / Flutter=showTimePicker / CupertinoDatePicker(mode: .time)
+- Flutter: `showTimePicker / CupertinoDatePicker(mode: .time)`
+- 関連: date_picker, cupertino_picker
+
+**説明**: Material は文字盤（dial）をなぞって選ぶ方式。iOS は時・分のドラムを回す方式。
+
+**使いどころ**: アラーム・リマインダー・予約時刻。
+
+**AI への伝え方（日本語）**: リマインダーの時刻を選ぶ Time Picker を作って。iOS では時・分のドラムを回す CupertinoDatePicker を Bottom Sheet で出して。
+
+**Prompt (English)**: Create a Time Picker for a reminder. On iOS, present a CupertinoDatePicker in time mode inside a bottom sheet with hour/minute wheels.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

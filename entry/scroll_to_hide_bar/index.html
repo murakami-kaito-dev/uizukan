@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hide on Scroll（スクロールでバーを隠す） — UI図鑑</title>
+<meta name="description" content="下にスクロールすると上のバー（App Bar）と FAB が隠れ、少しでも上に戻すと現れる。下のタブは残す。">
+<link rel="canonical" href="https://uizukan.dev/entry/scroll_to_hide_bar/">
+<meta property="og:title" content="Hide on Scroll（スクロールでバーを隠す） — UI図鑑">
+<meta property="og:description" content="下にスクロールすると上のバー（App Bar）と FAB が隠れ、少しでも上に戻すと現れる。下のタブは残す。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/scroll_to_hide_bar/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/scroll_to_hide_bar.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/actions/">アクション</a><span class="sep">/</span><span class="here">Hide on Scroll</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Scrolling Behaviors · 04 · アクション</div>
+  <h1 class="display" style="margin-top:10px">Hide on Scroll</h1>
+  <p class="lead" style="margin-top:6px">スクロールでバーを隠す</p>
+  <div class="demo-plate">
+    <div class="head"><code>scroll_to_hide_bar</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-scroll_to_hide_bar" role="group" aria-label="Hide on Scroll のデモ"><div class="sr-fit-o"><div class="sr-fit-i" style="width:300px"><div class="sr-fr" style="width:300px;height:300px"><div class="sr-scaf"><div class="sr-sc"><div class="sr-bar">フィード</div><div class="sr-lt"><span class="sr-no">1</span><span class="sr-lx">↓ 下へスクロールしてみてください</span></div><div class="sr-lt"><span class="sr-no">2</span><span class="sr-lx">上の「フィード」のバーが隠れ、読む場所が広がります</span></div><div class="sr-lt"><span class="sr-no">3</span><span class="sr-lx">右下の ＋ ボタンも、本文を隠さないよう引っ込みます</span></div><div class="sr-lt"><span class="sr-no">4</span><span class="sr-lx">↑ 少しでも上へ戻すと、どちらもすぐ戻ってきます</span></div><div class="sr-lt"><span class="sr-no">5</span><span class="sr-lx">下のタブは隠さず、いつでも切り替えられるようにします</span></div><div class="sr-lt"><span class="sr-no">6</span><span class="sr-lx">よく見る場所：SNS のタイムライン</span></div><div class="sr-lt"><span class="sr-no">7</span><span class="sr-lx">よく見る場所：ニュースアプリの記事</span></div><div class="sr-lt"><span class="sr-no">8</span><span class="sr-lx">よく見る場所：ブラウザのアドレスバー</span></div><div class="sr-lt"><span class="sr-no">9</span><span class="sr-lx">よく見る場所：写真の一覧</span></div><div class="sr-lt"><span class="sr-no">10</span><span class="sr-lx">読むことが目的の、長い画面に向いています</span></div><div class="sr-lt"><span class="sr-no">11</span><span class="sr-lx">設定画面や短い画面では、隠さないほうが使いやすい</span></div><div class="sr-lt"><span class="sr-no">12</span><span class="sr-lx">隠すのも戻すのも、素早く</span></div><div class="sr-lt"><span class="sr-no">13</span><span class="sr-lx">一番上に戻ったら、必ず出しておきます</span></div><div class="sr-lt"><span class="sr-no">14</span><span class="sr-lx">さらに下へどうぞ</span></div><div class="sr-lt"><span class="sr-no">15</span><span class="sr-lx">…あと少し</span></div><div class="sr-lt"><span class="sr-no">16</span><span class="sr-lx">…もう少し</span></div><div class="sr-lt"><span class="sr-no">17</span><span class="sr-lx">ここで一覧はおしまいです</span></div><div class="sr-lt"><span class="sr-no">18</span><span class="sr-lx">↑ 上へ少し戻してみてください</span></div><div class="sr-lt"><span class="sr-no">19</span><span class="sr-lx">バーと ＋ ボタンが戻ってきます</span></div><div class="sr-lt"><span class="sr-no">20</span><span class="sr-lx">下のタブは、ずっとそのままです</span></div></div><button class="sr-fab" aria-label="追加"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e047.png);width:24px;height:24px" aria-hidden="true"></i></button><nav class="sr-nav"><span class="sr-dst sr-on"><span class="sr-ic"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e318.png);width:24px;height:24px" aria-hidden="true"></i></span><span class="sr-lb">ホーム</span></span><span class="sr-dst"><span class="sr-ic"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e567.png);width:24px;height:24px" aria-hidden="true"></i></span><span class="sr-lb">検索</span></span></nav></div></div></div></div></div><style>#wd-scroll_to_hide_bar .sr-fit-o{position:relative;flex:none}
+#wd-scroll_to_hide_bar .sr-fit-i{position:absolute;left:0;top:0;transform-origin:0 0}
+#wd-scroll_to_hide_bar .sr-fr{position:relative;overflow:hidden;border-radius:12px;isolation:isolate;text-align:left}
+#wd-scroll_to_hide_bar .sr-fr::after{content:"";position:absolute;inset:0;border:1px solid var(--rule);border-radius:12px;pointer-events:none;z-index:60}
+#wd-scroll_to_hide_bar .sr-sc{height:100%;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+#wd-scroll_to_hide_bar .sr-sc::-webkit-scrollbar{display:none}
+#wd-scroll_to_hide_bar .sr-fab{width:40px;height:40px;border-radius:12px;background:var(--accent-soft);color:var(--ink);display:flex;align-items:center;justify-content:center;box-shadow:var(--e3)}
+
+#wd-scroll_to_hide_bar .sr-lt{min-height:48px;display:flex;align-items:center;gap:16px;padding:8px 20px}
+#wd-scroll_to_hide_bar .sr-no{min-width:16px;font-size:11px;line-height:1.65;color:var(--ink2);flex:none}
+#wd-scroll_to_hide_bar .sr-lx{font-size:12px;line-height:1.3}
+
+#wd-scroll_to_hide_bar .sr-scaf{position:relative;height:100%;display:flex;flex-direction:column;background:var(--canvas)}
+#wd-scroll_to_hide_bar .sr-scaf .sr-sc{flex:1;height:auto}
+#wd-scroll_to_hide_bar .sr-bar{position:sticky;top:0;z-index:2;height:48px;display:flex;align-items:center;padding-left:16px;background:var(--canvas);border-bottom:1px solid var(--rule);font-size:15px;font-weight:700;line-height:1.65}
+#wd-scroll_to_hide_bar .sr-fab{position:absolute;right:20px;bottom:76px;z-index:3;transition:transform .2s cubic-bezier(0,0,.58,1),opacity .2s linear}
+#wd-scroll_to_hide_bar .sr-fab.sr-hid{transform:translateY(80px);opacity:0}
+#wd-scroll_to_hide_bar .sr-nav{height:56px;flex:none;display:flex;background:var(--surface)}
+#wd-scroll_to_hide_bar .sr-dst{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ink3)}
+#wd-scroll_to_hide_bar .sr-dst.sr-on{color:var(--accent)}
+#wd-scroll_to_hide_bar .sr-ic{height:32px;display:flex;align-items:center}
+#wd-scroll_to_hide_bar .sr-lb{margin-top:4px;font-size:12px;font-weight:500;line-height:1.2;letter-spacing:.2px}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const fitO = root.querySelector('.sr-fit-o'), fitI = fitO.firstElementChild;
+let S = 1;
+const refit = () => {
+  const W = fitI.offsetWidth, H = fitI.offsetHeight, a = root.clientWidth || W;
+  S = Math.min(1, a / W);
+  fitI.style.transform = S < 1 ? 'scale(' + S + ')' : '';
+  fitO.style.width = W * S + 'px';
+  fitO.style.height = H * S + 'px';
+};
+refit();
+if (window.ResizeObserver) { const ro = new ResizeObserver(refit); ro.observe(root); ro.observe(fitI); }
+
+const tween = (dur, ease, fn, done) => {
+  const t0 = performance.now(); let id = 0;
+  const step = (now) => { const p = Math.min(1, (now - t0) / dur); fn(ease(p)); if (p < 1) id = requestAnimationFrame(step); else if (done) done(); };
+  id = requestAnimationFrame(step);
+  return () => cancelAnimationFrame(id);
+};
+const bez = (x1, y1, x2, y2) => (x) => {
+  if (x <= 0) return 0; if (x >= 1) return 1;
+  let t = x;
+  for (let i = 0; i < 8; i++) {
+    const cx = 3 * x1 * t * (1 - t) * (1 - t) + 3 * x2 * t * t * (1 - t) + t * t * t - x;
+    const d = 3 * x1 * (1 - t) * (1 - t) + 6 * (x2 - x1) * t * (1 - t) + 3 * (1 - x2) * t * t;
+    if (Math.abs(cx) < 1e-5 || !d) break;
+    t -= cx / d;
+  }
+  return 3 * y1 * t * (1 - t) * (1 - t) + 3 * y2 * t * t * (1 - t) + t * t * t;
+};
+const EASE = bez(0.25, 0.1, 0.25, 1);
+// 横スクロール（scroll-snap）の箱を、マウスでも引っぱってページ送りできるようにする（指はブラウザの横スクロールのまま）
+const pager = (el, step) => {
+  let id = null, sx = 0, sl = 0, lx = 0, lt = 0, v = 0, stop = null;
+  el.addEventListener('pointerdown', (e) => {
+    if (e.pointerType !== 'mouse' || e.button !== 0) return;
+    if (stop) { stop(); stop = null; }
+    id = e.pointerId; sx = lx = e.clientX; lt = e.timeStamp; sl = el.scrollLeft; v = 0;
+    el.style.scrollSnapType = 'none';
+    try { el.setPointerCapture(id); } catch (_) {}
+  });
+  el.addEventListener('pointermove', (e) => {
+    if (e.pointerId !== id) return;
+    const dt = e.timeStamp - lt; if (dt > 0) v = (e.clientX - lx) / S / dt;
+    lx = e.clientX; lt = e.timeStamp;
+    el.scrollLeft = sl - (e.clientX - sx) / S;
+  });
+  const up = (e) => {
+    if (e.pointerId !== id) return;
+    id = null;
+    const s = step(), max = Math.round((el.scrollWidth - el.clientWidth) / s);
+    let p = el.scrollLeft / s;
+    p = v < -0.05 ? Math.ceil(p) : v > 0.05 ? Math.floor(p) : Math.round(p); // 速さが 50px/秒を超えたら次のページへ（Flutter のページ送りと同じ）
+    p = Math.max(0, Math.min(max, p));
+    const from = el.scrollLeft, to = p * s;
+    stop = tween(300, EASE, (k) => { el.scrollLeft = from + (to - from) * k; }, () => { el.style.scrollSnapType = ''; stop = null; });
+  };
+  el.addEventListener('pointerup', up);
+  el.addEventListener('pointercancel', up);
+};
+
+const sc = root.querySelector('.sr-sc'), bar = root.querySelector('.sr-bar'), fab = root.querySelector('.sr-fab');
+let last = 0, dir = 0, f = 0, stop = null;
+const ease = bez(0, 0, 0.58, 1); // Curves.easeOut
+const draw = () => { const st = Math.max(0, sc.scrollTop); bar.style.transform = 'translateY(' + (-Math.min(f, st, 48)) + 'px)'; };
+const snap = (to) => {
+  if (stop) stop();
+  const from = f;
+  stop = tween(200, ease, (k) => { f = from + (to - from) * k; draw(); }, () => { stop = null; });
+};
+sc.addEventListener('scroll', () => {
+  const st = sc.scrollTop, max = sc.scrollHeight - sc.clientHeight;
+  const d = st - last; last = st;
+  if (st < 0 || st > max || Math.abs(d) < 1) { draw(); return; }
+  const nd = d > 0 ? 1 : -1;
+  if (nd !== dir) {
+    dir = nd;
+    fab.classList.toggle('sr-hid', dir > 0);
+    snap(dir > 0 ? 48 : 0);
+  }
+  draw();
+}, { passive: true });})(document.getElementById("wd-scroll_to_hide_bar"),window.UZ);</script></div>
+    <a class="foot" href="https://apps.apple.com/jp/app/id6808997175" rel="noopener"><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i><span>本物の手触りは iOS アプリで</span><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a>
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Scroll-aware Bar</span><span class="tag">Auto-hide Navigation</span><span class="tag">Quick Return</span><span class="tag">Floating App Bar</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Top app bar（scroll behavior: enter always）</dd></div><div><dt>Material 2</dt><dd class="">Top app bar（scroll flags: scroll|enterAlways）</dd></div><div><dt>Android (Compose)</dt><dd class="">TopAppBarDefaults.enterAlwaysScrollBehavior</dd></div><div><dt>iOS (HIG)</dt><dd class="">Navigation bars / Tab bars（hidesBarsOnSwipe）</dd></div><div><dt>SwiftUI</dt><dd class="">.toolbarVisibility を scroll で切替</dd></div><div><dt>Web</dt><dd class="na">該当なし（scroll イベントで自作）</dd></div><div><dt>Flutter</dt><dd class="mono">SliverAppBar(floating: true, snap: true) / userScrollDirection</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>スクロール方向を監視し、下方向で隠し上方向で出す。読む場所が広がり、本文に集中できる。SNS のタイムライン・ニュースの記事・ブラウザのアドレスバーでよく見る。下の<a class="term" href="/glossary/tab/">タブ</a>（<a class="term" href="/entry/bottom_navigation_bar/">Bottom Navigation Bar</a>）は、いつでも切り替えられるよう隠さないのが一般的。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>長い記事、フィード、写真一覧など、読むことが主目的の画面。設定画面や短い画面では隠さない。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/fab/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Floating Action Button</a><a class="chip" href="/entry/extended_fab/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Extended FAB</a><a class="chip" href="/entry/app_bar/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Top App Bar</a><a class="chip" href="/entry/bottom_navigation_bar/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Bottom Navigation Bar</a><a class="chip" href="/glossary/tab/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>タブ</a></div></section>
+  
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="フィード画面で、下にスクロールすると上の App Bar と FAB が隠れ、少しでも上にスクロールすると戻ってくる Hide on Scroll にして。App Bar は floating + snap、下のタブ（Bottom Navigation Bar）は隠さず固定のまま。" data-en="On the feed, hide the top App Bar and the FAB when scrolling down and bring them back as soon as the user scrolls up (Hide on Scroll). Make the App Bar floating + snap, and keep the Bottom Navigation Bar always visible.">フィード画面で、下にスクロールすると上の App Bar と FAB が隠れ、少しでも上にスクロールすると戻ってくる Hide on Scroll にして。App Bar は floating + snap、下のタブ（Bottom Navigation Bar）は隠さず固定のまま。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Hide on Scroll / スクロールでバーを隠す
+
+- id: `scroll_to_hide_bar`  URL: https://uizukan.dev/entry/scroll_to_hide_bar/
+- 種別: アクション / Scrolling Behaviors
+- 別名: Scroll-aware Bar, Auto-hide Navigation, Quick Return, Floating App Bar
+- 呼び名: Material 3=Top app bar（scroll behavior: enter always） / Material 2=Top app bar（scroll flags: scroll|enterAlways） / Android (Compose)=TopAppBarDefaults.enterAlwaysScrollBehavior / iOS (HIG)=Navigation bars / Tab bars（hidesBarsOnSwipe） / SwiftUI=.toolbarVisibility を scroll で切替 / Web=該当なし（scroll イベントで自作） / Flutter=SliverAppBar(floating: true, snap: true) / userScrollDirection
+- Flutter: `SliverAppBar(floating: true, snap: true) / userScrollDirection`
+- 関連: fab, extended_fab, app_bar, bottom_navigation_bar
+
+**説明**: スクロール方向を監視し、下方向で隠し上方向で出す。読む場所が広がり、本文に集中できる。SNS のタイムライン・ニュースの記事・ブラウザのアドレスバーでよく見る。下のタブ（Bottom Navigation Bar）は、いつでも切り替えられるよう隠さないのが一般的。
+
+**使いどころ**: 長い記事、フィード、写真一覧など、読むことが主目的の画面。設定画面や短い画面では隠さない。
+
+**AI への伝え方（日本語）**: フィード画面で、下にスクロールすると上の App Bar と FAB が隠れ、少しでも上にスクロールすると戻ってくる Hide on Scroll にして。App Bar は floating + snap、下のタブ（Bottom Navigation Bar）は隠さず固定のまま。
+
+**Prompt (English)**: On the feed, hide the top App Bar and the FAB when scrolling down and bring them back as soon as the user scrolls up (Hide on Scroll). Make the App Bar floating + snap, and keep the Bottom Navigation Bar always visible.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

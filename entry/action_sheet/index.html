@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Action Sheet（アクションシート） — UI図鑑</title>
+<meta name="description" content="iOS で下から出る、縦に並んだ選択肢のリスト。赤い破壊的操作とキャンセルが付く。">
+<link rel="canonical" href="https://uizukan.dev/entry/action_sheet/">
+<meta property="og:title" content="Action Sheet（アクションシート） — UI図鑑">
+<meta property="og:description" content="iOS で下から出る、縦に並んだ選択肢のリスト。赤い破壊的操作とキャンセルが付く。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/action_sheet/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/action_sheet.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Action Sheet</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Surfaces &amp; Overlays · 06 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Action Sheet</h1>
+  <p class="lead" style="margin-top:6px">アクションシート</p>
+  <div class="demo-plate">
+    <div class="head"><code>action_sheet</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-action_sheet" role="group" aria-label="Action Sheet のデモ"><div class="sf-col">
+<button class="sf-av" aria-label="プロフィール画像を変更"><span class="sf-lay"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e491.png);width:56px;height:56px" aria-hidden="true"></i></span></button>
+<button class="m-btn m-filled sf-open"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f29b.png);width:18px;height:18px" aria-hidden="true"></i><span>プロフィール画像を変更</span></button>
+<div class="sf-err" hidden></div>
+<input type="file" accept="image/*" capture="environment" class="sf-f-cam" hidden>
+<input type="file" accept="image/*" class="sf-f-lib" hidden>
+</div>
+<div class="sf-ov" hidden><div class="sf-scrim"></div>
+<div class="sf-as" role="dialog" aria-modal="true" aria-label="プロフィール画像" tabindex="-1">
+<div class="sf-main"><div class="sf-ttl">プロフィール画像</div>
+<button class="sf-act" data-a="cam">写真を撮る</button><button class="sf-act" data-a="lib">ライブラリから選ぶ</button><button class="sf-act sf-del" data-a="del" hidden>削除</button></div>
+<button class="sf-act sf-cancel" data-a="cancel">キャンセル</button>
+</div></div></div><style>#wd-action_sheet .sf-ov{position:fixed;inset:0;z-index:1000;-webkit-tap-highlight-color:transparent}
+#wd-action_sheet .sf-ov[hidden]{display:none}
+#wd-action_sheet .sf-scrim{position:absolute;inset:0;touch-action:none}
+
+#wd-action_sheet .sf-col{display:flex;flex-direction:column;align-items:center}
+#wd-action_sheet .sf-av{position:relative;width:112px;height:112px;border-radius:50%;border:3px solid var(--surface);overflow:hidden;
+  background:linear-gradient(color-mix(in srgb,var(--accent) 12%,transparent),color-mix(in srgb,var(--accent) 12%,transparent)),rgba(0,0,0,.12);
+  box-shadow:0 4px 12px rgba(0,0,0,.12)}
+#wd-action_sheet .sf-lay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--accent);transition:opacity .25s linear}
+#wd-action_sheet .sf-lay img{width:100%;height:100%;object-fit:cover;display:block}
+#wd-action_sheet .sf-open{margin-top:16px}
+#wd-action_sheet .sf-err{width:260px;max-width:100%;margin-top:8px;font-size:11px;text-align:center;color:var(--danger)}
+#wd-action_sheet .sf-err[hidden]{display:none}
+#wd-action_sheet .sf-scrim{background:rgba(0,0,0,.2);background:light-dark(rgba(0,0,0,.2),rgba(0,0,0,.478));opacity:0;transition:opacity .335s cubic-bezier(.35,.91,.33,.97)}
+#wd-action_sheet .sf-ov.sf-on .sf-scrim{opacity:1}
+#wd-action_sheet .sf-as{position:absolute;left:8px;right:8px;bottom:calc(8px + env(safe-area-inset-bottom));max-width:440px;margin:0 auto;font-family:var(--sans);touch-action:none;outline:none;
+  transform:translateY(calc(100% + 8px + env(safe-area-inset-bottom)));transition:transform .335s cubic-bezier(.35,.91,.33,.97)}
+#wd-action_sheet .sf-ov.sf-on .sf-as{transform:none}
+#wd-action_sheet .sf-main{border-radius:12px;overflow:hidden;-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px)}
+#wd-action_sheet .sf-ttl,#wd-action_sheet .sf-main .sf-act{background:rgba(252,252,252,.784);background:light-dark(rgba(252,252,252,.784),rgba(41,41,41,.745))}
+#wd-action_sheet .sf-ttl{padding:13.5px 16px;font-size:13px;line-height:1.3;text-align:center;color:rgba(29,29,29,.52);color:light-dark(rgba(29,29,29,.52),rgba(241,241,241,.59))}
+#wd-action_sheet .sf-act{display:flex;align-items:center;justify-content:center;width:100%;min-height:57px;padding:16px 10px;font-size:17px;line-height:1.3;text-align:center;color:var(--accent)}
+#wd-action_sheet .sf-act[hidden]{display:none}
+#wd-action_sheet .sf-main .sf-act{border-top:.3px solid rgba(201,201,201,.83);border-top:light-dark(.3px solid rgba(201,201,201,.83),.3px solid rgba(125,125,125,.835))}
+#wd-action_sheet .sf-main .sf-act.sf-down{background:rgba(224,224,224,.79);background:light-dark(rgba(224,224,224,.79),rgba(81,81,81,.757))}
+#wd-action_sheet .sf-act.sf-del{color:#FF3B30;color:light-dark(#FF3B30,#FF453A)}
+#wd-action_sheet .sf-cancel{margin-top:8px;border-radius:12px;font-weight:600;background:#fff;background:light-dark(#fff,#2C2C2C)}
+#wd-action_sheet .sf-cancel.sf-down{background:#ECECEC;background:light-dark(#ECECEC,#494949)}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const lock = (on) => { document.documentElement.style.overflow = on ? 'hidden' : ''; };
+const escKey = (fn) => { const h = (e) => { if (e.key === 'Escape') fn(); }; document.addEventListener('keydown', h); return () => document.removeEventListener('keydown', h); };
+const layer = (el, ms, outCls) => {
+  let shown = false, t = 0, off = null;
+  return {
+    get open() { return shown; },
+    show(close) {
+      if (shown) return false;
+      shown = true; clearTimeout(t); el.hidden = false; if (outCls) el.classList.remove(outCls); lock(true);
+      void el.offsetWidth; el.classList.add('sf-on'); off = escKey(close); return true;
+    },
+    hide() {
+      if (!shown) return false;
+      shown = false; if (outCls) el.classList.add(outCls); el.classList.remove('sf-on'); if (off) off();
+      t = setTimeout(() => { el.hidden = true; if (outCls) el.classList.remove(outCls); lock(false); }, ms); return true;
+    },
+  };
+};
+const press = (el) => {
+  const off = () => el.classList.remove('sf-down');
+  el.addEventListener('pointerdown', () => el.classList.add('sf-down'));
+  ['pointerup', 'pointercancel', 'pointerleave'].forEach((n) => el.addEventListener(n, off));
+};
+const ov = root.querySelector('.sf-ov'), as = root.querySelector('.sf-as'), av = root.querySelector('.sf-av'), err = root.querySelector('.sf-err');
+const del = root.querySelector('.sf-act.sf-del'), fCam = root.querySelector('.sf-f-cam'), fLib = root.querySelector('.sf-f-lib');
+const L = layer(ov, 345);
+let url = null;
+const close = () => L.hide();
+const open = () => { del.hidden = !url; if (L.show(close)) as.focus({ preventScroll: true }); };
+av.addEventListener('click', open);
+root.querySelector('.sf-open').addEventListener('click', open);
+root.querySelector('.sf-scrim').addEventListener('click', close);
+// 丸の中身を入れ替える（AnimatedSwitcher：250ms で重ねて入れ替え）
+const swap = (html) => {
+  const old = av.querySelectorAll('.sf-lay');
+  const n = document.createElement('span');
+  n.className = 'sf-lay'; n.style.opacity = '0'; n.innerHTML = html;
+  av.appendChild(n); void n.offsetWidth; n.style.opacity = '1';
+  old.forEach((o) => { o.style.opacity = '0'; setTimeout(() => o.remove(), 260); });
+};
+const personHtml = av.querySelector('.sf-lay').innerHTML;
+const pick = (input, cam) => {
+  input.onchange = () => {
+    const f = input.files && input.files[0];
+    input.value = '';
+    if (!f) return;
+    const u = URL.createObjectURL(f);
+    const im = new Image();
+    im.onload = () => { if (url) URL.revokeObjectURL(url); url = u; err.hidden = true; swap(''); av.lastChild.appendChild(im); };
+    im.onerror = () => { URL.revokeObjectURL(u); err.textContent = cam ? 'カメラを使えませんでした（シミュレーターや権限の設定を確認）' : '写真を読み込めませんでした（権限の設定を確認）'; err.hidden = false; };
+    im.alt = ''; im.draggable = false; im.src = u;
+  };
+  input.click();
+};
+const run = (a) => {
+  close();
+  if (a === 'cam') pick(fCam, true);
+  else if (a === 'lib') pick(fLib, false);
+  else if (a === 'del') { if (url) { URL.revokeObjectURL(url); url = null; swap(personHtml); } }
+};
+// 指でなぞって選ぶ：押している所を移し、離した所のボタンを実行する
+let pid = null, cur = null;
+const actAt = (x, y) => { const el = document.elementFromPoint(x, y); return el && el.closest ? el.closest('.sf-act') : null; };
+const setCur = (b) => { if (cur === b) return; if (cur) cur.classList.remove('sf-down'); cur = b && as.contains(b) ? b : null; if (cur) cur.classList.add('sf-down'); };
+as.addEventListener('pointerdown', (e) => {
+  if (!L.open) return;
+  pid = e.pointerId; try { as.setPointerCapture(pid); } catch (_) {}
+  setCur(actAt(e.clientX, e.clientY));
+});
+as.addEventListener('pointermove', (e) => { if (e.pointerId === pid) setCur(actAt(e.clientX, e.clientY)); });
+as.addEventListener('pointerup', (e) => {
+  if (e.pointerId !== pid) return;
+  pid = null; const b = cur; setCur(null);
+  if (b) run(b.dataset.a);
+});
+as.addEventListener('pointercancel', () => { pid = null; setCur(null); });
+// キーボード（Enter・Space）で押したとき
+as.querySelectorAll('.sf-act').forEach((b) => b.addEventListener('click', (e) => { if (e.detail === 0) run(b.dataset.a); }));})(document.getElementById("wd-action_sheet"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">iOS Action Sheet</span><span class="tag">Options Sheet</span><span class="tag">Bottom Action Menu</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="na">該当なし（Bottom sheet の list で代替）</dd></div><div><dt>Material 2</dt><dd class="na">該当なし（Modal bottom sheet で代替）</dd></div><div><dt>Android (Compose)</dt><dd class="na">該当なし（ModalBottomSheet で代替）</dd></div><div><dt>iOS (HIG)</dt><dd class="">Action sheets</dd></div><div><dt>SwiftUI</dt><dd class="">.confirmationDialog()</dd></div><div><dt>Web</dt><dd class="na">該当なし（Action sheet。&lt;dialog&gt; で自作）</dd></div><div><dt>Flutter</dt><dd class="mono">showCupertinoModalPopup + CupertinoActionSheet</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>「写真を撮る／ライブラリから選ぶ／キャンセル」のように、少数の選択肢を下から提示する iOS 標準の部品。<a class="term" href="/glossary/destructive/">破壊的</a>操作は赤字。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>1 つの操作に対する 2〜5 個の選択肢（画像の取得元、共有先、削除確認）。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/modal_bottom_sheet/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Bottom Sheet</a><a class="chip" href="/entry/alert_dialog/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Alert Dialog</a><a class="chip" href="/entry/popup_menu/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Menu (Popup / Overflow)</a><a class="chip" href="/glossary/destructive/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>destructive</a></div></section>
+  
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="プロフィール画像をタップしたら「写真を撮る／ライブラリから選ぶ／削除（赤）／キャンセル」の iOS 風 Action Sheet を出して。" data-en="When the profile picture is tapped, present an iOS-style Action Sheet: &quot;Take Photo / Choose from Library / Delete (red) / Cancel&quot;.">プロフィール画像をタップしたら「写真を撮る／ライブラリから選ぶ／削除（赤）／キャンセル」の iOS 風 Action Sheet を出して。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Action Sheet / アクションシート
+
+- id: `action_sheet`  URL: https://uizukan.dev/entry/action_sheet/
+- 種別: 表示 / Surfaces &amp; Overlays
+- 別名: iOS Action Sheet, Options Sheet, Bottom Action Menu
+- 呼び名: Material 3=該当なし（Bottom sheet の list で代替） / Material 2=該当なし（Modal bottom sheet で代替） / Android (Compose)=該当なし（ModalBottomSheet で代替） / iOS (HIG)=Action sheets / SwiftUI=.confirmationDialog() / Web=該当なし（Action sheet。&lt;dialog&gt; で自作） / Flutter=showCupertinoModalPopup + CupertinoActionSheet
+- Flutter: `showCupertinoModalPopup + CupertinoActionSheet`
+- 関連: modal_bottom_sheet, alert_dialog, popup_menu
+
+**説明**: 「写真を撮る／ライブラリから選ぶ／キャンセル」のように、少数の選択肢を下から提示する iOS 標準の部品。破壊的操作は赤字。
+
+**使いどころ**: 1 つの操作に対する 2〜5 個の選択肢（画像の取得元、共有先、削除確認）。
+
+**AI への伝え方（日本語）**: プロフィール画像をタップしたら「写真を撮る／ライブラリから選ぶ／削除（赤）／キャンセル」の iOS 風 Action Sheet を出して。
+
+**Prompt (English)**: When the profile picture is tapped, present an iOS-style Action Sheet: "Take Photo / Choose from Library / Delete (red) / Cancel".
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

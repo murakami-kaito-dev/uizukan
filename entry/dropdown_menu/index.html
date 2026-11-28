@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dropdown Menu（ドロップダウン（プルダウン）） — UI図鑑</title>
+<meta name="description" content="タップすると候補リストが下に開き、1つ選ぶ入力欄。">
+<link rel="canonical" href="https://uizukan.dev/entry/dropdown_menu/">
+<meta property="og:title" content="Dropdown Menu（ドロップダウン（プルダウン）） — UI図鑑">
+<meta property="og:description" content="タップすると候補リストが下に開き、1つ選ぶ入力欄。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/dropdown_menu/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/dropdown_menu.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Dropdown Menu</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Inputs &amp; Selection · 10 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Dropdown Menu</h1>
+  <p class="lead" style="margin-top:6px">ドロップダウン（プルダウン）</p>
+  <div class="demo-plate">
+    <div class="head"><code>dropdown_menu</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-dropdown_menu" role="group" aria-label="Dropdown Menu のデモ"><div class="in-col"><div class="in-tf in-fill in-dm" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-label="カテゴリ" tabindex="0"><span class="in-tf-iw in-ps"><input readonly tabindex="-1" aria-hidden="true"></span><span class="in-tf-lab">カテゴリ</span><span class="in-tf-suf in-arr"><span class="in-dn"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e098.png);width:24px;height:24px" aria-hidden="true"></i></span><span class="in-upi" hidden><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e09a.png);width:24px;height:24px" aria-hidden="true"></i></span></span><fieldset aria-hidden="true"><legend><span>カテゴリ</span></legend></fieldset></div><div class="in-menu" role="listbox" hidden><button type="button" class="in-mi-row" role="option" data-v="food"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e532.png);width:24px;height:24px" aria-hidden="true"></i><span>食費</span></button><button type="button" class="in-mi-row" role="option" data-v="transport"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e675.png);width:24px;height:24px" aria-hidden="true"></i><span>交通</span></button><button type="button" class="in-mi-row" role="option" data-v="home"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e318.png);width:24px;height:24px" aria-hidden="true"></i><span>住居</span></button><button type="button" class="in-mi-row" role="option" data-v="fun"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e5e8.png);width:24px;height:24px" aria-hidden="true"></i><span>娯楽</span></button></div></div></div><style>#wd-dropdown_menu [hidden]{display:none!important}
+#wd-dropdown_menu .in-tf{--r:6px;--bc:var(--ink3);--bw:1px;--lx:14px;position:relative;display:flex;align-items:center;width:100%;height:52px;border-radius:var(--r);cursor:text;font-size:15px}
+#wd-dropdown_menu .in-tf.in-fill{background:var(--surface)}
+#wd-dropdown_menu .in-tf fieldset{position:absolute;left:0;right:0;bottom:0;top:-5px;margin:0;padding:0 0 0 calc(10px - var(--bw));border:var(--bw) solid var(--bc);border-radius:var(--r);pointer-events:none;min-width:0;transition:border-color .167s}
+#wd-dropdown_menu .in-tf legend{display:block;float:none;width:auto;max-width:.01px;height:11px;padding:0;font-size:9.75px;line-height:11px;visibility:hidden;white-space:nowrap;overflow:hidden;transition:max-width 50ms}
+#wd-dropdown_menu .in-tf legend span{display:inline-block;padding:0 4px}
+#wd-dropdown_menu .in-tf.in-up legend{max-width:100%;transition:max-width 100ms 50ms}
+#wd-dropdown_menu .in-tf.in-f{--bc:var(--accent);--bw:1.5px}
+#wd-dropdown_menu .in-tf.in-e{--bc:var(--danger)}
+#wd-dropdown_menu .in-tf-lab{position:absolute;left:var(--lx);top:50%;transform:translateY(-50%);transform-origin:0 50%;font-size:13px;line-height:1;color:var(--ink2);white-space:nowrap;pointer-events:none;transition:left .167s cubic-bezier(.4,0,.2,1),top .167s cubic-bezier(.4,0,.2,1),transform .167s cubic-bezier(.4,0,.2,1)}
+#wd-dropdown_menu .in-tf.in-up .in-tf-lab{left:14px;top:0;transform:translateY(-50%) scale(.75)}
+#wd-dropdown_menu .in-tf-pre,#wd-dropdown_menu .in-tf-suf{flex:none;width:48px;height:48px;display:flex;align-items:center;justify-content:center;color:var(--ink);border-radius:999px}
+@media (hover:hover){#wd-dropdown_menu button.in-tf-suf:hover{background:color-mix(in srgb,var(--ink) 8%,transparent)}}
+#wd-dropdown_menu .in-tf-iw{position:relative;flex:1;min-width:0;align-self:stretch}
+#wd-dropdown_menu .in-tf-iw.in-ps{margin-left:14px}
+#wd-dropdown_menu .in-tf-iw.in-pe{margin-right:14px}
+#wd-dropdown_menu .in-tf-iw input{position:absolute;left:0;top:0;width:106.667%;height:100%;transform:scale(.9375);transform-origin:0 50%;border:0;outline:0;background:transparent;padding:0;margin:0;font:inherit;font-size:16px;line-height:normal;color:var(--ink);caret-color:var(--accent);-webkit-user-select:text;user-select:text;-webkit-appearance:none;appearance:none;border-radius:0;text-overflow:ellipsis}
+#wd-dropdown_menu .in-tf-iw input::placeholder{color:transparent;opacity:1;transition:color .167s}
+#wd-dropdown_menu .in-tf.in-f .in-tf-iw input::placeholder{color:var(--ink3)}
+#wd-dropdown_menu .in-tf-sub{padding:4px 14px 0;font-size:13px;line-height:1.55;color:var(--ink2)}
+#wd-dropdown_menu .in-tf-sub.in-err{color:var(--danger);animation:inp-sub .167s cubic-bezier(.4,0,.2,1)}
+@keyframes inp-sub{from{opacity:0;transform:translateY(-25%)}}
+#wd-dropdown_menu .in-col{width:100%;max-width:260px}
+#wd-dropdown_menu .in-tf.in-dm{--r:4px;--bw:1.5px;--lx:12px;height:56px;cursor:pointer;outline:none}
+#wd-dropdown_menu .in-tf.in-dm.in-up .in-tf-lab{left:12px}
+#wd-dropdown_menu .in-tf.in-dm fieldset{padding-left:calc(8px - var(--bw))}
+#wd-dropdown_menu .in-tf.in-dm .in-tf-iw.in-ps{margin-left:12px}
+#wd-dropdown_menu .in-tf.in-dm input{cursor:pointer;pointer-events:none}
+#wd-dropdown_menu .in-tf.in-dm:focus-visible{--bc:var(--accent);--bw:2px}
+#wd-dropdown_menu .in-arr{margin-right:4px}
+#wd-dropdown_menu .in-arr>span{display:flex}
+#wd-dropdown_menu .in-menu{position:fixed;z-index:1000;padding:8px 0;border-radius:4px;background:var(--m-s);box-shadow:var(--e3);font:15px/1.65 var(--sans);color:var(--ink);transform-origin:50% 0;animation:inp-menu .15s cubic-bezier(.2,0,0,1);overflow-y:auto}
+@keyframes inp-menu{from{opacity:0;transform:scaleY(.8)}}
+#wd-dropdown_menu .in-mi-row{display:flex;align-items:center;width:100%;height:48px;padding:0 12px;gap:12px;text-align:left;color:var(--ink)}
+#wd-dropdown_menu .in-mi-row .mi{color:var(--ink2)}
+@media (hover:hover){#wd-dropdown_menu .in-mi-row:hover{background:color-mix(in srgb,var(--ink) 8%,transparent)}}
+#wd-dropdown_menu .in-mi-row:active,#wd-dropdown_menu .in-mi-row.in-sel{background:color-mix(in srgb,var(--ink) 12%,transparent)}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const dm=root.querySelector('.in-dm'),inp=dm.querySelector('input'),menu=root.querySelector('.in-menu');
+let value=null;
+function place(){
+  const r=dm.getBoundingClientRect(),h=menu.offsetHeight;
+  menu.style.left=r.left+'px';menu.style.width=r.width+'px';
+  const below=window.innerHeight-r.bottom;
+  menu.style.top=(below>=h+8||below>=r.top?r.bottom:Math.max(8,r.top-h))+'px';
+  menu.style.maxHeight=Math.max(below,r.top)-8+'px';
+}
+function open(){menu.hidden=false;menu.querySelectorAll('.in-mi-row').forEach(function(b){b.classList.toggle('in-sel',b.dataset.v===value);});place();dm.setAttribute('aria-expanded','true');dm.querySelector('.in-dn').hidden=true;dm.querySelector('.in-upi').hidden=false;}
+function close(){if(menu.hidden)return;menu.hidden=true;dm.setAttribute('aria-expanded','false');dm.querySelector('.in-dn').hidden=false;dm.querySelector('.in-upi').hidden=true;}
+dm.addEventListener('click',function(){if(menu.hidden)open();else close();});
+dm.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '||e.key==='ArrowDown'){e.preventDefault();open();const f=menu.querySelector('.in-sel')||menu.querySelector('.in-mi-row');f.focus();}else if(e.key==='Escape')close();});
+menu.addEventListener('click',function(e){const b=e.target.closest('.in-mi-row');if(!b)return;value=b.dataset.v;inp.value=b.textContent;dm.classList.add('in-up');close();dm.focus({preventScroll:true});});
+menu.addEventListener('keydown',function(e){const items=Array.from(menu.querySelectorAll('.in-mi-row')),i=items.indexOf(document.activeElement);if(e.key==='ArrowDown'){e.preventDefault();items[Math.min(items.length-1,i+1)].focus();}else if(e.key==='ArrowUp'){e.preventDefault();items[Math.max(0,i-1)].focus();}else if(e.key==='Escape'){close();dm.focus();}});
+document.addEventListener('pointerdown',function(e){if(!menu.hidden&&!menu.contains(e.target)&&!dm.contains(e.target))close();});
+window.addEventListener('scroll',close,{passive:true});window.addEventListener('resize',function(){if(!menu.hidden)place();});})(document.getElementById("wd-dropdown_menu"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Select</span><span class="tag">Pulldown</span><span class="tag">Combo Box</span><span class="tag">Dropdown Button</span><span class="tag">Exposed Dropdown</span><span class="tag">Pop-up Button</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Menus（Exposed dropdown menu）</dd></div><div><dt>Material 2</dt><dd class="">Exposed dropdown menu</dd></div><div><dt>Android (Compose)</dt><dd class="">ExposedDropdownMenuBox + DropdownMenu</dd></div><div><dt>iOS (HIG)</dt><dd class="">Pop-up buttons</dd></div><div><dt>SwiftUI</dt><dd class="">Picker + .pickerStyle(.menu) / Menu</dd></div><div><dt>Web</dt><dd class="">&lt;select&gt; / Combobox（WAI-ARIA パターン）</dd></div><div><dt>Flutter</dt><dd class="mono">DropdownMenu / DropdownButtonFormField</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>入力欄の見た目で、タップするとメニューが展開する。<a class="term" href="/glossary/material3/">Material 3</a> の DropdownMenu は文字入力で候補を絞ることもできる。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>候補が 5〜15 個程度の単一選択（都道府県、カテゴリ）。候補が少なければ Radio/Segmented、多ければ検索付きの別画面。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/radio_button/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Radio Button</a><a class="chip" href="/entry/autocomplete/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Autocomplete</a><a class="chip" href="/entry/cupertino_picker/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Wheel Picker</a><a class="chip" href="/entry/popup_menu/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Menu (Popup / Overflow)</a><a class="chip" href="/glossary/material3/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>Material 3</a></div></section>
+  
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="カテゴリを選ぶ Material 3 の Dropdown Menu を作って。入力欄の見た目で、タップで候補が下に開くように。" data-en="Create a Material 3 Dropdown Menu for choosing a category. It should look like a text field and open a list of options below when tapped.">カテゴリを選ぶ Material 3 の Dropdown Menu を作って。入力欄の見た目で、タップで候補が下に開くように。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Dropdown Menu / ドロップダウン（プルダウン）
+
+- id: `dropdown_menu`  URL: https://uizukan.dev/entry/dropdown_menu/
+- 種別: 表示 / Inputs &amp; Selection
+- 別名: Select, Pulldown, Combo Box, Dropdown Button, Exposed Dropdown, Pop-up Button
+- 呼び名: Material 3=Menus（Exposed dropdown menu） / Material 2=Exposed dropdown menu / Android (Compose)=ExposedDropdownMenuBox + DropdownMenu / iOS (HIG)=Pop-up buttons / SwiftUI=Picker + .pickerStyle(.menu) / Menu / Web=&lt;select&gt; / Combobox（WAI-ARIA パターン） / Flutter=DropdownMenu / DropdownButtonFormField
+- Flutter: `DropdownMenu / DropdownButtonFormField`
+- 関連: radio_button, autocomplete, cupertino_picker, popup_menu
+
+**説明**: 入力欄の見た目で、タップするとメニューが展開する。Material 3 の DropdownMenu は文字入力で候補を絞ることもできる。
+
+**使いどころ**: 候補が 5〜15 個程度の単一選択（都道府県、カテゴリ）。候補が少なければ Radio/Segmented、多ければ検索付きの別画面。
+
+**AI への伝え方（日本語）**: カテゴリを選ぶ Material 3 の Dropdown Menu を作って。入力欄の見た目で、タップで候補が下に開くように。
+
+**Prompt (English)**: Create a Material 3 Dropdown Menu for choosing a category. It should look like a text field and open a list of options below when tapped.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

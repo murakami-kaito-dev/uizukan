@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Split Button（スプリットボタン（主な操作＋メニューの 2 分割）） — UI図鑑</title>
+<meta name="description" content="左で主な操作、右の小さな ▾ で関連する別の操作を選べる、2 つに分かれたボタン。">
+<link rel="canonical" href="https://uizukan.dev/entry/split_button/">
+<meta property="og:title" content="Split Button（スプリットボタン（主な操作＋メニューの 2 分割）） — UI図鑑">
+<meta property="og:description" content="左で主な操作、右の小さな ▾ で関連する別の操作を選べる、2 つに分かれたボタン。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/split_button/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/split_button.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Split Button</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Buttons · 14 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Split Button</h1>
+  <p class="lead" style="margin-top:6px">スプリットボタン（主な操作＋メニューの 2 分割）</p>
+  <div class="demo-plate">
+    <div class="head"><code>split_button</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-split_button" role="group" aria-label="Split Button のデモ"><div class="ex-sp"><div class="ex-sprow"><button class="ex-spl ex-ink"><i class="mi ex-spi" style="--i:url(/assets/icons/mi-materialicons-e571.png);width:20px;height:20px" aria-hidden="true"></i><span class="ex-splb">送信</span></button><button class="ex-spt ex-on" aria-label="ほかの送り方" aria-expanded="true"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e353.png);width:24px;height:24px" aria-hidden="true"></i></button></div>
+<div class="ex-spm ex-on" role="menu"><button class="ex-spo ex-ink" role="menuitem" data-l="送信"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e571.png);width:20px;height:20px" aria-hidden="true"></i><span>今すぐ送信</span></button><button class="ex-spo ex-ink" role="menuitem" data-l="予約送信"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e557.png);width:20px;height:20px" aria-hidden="true"></i><span>予約して送信</span></button><button class="ex-spo ex-ink" role="menuitem" data-l="下書き保存"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-eff4.png);width:20px;height:20px" aria-hidden="true"></i><span>下書きに保存</span></button></div></div></div><style>#wd-split_button .ex-ink{position:relative;overflow:hidden}
+#wd-split_button .ex-ink::after{content:"";position:absolute;inset:0;background:currentColor;opacity:0;transition:opacity .15s}
+#wd-split_button .ex-ink.ex-down::after{opacity:.1}
+
+#wd-split_button .ex-sp{width:280px;max-width:100%;height:226px;display:flex;flex-direction:column;align-items:center}
+#wd-split_button .ex-sprow{display:flex;gap:2px;margin-top:4px}
+#wd-split_button .ex-spl{display:flex;align-items:center;gap:8px;height:48px;padding:0 16px 0 18px;border-radius:24px 4px 4px 24px;background:var(--m-primary);color:var(--m-on-primary);font-size:15px;font-weight:500;line-height:1.2;white-space:nowrap}
+#wd-split_button .ex-spt{width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:var(--m-primary);color:var(--m-on-primary);border-radius:4px 24px 24px 4px;transition:border-radius .2s cubic-bezier(.33,1,.68,1)}
+#wd-split_button .ex-spt.ex-on{border-radius:24px}
+#wd-split_button .ex-spt .mi{transition:transform .2s linear}
+#wd-split_button .ex-spt.ex-on .mi{transform:rotate(180deg)}
+#wd-split_button .ex-spm{width:200px;margin-top:6px;padding:6px 0;background:var(--surface);border:1px solid var(--rule);border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.16);display:flex;flex-direction:column;overflow:hidden;transform-origin:top center;opacity:0;transform:scale(.92);pointer-events:none;transition:opacity .15s linear,transform .2s cubic-bezier(.33,1,.68,1)}
+#wd-split_button .ex-spm.ex-on{opacity:1;transform:none;pointer-events:auto}
+#wd-split_button .ex-spo{display:flex;align-items:center;gap:12px;padding:12px 14px;width:100%;text-align:left;font-size:15px;line-height:1.45;color:var(--ink)}
+#wd-split_button .ex-spo .mi{color:var(--ink2)}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const press = (el) => {
+  const off = () => el.classList.remove('ex-down');
+  el.addEventListener('pointerdown', () => el.classList.add('ex-down'));
+  ['pointerup', 'pointercancel', 'pointerleave'].forEach((n) => el.addEventListener(n, off));
+};
+const lead = root.querySelector('.ex-spl'), trail = root.querySelector('.ex-spt'), menu = root.querySelector('.ex-spm'), label = root.querySelector('.ex-splb');
+const opts = [...root.querySelectorAll('.ex-spo')];
+[lead, ...opts].forEach(press);
+const set = (on) => { trail.classList.toggle('ex-on', on); menu.classList.toggle('ex-on', on); trail.setAttribute('aria-expanded', String(on)); };
+trail.addEventListener('click', () => set(!menu.classList.contains('ex-on')));
+lead.addEventListener('click', () => set(false));
+opts.forEach((o) => o.addEventListener('click', () => {
+  label.textContent = o.dataset.l;
+  const from = o.querySelector('.mi'), to = lead.querySelector('.mi');
+  to.style.setProperty('--i', from.style.getPropertyValue('--i'));
+  set(false);
+}));})(document.getElementById("wd-split_button"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Dropdown Button</span><span class="tag">Menu Button</span><span class="tag">Button with Menu</span><span class="tag">分割ボタン</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Split button</dd></div><div><dt>Material 2</dt><dd class="na">該当なし（Material 2 に無い。M3 Expressive で加わった）</dd></div><div><dt>Android (Compose)</dt><dd class="">SplitButtonLayout</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（iOS 標準には無い。メニュー付きのボタンは Pull-down button で作る）</dd></div><div><dt>SwiftUI</dt><dd class="">Menu（primaryAction: を付ける）</dd></div><div><dt>Web</dt><dd class="na">該当なし（&lt;button&gt; 2 つと Menu Button パターンで自作）</dd></div><div><dt>Flutter</dt><dd class="mono">Row + FilledButton + MenuAnchor（専用の部品は無く、これで自作する）</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>1 つのボタンを 2 つに割ったもの。左（<a class="term" href="/glossary/leading_trailing/">leading</a>）はいちばん使う操作をそのまま実行し、右（<a class="term" href="/glossary/leading_trailing/">trailing</a>）の小さなボタンは関連する操作のメニューを開く。開くと右のボタンの矢印が回り、形が丸に変わる。<a class="term" href="/glossary/material3/">Material 3</a> Expressive で加わった。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>「送信」と「予約して送信」のように、主な操作に近い別のやり方が 2〜4 個あるとき。関係のない操作をメニューに入れない。メニューが主役なら、ふつうのメニューボタンにする。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/filled_button/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Filled Button</a><a class="chip" href="/entry/popup_menu/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Menu (Popup / Overflow)</a><a class="chip" href="/entry/button_group/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Button Group</a><a class="chip" href="/entry/dropdown_menu/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Dropdown Menu</a><a class="chip" href="/glossary/leading_trailing/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>leading / trailing</a><a class="chip" href="/glossary/material3/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>Material 3</a></div></section>
+  
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="「送信」を Split Button にして。左を押すとそのまま送信、右の ▾ を押すと「予約して送信／下書きに保存」のメニューが出るように。" data-en="Make &quot;Send&quot; a Split Button: the leading part sends immediately, the trailing ▾ opens a menu with &quot;Schedule send / Save as draft&quot;.">「送信」を Split Button にして。左を押すとそのまま送信、右の ▾ を押すと「予約して送信／下書きに保存」のメニューが出るように。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Split Button / スプリットボタン（主な操作＋メニューの 2 分割）
+
+- id: `split_button`  URL: https://uizukan.dev/entry/split_button/
+- 種別: 表示 / Buttons
+- 別名: Dropdown Button, Menu Button, Button with Menu, 分割ボタン
+- 呼び名: Material 3=Split button / Material 2=該当なし（Material 2 に無い。M3 Expressive で加わった） / Android (Compose)=SplitButtonLayout / iOS (HIG)=該当なし（iOS 標準には無い。メニュー付きのボタンは Pull-down button で作る） / SwiftUI=Menu（primaryAction: を付ける） / Web=該当なし（&lt;button&gt; 2 つと Menu Button パターンで自作） / Flutter=Row + FilledButton + MenuAnchor（専用の部品は無く、これで自作する）
+- Flutter: `Row + FilledButton + MenuAnchor（専用の部品は無く、これで自作する）`
+- 関連: filled_button, popup_menu, button_group, dropdown_menu
+
+**説明**: 1 つのボタンを 2 つに割ったもの。左（leading）はいちばん使う操作をそのまま実行し、右（trailing）の小さなボタンは関連する操作のメニューを開く。開くと右のボタンの矢印が回り、形が丸に変わる。Material 3 Expressive で加わった。
+
+**使いどころ**: 「送信」と「予約して送信」のように、主な操作に近い別のやり方が 2〜4 個あるとき。関係のない操作をメニューに入れない。メニューが主役なら、ふつうのメニューボタンにする。
+
+**AI への伝え方（日本語）**: 「送信」を Split Button にして。左を押すとそのまま送信、右の ▾ を押すと「予約して送信／下書きに保存」のメニューが出るように。
+
+**Prompt (English)**: Make "Send" a Split Button: the leading part sends immediately, the trailing ▾ opens a menu with "Schedule send / Save as draft".
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

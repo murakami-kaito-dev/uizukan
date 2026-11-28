@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Overscroll Bounce (Rubber Band)（バウンス（端で跳ね返る）） — UI図鑑</title>
+<meta name="description" content="リストの端を越えて引っ張ると、ゴムのように伸びて跳ね返る iOS の挙動。">
+<link rel="canonical" href="https://uizukan.dev/entry/overscroll_bounce/">
+<meta property="og:title" content="Overscroll Bounce (Rubber Band)（バウンス（端で跳ね返る）） — UI図鑑">
+<meta property="og:description" content="リストの端を越えて引っ張ると、ゴムのように伸びて跳ね返る iOS の挙動。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/overscroll_bounce/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/overscroll_bounce.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/actions/">アクション</a><span class="sep">/</span><span class="here">Overscroll Bounce (Rubber Band)</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Scrolling Behaviors · 05 · アクション</div>
+  <h1 class="display" style="margin-top:10px">Overscroll Bounce (Rubber Band)</h1>
+  <p class="lead" style="margin-top:6px">バウンス（端で跳ね返る）</p>
+  <div class="demo-plate">
+    <div class="head"><code>overscroll_bounce</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-overscroll_bounce" role="group" aria-label="Overscroll Bounce (Rubber Band) のデモ"><div class="sr-fit-o"><div class="sr-fit-i" style="width:300px"><div class="sr-fr" style="width:300px;height:240px"><div class="sr-sc"><div class="sr-in"><p class="sr-lead">端を越えて引っ張ると跳ね返る</p><div class="sr-bt"><span class="sr-bi"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f01ab.png);width:20px;height:20px" aria-hidden="true"></i></span><span class="sr-bx">上の端で、さらに下へ引っ張る</span></div><div class="sr-bt"><span class="sr-bi"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f721.png);width:20px;height:20px" aria-hidden="true"></i></span><span class="sr-bx">少し伸びて、離すとふわっと戻る</span></div><div class="sr-bt"><span class="sr-bi"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f001a.png);width:20px;height:20px" aria-hidden="true"></i></span><span class="sr-bx">下の端でも、同じように跳ね返る</span></div><div class="sr-bt"><span class="sr-bi"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f0609.png);width:20px;height:20px" aria-hidden="true"></i></span><span class="sr-bx">「ここが端」と指で分かるのが役目</span></div><div class="sr-bt"><span class="sr-bi"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f007f.png);width:20px;height:20px" aria-hidden="true"></i></span><span class="sr-bx">iOS の標準：設定・メール・写真など</span></div><div class="sr-bt"><span class="sr-bi"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f563.png);width:20px;height:20px" aria-hidden="true"></i></span><span class="sr-bx">Android は跳ねずに、端が光る・伸びる</span></div><div class="sr-bt"><span class="sr-bi"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f653.png);width:20px;height:20px" aria-hidden="true"></i></span><span class="sr-bx">Flutter：BouncingScrollPhysics</span></div><div class="sr-bt"><span class="sr-bi"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f001a.png);width:20px;height:20px" aria-hidden="true"></i></span><span class="sr-bx">いちばん下。上へ引っ張ってみて</span></div></div></div></div></div></div></div><style>#wd-overscroll_bounce .sr-fit-o{position:relative;flex:none}
+#wd-overscroll_bounce .sr-fit-i{position:absolute;left:0;top:0;transform-origin:0 0}
+#wd-overscroll_bounce .sr-fr{position:relative;overflow:hidden;border-radius:12px;isolation:isolate;text-align:left}
+#wd-overscroll_bounce .sr-fr::after{content:"";position:absolute;inset:0;border:1px solid var(--rule);border-radius:12px;pointer-events:none;z-index:60}
+#wd-overscroll_bounce .sr-sc{height:100%;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+#wd-overscroll_bounce .sr-sc::-webkit-scrollbar{display:none}
+#wd-overscroll_bounce .sr-fab{width:40px;height:40px;border-radius:12px;background:var(--accent-soft);color:var(--ink);display:flex;align-items:center;justify-content:center;box-shadow:var(--e3)}
+
+#wd-overscroll_bounce .sr-sc{cursor:grab}
+#wd-overscroll_bounce .sr-lead{margin:0;padding:12px;font-size:12px;line-height:1.65}
+#wd-overscroll_bounce .sr-bt{min-height:48px;display:flex;align-items:center;gap:16px;padding:0 20px}
+#wd-overscroll_bounce .sr-bi{width:24px;flex:none;color:var(--ink2);display:flex}
+#wd-overscroll_bounce .sr-bx{font-size:13px;line-height:1.3}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const fitO = root.querySelector('.sr-fit-o'), fitI = fitO.firstElementChild;
+let S = 1;
+const refit = () => {
+  const W = fitI.offsetWidth, H = fitI.offsetHeight, a = root.clientWidth || W;
+  S = Math.min(1, a / W);
+  fitI.style.transform = S < 1 ? 'scale(' + S + ')' : '';
+  fitO.style.width = W * S + 'px';
+  fitO.style.height = H * S + 'px';
+};
+refit();
+if (window.ResizeObserver) { const ro = new ResizeObserver(refit); ro.observe(root); ro.observe(fitI); }
+
+const sc = root.querySelector('.sr-sc'), inner = root.querySelector('.sr-in');
+let over = 0, id = null, sy = 0, base = 0, timer = 0;
+const max = () => sc.scrollHeight - sc.clientHeight;
+const setOver = (o, back) => {
+  over = o;
+  inner.style.transition = back ? 'transform .5s cubic-bezier(.17,.89,.32,1)' : 'none';
+  inner.style.transform = o ? 'translateY(' + o + 'px)' : '';
+};
+// 引っぱった量に対して、越えた分は抵抗がかかる（BouncingScrollPhysics に近い）
+const resist = (x) => { const v = Math.abs(x), r = 300 * (1 - Math.exp(-v / 300)) * 0.55; return x < 0 ? -r : r; };
+sc.addEventListener('pointerdown', (e) => {
+  if (e.pointerType !== 'mouse' || e.button !== 0) return;
+  id = e.pointerId; sy = e.clientY; base = sc.scrollTop;
+  try { sc.setPointerCapture(id); } catch (_) {}
+});
+sc.addEventListener('pointermove', (e) => {
+  if (e.pointerId !== id) return;
+  const want = base - (e.clientY - sy) / S, m = max();
+  if (want < 0) { sc.scrollTop = 0; setOver(resist(-want)); }
+  else if (want > m) { sc.scrollTop = m; setOver(-resist(want - m)); }
+  else { sc.scrollTop = want; setOver(0); }
+});
+const up = (e) => { if (e.pointerId !== id) return; id = null; if (over) setOver(0, true); };
+sc.addEventListener('pointerup', up);
+sc.addEventListener('pointercancel', up);
+sc.addEventListener('wheel', (e) => {
+  const m = max();
+  const atTop = sc.scrollTop <= 0 && e.deltaY < 0, atEnd = sc.scrollTop >= m - 1 && e.deltaY > 0;
+  if (!atTop && !atEnd) return;
+  e.preventDefault();
+  const raw = Math.max(-200, Math.min(200, (over ? over / 0.55 : 0) - e.deltaY));
+  setOver(resist(raw));
+  clearTimeout(timer);
+  timer = setTimeout(() => setOver(0, true), 120);
+}, { passive: false });})(document.getElementById("wd-overscroll_bounce"),window.UZ);</script></div>
+    <a class="foot" href="https://apps.apple.com/jp/app/id6808997175" rel="noopener"><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i><span>本物の手触りは iOS アプリで</span><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a>
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Rubber Band Effect</span><span class="tag">Bouncing Scroll</span><span class="tag">Elastic Scroll</span><span class="tag">Overscroll Glow (Android)</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="na">該当なし（Android は Stretch overscroll）</dd></div><div><dt>Material 2</dt><dd class="na">該当なし（Edge glow）</dd></div><div><dt>Android (Compose)</dt><dd class="">OverscrollEffect（stretch）</dd></div><div><dt>iOS (HIG)</dt><dd class="">Scroll views（bounce）</dd></div><div><dt>SwiftUI</dt><dd class="">ScrollView（既定で bounce）/ .scrollBounceBehavior</dd></div><div><dt>Web</dt><dd class="">overscroll-behavior</dd></div><div><dt>Flutter</dt><dd class="mono">ScrollPhysics（BouncingScrollPhysics）</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>iOS はバウンス、Android は端で光る（glow）か伸びる（<a class="term" href="/glossary/collapse/">stretch</a>）。Flutter は platform で自動切替するが、physics を指定して統一もできる。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>iOS らしさを保ちたい一覧。<a class="term" href="/entry/pull_to_refresh/">Pull to Refresh</a>（iOS 風）や <a class="term" href="/glossary/collapse/">stretch</a> ヘッダーには必須。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/pull_to_refresh/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Pull to Refresh</a><a class="chip" href="/entry/collapsing_toolbar/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Collapsing Toolbar</a><a class="chip" href="/entry/snap_scrolling/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Snap Scrolling</a><a class="chip" href="/glossary/collapse/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>ヘッダーの折りたたみ</a></div></section>
+  
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="この一覧を Android でも iOS と同じバウンス（Rubber Band）挙動にして。端で光る Android の glow は出さないで。" data-en="Make this list bounce at the edges (Rubber Band) on Android too, exactly like iOS, instead of the Android overscroll glow.">この一覧を Android でも iOS と同じバウンス（Rubber Band）挙動にして。端で光る Android の glow は出さないで。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Overscroll Bounce (Rubber Band) / バウンス（端で跳ね返る）
+
+- id: `overscroll_bounce`  URL: https://uizukan.dev/entry/overscroll_bounce/
+- 種別: アクション / Scrolling Behaviors
+- 別名: Rubber Band Effect, Bouncing Scroll, Elastic Scroll, Overscroll Glow (Android)
+- 呼び名: Material 3=該当なし（Android は Stretch overscroll） / Material 2=該当なし（Edge glow） / Android (Compose)=OverscrollEffect（stretch） / iOS (HIG)=Scroll views（bounce） / SwiftUI=ScrollView（既定で bounce）/ .scrollBounceBehavior / Web=overscroll-behavior / Flutter=ScrollPhysics（BouncingScrollPhysics）
+- Flutter: `ScrollPhysics（BouncingScrollPhysics）`
+- 関連: pull_to_refresh, collapsing_toolbar, snap_scrolling
+
+**説明**: iOS はバウンス、Android は端で光る（glow）か伸びる（stretch）。Flutter は platform で自動切替するが、physics を指定して統一もできる。
+
+**使いどころ**: iOS らしさを保ちたい一覧。Pull to Refresh（iOS 風）や stretch ヘッダーには必須。
+
+**AI への伝え方（日本語）**: この一覧を Android でも iOS と同じバウンス（Rubber Band）挙動にして。端で光る Android の glow は出さないで。
+
+**Prompt (English)**: Make this list bounce at the edges (Rubber Band) on Android too, exactly like iOS, instead of the Android overscroll glow.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

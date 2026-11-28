@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Extended FAB（拡張 FAB（ラベル付き FAB）） — UI図鑑</title>
+<meta name="description" content="アイコンと文字ラベルが付いた横長の FAB。">
+<link rel="canonical" href="https://uizukan.dev/entry/extended_fab/">
+<meta property="og:title" content="Extended FAB（拡張 FAB（ラベル付き FAB）） — UI図鑑">
+<meta property="og:description" content="アイコンと文字ラベルが付いた横長の FAB。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/extended_fab/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/extended_fab.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Extended FAB</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Buttons · 08 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Extended FAB</h1>
+  <p class="lead" style="margin-top:6px">拡張 FAB（ラベル付き FAB）</p>
+  <div class="demo-plate">
+    <div class="head"><code>extended_fab</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-extended_fab" role="group" aria-label="Extended FAB のデモ"><div class="col"><button class="efab" aria-label="新規作成"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e21a.png);width:24px;height:24px" aria-hidden="true"></i><span class="lb">新規作成</span></button><div class="cap">タップで縮む/伸びる</div></div></div><style>#wd-extended_fab .col{display:flex;flex-direction:column;align-items:center}
+#wd-extended_fab .efab{position:relative;height:56px;padding:0 20px 0 16px;border-radius:16px;display:inline-flex;align-items:center;gap:8px;background:var(--m-primary-c);color:var(--m-on-primary-c);font-size:15px;font-weight:500;line-height:1.2;white-space:nowrap;box-shadow:var(--e3);transition:box-shadow .2s cubic-bezier(.4,0,.2,1)}
+#wd-extended_fab .efab::after{content:"";position:absolute;inset:0;border-radius:inherit;background:currentColor;opacity:0;transition:opacity .15s;pointer-events:none}
+@media (hover:hover){#wd-extended_fab .efab:hover{box-shadow:var(--e4)}#wd-extended_fab .efab:hover::after{opacity:.08}}
+#wd-extended_fab .efab:active::after{opacity:.1}
+#wd-extended_fab .efab.shrink .lb{display:none}
+#wd-extended_fab .cap{margin-top:8px;font-size:11px;line-height:1.65;color:var(--ink3)}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const b = root.querySelector('.efab');
+b.addEventListener('click', () => b.classList.toggle('shrink'));})(document.getElementById("wd-extended_fab"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Extended Floating Action Button</span><span class="tag">Labeled FAB</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Extended FAB</dd></div><div><dt>Material 2</dt><dd class="">Extended FAB</dd></div><div><dt>Android (Compose)</dt><dd class="">ExtendedFloatingActionButton</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（iOS 標準には無い）</dd></div><div><dt>SwiftUI</dt><dd class="na">該当なし（ZStack + Button + Label で自作）</dd></div><div><dt>Web</dt><dd class="na">該当なし（Material 系ライブラリの Extended FAB）</dd></div><div><dt>Flutter</dt><dd class="mono">FloatingActionButton.extended</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>通常の <a class="term" href="/entry/fab/">FAB</a> にテキストを添えた横長版。スクロールで通常 <a class="term" href="/entry/fab/">FAB</a> に<a class="term" href="/glossary/collapse/">縮む</a>（<a class="term" href="/glossary/collapse/">collapse</a>）動きと組み合わせることが多い。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>アイコンだけでは意味が伝わりにくい主要操作（例：「新しいメモ」「ルートを開始」）。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/fab/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Floating Action Button</a><a class="chip" href="/entry/scroll_to_hide_bar/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Hide on Scroll</a><a class="chip" href="/glossary/collapse/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>ヘッダーの折りたたみ</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/tasks/"><span class="ic s" style="--i:url(/assets/icons/scene-tasks.png)"></span>タスク一覧</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="アイコン＋「新規作成」ラベル付きの Extended FAB を右下に置いて。下にスクロールするとラベルが消えて丸い FAB に縮むようにして。" data-en="Add an Extended FAB with an icon and a &quot;Create&quot; label at the bottom-right. When scrolling down, collapse it into a regular icon-only FAB.">アイコン＋「新規作成」ラベル付きの Extended FAB を右下に置いて。下にスクロールするとラベルが消えて丸い FAB に縮むようにして。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Extended FAB / 拡張 FAB（ラベル付き FAB）
+
+- id: `extended_fab`  URL: https://uizukan.dev/entry/extended_fab/
+- 種別: 表示 / Buttons
+- 別名: Extended Floating Action Button, Labeled FAB
+- 呼び名: Material 3=Extended FAB / Material 2=Extended FAB / Android (Compose)=ExtendedFloatingActionButton / iOS (HIG)=該当なし（iOS 標準には無い） / SwiftUI=該当なし（ZStack + Button + Label で自作） / Web=該当なし（Material 系ライブラリの Extended FAB） / Flutter=FloatingActionButton.extended
+- Flutter: `FloatingActionButton.extended`
+- 関連: fab, scroll_to_hide_bar
+
+**説明**: 通常の FAB にテキストを添えた横長版。スクロールで通常 FAB に縮む（collapse）動きと組み合わせることが多い。
+
+**使いどころ**: アイコンだけでは意味が伝わりにくい主要操作（例：「新しいメモ」「ルートを開始」）。
+
+**AI への伝え方（日本語）**: アイコン＋「新規作成」ラベル付きの Extended FAB を右下に置いて。下にスクロールするとラベルが消えて丸い FAB に縮むようにして。
+
+**Prompt (English)**: Add an Extended FAB with an icon and a "Create" label at the bottom-right. When scrolling down, collapse it into a regular icon-only FAB.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hero Transition (Shared Element)（ヒーロー遷移（共有要素アニメーション）） — UI図鑑</title>
+<meta name="description" content="一覧のサムネイルが、そのまま詳細画面の大きな画像に「飛んで」拡大する。">
+<link rel="canonical" href="https://uizukan.dev/entry/hero_transition/">
+<meta property="og:title" content="Hero Transition (Shared Element)（ヒーロー遷移（共有要素アニメーション）） — UI図鑑">
+<meta property="og:description" content="一覧のサムネイルが、そのまま詳細画面の大きな画像に「飛んで」拡大する。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/hero_transition/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/hero_transition.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/actions/">アクション</a><span class="sep">/</span><span class="here">Hero Transition (Shared Element)</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Transitions · 04 · アクション</div>
+  <h1 class="display" style="margin-top:10px">Hero Transition (Shared Element)</h1>
+  <p class="lead" style="margin-top:6px">ヒーロー遷移（共有要素アニメーション）</p>
+  <div class="demo-plate">
+    <div class="head"><code>hero_transition</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-hero_transition" role="group" aria-label="Hero Transition (Shared Element) のデモ"><div class="tr-fr"><div class="tr-pg tr-home"><div class="tr-ths"><button class="tr-th" data-i="0" aria-label="キャンバス スニーカー"><img src="/assets/images/products/1_sneakers.jpg" alt="" class="tr-ti" draggable="false"></button><button class="tr-th" data-i="1" aria-label="デスクランプ"><img src="/assets/images/products/5_lamp.jpg" alt="" class="tr-ti" draggable="false"></button><button class="tr-th" data-i="2" aria-label="サングラス"><img src="/assets/images/products/8_sunglasses.jpg" alt="" class="tr-ti" draggable="false"></button></div><div class="tr-hint">写真をタップ</div></div><div class="tr-bar"></div><div class="tr-pg tr-p2" data-i="0" hidden><div class="tr-sh"></div><div class="tr-ab"><div class="tr-ld"><button class="m-icon-btn tr-bk" aria-label="戻る"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f570.png);width:22px;height:22px" aria-hidden="true"></i></button></div><div class="tr-ttl">キャンバス スニーカー</div></div><div class="tr-bd"><img src="/assets/images/products/1_sneakers.jpg" alt="" class="tr-hi" draggable="false"><div class="tr-info"><div class="tr-nm">キャンバス スニーカー</div><div class="tr-pr">¥4,980</div><p class="tr-ds">一覧の小さな写真が、そのまま大きくなってこの位置まで飛んできました。戻ると元の位置へ縮んで戻ります。</p></div></div></div><div class="tr-pg tr-p2" data-i="1" hidden><div class="tr-sh"></div><div class="tr-ab"><div class="tr-ld"><button class="m-icon-btn tr-bk" aria-label="戻る"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f570.png);width:22px;height:22px" aria-hidden="true"></i></button></div><div class="tr-ttl">デスクランプ</div></div><div class="tr-bd"><img src="/assets/images/products/5_lamp.jpg" alt="" class="tr-hi" draggable="false"><div class="tr-info"><div class="tr-nm">デスクランプ</div><div class="tr-pr">¥6,200</div><p class="tr-ds">一覧の小さな写真が、そのまま大きくなってこの位置まで飛んできました。戻ると元の位置へ縮んで戻ります。</p></div></div></div><div class="tr-pg tr-p2" data-i="2" hidden><div class="tr-sh"></div><div class="tr-ab"><div class="tr-ld"><button class="m-icon-btn tr-bk" aria-label="戻る"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f570.png);width:22px;height:22px" aria-hidden="true"></i></button></div><div class="tr-ttl">サングラス</div></div><div class="tr-bd"><img src="/assets/images/products/8_sunglasses.jpg" alt="" class="tr-hi" draggable="false"><div class="tr-info"><div class="tr-nm">サングラス</div><div class="tr-pr">¥8,800</div><p class="tr-ds">一覧の小さな写真が、そのまま大きくなってこの位置まで飛んできました。戻ると元の位置へ縮んで戻ります。</p></div></div></div></div></div><style>#wd-hero_transition .tr-fr{position:relative;width:300px;max-width:100%;height:380px;border-radius:12px;overflow:hidden;isolation:isolate;-webkit-mask-image:-webkit-radial-gradient(white,black)}
+#wd-hero_transition .tr-fr::after{content:"";position:absolute;inset:0;border:1px solid var(--rule);border-radius:12px;pointer-events:none;z-index:10}
+#wd-hero_transition .tr-pg{position:absolute;inset:0;display:flex;flex-direction:column}
+#wd-hero_transition .tr-home{align-items:center;justify-content:center}
+#wd-hero_transition .tr-p2{background:var(--canvas);z-index:2;touch-action:pan-y;will-change:transform}
+#wd-hero_transition .tr-p2[hidden]{display:none}
+#wd-hero_transition .tr-sh{position:absolute;top:0;bottom:0;left:-12px;width:12px;background:linear-gradient(to left,rgba(0,0,0,.05),transparent);pointer-events:none;opacity:0}
+#wd-hero_transition .tr-bar{position:absolute;inset:0;background:rgba(0,0,0,.094);opacity:0;z-index:1;pointer-events:none}
+#wd-hero_transition .tr-ab{flex:none;display:flex;align-items:center;height:56px;background:var(--canvas)}
+#wd-hero_transition .tr-ld{flex:none;width:56px;display:flex;align-items:center;justify-content:center}
+#wd-hero_transition .tr-ttl{flex:1;min-width:0;padding-left:16px;font-size:18px;font-weight:600;line-height:1.3;letter-spacing:-.18px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#wd-hero_transition .tr-acts{flex:none;display:flex;align-items:center;padding-right:8px}
+#wd-hero_transition .tr-bd{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none}
+#wd-hero_transition .tr-bd::-webkit-scrollbar{display:none}
+#wd-hero_transition .tr-cap{margin-top:8px;font-size:12px;line-height:1.55;color:var(--ink2);text-align:center;padding:0 8px}
+
+#wd-hero_transition .tr-ths{display:flex;max-width:100%;padding:0 4px}
+#wd-hero_transition .tr-th{flex:0 1 88px;min-width:0;padding:4px;border-radius:10px}
+#wd-hero_transition .tr-ti{display:block;width:100%;height:auto;aspect-ratio:1;max-height:none;object-fit:cover;border-radius:10px}
+#wd-hero_transition .tr-hint{margin-top:6px;font-size:11px;line-height:1.3;color:var(--ink)}
+#wd-hero_transition .tr-hi{display:block;width:100%;aspect-ratio:1;height:auto;max-height:none;object-fit:cover}
+#wd-hero_transition .tr-info{padding:16px 16px 8px;color:var(--ink)}
+#wd-hero_transition .tr-nm{font-size:18px;font-weight:700;line-height:1.3}
+#wd-hero_transition .tr-pr{margin-top:4px;font-size:16px;font-weight:600;line-height:1.3}
+#wd-hero_transition .tr-ds{margin:12px 0 0;font-size:13px;line-height:1.6;color:var(--ink2)}
+#wd-hero_transition .tr-fly{position:absolute;left:0;top:0;z-index:8;object-fit:cover;pointer-events:none;max-height:none;transform-origin:0 0}
+#wd-hero_transition .tr-hide{visibility:hidden}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";function cb(a,b,c,d){
+  const ev=(p1,p2,t)=>3*p1*(1-t)*(1-t)*t+3*p2*(1-t)*t*t+t*t*t;
+  return function(x){ if(x<=0)return 0; if(x>=1)return 1; let lo=0,hi=1;
+    for(let i=0;i<30;i++){const m=(lo+hi)/2; if(ev(a,c,m)<x)lo=m; else hi=m;} return ev(b,d,(lo+hi)/2); };
+}
+// Curves.fastEaseInToSlowEaseOut（ThreePointCubic）
+const G=(function(){
+  const mid=[.198,.541], A1=[.056,.024], B1=[.108,.3085], A2=[.3655,1], B2=[.5465,.989];
+  const c1=cb(A1[0]/mid[0],A1[1]/mid[1],B1[0]/mid[0],B1[1]/mid[1]);
+  const sx=1-mid[0], sy=1-mid[1];
+  const c2=cb((A2[0]-mid[0])/sx,(A2[1]-mid[1])/sy,(B2[0]-mid[0])/sx,(B2[1]-mid[1])/sy);
+  return t=>t<mid[0]?c1(t/mid[0])*mid[1]:c2((t-mid[0])/sx)*sy+mid[1];
+})();
+const L2E=cb(.35,.91,.33,.97), EIL=cb(.67,.03,.65,.09), EASE=cb(.25,.1,.25,1), FLSE=cb(.18,1,.04,1), FOSI=cb(.4,0,.2,1);
+function nav(fr,o){
+  const home=fr.querySelector('.tr-home'), bar=fr.querySelector('.tr-bar');
+  let page=null, v=0, raf=0, mode='fwd', anim=false;
+  function render(){
+    if(!page)return;
+    const lin=mode==='lin';
+    if(o.kind==='modal'){
+      const c=lin?v:(mode==='fwd'?L2E(v):1-L2E(1-v));
+      page.style.transform='translateY('+((1-c)*100)+'%)';
+    }else{
+      const c=lin?v:(mode==='fwd'?G(v):1-G(1-v));
+      const s=lin?v:(mode==='fwd'?L2E(v):EIL(v));
+      page.style.transform='translateX('+((1-c)*100)+'%)';
+      home.style.transform='translateX('+(-s*100/3)+'%)';
+      if(o.barrier)bar.style.opacity=EASE(v);
+      const sh=page.querySelector('.tr-sh'); if(sh)sh.style.opacity=lin?v:L2E(v);
+    }
+    if(o.onTick)o.onTick(v,mode);
+  }
+  function run(to,dur,m,curve,done){
+    cancelAnimationFrame(raf); anim=true; mode=m;
+    const from=v, t0=performance.now(), d=Math.max(1,dur);
+    const f=now=>{ const k=Math.min(1,(now-t0)/d); v=from+(to-from)*(curve?curve(k):k); render();
+      if(k<1)raf=requestAnimationFrame(f); else { anim=false; done&&done(); } };
+    raf=requestAnimationFrame(f);
+  }
+  function finishPop(){ const p=page; page=null; p.hidden=true; p.style.transform=''; home.style.transform=''; bar.style.opacity=0; home.inert=false; o.onDone&&o.onDone('pop',p); }
+  const api={
+    busy:()=>anim||drag!==null,
+    push(p){ if(api.busy()||page)return; page=p; v=0; p.hidden=false; home.inert=true; render();
+      o.onStart&&o.onStart('push',p);
+      run(1,o.dur,'fwd',null,()=>{ o.onDone&&o.onDone('push',p); }); },
+    pop(){ if(api.busy()||!page)return; o.onStart&&o.onStart('pop',page); run(0,o.dur,'rev',null,finishPop); },
+  };
+  // 左端 20px からのスワイプで戻る（Cupertino の戻るジェスチャー）
+  let drag=null;
+  if(o.kind!=='modal'){
+    fr.addEventListener('pointerdown',e=>{
+      if(!page||anim||e.button>0)return;
+      const r=page.getBoundingClientRect(); const sc=r.width/page.offsetWidth||1;
+      if((e.clientX-r.left)/sc>20)return;
+      drag={id:e.pointerId,x0:e.clientX,y0:e.clientY,on:false,w:r.width,hist:[]};
+    });
+    fr.addEventListener('pointermove',e=>{
+      if(!drag||e.pointerId!==drag.id)return;
+      const dx=e.clientX-drag.x0, dy=e.clientY-drag.y0;
+      if(!drag.on){ if(Math.abs(dx)<4&&Math.abs(dy)<4)return; if(Math.abs(dy)>Math.abs(dx)||dx<0){drag=null;return;} drag.on=true; try{fr.setPointerCapture(e.pointerId);}catch(_){} o.onStart&&o.onStart('gesture',page); }
+      mode='lin'; v=Math.max(0,Math.min(1,1-dx/drag.w)); render();
+      const now=performance.now(); drag.hist.push([now,e.clientX]); while(drag.hist.length>2&&now-drag.hist[0][0]>100)drag.hist.shift();
+      e.preventDefault();
+    });
+    const end=e=>{
+      if(!drag||e.pointerId!==drag.id)return; const d=drag; drag=null; if(!d.on)return;
+      let vel=0; if(d.hist.length>1){ const a=d.hist[0], b=d.hist[d.hist.length-1]; if(b[0]>a[0])vel=(b[1]-a[1])/(b[0]-a[0])*1000/d.w; }
+      const fwd=Math.abs(vel)>=1?vel<=0:v>.5;
+      if(fwd)run(1,Math.min(Math.floor(800*(1-v)),300),'lin',FLSE,()=>{mode='fwd'; o.onDone&&o.onDone('stay',page);});
+      else run(0,Math.floor(800*v),'lin',FLSE,finishPop);
+    };
+    fr.addEventListener('pointerup',end); fr.addEventListener('pointercancel',end);
+  }
+  return api;
+}
+const fr=root.querySelector('.tr-fr'), home=fr.querySelector('.tr-home');
+const thumbs=fr.querySelectorAll('.tr-th .tr-ti'), pages=fr.querySelectorAll('.tr-p2');
+let cur=-1, fl=null;
+// 枠の中での位置（ページの横移動は含めない＝Flutter の Hero も行き先は最終位置で測る）
+function rectIn(el,pg){
+  const fr0=fr.getBoundingClientRect(), sc=fr0.width/fr.offsetWidth||1;
+  const pr=pg.getBoundingClientRect(), er=el.getBoundingClientRect();
+  return {x:(er.left-pr.left)/sc+pg.offsetLeft, y:(er.top-pr.top)/sc+pg.offsetTop, w:er.width/sc, h:er.height/sc};
+}
+function onStart(kind,pg){
+  if(kind==='gesture')return;   // スワイプで戻る間は飛ばない（transitionOnUserGestures: false）
+  const big=pg.querySelector('.tr-hi'), small=thumbs[cur];
+  const a=kind==='push'?rectIn(small,home):rectIn(big,pg);
+  pg.style.transform='none'; home.style.transform='none';
+  const b=kind==='push'?rectIn(big,pg):rectIn(small,home);
+  fl={a,b,el:document.createElement('img')};
+  fl.el.src=big.currentSrc||big.src; fl.el.className='tr-fly'; fl.el.alt=''; fr.append(fl.el);
+  big.classList.add('tr-hide'); small.classList.add('tr-hide');
+  tick(kind==='push'?0:1,kind==='push'?'fwd':'rev');
+}
+function tick(v,mode){
+  if(!fl)return;
+  // 行きは a（一覧）→ b（詳細）、帰りは a（詳細）→ b（一覧）。どちらも時間に対して fastOutSlowIn
+  const k=mode==='fwd'?FOSI(v):1-FOSI(1-v);
+  const a=fl.a,b=fl.b;
+  const q=mode==='fwd'?k:1-k;
+  const x=a.x+(b.x-a.x)*q, y=a.y+(b.y-a.y)*q, w=a.w+(b.w-a.w)*q, h=a.h+(b.h-a.h)*q;
+  fl.el.style.width=w+'px'; fl.el.style.height=h+'px'; fl.el.style.transform='translate('+x+'px,'+y+'px)';
+}
+function onDone(kind,pg){
+  if(fl){ fl.el.remove(); fl=null; }
+  pg.querySelector('.tr-hi').classList.remove('tr-hide'); if(cur>=0)thumbs[cur].classList.remove('tr-hide');
+  if(kind==='pop'){ pg.querySelector('.tr-bd').scrollTop=0; cur=-1; }
+}
+const n=nav(fr,{kind:'push',dur:300,barrier:false,onStart,onTick:tick,onDone});
+fr.querySelectorAll('.tr-th').forEach(b=>b.addEventListener('click',()=>{ if(n.busy()||cur>=0)return; cur=+b.dataset.i; n.push(pages[cur]); }));
+pages.forEach(p=>p.querySelector('.tr-bk').addEventListener('click',()=>n.pop()));})(document.getElementById("wd-hero_transition"),window.UZ);</script></div>
+    <a class="foot" href="https://apps.apple.com/jp/app/id6808997175" rel="noopener"><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i><span>本物の手触りは iOS アプリで</span><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a>
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Shared Element Transition</span><span class="tag">Container Transform</span><span class="tag">Zoom Transition</span><span class="tag">matchedGeometryEffect</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Container transform</dd></div><div><dt>Material 2</dt><dd class="">Container transform</dd></div><div><dt>Android (Compose)</dt><dd class="">SharedTransitionLayout + Modifier.sharedElement</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（Zoom transition＝iOS 18）</dd></div><div><dt>SwiftUI</dt><dd class="">.matchedGeometryEffect / .navigationTransition(.zoom)（iOS 18）</dd></div><div><dt>Web</dt><dd class="">View Transitions API（view-transition-name）</dd></div><div><dt>Flutter</dt><dd class="mono">Hero(tag:)</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>2 つの画面に同じ tag を持つ要素があると、遷移中にその要素が位置・サイズを<a class="term" href="/glossary/interpolate/">補間</a>しながら移動する。画像・カードで使うと連続性が生まれる。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>一覧 → 詳細で、画像やカードがそのまま主役になる遷移。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/card/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Card</a><a class="chip" href="/entry/grid/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Grid</a><a class="chip" href="/entry/push_slide/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Push Transition</a><a class="chip" href="/entry/pinch_zoom/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Pinch In / Pinch Out</a><a class="chip" href="/glossary/interpolate/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>補間</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/product/"><span class="ic s" style="--i:url(/assets/icons/scene-product.png)"></span>商品と購入</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="一覧のサムネイル画像をタップすると、その画像が詳細画面の上部に拡大しながら飛んでいく Hero（Shared Element）遷移にして。" data-en="When a thumbnail in the list is tapped, use a Hero (Shared Element) transition so the image flies and expands into the header of the detail screen.">一覧のサムネイル画像をタップすると、その画像が詳細画面の上部に拡大しながら飛んでいく Hero（Shared Element）遷移にして。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Hero Transition (Shared Element) / ヒーロー遷移（共有要素アニメーション）
+
+- id: `hero_transition`  URL: https://uizukan.dev/entry/hero_transition/
+- 種別: アクション / Transitions
+- 別名: Shared Element Transition, Container Transform, Zoom Transition, matchedGeometryEffect
+- 呼び名: Material 3=Container transform / Material 2=Container transform / Android (Compose)=SharedTransitionLayout + Modifier.sharedElement / iOS (HIG)=該当なし（Zoom transition＝iOS 18） / SwiftUI=.matchedGeometryEffect / .navigationTransition(.zoom)（iOS 18） / Web=View Transitions API（view-transition-name） / Flutter=Hero(tag:)
+- Flutter: `Hero(tag:)`
+- 関連: card, grid, push_slide, pinch_zoom
+
+**説明**: 2 つの画面に同じ tag を持つ要素があると、遷移中にその要素が位置・サイズを補間しながら移動する。画像・カードで使うと連続性が生まれる。
+
+**使いどころ**: 一覧 → 詳細で、画像やカードがそのまま主役になる遷移。
+
+**AI への伝え方（日本語）**: 一覧のサムネイル画像をタップすると、その画像が詳細画面の上部に拡大しながら飛んでいく Hero（Shared Element）遷移にして。
+
+**Prompt (English)**: When a thumbnail in the list is tapped, use a Hero (Shared Element) transition so the image flies and expands into the header of the detail screen.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

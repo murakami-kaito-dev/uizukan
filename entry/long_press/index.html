@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Long Press（長押し） — UI図鑑</title>
+<meta name="description" content="約 0.5 秒押し続けると発火する。隠れたメニューや選択モードの入口。">
+<link rel="canonical" href="https://uizukan.dev/entry/long_press/">
+<meta property="og:title" content="Long Press（長押し） — UI図鑑">
+<meta property="og:description" content="約 0.5 秒押し続けると発火する。隠れたメニューや選択モードの入口。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/long_press/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/long_press.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/actions/">アクション</a><span class="sep">/</span><span class="here">Long Press</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Gestures · 03 · アクション</div>
+  <h1 class="display" style="margin-top:10px">Long Press</h1>
+  <p class="lead" style="margin-top:6px">長押し</p>
+  <div class="demo-plate">
+    <div class="head"><code>long_press</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-long_press" role="group" aria-label="Long Press のデモ"><div class="gs-lp"><div class="gs-hd"><div class="gs-hint">行を長押しで選択モード</div><div class="gs-sel"><button class="m-icon-btn gs-x" aria-label="選択をやめる"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e16a.png);width:24px;height:24px" aria-hidden="true"></i></button><span class="gs-cnt">0 件選択中</span></div></div><div class="gs-r"><span class="gs-ld"><span class="gs-ic"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e3c4.png);width:24px;height:24px" aria-hidden="true"></i></span><span class="gs-cb"><i><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M2.7 8.1L7.2 12.6L15.3 4.5"/></svg></i></span></span><span class="gs-tt">メール 1</span></div><div class="gs-r"><span class="gs-ld"><span class="gs-ic"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e3c4.png);width:24px;height:24px" aria-hidden="true"></i></span><span class="gs-cb"><i><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M2.7 8.1L7.2 12.6L15.3 4.5"/></svg></i></span></span><span class="gs-tt">メール 2</span></div><div class="gs-r"><span class="gs-ld"><span class="gs-ic"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e3c4.png);width:24px;height:24px" aria-hidden="true"></i></span><span class="gs-cb"><i><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M2.7 8.1L7.2 12.6L15.3 4.5"/></svg></i></span></span><span class="gs-tt">メール 3</span></div></div></div><style>#wd-long_press .gs-lp{width:300px;max-width:100%}
+#wd-long_press .gs-hint{padding:8px;font-size:11px;line-height:1.65}
+#wd-long_press .gs-sel{display:none;align-items:center;font-size:15px;line-height:1.3}
+#wd-long_press .gs-lp.gs-on .gs-hint{display:none}
+#wd-long_press .gs-lp.gs-on .gs-sel{display:flex}
+#wd-long_press .gs-r{display:flex;align-items:center;height:48px;padding:0 20px;cursor:pointer;-webkit-touch-callout:none;transition:background-color .1s}
+#wd-long_press .gs-r.gs-pr{background:color-mix(in srgb,var(--ink) 4%,transparent)}
+#wd-long_press .gs-ld{position:relative;flex:none;width:24px;height:48px;margin-right:16px;display:flex;align-items:center;justify-content:center}
+#wd-long_press .gs-lp.gs-on .gs-ld{width:48px}
+#wd-long_press .gs-ic{display:flex;color:var(--m-on-surface-v);transition:opacity .2s}
+#wd-long_press .gs-cb{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s}
+#wd-long_press .gs-lp.gs-on .gs-ic{opacity:0}
+#wd-long_press .gs-lp.gs-on .gs-cb{opacity:1}
+#wd-long_press .gs-cb i{position:relative;width:18px;height:18px;border:2px solid var(--m-on-surface-v);border-radius:2px;transition:background-color .15s,border-color .15s}
+#wd-long_press .gs-cb svg{position:absolute;left:-2px;top:-2px;width:18px;height:18px;fill:none;stroke:var(--m-on-primary);stroke-width:2;opacity:0}
+#wd-long_press .gs-r.gs-ck .gs-cb i{background:var(--m-primary);border-color:var(--m-primary)}
+#wd-long_press .gs-r.gs-ck .gs-cb svg{opacity:1}
+#wd-long_press .gs-tt{font-size:13px;line-height:1.3}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const lp = root.querySelector('.gs-lp'), cnt = root.querySelector('.gs-cnt');
+const rows = [...root.querySelectorAll('.gs-r')];
+let selecting = false;
+const sel = new Set();
+const render = () => {
+  lp.classList.toggle('gs-on', selecting);
+  rows.forEach((r, i) => r.classList.toggle('gs-ck', sel.has(i)));
+  cnt.textContent = sel.size + ' 件選択中';
+};
+rows.forEach((r, i) => {
+  let id = null, sx = 0, sy = 0, timer = 0, fired = false;
+  const stop = () => { clearTimeout(timer); id = null; r.classList.remove('gs-pr'); };
+  r.addEventListener('contextmenu', (e) => e.preventDefault());
+  r.addEventListener('pointerdown', (e) => {
+    if (e.button !== 0) return;
+    id = e.pointerId; sx = e.clientX; sy = e.clientY; fired = false;
+    r.classList.add('gs-pr');
+    timer = setTimeout(() => {
+      fired = true; r.classList.remove('gs-pr');
+      UZ.haptic('medium');
+      selecting = true; sel.add(i); render();
+    }, 500);
+  });
+  r.addEventListener('pointermove', (e) => { if (e.pointerId === id && Math.hypot(e.clientX - sx, e.clientY - sy) > 18) stop(); });
+  r.addEventListener('pointerup', (e) => {
+    if (e.pointerId !== id) return;
+    stop();
+    if (!fired && selecting) { sel.has(i) ? sel.delete(i) : sel.add(i); render(); }
+  });
+  r.addEventListener('pointercancel', stop);
+  r.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') stop(); });
+});
+root.querySelector('.gs-x').addEventListener('click', () => { selecting = false; sel.clear(); render(); });})(document.getElementById("wd-long_press"),window.UZ);</script></div>
+    <a class="foot" href="https://apps.apple.com/jp/app/id6808997175" rel="noopener"><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i><span>本物の手触りは iOS アプリで</span><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a>
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Press and Hold</span><span class="tag">Touch and Hold</span><span class="tag">Long Tap</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Gestures（Long press）</dd></div><div><dt>Material 2</dt><dd class="">Gestures（Long press）</dd></div><div><dt>Android (Compose)</dt><dd class="">Modifier.combinedClickable(onLongClick:) / detectTapGestures(onLongPress:)</dd></div><div><dt>iOS (HIG)</dt><dd class="">Touch and hold</dd></div><div><dt>SwiftUI</dt><dd class="">.onLongPressGesture / LongPressGesture</dd></div><div><dt>Web</dt><dd class="">contextmenu イベント（標準の長押しイベントは無い。pointerdown + タイマー）</dd></div><div><dt>Flutter</dt><dd class="mono">GestureDetector(onLongPress:) / InkWell(onLongPress:)</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>一定時間（Flutter 既定 500ms）押し続けると発火する。発火の瞬間に触覚を鳴らすと「認識された」ことが伝わる。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>コンテキストメニュー、複数選択モードへの切替、並べ替え開始、ツールチップ表示。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/long_press_haptic_navigate/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Long Press → Haptic → Navigate</a><a class="chip" href="/entry/context_menu/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Context Menu (Long-press Preview)</a><a class="chip" href="/entry/drag_reorder/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Drag to Reorder</a><a class="chip" href="/entry/tooltip/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Tooltip</a></div></section>
+  
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="リストの行を長押ししたら、軽く振動してから複数選択モードに入るようにして。" data-en="Long-pressing a list row should trigger a light haptic and enter multi-select mode.">リストの行を長押ししたら、軽く振動してから複数選択モードに入るようにして。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Long Press / 長押し
+
+- id: `long_press`  URL: https://uizukan.dev/entry/long_press/
+- 種別: アクション / Gestures
+- 別名: Press and Hold, Touch and Hold, Long Tap
+- 呼び名: Material 3=Gestures（Long press） / Material 2=Gestures（Long press） / Android (Compose)=Modifier.combinedClickable(onLongClick:) / detectTapGestures(onLongPress:) / iOS (HIG)=Touch and hold / SwiftUI=.onLongPressGesture / LongPressGesture / Web=contextmenu イベント（標準の長押しイベントは無い。pointerdown + タイマー） / Flutter=GestureDetector(onLongPress:) / InkWell(onLongPress:)
+- Flutter: `GestureDetector(onLongPress:) / InkWell(onLongPress:)`
+- 関連: long_press_haptic_navigate, context_menu, drag_reorder, tooltip
+
+**説明**: 一定時間（Flutter 既定 500ms）押し続けると発火する。発火の瞬間に触覚を鳴らすと「認識された」ことが伝わる。
+
+**使いどころ**: コンテキストメニュー、複数選択モードへの切替、並べ替え開始、ツールチップ表示。
+
+**AI への伝え方（日本語）**: リストの行を長押ししたら、軽く振動してから複数選択モードに入るようにして。
+
+**Prompt (English)**: Long-pressing a list row should trigger a light haptic and enter multi-select mode.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

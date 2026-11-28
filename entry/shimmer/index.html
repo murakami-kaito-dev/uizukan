@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shimmer（シマー（光が流れるローディング）） — UI図鑑</title>
+<meta name="description" content="グレーの箱の上を、白い光が左から右へ繰り返し流れる。">
+<link rel="canonical" href="https://uizukan.dev/entry/shimmer/">
+<meta property="og:title" content="Shimmer（シマー（光が流れるローディング）） — UI図鑑">
+<meta property="og:description" content="グレーの箱の上を、白い光が左から右へ繰り返し流れる。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/shimmer/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/shimmer.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/actions/">アクション</a><span class="sep">/</span><span class="here">Shimmer</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Motion &amp; Micro-interactions · 07 · アクション</div>
+  <h1 class="display" style="margin-top:10px">Shimmer</h1>
+  <p class="lead" style="margin-top:6px">シマー（光が流れるローディング）</p>
+  <div class="demo-plate">
+    <div class="head"><code>shimmer</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-shimmer" role="group" aria-label="Shimmer のデモ"><svg class="mo-sh" width="280" height="184" viewBox="0 0 280 184" aria-label="読み込み中"><defs><linearGradient id="wd-shimmer-g" gradientUnits="userSpaceOnUse" x1="0" y1="64.4" x2="140" y2="119.6"><stop offset="0" class="mo-s1"/><stop offset=".5" class="mo-s2"/><stop offset="1" class="mo-s1"/></linearGradient></defs><g fill="url(#wd-shimmer-g)"><rect x="0" y="0" width="280" height="140" rx="8"/><rect x="0" y="150" width="200" height="14" rx="8"/><rect x="0" y="172" width="140" height="12" rx="8"/></g></svg></div><style>#wd-shimmer .mo-sh{display:block;max-width:100%;height:auto}
+#wd-shimmer .mo-s1{stop-color:var(--m-s-highest)}
+#wd-shimmer .mo-s2{stop-color:var(--m-surface)}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const g=root.querySelector('linearGradient'); const t0=performance.now();
+function f(now){
+  const v=((now-t0)%1500)/1500;
+  const x1=420*v; g.setAttribute('x1',x1.toFixed(2)); g.setAttribute('x2',(x1+140).toFixed(2));
+  requestAnimationFrame(f);
+}
+requestAnimationFrame(f);})(document.getElementById("wd-shimmer"),window.UZ);</script></div>
+    <a class="foot" href="https://apps.apple.com/jp/app/id6808997175" rel="noopener"><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i><span>本物の手触りは iOS アプリで</span><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a>
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Shimmer Effect</span><span class="tag">Skeleton Animation</span><span class="tag">Loading Glow</span><span class="tag">Sweep Highlight</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="na">該当なし（Skeleton loaders として言及のみ）</dd></div><div><dt>Material 2</dt><dd class="na">該当なし（M2 に無い）</dd></div><div><dt>Android (Compose)</dt><dd class="na">該当なし（Brush.linearGradient + rememberInfiniteTransition で自作）</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（iOS 標準には無い）</dd></div><div><dt>SwiftUI</dt><dd class="na">該当なし（.redacted + 自作のグラデーション）</dd></div><div><dt>Web</dt><dd class="">CSS @keyframes（background-position）</dd></div><div><dt>Flutter</dt><dd class="mono">ShaderMask + AnimationController / shimmer パッケージ</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>スケルトンにかける斜めのグラデーションのループ。「読み込み中」を静止画より強く伝える。1.2〜1.5 秒周期。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p><a class="term" href="/entry/skeleton/">Skeleton Screen</a> の上。ボタンの上を流して「押して」と誘導する演出にも使う。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/skeleton/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Skeleton Screen</a><a class="chip" href="/entry/crossfade/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Cross-fade Switch</a></div></section>
+  
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="Skeleton の上に、左から右へ白い光が 1.5 秒周期で流れる Shimmer をかけて。" data-en="Overlay a Shimmer on the skeleton: a white highlight sweeping left to right on a 1.5s loop.">Skeleton の上に、左から右へ白い光が 1.5 秒周期で流れる Shimmer をかけて。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Shimmer / シマー（光が流れるローディング）
+
+- id: `shimmer`  URL: https://uizukan.dev/entry/shimmer/
+- 種別: アクション / Motion &amp; Micro-interactions
+- 別名: Shimmer Effect, Skeleton Animation, Loading Glow, Sweep Highlight
+- 呼び名: Material 3=該当なし（Skeleton loaders として言及のみ） / Material 2=該当なし（M2 に無い） / Android (Compose)=該当なし（Brush.linearGradient + rememberInfiniteTransition で自作） / iOS (HIG)=該当なし（iOS 標準には無い） / SwiftUI=該当なし（.redacted + 自作のグラデーション） / Web=CSS @keyframes（background-position） / Flutter=ShaderMask + AnimationController / shimmer パッケージ
+- Flutter: `ShaderMask + AnimationController / shimmer パッケージ`
+- 関連: skeleton, crossfade
+
+**説明**: スケルトンにかける斜めのグラデーションのループ。「読み込み中」を静止画より強く伝える。1.2〜1.5 秒周期。
+
+**使いどころ**: Skeleton Screen の上。ボタンの上を流して「押して」と誘導する演出にも使う。
+
+**AI への伝え方（日本語）**: Skeleton の上に、左から右へ白い光が 1.5 秒周期で流れる Shimmer をかけて。
+
+**Prompt (English)**: Overlay a Shimmer on the skeleton: a white highlight sweeping left to right on a 1.5s loop.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

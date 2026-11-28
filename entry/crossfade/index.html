@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cross-fade Switch（クロスフェード切替） — UI図鑑</title>
+<meta name="description" content="ローディング → 内容、アイコン A → B のように、中身が溶けるように入れ替わる。">
+<link rel="canonical" href="https://uizukan.dev/entry/crossfade/">
+<meta property="og:title" content="Cross-fade Switch（クロスフェード切替） — UI図鑑">
+<meta property="og:description" content="ローディング → 内容、アイコン A → B のように、中身が溶けるように入れ替わる。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/crossfade/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/crossfade.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/actions/">アクション</a><span class="sep">/</span><span class="here">Cross-fade Switch</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Motion &amp; Micro-interactions · 05 · アクション</div>
+  <h1 class="display" style="margin-top:10px">Cross-fade Switch</h1>
+  <p class="lead" style="margin-top:6px">クロスフェード切替</p>
+  <div class="demo-plate">
+    <div class="head"><code>crossfade</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-crossfade" role="group" aria-label="Cross-fade Switch のデモ"><div class="mo-cf"><div class="mo-sw"><div class="mo-it mo-on" data-k="l"><svg class="mo-sp" viewBox="0 0 36 36" width="36" height="36" aria-label="読み込み中"><circle cx="18" cy="18" r="16" fill="none" stroke-width="4"/></svg></div><div class="mo-it" data-k="c" aria-hidden="true"><span class="mo-dn">読み込み完了！</span></div></div><button class="m-btn m-outlined">切り替える</button></div></div><style>#wd-crossfade .mo-cf{display:flex;flex-direction:column;align-items:center;width:280px;max-width:100%}
+#wd-crossfade .mo-sw{position:relative;height:80px;width:100%}
+#wd-crossfade .mo-it{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden}
+#wd-crossfade .mo-it.mo-on,#wd-crossfade .mo-it.mo-out{visibility:visible}
+#wd-crossfade .mo-it.mo-on{opacity:1}
+#wd-crossfade .mo-dn{font-size:18px;line-height:1.3;color:var(--ink)}
+#wd-crossfade .mo-sp{animation:wd-sp-rot 1.568s linear infinite}
+#wd-crossfade .mo-sp circle{stroke:var(--m-primary);stroke-linecap:butt;stroke-dasharray:1,200;stroke-dashoffset:0;animation:wd-sp-dash 1.333s ease-in-out infinite;transform-origin:center}
+@keyframes wd-sp-rot{to{transform:rotate(360deg)}}
+@keyframes wd-sp-dash{0%{stroke-dasharray:1,200;stroke-dashoffset:0}50%{stroke-dasharray:75,200;stroke-dashoffset:-12}100%{stroke-dasharray:75,200;stroke-dashoffset:-99}}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const items=root.querySelectorAll('.mo-it'); let loading=true;
+const anims=new Map();
+function show(el,inc){
+  const a0=anims.get(el); let from=inc?0:1;
+  if(a0){ from=parseFloat(getComputedStyle(el).opacity); a0.cancel(); }
+  const s=v=>({opacity:v,transform:'scale('+(.95+.05*v)+')'});
+  el.classList.toggle('mo-on',inc); el.classList.toggle('mo-out',!inc);
+  el.setAttribute('aria-hidden',String(!inc));
+  const to=inc?1:0, dur=250*Math.abs(to-from);
+  const a=el.animate([s(from),s(to)],{duration:Math.max(dur,1),easing:'linear'});
+  anims.set(el,a);
+  a.onfinish=()=>{ anims.delete(el); if(!inc)el.classList.remove('mo-out'); };
+}
+root.querySelector('button').addEventListener('click',()=>{
+  loading=!loading;
+  show(items[0],loading); show(items[1],!loading);
+});})(document.getElementById("wd-crossfade"),window.UZ);</script></div>
+    <a class="foot" href="https://apps.apple.com/jp/app/id6808997175" rel="noopener"><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i><span>本物の手触りは iOS アプリで</span><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a>
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Animated Switcher</span><span class="tag">Fade Swap</span><span class="tag">Content Transition</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Fade（transition pattern）</dd></div><div><dt>Material 2</dt><dd class="">Fade（Motion system）</dd></div><div><dt>Android (Compose)</dt><dd class="">Crossfade / AnimatedContent</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（Cross-dissolve）</dd></div><div><dt>SwiftUI</dt><dd class="">.transition(.opacity)</dd></div><div><dt>Web</dt><dd class="">CSS transition: opacity / View Transitions API</dd></div><div><dt>Flutter</dt><dd class="mono">AnimatedSwitcher</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>古い child がフェードアウトしつつ新しい child がフェードインする。key を変えることで「別物になった」と Flutter に伝える。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>スケルトン→本文、ボタン内のラベル⇄<a class="term" href="/glossary/indicator/">スピナー</a>、アイコンの状態変化。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/skeleton/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Skeleton Screen</a><a class="chip" href="/entry/loading_button/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Loading Button</a><a class="chip" href="/entry/fade_through/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Fade Through</a><a class="chip" href="/entry/expand_collapse/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Expand / Collapse</a><a class="chip" href="/glossary/indicator/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>インジケータ</a></div></section>
+  
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="読み込み中はスピナー、完了したら内容、を AnimatedSwitcher でクロスフェード（200ms）させて。パッと切り替わらないように。" data-en="Cross-fade (200ms) between the spinner while loading and the content when done using AnimatedSwitcher, instead of an abrupt swap.">読み込み中はスピナー、完了したら内容、を AnimatedSwitcher でクロスフェード（200ms）させて。パッと切り替わらないように。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Cross-fade Switch / クロスフェード切替
+
+- id: `crossfade`  URL: https://uizukan.dev/entry/crossfade/
+- 種別: アクション / Motion &amp; Micro-interactions
+- 別名: Animated Switcher, Fade Swap, Content Transition
+- 呼び名: Material 3=Fade（transition pattern） / Material 2=Fade（Motion system） / Android (Compose)=Crossfade / AnimatedContent / iOS (HIG)=該当なし（Cross-dissolve） / SwiftUI=.transition(.opacity) / Web=CSS transition: opacity / View Transitions API / Flutter=AnimatedSwitcher
+- Flutter: `AnimatedSwitcher`
+- 関連: skeleton, loading_button, fade_through, expand_collapse
+
+**説明**: 古い child がフェードアウトしつつ新しい child がフェードインする。key を変えることで「別物になった」と Flutter に伝える。
+
+**使いどころ**: スケルトン→本文、ボタン内のラベル⇄スピナー、アイコンの状態変化。
+
+**AI への伝え方（日本語）**: 読み込み中はスピナー、完了したら内容、を AnimatedSwitcher でクロスフェード（200ms）させて。パッと切り替わらないように。
+
+**Prompt (English)**: Cross-fade (200ms) between the spinner while loading and the content when done using AnimatedSwitcher, instead of an abrupt swap.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

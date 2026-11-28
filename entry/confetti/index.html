@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Confetti (Celebration)（紙吹雪（達成演出）） — UI図鑑</title>
+<meta name="description" content="目標達成や購入完了で、画面に紙吹雪が舞う。">
+<link rel="canonical" href="https://uizukan.dev/entry/confetti/">
+<meta property="og:title" content="Confetti (Celebration)（紙吹雪（達成演出）） — UI図鑑">
+<meta property="og:description" content="目標達成や購入完了で、画面に紙吹雪が舞う。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/confetti/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/confetti.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/actions/">アクション</a><span class="sep">/</span><span class="here">Confetti (Celebration)</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Motion &amp; Micro-interactions · 08 · アクション</div>
+  <h1 class="display" style="margin-top:10px">Confetti (Celebration)</h1>
+  <p class="lead" style="margin-top:6px">紙吹雪（達成演出）</p>
+  <div class="demo-plate">
+    <div class="head"><code>confetti</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-confetti" role="group" aria-label="Confetti (Celebration) のデモ"><div class="mo-cn"><div class="mo-col"><i class="mi mo-tr" style="--i:url(/assets/icons/mi-materialicons-e22c.png);width:48px;height:48px" aria-hidden="true"></i><button class="m-btn m-filled">目標達成！</button></div><canvas aria-hidden="true"></canvas></div></div><style>#wd-confetti .mo-cn{width:300px;max-width:100%;height:200px;display:flex;align-items:center;justify-content:center}
+#wd-confetti .mo-col{display:flex;flex-direction:column;align-items:center}
+#wd-confetti .mo-tr{color:#FFC107;margin-bottom:8px}
+#wd-confetti canvas{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:2}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const cn=root.querySelector('.mo-cn'), cv=root.querySelector('canvas'), cx=cv.getContext('2d');
+const COLORS=['#F44336','#E91E63','#9C27B0','#673AB7','#3F51B5','#2196F3','#03A9F4','#00BCD4','#009688','#4CAF50','#8BC34A','#CDDC39','#FFEB3B','#FFC107','#FF9800','#FF5722','#795548','#607D8B'];
+const rnd=(a,b)=>a+(b-a)*Math.random();
+const N=30, FREQ=.05, GRAV=.1+(5-.1)*.3, DRAG=.05, LOW=1/60;
+let ps=[], status='finished', emitEnd=0, raf=0, last=0, W=0, H=0, ex=0, ey=0;
+function force(){ const d=Math.floor(Math.random()*359)*Math.PI/180, r=rnd(5,20); return {x:r*Math.cos(d),y:r*Math.sin(d)}; }
+function reset(p){ p.f=force(); p.x=0; p.y=0; p.vx=rnd(-3,3); p.vy=rnd(-3,3); p.ax=0; p.ay=0; p.rx=0; p.ry=0; p.rz=0;
+  p.avx=rnd(-.1,.1); p.avy=rnd(-.1,.1); p.avz=rnd(-.1,.1); p.t=0; p.on=true; }
+function make(){ const p={c:COLORS[Math.floor(Math.random()*COLORS.length)],w:rnd(20,30),h:rnd(10,15),m:rnd(1,11),rotZ:Math.random()<.5}; reset(p); return p; }
+function add(){ let n=0; for(const p of ps){ if(!p.on){ reset(p); if(++n===N)return; } } for(let i=n;i<N;i++)ps.push(make()); }
+function apply(p,fx,fy,s){ p.ax+=fx/p.m*s; p.ay+=fy/p.m*s; }
+function upd(p,dt){
+  const s=dt*60, sp=Math.hypot(p.vx,p.vy);
+  if(sp>0){ const dm=DRAG*sp*sp; apply(p,-p.vx/sp*dm,-p.vy/sp*dm,s); }
+  if(p.t<5)apply(p,p.f.x,p.f.y,s);
+  if(p.t<25){ apply(p,0,-1,s); p.t+=1; }
+  apply(p,0,GRAV,s);
+  p.vx+=p.ax*s; p.vy+=p.ay*s; p.x+=p.vx*s; p.y+=p.vy*s; p.ax=0; p.ay=0;
+  const aa=.0001/p.m;
+  p.avx+=aa; p.rx+=p.avx*s; p.avy+=aa; p.ry+=p.avy*s;
+  if(p.rotZ){ p.rz+=p.avz*s; p.avz+=aa; }
+}
+const out=p=>{ const gx=p.x+ex, gy=p.y+ey; return gy>=H*1.1||gx>=W*1.1||gx<=W-W*1.1; };
+function step(dt,pause){
+  if(status==='stopped'){ ps=ps.filter(p=>!out(p)); for(const p of ps)upd(p,dt); if(!ps.length){status='finished';} return; }
+  for(const p of ps){ if(out(p)){p.on=false; continue;} upd(p,dt); }
+  if(pause)return;
+  if(status==='started'){ if(!ps.length){add();return;} if(Math.random()<FREQ)add(); }
+}
+function draw(){
+  const dpr=window.devicePixelRatio||1;
+  cx.setTransform(dpr,0,0,dpr,0,0); cx.clearRect(0,0,W,H);
+  for(const p of ps){ if(!p.on)continue;
+    const cX=Math.cos(p.rx),sX=Math.sin(p.rx),cY=Math.cos(p.ry),sY=Math.sin(p.ry),cZ=p.rotZ?Math.cos(p.rz):1,sZ=p.rotZ?Math.sin(p.rz):0;
+    cx.setTransform(dpr*cY*cZ,dpr*(cX*sZ+sX*sY*cZ),dpr*(-cY*sZ),dpr*(cX*cZ-sX*sY*sZ),dpr*(p.x+ex),dpr*(p.y+ey));
+    cx.fillStyle=p.c; cx.fillRect(-p.w,0,p.w,p.h);
+  }
+}
+function size(){
+  const par=cv.offsetParent||cn; const pr=par.getBoundingClientRect(), br=cn.getBoundingClientRect();
+  const sc=pr.width/(par.offsetWidth||pr.width)||1;
+  W=par.clientWidth; H=par.clientHeight; ex=(br.left+br.width/2-pr.left)/sc; ey=(br.top-pr.top)/sc;
+  const dpr=window.devicePixelRatio||1; cv.width=Math.round(W*dpr); cv.height=Math.round(H*dpr);
+}
+function frame(now){
+  const dt=(now-last)/1000; last=now;
+  if(status==='started'&&now>=emitEnd)status='stopped';
+  if(dt>LOW)step(LOW,true); else step(dt,false);
+  draw();
+  if(status!=='finished')raf=requestAnimationFrame(frame); else { cx.setTransform(1,0,0,1,0,0); cx.clearRect(0,0,cv.width,cv.height); }
+}
+root.querySelector('button').addEventListener('click',async()=>{
+  size(); status='started'; emitEnd=performance.now()+2000;
+  cancelAnimationFrame(raf); last=performance.now(); raf=requestAnimationFrame(frame);
+  UZ.haptic('light'); await UZ.wait(100); UZ.haptic('medium');
+});})(document.getElementById("wd-confetti"),window.UZ);</script></div>
+    <a class="foot" href="https://apps.apple.com/jp/app/id6808997175" rel="noopener"><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i><span>本物の手触りは iOS アプリで</span><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a>
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Celebration Effect</span><span class="tag">Particle Burst</span><span class="tag">Success Animation</span><span class="tag">Party Popper</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="na">該当なし（M3 に無い）</dd></div><div><dt>Material 2</dt><dd class="na">該当なし（M2 に無い）</dd></div><div><dt>Android (Compose)</dt><dd class="na">該当なし（Canvas で自作）</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（iOS 標準には無い）</dd></div><div><dt>SwiftUI</dt><dd class="na">該当なし（Canvas / SpriteKit で自作）</dd></div><div><dt>Web</dt><dd class="na">該当なし（canvas-confetti 等）</dd></div><div><dt>Flutter</dt><dd class="mono">confetti: ConfettiWidget + ConfettiController</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>色とりどりの紙片が噴き出して落ちる演出。Success 触覚・チェックマークのアニメーションと組み合わせる。1〜2 秒で終わらせる。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>初回タスク完了、連続記録の達成、決済完了、レベルアップ。多用すると価値が下がる。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/haptic_notification/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Notification Haptic (Success / Warning / Error)</a><a class="chip" href="/entry/animated_counter/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Animated Counter</a><a class="chip" href="/entry/like_burst/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Like Burst (Heart Pop)</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/product/"><span class="ic s" style="--i:url(/assets/icons/scene-product.png)"></span>商品と購入</a><a class="chip" href="/scenes/tasks/"><span class="ic s" style="--i:url(/assets/icons/scene-tasks.png)"></span>タスク一覧</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="目標を達成したら、画面上部中央から紙吹雪が 2 秒噴き出す Confetti 演出を出して。同時に Success 触覚を鳴らして。" data-en="When the goal is reached, burst Confetti from the top-center of the screen for 2 seconds and fire the success haptic.">目標を達成したら、画面上部中央から紙吹雪が 2 秒噴き出す Confetti 演出を出して。同時に Success 触覚を鳴らして。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Confetti (Celebration) / 紙吹雪（達成演出）
+
+- id: `confetti`  URL: https://uizukan.dev/entry/confetti/
+- 種別: アクション / Motion &amp; Micro-interactions
+- 別名: Celebration Effect, Particle Burst, Success Animation, Party Popper
+- 呼び名: Material 3=該当なし（M3 に無い） / Material 2=該当なし（M2 に無い） / Android (Compose)=該当なし（Canvas で自作） / iOS (HIG)=該当なし（iOS 標準には無い） / SwiftUI=該当なし（Canvas / SpriteKit で自作） / Web=該当なし（canvas-confetti 等） / Flutter=confetti: ConfettiWidget + ConfettiController
+- Flutter: `confetti: ConfettiWidget + ConfettiController`
+- 関連: haptic_notification, animated_counter, like_burst
+
+**説明**: 色とりどりの紙片が噴き出して落ちる演出。Success 触覚・チェックマークのアニメーションと組み合わせる。1〜2 秒で終わらせる。
+
+**使いどころ**: 初回タスク完了、連続記録の達成、決済完了、レベルアップ。多用すると価値が下がる。
+
+**AI への伝え方（日本語）**: 目標を達成したら、画面上部中央から紙吹雪が 2 秒噴き出す Confetti 演出を出して。同時に Success 触覚を鳴らして。
+
+**Prompt (English)**: When the goal is reached, burst Confetti from the top-center of the screen for 2 seconds and fire the success haptic.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

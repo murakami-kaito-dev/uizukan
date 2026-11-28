@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Swipe Actions（スワイプで操作ボタンを出す） — UI図鑑</title>
+<meta name="description" content="行を少し横にずらすと、裏から「アーカイブ」「削除」などのボタンが現れる。">
+<link rel="canonical" href="https://uizukan.dev/entry/swipe_actions/">
+<meta property="og:title" content="Swipe Actions（スワイプで操作ボタンを出す） — UI図鑑">
+<meta property="og:description" content="行を少し横にずらすと、裏から「アーカイブ」「削除」などのボタンが現れる。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/swipe_actions/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/swipe_actions.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/actions/">アクション</a><span class="sep">/</span><span class="here">Swipe Actions</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Gestures · 06 · アクション</div>
+  <h1 class="display" style="margin-top:10px">Swipe Actions</h1>
+  <p class="lead" style="margin-top:6px">スワイプで操作ボタンを出す</p>
+  <div class="demo-plate">
+    <div class="head"><code>swipe_actions</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-swipe_actions" role="group" aria-label="Swipe Actions のデモ"><div class="gs-sa"><div class="gs-acts"><div class="gs-a gs-ar"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e091.png);width:24px;height:24px" aria-hidden="true"></i><span>アーカイブ</span></div><div class="gs-a gs-dl"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e1b9.png);width:24px;height:24px" aria-hidden="true"></i><span>削除</span></div></div><div class="gs-fg"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e3c4.png);width:24px;height:24px" aria-hidden="true"></i><div class="gs-tx"><div class="gs-t1">件名: 来週の打ち合わせ</div><div class="gs-t2">左にスワイプ</div></div></div></div></div><style>#wd-swipe_actions .gs-sa{position:relative;width:300px;max-width:100%;height:64px;border-radius:12px;overflow:hidden}
+#wd-swipe_actions .gs-sa::after{content:"";position:absolute;inset:0;border:1px solid var(--rule);border-radius:12px;pointer-events:none;z-index:2}
+#wd-swipe_actions .gs-acts{position:absolute;inset:0;display:flex;justify-content:flex-end}
+#wd-swipe_actions .gs-a{width:70px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff}
+#wd-swipe_actions .gs-a span{font-size:10px;line-height:1.65}
+#wd-swipe_actions .gs-ar{background:#2196F3}
+#wd-swipe_actions .gs-dl{background:#F44336}
+#wd-swipe_actions .gs-fg{position:absolute;inset:0;display:flex;align-items:center;gap:16px;padding:0 20px;background:var(--m-surface);transition:transform 150ms linear;touch-action:pan-y;cursor:grab}
+#wd-swipe_actions .gs-fg>.mi{color:var(--m-on-surface-v)}
+#wd-swipe_actions .gs-tx{min-width:0}
+#wd-swipe_actions .gs-t1{font-size:15px;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#wd-swipe_actions .gs-t2{font-size:13px;line-height:1.4;color:var(--m-on-surface-v)}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const fg = root.querySelector('.gs-fg');
+const R = 140;
+let dx = 0, id = null, sx = 0, sy = 0, lx = 0, drag = false;
+const set = () => { fg.style.transform = 'translateX(' + dx + 'px)'; };
+fg.addEventListener('pointerdown', (e) => {
+  if (e.button !== 0) return;
+  id = e.pointerId; sx = lx = e.clientX; sy = e.clientY; drag = false;
+});
+fg.addEventListener('pointermove', (e) => {
+  if (e.pointerId !== id) return;
+  if (!drag) {
+    const ax = Math.abs(e.clientX - sx), ay = Math.abs(e.clientY - sy), slop = e.pointerType === 'mouse' ? 1 : 18;
+    if (ax > slop && ax > ay) { drag = true; lx = e.clientX; try { fg.setPointerCapture(id); } catch (_) {} }
+    else if (ay > slop) id = null;
+    return;
+  }
+  dx = Math.max(-R, Math.min(0, dx + e.clientX - lx));
+  lx = e.clientX;
+  set();
+});
+const end = (e) => {
+  if (e.pointerId !== id) return;
+  id = null;
+  if (!drag) return;
+  drag = false;
+  const open = dx < -R / 2;
+  if (open) UZ.haptic('selection');
+  dx = open ? -R : 0;
+  set();
+};
+fg.addEventListener('pointerup', end);
+fg.addEventListener('pointercancel', end);})(document.getElementById("wd-swipe_actions"),window.UZ);</script></div>
+    <a class="foot" href="https://apps.apple.com/jp/app/id6808997175" rel="noopener"><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i><span>本物の手触りは iOS アプリで</span><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a>
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Swipe to Reveal</span><span class="tag">Leading/Trailing Swipe Actions</span><span class="tag">Slidable</span><span class="tag">Swipe Menu</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="na">該当なし（M3 に無い）</dd></div><div><dt>Material 2</dt><dd class="na">該当なし（M2 に無い）</dd></div><div><dt>Android (Compose)</dt><dd class="">SwipeToDismissBox（背景に action）</dd></div><div><dt>iOS (HIG)</dt><dd class="">Swipe（reveal actions）</dd></div><div><dt>SwiftUI</dt><dd class="">.swipeActions(edge:)</dd></div><div><dt>Web</dt><dd class="na">該当なし（Pointer Events で自作）</dd></div><div><dt>Flutter</dt><dd class="mono">flutter_slidable（Slidable + ActionPane）</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>行を<a class="term" href="/glossary/swipe/">スワイプ</a>すると隠れていたボタン群がスライドして出る。iOS メールの標準挙動。端まで引き切ると先頭のアクションが即実行される（full <a class="term" href="/glossary/swipe/">swipe</a>）。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>行ごとに 2〜3 個の操作がある一覧（メール、タスク、チャット一覧）。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/swipe_to_dismiss/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Swipe to Dismiss</a><a class="chip" href="/entry/list_tile/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>List Item</a><a class="chip" href="/entry/popup_menu/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Menu (Popup / Overflow)</a><a class="chip" href="/glossary/swipe/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>スワイプ</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/tasks/"><span class="ic s" style="--i:url(/assets/icons/scene-tasks.png)"></span>タスク一覧</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="メール一覧の行を左にスワイプすると「アーカイブ」「削除」のボタンが出る Swipe Actions にして。端まで引き切ったら削除が即実行されるように。" data-en="Add Swipe Actions to the mail list: swiping a row left reveals &quot;Archive&quot; and &quot;Delete&quot; buttons; a full swipe immediately deletes.">メール一覧の行を左にスワイプすると「アーカイブ」「削除」のボタンが出る Swipe Actions にして。端まで引き切ったら削除が即実行されるように。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Swipe Actions / スワイプで操作ボタンを出す
+
+- id: `swipe_actions`  URL: https://uizukan.dev/entry/swipe_actions/
+- 種別: アクション / Gestures
+- 別名: Swipe to Reveal, Leading/Trailing Swipe Actions, Slidable, Swipe Menu
+- 呼び名: Material 3=該当なし（M3 に無い） / Material 2=該当なし（M2 に無い） / Android (Compose)=SwipeToDismissBox（背景に action） / iOS (HIG)=Swipe（reveal actions） / SwiftUI=.swipeActions(edge:) / Web=該当なし（Pointer Events で自作） / Flutter=flutter_slidable（Slidable + ActionPane）
+- Flutter: `flutter_slidable（Slidable + ActionPane）`
+- 関連: swipe_to_dismiss, list_tile, popup_menu
+
+**説明**: 行をスワイプすると隠れていたボタン群がスライドして出る。iOS メールの標準挙動。端まで引き切ると先頭のアクションが即実行される（full swipe）。
+
+**使いどころ**: 行ごとに 2〜3 個の操作がある一覧（メール、タスク、チャット一覧）。
+
+**AI への伝え方（日本語）**: メール一覧の行を左にスワイプすると「アーカイブ」「削除」のボタンが出る Swipe Actions にして。端まで引き切ったら削除が即実行されるように。
+
+**Prompt (English)**: Add Swipe Actions to the mail list: swiping a row left reveals "Archive" and "Delete" buttons; a full swipe immediately deletes.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

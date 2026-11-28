@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Breadcrumb（パンくずリスト） — UI図鑑</title>
+<meta name="description" content="「ホーム › カテゴリ › 商品」のように現在地までの階層を示す。">
+<link rel="canonical" href="https://uizukan.dev/entry/breadcrumb/">
+<meta property="og:title" content="Breadcrumb（パンくずリスト） — UI図鑑">
+<meta property="og:description" content="「ホーム › カテゴリ › 商品」のように現在地までの階層を示す。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/breadcrumb/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/breadcrumb.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Breadcrumb</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Navigation · 08 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Breadcrumb</h1>
+  <p class="lead" style="margin-top:6px">パンくずリスト</p>
+  <div class="demo-plate">
+    <div class="head"><code>breadcrumb</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-breadcrumb" role="group" aria-label="Breadcrumb のデモ"><nav class="nv-bc" aria-label="パンくず"><button class="m-btn m-text">ホーム</button><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e15f.png);width:16px;height:16px" aria-hidden="true"></i><button class="m-btn m-text">メンズ</button><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e15f.png);width:16px;height:16px" aria-hidden="true"></i><button class="m-btn m-text">シューズ</button><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e15f.png);width:16px;height:16px" aria-hidden="true"></i><span class="nv-cur">ランニングシューズ</span></nav></div><style>#wd-breadcrumb .nv-bc{display:flex;flex-wrap:wrap;align-items:center;max-width:100%}
+#wd-breadcrumb .m-text{min-width:64px}
+#wd-breadcrumb .nv-bc>.mi{color:var(--ink)}
+#wd-breadcrumb .nv-cur{padding:0 8px;font-size:15px;line-height:1.65}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Breadcrumbs</span><span class="tag">Path Navigation</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="na">該当なし（M3 に無い）</dd></div><div><dt>Material 2</dt><dd class="na">該当なし（M2 に無い）</dd></div><div><dt>Android (Compose)</dt><dd class="na">該当なし（Row + TextButton で自作）</dd></div><div><dt>iOS (HIG)</dt><dd class="">Path controls（macOS のみ）</dd></div><div><dt>SwiftUI</dt><dd class="na">該当なし（HStack + Button で自作）</dd></div><div><dt>Web</dt><dd class="">Breadcrumb（WAI-ARIA パターン。&lt;nav aria-label="breadcrumb"&gt;）</dd></div><div><dt>Flutter</dt><dd class="mono">自作（Row + TextButton + Icon(chevron_right)）</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>階層構造の現在位置を「›」区切りで示し、各階層へ戻れるリンク列。主に Web・デスクトップ向け。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>Web 版の階層が深い画面。モバイルでは戻るボタンで十分なことが多い。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/app_bar/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Top App Bar</a><a class="chip" href="/entry/text_button/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Text Button</a></div></section>
+  
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="Web 版の商品ページ上部に「ホーム › メンズ › シューズ › 商品名」の Breadcrumb を作って。最後以外はリンクにして。" data-en="Add a Breadcrumb &quot;Home › Men › Shoes › Product&quot; at the top of the web product page; all but the last are links.">Web 版の商品ページ上部に「ホーム › メンズ › シューズ › 商品名」の Breadcrumb を作って。最後以外はリンクにして。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Breadcrumb / パンくずリスト
+
+- id: `breadcrumb`  URL: https://uizukan.dev/entry/breadcrumb/
+- 種別: 表示 / Navigation
+- 別名: Breadcrumbs, Path Navigation
+- 呼び名: Material 3=該当なし（M3 に無い） / Material 2=該当なし（M2 に無い） / Android (Compose)=該当なし（Row + TextButton で自作） / iOS (HIG)=Path controls（macOS のみ） / SwiftUI=該当なし（HStack + Button で自作） / Web=Breadcrumb（WAI-ARIA パターン。&lt;nav aria-label="breadcrumb"&gt;） / Flutter=自作（Row + TextButton + Icon(chevron_right)）
+- Flutter: `自作（Row + TextButton + Icon(chevron_right)）`
+- 関連: app_bar, text_button
+
+**説明**: 階層構造の現在位置を「›」区切りで示し、各階層へ戻れるリンク列。主に Web・デスクトップ向け。
+
+**使いどころ**: Web 版の階層が深い画面。モバイルでは戻るボタンで十分なことが多い。
+
+**AI への伝え方（日本語）**: Web 版の商品ページ上部に「ホーム › メンズ › シューズ › 商品名」の Breadcrumb を作って。最後以外はリンクにして。
+
+**Prompt (English)**: Add a Breadcrumb "Home › Men › Shoes › Product" at the top of the web product page; all but the last are links.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Card（カード） — UI図鑑</title>
+<meta name="description" content="関連する情報をひとまとまりにした角丸の面。影付き・塗り・枠線の 3 種。">
+<link rel="canonical" href="https://uizukan.dev/entry/card/">
+<meta property="og:title" content="Card（カード） — UI図鑑">
+<meta property="og:description" content="関連する情報をひとまとまりにした角丸の面。影付き・塗り・枠線の 3 種。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/card/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/card.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Card</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Surfaces &amp; Overlays · 01 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Card</h1>
+  <p class="lead" style="margin-top:6px">カード</p>
+  <div class="demo-plate">
+    <div class="head"><code>card</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-card" role="group" aria-label="Card のデモ"><div class="sf-crd sf-ink" role="button" tabindex="0">
+<div class="sf-pic"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f120.png);width:40px;height:40px" aria-hidden="true"></i></div>
+<div class="sf-bd"><div class="sf-h">見出し</div><div class="sf-p">カードの説明文。2 行で省略される長さの本文がここに入ります。</div></div>
+<div class="sf-act"><button class="m-btn m-text">詳細</button></div>
+</div></div><style>#wd-card .sf-ink{position:relative;cursor:pointer}
+#wd-card .sf-ink::after{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--ink);opacity:0;pointer-events:none;transition:opacity .2s}
+@media (hover:hover){#wd-card .sf-ink:hover::after{opacity:.03}}
+#wd-card .sf-ink.sf-down::after{opacity:.04}
+
+#wd-card .sf-crd{width:280px;max-width:100%;background:var(--surface);border-radius:12px;box-shadow:var(--e1);overflow:hidden}
+#wd-card .sf-pic{aspect-ratio:16/9;background:linear-gradient(90deg,#7986CB,#CE93D8);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7)}
+#wd-card .sf-bd{padding:14px}
+#wd-card .sf-h{font-weight:700}
+#wd-card .sf-p{margin-top:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+#wd-card .sf-act{display:flex;justify-content:flex-end}
+#wd-card .sf-act .m-btn{min-width:64px;z-index:1}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const lock = (on) => { document.documentElement.style.overflow = on ? 'hidden' : ''; };
+const escKey = (fn) => { const h = (e) => { if (e.key === 'Escape') fn(); }; document.addEventListener('keydown', h); return () => document.removeEventListener('keydown', h); };
+const layer = (el, ms, outCls) => {
+  let shown = false, t = 0, off = null;
+  return {
+    get open() { return shown; },
+    show(close) {
+      if (shown) return false;
+      shown = true; clearTimeout(t); el.hidden = false; if (outCls) el.classList.remove(outCls); lock(true);
+      void el.offsetWidth; el.classList.add('sf-on'); off = escKey(close); return true;
+    },
+    hide() {
+      if (!shown) return false;
+      shown = false; if (outCls) el.classList.add(outCls); el.classList.remove('sf-on'); if (off) off();
+      t = setTimeout(() => { el.hidden = true; if (outCls) el.classList.remove(outCls); lock(false); }, ms); return true;
+    },
+  };
+};
+const press = (el) => {
+  const off = () => el.classList.remove('sf-down');
+  el.addEventListener('pointerdown', () => el.classList.add('sf-down'));
+  ['pointerup', 'pointercancel', 'pointerleave'].forEach((n) => el.addEventListener(n, off));
+};
+
+press(root.querySelector('.sf-crd'));})(document.getElementById("wd-card"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Elevated Card</span><span class="tag">Filled Card</span><span class="tag">Outlined Card</span><span class="tag">Tile</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Cards（Elevated / Filled / Outlined）</dd></div><div><dt>Material 2</dt><dd class="">Card（Elevated / Outlined）</dd></div><div><dt>Android (Compose)</dt><dd class="">Card / ElevatedCard / OutlinedCard</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（Lockups や grouped list で表現）</dd></div><div><dt>SwiftUI</dt><dd class="">GroupBox（近い）/ 自作</dd></div><div><dt>Web</dt><dd class="na">該当なし（Card。&lt;article&gt;）</dd></div><div><dt>Flutter</dt><dd class="mono">Card / Card.filled / Card.outlined</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>画像・見出し・本文・アクションを<a class="term" href="/glossary/border_radius/">角丸</a> 12dp の面にまとめる。<a class="term" href="/glossary/material3/">Material 3</a> では Elevated（影）／Filled（塗り）／Outlined（枠線）の 3 種類。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>フィードの投稿、商品、記事など「タップで詳細へ行く独立した塊」。単なる区切りには不要。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/list_tile/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>List Item</a><a class="chip" href="/entry/elevated_button/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Elevated Button</a><a class="chip" href="/entry/hero_transition/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Hero Transition (Shared Element)</a><a class="chip" href="/glossary/border_radius/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>角丸</a><a class="chip" href="/glossary/material3/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>Material 3</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/feed/"><span class="ic s" style="--i:url(/assets/icons/scene-feed.png)"></span>フィード</a><a class="chip" href="/scenes/product/"><span class="ic s" style="--i:url(/assets/icons/scene-product.png)"></span>商品と購入</a><a class="chip" href="/scenes/paywall/"><span class="ic s" style="--i:url(/assets/icons/scene-paywall.png)"></span>ペイウォール</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="上に画像、下に見出しと 2 行の説明、右下にテキストボタンがある Material 3 の Elevated Card を作って。タップで詳細に遷移するように。" data-en="Create a Material 3 Elevated Card with an image on top, a headline and 2-line description below, and a text button at the bottom-right. Tapping the card navigates to the detail screen.">上に画像、下に見出しと 2 行の説明、右下にテキストボタンがある Material 3 の Elevated Card を作って。タップで詳細に遷移するように。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Card / カード
+
+- id: `card`  URL: https://uizukan.dev/entry/card/
+- 種別: 表示 / Surfaces &amp; Overlays
+- 別名: Elevated Card, Filled Card, Outlined Card, Tile
+- 呼び名: Material 3=Cards（Elevated / Filled / Outlined） / Material 2=Card（Elevated / Outlined） / Android (Compose)=Card / ElevatedCard / OutlinedCard / iOS (HIG)=該当なし（Lockups や grouped list で表現） / SwiftUI=GroupBox（近い）/ 自作 / Web=該当なし（Card。&lt;article&gt;） / Flutter=Card / Card.filled / Card.outlined
+- Flutter: `Card / Card.filled / Card.outlined`
+- 関連: list_tile, elevated_button, hero_transition
+
+**説明**: 画像・見出し・本文・アクションを角丸 12dp の面にまとめる。Material 3 では Elevated（影）／Filled（塗り）／Outlined（枠線）の 3 種類。
+
+**使いどころ**: フィードの投稿、商品、記事など「タップで詳細へ行く独立した塊」。単なる区切りには不要。
+
+**AI への伝え方（日本語）**: 上に画像、下に見出しと 2 行の説明、右下にテキストボタンがある Material 3 の Elevated Card を作って。タップで詳細に遷移するように。
+
+**Prompt (English)**: Create a Material 3 Elevated Card with an image on top, a headline and 2-line description below, and a text button at the bottom-right. Tapping the card navigates to the detail screen.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

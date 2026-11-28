@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Staggered Entrance（順番に現れるリスト（スタッガー）） — UI図鑑</title>
+<meta name="description" content="リストの行が、上から順に少しずつ遅れてフェードイン＋スライドインする。">
+<link rel="canonical" href="https://uizukan.dev/entry/staggered_list/">
+<meta property="og:title" content="Staggered Entrance（順番に現れるリスト（スタッガー）） — UI図鑑">
+<meta property="og:description" content="リストの行が、上から順に少しずつ遅れてフェードイン＋スライドインする。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/staggered_list/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/staggered_list.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/actions/">アクション</a><span class="sep">/</span><span class="here">Staggered Entrance</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Motion &amp; Micro-interactions · 11 · アクション</div>
+  <h1 class="display" style="margin-top:10px">Staggered Entrance</h1>
+  <p class="lead" style="margin-top:6px">順番に現れるリスト（スタッガー）</p>
+  <div class="demo-plate">
+    <div class="head"><code>staggered_list</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-staggered_list" role="group" aria-label="Staggered Entrance のデモ"><div class="mo-sl"><div class="mo-hd">通知</div><div class="mo-cs"><div class="m-card mo-nc"><div class="mo-av" style="background:#EF4444">山</div><div class="mo-tx"><div class="mo-nm">山田 花子</div><div class="mo-sb">あなたの投稿に「いいね」しました</div></div><div class="mo-tm">2 分前</div></div><div class="m-card mo-nc"><div class="mo-av" style="background:#3B5BFF">佐</div><div class="mo-tx"><div class="mo-nm">佐藤 健</div><div class="mo-sb">コメント：「参考になりました！」</div></div><div class="mo-tm">15 分前</div></div><div class="m-card mo-nc"><div class="mo-av" style="background:#22C55E">U</div><div class="mo-tx"><div class="mo-nm">UI図鑑</div><div class="mo-sb">新しい項目が 2 件追加されました</div></div><div class="mo-tm">1 時間前</div></div><div class="m-card mo-nc"><div class="mo-av" style="background:#8B5CF6">田</div><div class="mo-tx"><div class="mo-nm">田中 美咲</div><div class="mo-sb">あなたをフォローしました</div></div><div class="mo-tm">3 時間前</div></div></div><div class="mo-ag"><button class="m-btn m-text">もう一度</button></div></div></div><style>#wd-staggered_list .mo-sl{width:300px;max-width:100%;display:flex;flex-direction:column}
+#wd-staggered_list .mo-hd{padding:0 4px 6px;font-size:15px;font-weight:700;line-height:1.65;color:var(--ink)}
+#wd-staggered_list .mo-nc{display:flex;align-items:center;min-height:64px;padding:8px 20px}
+#wd-staggered_list .mo-av{flex:none;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:600;line-height:1}
+#wd-staggered_list .mo-tx{flex:1;min-width:0;margin-left:16px}
+#wd-staggered_list .mo-nm{font-size:13px;font-weight:600;line-height:1.3;color:var(--ink)}
+#wd-staggered_list .mo-sb{font-size:12px;line-height:1.4;color:var(--ink2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#wd-staggered_list .mo-tm{flex:none;margin-left:16px;font-size:10px;line-height:1.3;color:var(--ink2)}
+#wd-staggered_list .mo-ag{display:flex;justify-content:center}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const reduced=()=>{try{return matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){return false;}};
+const cards=root.querySelectorAll('.mo-nc'); let ans=[];
+function play(){
+  ans.forEach(a=>a.cancel()); ans=[];
+  if(reduced())return;
+  cards.forEach((c,i)=>{
+    ans.push(c.animate([{opacity:0,transform:'translateY(20px)'},{opacity:1,transform:'none'}],{duration:360,delay:i*135,easing:'cubic-bezier(0,0,.58,1)',fill:'backwards'}));
+  });
+}
+play();
+root.querySelector('.mo-ag button').addEventListener('click',play);})(document.getElementById("wd-staggered_list"),window.UZ);</script></div>
+    <a class="foot" href="https://apps.apple.com/jp/app/id6808997175" rel="noopener"><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i><span>本物の手触りは iOS アプリで</span><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a>
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Staggered Animation</span><span class="tag">Cascade Animation</span><span class="tag">List Entrance Animation</span><span class="tag">Fade-in Slide-up</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="na">該当なし（Motion に個別名は無い）</dd></div><div><dt>Material 2</dt><dd class="">Motion（Stagger）</dd></div><div><dt>Android (Compose)</dt><dd class="">AnimatedVisibility + delay</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（iOS 標準には無い）</dd></div><div><dt>SwiftUI</dt><dd class="">.animation(.delay) / PhaseAnimator</dd></div><div><dt>Web</dt><dd class="">CSS animation-delay</dd></div><div><dt>Flutter</dt><dd class="mono">flutter_staggered_animations: AnimationLimiter + AnimationConfiguration.staggeredList</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>各要素の開始を 50〜80ms ずつずらして、画面が「生きて」見えるようにする。初回表示だけに使い、スクロール中には使わない。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>画面の初回表示、検索結果の表示、ダッシュボードのカード群。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/crossfade/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Cross-fade Switch</a><a class="chip" href="/entry/card/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Card</a><a class="chip" href="/entry/chat_bubble/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Chat Bubble</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/chat/"><span class="ic s" style="--i:url(/assets/icons/scene-chat.png)"></span>チャット</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="画面を開いたとき、リストの各行が上から順に 60ms ずつ遅れて、下から 20dp スライドしながらフェードインする Staggered Entrance にして。" data-en="On screen open, animate list rows in with a Staggered Entrance: each row fades in while sliding up 20dp, delayed 60ms after the previous one.">画面を開いたとき、リストの各行が上から順に 60ms ずつ遅れて、下から 20dp スライドしながらフェードインする Staggered Entrance にして。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Staggered Entrance / 順番に現れるリスト（スタッガー）
+
+- id: `staggered_list`  URL: https://uizukan.dev/entry/staggered_list/
+- 種別: アクション / Motion &amp; Micro-interactions
+- 別名: Staggered Animation, Cascade Animation, List Entrance Animation, Fade-in Slide-up
+- 呼び名: Material 3=該当なし（Motion に個別名は無い） / Material 2=Motion（Stagger） / Android (Compose)=AnimatedVisibility + delay / iOS (HIG)=該当なし（iOS 標準には無い） / SwiftUI=.animation(.delay) / PhaseAnimator / Web=CSS animation-delay / Flutter=flutter_staggered_animations: AnimationLimiter + AnimationConfiguration.staggeredList
+- Flutter: `flutter_staggered_animations: AnimationLimiter + AnimationConfiguration.staggeredList`
+- 関連: crossfade, card, chat_bubble
+
+**説明**: 各要素の開始を 50〜80ms ずつずらして、画面が「生きて」見えるようにする。初回表示だけに使い、スクロール中には使わない。
+
+**使いどころ**: 画面の初回表示、検索結果の表示、ダッシュボードのカード群。
+
+**AI への伝え方（日本語）**: 画面を開いたとき、リストの各行が上から順に 60ms ずつ遅れて、下から 20dp スライドしながらフェードインする Staggered Entrance にして。
+
+**Prompt (English)**: On screen open, animate list rows in with a Staggered Entrance: each row fades in while sliding up 20dp, delayed 60ms after the previous one.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

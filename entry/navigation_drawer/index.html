@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Navigation Drawer（ナビゲーションドロワー（ハンバーガーメニュー）） — UI図鑑</title>
+<meta name="description" content="左端から横にスライドして出てくるメニューパネル。">
+<link rel="canonical" href="https://uizukan.dev/entry/navigation_drawer/">
+<meta property="og:title" content="Navigation Drawer（ナビゲーションドロワー（ハンバーガーメニュー）） — UI図鑑">
+<meta property="og:description" content="左端から横にスライドして出てくるメニューパネル。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/navigation_drawer/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/navigation_drawer.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Navigation Drawer</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Navigation · 05 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Navigation Drawer</h1>
+  <p class="lead" style="margin-top:6px">ナビゲーションドロワー（ハンバーガーメニュー）</p>
+  <div class="demo-plate">
+    <div class="head"><code>navigation_drawer</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-navigation_drawer" role="group" aria-label="Navigation Drawer のデモ"><div class="nv-fit-o"><div class="nv-fit-i" style="width:330px"><div class="nv-fr" style="width:330px;height:400px"><div class="nv-scaf"><div class="nv-ab"><button class="m-icon-btn nv-menu" aria-label="メニューを開く"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e3dc.png);width:22px;height:22px" aria-hidden="true"></i></button><span class="nv-t">受信箱</span></div><div class="nv-lst nv-sc"><div class="nv-lt"><span class="nv-av">山</span><span class="nv-tx"><span class="nv-t1">山田</span><span class="nv-t2">来週の打ち合わせ</span></span></div><div class="nv-lt"><span class="nv-av">A</span><span class="nv-tx"><span class="nv-t1">Apple</span><span class="nv-t2">レシート</span></span></div><div class="nv-lt"><span class="nv-av">G</span><span class="nv-tx"><span class="nv-t1">GitHub</span><span class="nv-t2">PR がマージされました</span></span></div><p class="nv-hint">左上の ≡ をタップ</p></div><div class="nv-scrim"></div><nav class="nv-drw" aria-label="ドロワー"><div class="nv-dh"><span class="nv-dav"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e491.png);width:24px;height:24px" aria-hidden="true"></i></span><b>田中 太郎</b><span class="nv-em">user@example.com</span></div><button class="nv-dd nv-sel"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f126.png);width:24px;height:24px" aria-hidden="true"></i><span>受信箱</span></button><button class="nv-dd"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f355.png);width:24px;height:24px" aria-hidden="true"></i><span>送信済み</span></button><button class="nv-dd"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e5fd.png);width:24px;height:24px" aria-hidden="true"></i><span>スター付き</span></button><button class="nv-dd"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e1bb.png);width:24px;height:24px" aria-hidden="true"></i><span>ゴミ箱</span></button></nav></div></div></div></div></div><style>#wd-navigation_drawer .nv-fit-o{position:relative;flex:none}
+#wd-navigation_drawer .nv-fit-i{position:absolute;left:0;top:0;transform-origin:0 0}
+#wd-navigation_drawer .nv-fr{position:relative;overflow:hidden;border-radius:12px;isolation:isolate;text-align:left}
+#wd-navigation_drawer .nv-fr::after{content:"";position:absolute;inset:0;border:1px solid var(--rule);border-radius:12px;pointer-events:none;z-index:60}
+#wd-navigation_drawer .nv-sc{overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+#wd-navigation_drawer .nv-sc::-webkit-scrollbar{display:none}
+#wd-navigation_drawer .m-icon-btn .mi{width:22px;height:22px}
+
+#wd-navigation_drawer .nv-scaf{position:relative;height:100%;background:var(--canvas);display:flex;flex-direction:column}
+#wd-navigation_drawer .nv-ab{height:56px;flex:none;position:relative;display:flex;align-items:center}
+#wd-navigation_drawer .nv-menu{position:absolute;left:4px;top:4px}
+#wd-navigation_drawer .nv-ab .nv-t{position:absolute;left:72px;font-size:18px;font-weight:600;line-height:1.3;letter-spacing:-.18px}
+#wd-navigation_drawer .nv-lst{flex:1}
+#wd-navigation_drawer .nv-lt{height:64px;display:flex;align-items:center;gap:16px;padding:0 20px}
+#wd-navigation_drawer .nv-av{width:40px;height:40px;border-radius:50%;background:var(--accent-soft);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600;flex:none}
+#wd-navigation_drawer .nv-tx{display:flex;flex-direction:column;min-width:0}
+#wd-navigation_drawer .nv-t1{font-size:13px;line-height:1.65}
+#wd-navigation_drawer .nv-t2{font-size:12px;line-height:1.65}
+#wd-navigation_drawer .nv-hint{margin:0;padding:16px;text-align:center;font-size:12px;line-height:1.65}
+#wd-navigation_drawer .nv-scrim{position:absolute;inset:0;background:rgba(0,0,0,.54);opacity:0;pointer-events:none;transition:opacity .3s cubic-bezier(.2,0,0,1);z-index:5}
+#wd-navigation_drawer .nv-drw{position:absolute;left:0;top:0;bottom:0;width:304px;background:var(--canvas);border-radius:0 16px 16px 0;transform:translateX(-100%);transition:transform .3s cubic-bezier(.2,0,0,1);z-index:6;overflow:hidden;visibility:hidden}
+#wd-navigation_drawer .nv-open .nv-scrim{opacity:1;pointer-events:auto}
+#wd-navigation_drawer .nv-open .nv-drw{transform:none;visibility:visible}
+#wd-navigation_drawer .nv-dh{height:161px;margin-bottom:8px;padding:16px 16px 8px;border-bottom:1px solid var(--rule);display:flex;flex-direction:column;justify-content:flex-end}
+#wd-navigation_drawer .nv-dav{width:44px;height:44px;border-radius:50%;background:var(--accent-soft);color:var(--ink);display:flex;align-items:center;justify-content:center;margin-bottom:8px}
+#wd-navigation_drawer .nv-dh b{font-size:15px;font-weight:700;line-height:1.65}
+#wd-navigation_drawer .nv-em{font-size:12px;line-height:1.65}
+#wd-navigation_drawer .nv-dd{display:flex;align-items:center;gap:12px;width:280px;height:56px;margin:0 12px;padding:0 16px;border-radius:28px;color:var(--ink2);font-size:15px;font-weight:500;line-height:1.2;text-align:left;transition:background-color .15s}
+@media (hover:hover){#wd-navigation_drawer .nv-dd:hover{background:color-mix(in srgb,var(--ink) 4%,transparent)}}
+#wd-navigation_drawer .nv-dd.nv-sel{background:var(--accent-soft);color:var(--ink)}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const fitO = root.querySelector('.nv-fit-o'), fitI = fitO.firstElementChild;
+let S = 1;
+const refit = () => {
+  const W = fitI.offsetWidth, H = fitI.offsetHeight, a = root.clientWidth || W;
+  S = Math.min(1, a / W);
+  fitI.style.transform = S < 1 ? 'scale(' + S + ')' : '';
+  fitO.style.width = W * S + 'px';
+  fitO.style.height = H * S + 'px';
+};
+refit();
+if (window.ResizeObserver) { const ro = new ResizeObserver(refit); ro.observe(root); ro.observe(fitI); }
+
+const scaf = root.querySelector('.nv-scaf'), drw = root.querySelector('.nv-drw');
+const close = () => { scaf.classList.remove('nv-open'); setTimeout(() => { if (!scaf.classList.contains('nv-open')) drw.style.visibility = ''; }, 300); };
+root.querySelector('.nv-menu').addEventListener('click', () => { drw.style.visibility = 'visible'; requestAnimationFrame(() => scaf.classList.add('nv-open')); });
+root.querySelector('.nv-scrim').addEventListener('click', close);
+root.querySelectorAll('.nv-dd').forEach((d) => d.addEventListener('click', close));})(document.getElementById("wd-navigation_drawer"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Side Drawer</span><span class="tag">Hamburger Menu</span><span class="tag">Side Menu</span><span class="tag">Sidebar</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Navigation drawer（Standard / Modal）</dd></div><div><dt>Material 2</dt><dd class="">Navigation drawer</dd></div><div><dt>Android (Compose)</dt><dd class="">ModalNavigationDrawer / PermanentNavigationDrawer / DismissibleNavigationDrawer</dd></div><div><dt>iOS (HIG)</dt><dd class="">Sidebars</dd></div><div><dt>SwiftUI</dt><dd class="">NavigationSplitView</dd></div><div><dt>Web</dt><dd class="na">該当なし（Drawer / Off-canvas menu。&lt;nav&gt; + role="dialog"）</dd></div><div><dt>Flutter</dt><dd class="mono">NavigationDrawer / Drawer</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>≡（<a class="term" href="/glossary/menu_icons/">ハンバーガー</a>）アイコンや左端<a class="term" href="/glossary/swipe/">スワイプ</a>で開く、画面の左からスライドインするメニュー。項目が多いアプリで使う。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p><a class="term" href="/glossary/top_level/">トップレベル</a>の項目が 6 個以上あるとき。5 個以下なら Bottom Navigation の方が発見されやすい。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/bottom_navigation_bar/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Bottom Navigation Bar</a><a class="chip" href="/entry/navigation_rail/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Navigation Rail</a><a class="chip" href="/entry/list_tile/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>List Item</a><a class="chip" href="/glossary/menu_icons/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>ハンバーガー／ケバブ</a><a class="chip" href="/glossary/swipe/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>スワイプ</a><a class="chip" href="/glossary/top_level/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>トップレベル画面</a></div></section>
+  
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="App Bar 左の ≡ で開く Navigation Drawer を作って。上にユーザー情報、下にメニュー項目（アイコン付き）を並べて。" data-en="Create a Navigation Drawer opened by the ≡ icon in the App Bar, with user info at the top and icon menu items below.">App Bar 左の ≡ で開く Navigation Drawer を作って。上にユーザー情報、下にメニュー項目（アイコン付き）を並べて。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Navigation Drawer / ナビゲーションドロワー（ハンバーガーメニュー）
+
+- id: `navigation_drawer`  URL: https://uizukan.dev/entry/navigation_drawer/
+- 種別: 表示 / Navigation
+- 別名: Side Drawer, Hamburger Menu, Side Menu, Sidebar
+- 呼び名: Material 3=Navigation drawer（Standard / Modal） / Material 2=Navigation drawer / Android (Compose)=ModalNavigationDrawer / PermanentNavigationDrawer / DismissibleNavigationDrawer / iOS (HIG)=Sidebars / SwiftUI=NavigationSplitView / Web=該当なし（Drawer / Off-canvas menu。&lt;nav&gt; + role="dialog"） / Flutter=NavigationDrawer / Drawer
+- Flutter: `NavigationDrawer / Drawer`
+- 関連: bottom_navigation_bar, navigation_rail, list_tile
+
+**説明**: ≡（ハンバーガー）アイコンや左端スワイプで開く、画面の左からスライドインするメニュー。項目が多いアプリで使う。
+
+**使いどころ**: トップレベルの項目が 6 個以上あるとき。5 個以下なら Bottom Navigation の方が発見されやすい。
+
+**AI への伝え方（日本語）**: App Bar 左の ≡ で開く Navigation Drawer を作って。上にユーザー情報、下にメニュー項目（アイコン付き）を並べて。
+
+**Prompt (English)**: Create a Navigation Drawer opened by the ≡ icon in the App Bar, with user info at the top and icon menu items below.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

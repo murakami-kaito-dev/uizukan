@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bottom Sheet（ボトムシート（ハーフモーダル）） — UI図鑑</title>
+<meta name="description" content="画面下からせり上がる面。ドラッグで高さ調整や閉じることができる。">
+<link rel="canonical" href="https://uizukan.dev/entry/modal_bottom_sheet/">
+<meta property="og:title" content="Bottom Sheet（ボトムシート（ハーフモーダル）） — UI図鑑">
+<meta property="og:description" content="画面下からせり上がる面。ドラッグで高さ調整や閉じることができる。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/modal_bottom_sheet/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/modal_bottom_sheet.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Bottom Sheet</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Surfaces &amp; Overlays · 04 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Bottom Sheet</h1>
+  <p class="lead" style="margin-top:6px">ボトムシート（ハーフモーダル）</p>
+  <div class="demo-plate">
+    <div class="head"><code>modal_bottom_sheet</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-modal_bottom_sheet" role="group" aria-label="Bottom Sheet のデモ"><button class="m-btn m-filled sf-open"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e683.png);width:18px;height:18px" aria-hidden="true"></i><span>フィルタ（下から出す）</span></button>
+<div class="sf-ov" hidden><div class="sf-scrim"></div>
+<div class="sf-sheet" role="dialog" aria-modal="true" aria-label="絞り込み" tabindex="-1">
+<div class="sf-handle"><span></span></div>
+<div class="sf-sc"><div class="sf-ttl">絞り込み</div><p>取っ手をつまんで下にドラッグすると閉じます。</p><button class="m-btn m-filled sf-apply">適用</button></div>
+</div></div></div><style>#wd-modal_bottom_sheet .sf-ov{position:fixed;inset:0;z-index:1000;-webkit-tap-highlight-color:transparent}
+#wd-modal_bottom_sheet .sf-ov[hidden]{display:none}
+#wd-modal_bottom_sheet .sf-scrim{position:absolute;inset:0;touch-action:none}
+
+#wd-modal_bottom_sheet .sf-scrim{background:rgba(0,0,0,.54);opacity:0;transition:opacity .2s cubic-bezier(.8,0,1,1)}
+#wd-modal_bottom_sheet .sf-ov.sf-on .sf-scrim{opacity:1;transition:opacity .25s cubic-bezier(0,0,.2,1)}
+#wd-modal_bottom_sheet .sf-sheet{position:absolute;left:0;right:0;bottom:0;margin:0 auto;max-width:640px;background:var(--surface);color:var(--ink);border-radius:20px 20px 0 0;padding-bottom:env(safe-area-inset-bottom);transform:translateY(100%);transition:transform .2s cubic-bezier(.8,0,1,1);touch-action:none;outline:none}
+#wd-modal_bottom_sheet .sf-ov.sf-on .sf-sheet{transform:none;transition:transform .25s cubic-bezier(0,0,.2,1)}
+#wd-modal_bottom_sheet .sf-ov .sf-sheet.sf-drag,#wd-modal_bottom_sheet .sf-ov .sf-scrim.sf-drag{transition:none}
+#wd-modal_bottom_sheet .sf-handle{height:48px;display:flex;align-items:center;justify-content:center}
+#wd-modal_bottom_sheet .sf-handle span{width:32px;height:4px;border-radius:2px;background:var(--line)}
+#wd-modal_bottom_sheet .sf-sc{padding:0 20px 20px}
+#wd-modal_bottom_sheet .sf-ttl{font-size:24px;font-weight:600;line-height:1.15;letter-spacing:-.48px}
+#wd-modal_bottom_sheet .sf-sc p{margin:12px 0 16px}
+#wd-modal_bottom_sheet .sf-apply{display:flex;width:100%}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const lock = (on) => { document.documentElement.style.overflow = on ? 'hidden' : ''; };
+const escKey = (fn) => { const h = (e) => { if (e.key === 'Escape') fn(); }; document.addEventListener('keydown', h); return () => document.removeEventListener('keydown', h); };
+const layer = (el, ms, outCls) => {
+  let shown = false, t = 0, off = null;
+  return {
+    get open() { return shown; },
+    show(close) {
+      if (shown) return false;
+      shown = true; clearTimeout(t); el.hidden = false; if (outCls) el.classList.remove(outCls); lock(true);
+      void el.offsetWidth; el.classList.add('sf-on'); off = escKey(close); return true;
+    },
+    hide() {
+      if (!shown) return false;
+      shown = false; if (outCls) el.classList.add(outCls); el.classList.remove('sf-on'); if (off) off();
+      t = setTimeout(() => { el.hidden = true; if (outCls) el.classList.remove(outCls); lock(false); }, ms); return true;
+    },
+  };
+};
+const press = (el) => {
+  const off = () => el.classList.remove('sf-down');
+  el.addEventListener('pointerdown', () => el.classList.add('sf-down'));
+  ['pointerup', 'pointercancel', 'pointerleave'].forEach((n) => el.addEventListener(n, off));
+};
+const ov = root.querySelector('.sf-ov'), sheet = root.querySelector('.sf-sheet'), scrim = root.querySelector('.sf-scrim');
+const L = layer(ov, 220);
+const close = () => { sheet.classList.remove('sf-drag'); scrim.classList.remove('sf-drag'); sheet.style.transform = ''; scrim.style.opacity = ''; L.hide(); };
+root.querySelector('.sf-open').addEventListener('click', () => { if (L.show(close)) sheet.focus({ preventScroll: true }); });
+scrim.addEventListener('click', close);
+root.querySelector('.sf-apply').addEventListener('click', () => { if (!moved) close(); });
+// 下へ引っぱる
+let pid = null, sy = 0, dy = 0, dragging = false, moved = false, samples = [];
+sheet.addEventListener('pointerdown', (e) => {
+  if (!L.open || pid !== null) return;
+  pid = e.pointerId; sy = e.clientY; dy = 0; dragging = false; moved = false; samples = [[e.timeStamp, e.clientY]];
+});
+sheet.addEventListener('pointermove', (e) => {
+  if (e.pointerId !== pid) return;
+  const d = e.clientY - sy;
+  if (!dragging) {
+    if (Math.abs(d) < 4) return;
+    dragging = true; moved = true;
+    try { sheet.setPointerCapture(pid); } catch (_) {}
+    sheet.classList.add('sf-drag'); scrim.classList.add('sf-drag');
+  }
+  dy = Math.max(0, d);
+  sheet.style.transform = 'translateY(' + dy + 'px)';
+  scrim.style.opacity = String(Math.max(0, 1 - dy / sheet.offsetHeight));
+  samples.push([e.timeStamp, e.clientY]);
+  if (samples.length > 6) samples.shift();
+});
+const end = (e) => {
+  if (e.pointerId !== pid) return;
+  pid = null;
+  if (!dragging) return;
+  dragging = false;
+  const a = samples[0], b = samples[samples.length - 1];
+  const v = (b[1] - a[1]) / Math.max(1, b[0] - a[0]) * 1000;
+  if (v > 700 || dy / sheet.offsetHeight > 0.5) { close(); return; }
+  sheet.classList.remove('sf-drag'); scrim.classList.remove('sf-drag');
+  sheet.style.transform = ''; scrim.style.opacity = '';
+  setTimeout(() => { moved = false; }, 0);
+};
+sheet.addEventListener('pointerup', end);
+sheet.addEventListener('pointercancel', end);})(document.getElementById("wd-modal_bottom_sheet"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Modal Bottom Sheet</span><span class="tag">Half Modal</span><span class="tag">Sheet</span><span class="tag">Drawer (bottom)</span><span class="tag">Half Sheet</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Bottom sheets（Standard / Modal）</dd></div><div><dt>Material 2</dt><dd class="">Sheets: bottom（Standard / Modal）</dd></div><div><dt>Android (Compose)</dt><dd class="">ModalBottomSheet / BottomSheetScaffold</dd></div><div><dt>iOS (HIG)</dt><dd class="">Sheets</dd></div><div><dt>SwiftUI</dt><dd class="">.sheet + .presentationDetents([.medium, .large])</dd></div><div><dt>Web</dt><dd class="">&lt;dialog&gt;（Bottom sheet）</dd></div><div><dt>Flutter</dt><dd class="mono">showModalBottomSheet / DraggableScrollableSheet</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>画面下部から表示されるパネル。上端に「<a class="term" href="/glossary/handle/">取っ手</a>（<a class="term" href="/glossary/handle/">drag handle</a>）」が付き、下に<a class="term" href="/glossary/drag/">ドラッグ</a>して閉じる。Material の <a class="term" href="/glossary/modal/">Modal</a> Bottom Sheet、iOS の <a class="term" href="/glossary/detent/">half sheet</a>（<a class="term" href="/glossary/detent/">detents</a>）が該当。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>共有メニュー、フィルタ設定、簡単な入力など「今の画面を離れずに済ませたい」操作。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/action_sheet/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Action Sheet</a><a class="chip" href="/entry/alert_dialog/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Alert Dialog</a><a class="chip" href="/entry/drag_to_dismiss_sheet/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Drag to Dismiss</a><a class="chip" href="/entry/slide_up_modal/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Slide Up (Modal Presentation)</a><a class="chip" href="/glossary/handle/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>ハンドル</a><a class="chip" href="/glossary/drag/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>ドラッグ</a><a class="chip" href="/glossary/modal/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>モーダル</a><a class="chip" href="/glossary/detent/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>ディテント</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/product/"><span class="ic s" style="--i:url(/assets/icons/scene-product.png)"></span>商品と購入</a><a class="chip" href="/scenes/search/"><span class="ic s" style="--i:url(/assets/icons/scene-search.png)"></span>検索</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="フィルタボタンを押すと、下から Modal Bottom Sheet がせり上がって出るようにして。上に取っ手を付け、下にドラッグで閉じられるように。" data-en="When the filter button is pressed, slide up a Modal Bottom Sheet from the bottom with a drag handle; dragging down dismisses it.">フィルタボタンを押すと、下から Modal Bottom Sheet がせり上がって出るようにして。上に取っ手を付け、下にドラッグで閉じられるように。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Bottom Sheet / ボトムシート（ハーフモーダル）
+
+- id: `modal_bottom_sheet`  URL: https://uizukan.dev/entry/modal_bottom_sheet/
+- 種別: 表示 / Surfaces &amp; Overlays
+- 別名: Modal Bottom Sheet, Half Modal, Sheet, Drawer (bottom), Half Sheet
+- 呼び名: Material 3=Bottom sheets（Standard / Modal） / Material 2=Sheets: bottom（Standard / Modal） / Android (Compose)=ModalBottomSheet / BottomSheetScaffold / iOS (HIG)=Sheets / SwiftUI=.sheet + .presentationDetents([.medium, .large]) / Web=&lt;dialog&gt;（Bottom sheet） / Flutter=showModalBottomSheet / DraggableScrollableSheet
+- Flutter: `showModalBottomSheet / DraggableScrollableSheet`
+- 関連: action_sheet, alert_dialog, drag_to_dismiss_sheet, slide_up_modal
+
+**説明**: 画面下部から表示されるパネル。上端に「取っ手（drag handle）」が付き、下にドラッグして閉じる。Material の Modal Bottom Sheet、iOS の half sheet（detents）が該当。
+
+**使いどころ**: 共有メニュー、フィルタ設定、簡単な入力など「今の画面を離れずに済ませたい」操作。
+
+**AI への伝え方（日本語）**: フィルタボタンを押すと、下から Modal Bottom Sheet がせり上がって出るようにして。上に取っ手を付け、下にドラッグで閉じられるように。
+
+**Prompt (English)**: When the filter button is pressed, slide up a Modal Bottom Sheet from the bottom with a drag handle; dragging down dismisses it.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

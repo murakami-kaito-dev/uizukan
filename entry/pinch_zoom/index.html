@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pinch In / Pinch Out（ピンチイン／ピンチアウト） — UI図鑑</title>
+<meta name="description" content="2 本指を広げて拡大（ピンチアウト）、つまんで縮小（ピンチイン）。ドラッグで移動。">
+<link rel="canonical" href="https://uizukan.dev/entry/pinch_zoom/">
+<meta property="og:title" content="Pinch In / Pinch Out（ピンチイン／ピンチアウト） — UI図鑑">
+<meta property="og:description" content="2 本指を広げて拡大（ピンチアウト）、つまんで縮小（ピンチイン）。ドラッグで移動。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/pinch_zoom/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/pinch_zoom.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/actions/">アクション</a><span class="sep">/</span><span class="here">Pinch In / Pinch Out</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Gestures · 08 · アクション</div>
+  <h1 class="display" style="margin-top:10px">Pinch In / Pinch Out</h1>
+  <p class="lead" style="margin-top:6px">ピンチイン／ピンチアウト</p>
+  <div class="demo-plate">
+    <div class="head"><code>pinch_zoom</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-pinch_zoom" role="group" aria-label="Pinch In / Pinch Out のデモ"><div class="gs-pz"><div class="gs-vp"><img src="/assets/images/products/4_plant.jpg" alt="観葉植物の写真" draggable="false"><span class="gs-chip">×1.0</span></div><div class="gs-row"><div class="gs-tx">広げると拡大（ピンチアウト）<br>つまむと縮小（ピンチイン）</div><button class="m-btn m-outlined gs-rs" disabled>元に戻す</button></div></div></div><style>#wd-pinch_zoom .gs-pz{width:320px;max-width:100%}
+#wd-pinch_zoom .gs-vp{position:relative;width:100%;aspect-ratio:320/360;background:#000;border-radius:12px;overflow:hidden;touch-action:none;cursor:grab}
+#wd-pinch_zoom .gs-vp img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;max-height:none;max-width:none;transform-origin:0 0;will-change:transform}
+#wd-pinch_zoom .gs-chip{position:absolute;left:10px;top:10px;padding:3px 8px;border-radius:999px;background:rgba(0,0,0,.55);color:#fff;font-size:12px;font-weight:600;line-height:1.65;pointer-events:none}
+#wd-pinch_zoom .gs-row{display:flex;align-items:center;margin-top:10px}
+#wd-pinch_zoom .gs-tx{flex:1;min-width:0;font-size:12px;line-height:1.5;color:var(--m-on-surface-v)}
+#wd-pinch_zoom .gs-rs:disabled{color:color-mix(in srgb,var(--ink) 38%,transparent)}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const vp = root.querySelector('.gs-vp'), im = vp.querySelector('img'), chip = root.querySelector('.gs-chip'), rs = root.querySelector('.gs-rs');
+let s = 1, tx = 0, ty = 0, g = null, raf = 0;
+const pts = new Map();
+const apply = () => {
+  const W = vp.clientWidth, H = vp.clientHeight;
+  s = Math.min(4, Math.max(1, s));
+  tx = Math.min(0, Math.max(W - W * s, tx));
+  ty = Math.min(0, Math.max(H - H * s, ty));
+  im.style.transform = 'translate(' + tx + 'px,' + ty + 'px) scale(' + s + ')';
+  chip.textContent = '×' + s.toFixed(1);
+  rs.disabled = !(s > 1.01);
+};
+const loc = (e) => { const r = vp.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; };
+const mid = (p) => [p.reduce((a, q) => a + q[0], 0) / p.length, p.reduce((a, q) => a + q[1], 0) / p.length];
+const dist = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]);
+// 指の本数が変わるたびに、そこから測り直す
+const begin = () => {
+  const p = [...pts.values()];
+  g = p.length ? { c: mid(p), d: p.length > 1 ? dist(p[0], p[1]) : 0, s, tx, ty } : null;
+};
+// 点 (x, y) の下にある写真の点を動かさずに倍率を ns にする
+const zoomAt = (x, y, ns, b) => {
+  const cx = (x - b.tx) / b.s, cy = (y - b.ty) / b.s;
+  s = Math.min(4, Math.max(1, ns));
+  tx = x - cx * s; ty = y - cy * s;
+};
+vp.addEventListener('pointerdown', (e) => {
+  if (e.button !== 0) return;
+  cancelAnimationFrame(raf);
+  try { vp.setPointerCapture(e.pointerId); } catch (_) {}
+  pts.set(e.pointerId, loc(e));
+  begin();
+});
+vp.addEventListener('pointermove', (e) => {
+  if (!pts.has(e.pointerId) || !g) return;
+  pts.set(e.pointerId, loc(e));
+  const p = [...pts.values()], c = mid(p);
+  const ns = p.length > 1 && g.d > 0 ? g.s * dist(p[0], p[1]) / g.d : g.s;
+  // 2 本の中点が動けば写真も一緒に動く
+  const cx = (g.c[0] - g.tx) / g.s, cy = (g.c[1] - g.ty) / g.s;
+  s = Math.min(4, Math.max(1, ns));
+  tx = c[0] - cx * s; ty = c[1] - cy * s;
+  apply();
+});
+const up = (e) => { if (!pts.delete(e.pointerId)) return; begin(); };
+vp.addEventListener('pointerup', up);
+vp.addEventListener('pointercancel', up);
+vp.addEventListener('wheel', (e) => {
+  const dy = e.deltaY * (e.deltaMode === 1 ? 16 : 1);
+  const ns = Math.min(4, Math.max(1, s * Math.exp(-dy / (e.ctrlKey ? 100 : 200))));
+  if (ns === s && !e.ctrlKey) return; // 端まで来たらページのスクロールに譲る
+  e.preventDefault();
+  cancelAnimationFrame(raf);
+  const [x, y] = loc(e);
+  zoomAt(x, y, ns, { s, tx, ty });
+  apply();
+}, { passive: false });
+// Safari（Mac のトラックパッド）のピンチ。iPhone では Pointer Events の 2 本指で扱うので、ここではページの拡大だけ止める
+let gs = null;
+vp.addEventListener('gesturestart', (e) => { e.preventDefault(); gs = pts.size > 1 ? null : { s, tx, ty }; });
+vp.addEventListener('gesturechange', (e) => {
+  e.preventDefault();
+  if (!gs || pts.size > 1) return;
+  const r = vp.getBoundingClientRect();
+  const x = (e.clientX || r.left + r.width / 2) - r.left, y = (e.clientY || r.top + r.height / 2) - r.top;
+  zoomAt(x, y, gs.s * e.scale, gs);
+  apply();
+});
+vp.addEventListener('gestureend', (e) => { e.preventDefault(); gs = null; });
+rs.addEventListener('click', () => {
+  UZ.haptic('light');
+  const a = { s, tx, ty }, t0 = performance.now();
+  cancelAnimationFrame(raf);
+  const step = (now) => {
+    const t = Math.min(1, (now - t0) / 250), k = 1 - Math.pow(1 - t, 3); // easeOutCubic
+    s = a.s + (1 - a.s) * k; tx = a.tx * (1 - k); ty = a.ty * (1 - k);
+    apply();
+    if (t < 1) raf = requestAnimationFrame(step);
+  };
+  raf = requestAnimationFrame(step);
+});
+addEventListener('resize', apply);
+apply();})(document.getElementById("wd-pinch_zoom"),window.UZ);</script></div>
+    <a class="foot" href="https://apps.apple.com/jp/app/id6808997175" rel="noopener"><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i><span>本物の手触りは iOS アプリで</span><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a>
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Pinch to Zoom</span><span class="tag">ピンチイン</span><span class="tag">ピンチアウト</span><span class="tag">Zoom In / Zoom Out</span><span class="tag">Pinch Zoom</span><span class="tag">Scale Gesture</span><span class="tag">Pan and Zoom</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Gestures（Pinch）</dd></div><div><dt>Material 2</dt><dd class="">Gestures（Pinch to zoom）</dd></div><div><dt>Android (Compose)</dt><dd class="">Modifier.transformable / detectTransformGestures</dd></div><div><dt>iOS (HIG)</dt><dd class="">Zoom（pinch）</dd></div><div><dt>SwiftUI</dt><dd class="">MagnifyGesture</dd></div><div><dt>Web</dt><dd class="">Pointer Events / touch-action: pinch-zoom</dd></div><div><dt>Flutter</dt><dd class="mono">InteractiveViewer</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>画像や地図を 2 本指で拡大縮小し、1 本指で<a class="term" href="/glossary/drag/">パン</a>する。ダブルタップで段階ズームを併用することが多い。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>写真ビューア、地図、図面、レシート画像。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/double_tap/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Double Tap</a><a class="chip" href="/entry/grid/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Grid</a><a class="chip" href="/entry/hero_transition/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Hero Transition (Shared Element)</a><a class="chip" href="/glossary/drag/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>ドラッグ</a></div></section>
+  
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="写真の拡大表示画面で、ピンチアウトで拡大・ピンチインで縮小（Pinch to Zoom。1 本指で移動）できるようにして。最大 4 倍、ダブルタップで 2 倍⇄等倍。" data-en="In the photo viewer, support Pinch to Zoom (two-finger scale, one-finger pan), max 4x, and double-tap to toggle between 2x and 1x.">写真の拡大表示画面で、ピンチアウトで拡大・ピンチインで縮小（Pinch to Zoom。1 本指で移動）できるようにして。最大 4 倍、ダブルタップで 2 倍⇄等倍。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Pinch In / Pinch Out / ピンチイン／ピンチアウト
+
+- id: `pinch_zoom`  URL: https://uizukan.dev/entry/pinch_zoom/
+- 種別: アクション / Gestures
+- 別名: Pinch to Zoom, ピンチイン, ピンチアウト, Zoom In / Zoom Out, Pinch Zoom, Scale Gesture, Pan and Zoom
+- 呼び名: Material 3=Gestures（Pinch） / Material 2=Gestures（Pinch to zoom） / Android (Compose)=Modifier.transformable / detectTransformGestures / iOS (HIG)=Zoom（pinch） / SwiftUI=MagnifyGesture / Web=Pointer Events / touch-action: pinch-zoom / Flutter=InteractiveViewer
+- Flutter: `InteractiveViewer`
+- 関連: double_tap, grid, hero_transition
+
+**説明**: 画像や地図を 2 本指で拡大縮小し、1 本指でパンする。ダブルタップで段階ズームを併用することが多い。
+
+**使いどころ**: 写真ビューア、地図、図面、レシート画像。
+
+**AI への伝え方（日本語）**: 写真の拡大表示画面で、ピンチアウトで拡大・ピンチインで縮小（Pinch to Zoom。1 本指で移動）できるようにして。最大 4 倍、ダブルタップで 2 倍⇄等倍。
+
+**Prompt (English)**: In the photo viewer, support Pinch to Zoom (two-finger scale, one-finger pan), max 4x, and double-tap to toggle between 2x and 1x.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

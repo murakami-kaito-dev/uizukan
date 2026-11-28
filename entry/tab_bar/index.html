@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tabs（タブ（上部タブ）） — UI図鑑</title>
+<meta name="description" content="App Bar の下に並び、横スワイプでも切り替えられるタブ。">
+<link rel="canonical" href="https://uizukan.dev/entry/tab_bar/">
+<meta property="og:title" content="Tabs（タブ（上部タブ）） — UI図鑑">
+<meta property="og:description" content="App Bar の下に並び、横スワイプでも切り替えられるタブ。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/tab_bar/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/tab_bar.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Tabs</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Navigation · 06 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Tabs</h1>
+  <p class="lead" style="margin-top:6px">タブ（上部タブ）</p>
+  <div class="demo-plate">
+    <div class="head"><code>tab_bar</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-tab_bar" role="group" aria-label="Tabs のデモ"><div class="nv-fit-o"><div class="nv-fit-i" style="width:320px"><div class="nv-fr" style="width:320px;height:220px"><div class="nv-scaf"><div class="nv-ab"><span class="nv-t">プロフィール</span></div><div class="nv-tabs"><button class="nv-tab" data-i="0"><span>投稿</span></button><button class="nv-tab" data-i="1"><span>いいね</span></button><button class="nv-tab" data-i="2"><span>保存済み</span></button><span class="nv-ind"></span></div><div class="nv-tv"><div class="nv-tp">投稿</div><div class="nv-tp">いいね</div><div class="nv-tp">保存済み</div></div></div></div></div></div></div><style>#wd-tab_bar .nv-fit-o{position:relative;flex:none}
+#wd-tab_bar .nv-fit-i{position:absolute;left:0;top:0;transform-origin:0 0}
+#wd-tab_bar .nv-fr{position:relative;overflow:hidden;border-radius:12px;isolation:isolate;text-align:left}
+#wd-tab_bar .nv-fr::after{content:"";position:absolute;inset:0;border:1px solid var(--rule);border-radius:12px;pointer-events:none;z-index:60}
+#wd-tab_bar .nv-sc{overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+#wd-tab_bar .nv-sc::-webkit-scrollbar{display:none}
+#wd-tab_bar .m-icon-btn .mi{width:22px;height:22px}
+
+#wd-tab_bar .nv-scaf{height:100%;background:var(--canvas);display:flex;flex-direction:column}
+#wd-tab_bar .nv-ab{height:56px;flex:none;display:flex;align-items:center;padding-left:16px}
+#wd-tab_bar .nv-ab .nv-t{font-size:18px;font-weight:600;line-height:1.3;letter-spacing:-.18px}
+#wd-tab_bar .nv-tabs{position:relative;height:48px;flex:none;display:flex}
+#wd-tab_bar .nv-tabs::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--rule)}
+#wd-tab_bar .nv-tab{flex:1;height:46px;padding:0 6px;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:500;line-height:1.65;color:var(--ink2);white-space:nowrap;min-width:0}
+#wd-tab_bar .nv-tab span{display:inline-block}
+#wd-tab_bar .nv-ind{position:absolute;bottom:0;left:0;height:3px;border-radius:3px 3px 0 0;background:var(--accent);z-index:1}
+#wd-tab_bar .nv-tv{flex:1;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+#wd-tab_bar .nv-tv::-webkit-scrollbar{display:none}
+#wd-tab_bar .nv-tp{flex:0 0 100%;scroll-snap-align:start;scroll-snap-stop:always;display:flex;align-items:center;justify-content:center;font-size:15px}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const fitO = root.querySelector('.nv-fit-o'), fitI = fitO.firstElementChild;
+let S = 1;
+const refit = () => {
+  const W = fitI.offsetWidth, H = fitI.offsetHeight, a = root.clientWidth || W;
+  S = Math.min(1, a / W);
+  fitI.style.transform = S < 1 ? 'scale(' + S + ')' : '';
+  fitO.style.width = W * S + 'px';
+  fitO.style.height = H * S + 'px';
+};
+refit();
+if (window.ResizeObserver) { const ro = new ResizeObserver(refit); ro.observe(root); ro.observe(fitI); }
+
+const bez = (x1, y1, x2, y2) => (x) => {
+  if (x <= 0) return 0; if (x >= 1) return 1;
+  let t = x;
+  for (let i = 0; i < 8; i++) {
+    const cx = 3 * x1 * t * (1 - t) * (1 - t) + 3 * x2 * t * t * (1 - t) + t * t * t - x;
+    const d = 3 * x1 * (1 - t) * (1 - t) + 6 * (x2 - x1) * t * (1 - t) + 3 * (1 - x2) * t * t;
+    if (Math.abs(cx) < 1e-5 || !d) break;
+    t -= cx / d;
+  }
+  return 3 * y1 * t * (1 - t) * (1 - t) + 3 * y2 * t * t * (1 - t) + t * t * t;
+};
+const tween = (dur, ease, fn, done) => {
+  const t0 = performance.now(); let id = 0;
+  const step = (now) => { const p = Math.min(1, (now - t0) / dur); fn(ease(p)); if (p < 1) id = requestAnimationFrame(step); else if (done) done(); };
+  id = requestAnimationFrame(step);
+  return () => cancelAnimationFrame(id);
+};
+const EASE = bez(0.25, 0.1, 0.25, 1);
+// 横スクロール（scroll-snap）の箱を、マウスでも引っぱってページ送りできるようにする（指はブラウザの横スクロールのまま）
+const pager = (el, step) => {
+  let id = null, sx = 0, sl = 0, lx = 0, lt = 0, v = 0, stop = null;
+  el.addEventListener('pointerdown', (e) => {
+    if (e.pointerType !== 'mouse' || e.button !== 0) return;
+    if (stop) { stop(); stop = null; }
+    id = e.pointerId; sx = lx = e.clientX; lt = e.timeStamp; sl = el.scrollLeft; v = 0;
+    el.style.scrollSnapType = 'none';
+    try { el.setPointerCapture(id); } catch (_) {}
+  });
+  el.addEventListener('pointermove', (e) => {
+    if (e.pointerId !== id) return;
+    const dt = e.timeStamp - lt; if (dt > 0) v = (e.clientX - lx) / S / dt;
+    lx = e.clientX; lt = e.timeStamp;
+    el.scrollLeft = sl - (e.clientX - sx) / S;
+  });
+  const up = (e) => {
+    if (e.pointerId !== id) return;
+    id = null;
+    const s = step(), max = Math.round((el.scrollWidth - el.clientWidth) / s);
+    let p = el.scrollLeft / s;
+    p = v < -0.05 ? Math.ceil(p) : v > 0.05 ? Math.floor(p) : Math.round(p); // 速さが 50px/秒を超えたら次のページへ（Flutter のページ送りと同じ）
+    p = Math.max(0, Math.min(max, p));
+    const from = el.scrollLeft, to = p * s;
+    stop = tween(300, EASE, (k) => { el.scrollLeft = from + (to - from) * k; }, () => { el.style.scrollSnapType = ''; stop = null; });
+  };
+  el.addEventListener('pointerup', up);
+  el.addEventListener('pointercancel', up);
+};
+
+const tv = root.querySelector('.nv-tv'), tabs = Array.prototype.slice.call(root.querySelectorAll('.nv-tab')), ind = root.querySelector('.nv-ind');
+const lab = tabs.map((t) => t.firstElementChild);
+const upd = () => {
+  const w = tv.clientWidth || 1, f = Math.max(0, Math.min(tabs.length - 1, tv.scrollLeft / w));
+  const a = Math.floor(f), b = Math.min(tabs.length - 1, a + 1), k = f - a;
+  const l = (e) => e.offsetLeft;
+  ind.style.left = (l(lab[a]) + (l(lab[b]) - l(lab[a])) * k) + 'px';
+  ind.style.width = (lab[a].offsetWidth + (lab[b].offsetWidth - lab[a].offsetWidth) * k) + 'px';
+  tabs.forEach((t, i) => { const p = Math.max(0, 1 - Math.abs(i - f)); t.style.color = 'color-mix(in srgb,var(--accent) ' + Math.round(p * 100) + '%,var(--ink2))'; });
+};
+tv.addEventListener('scroll', upd, { passive: true });
+let stop = null;
+tabs.forEach((t, i) => t.addEventListener('click', () => {
+  if (stop) stop();
+  const from = tv.scrollLeft, to = i * tv.clientWidth;
+  if (Math.abs(to - from) < 1) return;
+  tv.style.scrollSnapType = 'none';
+  stop = tween(300, EASE, (k) => { tv.scrollLeft = from + (to - from) * k; upd(); }, () => { tv.style.scrollSnapType = ''; stop = null; });
+}));
+pager(tv, () => tv.clientWidth);
+upd();
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(upd);})(document.getElementById("wd-tab_bar"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Tab Bar</span><span class="tag">Top Tabs</span><span class="tag">Scrollable Tabs</span><span class="tag">Tab Layout</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Tabs（Primary / Secondary）</dd></div><div><dt>Material 2</dt><dd class="">Tabs（Fixed / Scrollable）</dd></div><div><dt>Android (Compose)</dt><dd class="">PrimaryTabRow / SecondaryTabRow / ScrollableTabRow + Tab</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（Segmented control で代替。iOS の Tab bar は画面下の別物）</dd></div><div><dt>SwiftUI</dt><dd class="na">該当なし（Picker(.segmented) か TabView(.page)）</dd></div><div><dt>Web</dt><dd class="">Tabs（WAI-ARIA パターン。role="tablist"）</dd></div><div><dt>Flutter</dt><dd class="mono">TabBar + TabBarView + DefaultTabController</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>選択中の<a class="term" href="/glossary/tab/">タブ</a>に下線<a class="term" href="/glossary/indicator/">インジケータ</a>が付き、内容を横<a class="term" href="/glossary/swipe/">スワイプ</a>で切り替えられる。<a class="term" href="/glossary/tab/">タブ</a>が多いときは横スクロール（isScrollable）。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>同じ画面内で内容のカテゴリを切り替える（プロフィールの「投稿／いいね」など）。アプリ全体の切替は Bottom Navigation。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/segmented_button/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Segmented Button</a><a class="chip" href="/entry/bottom_navigation_bar/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Bottom Navigation Bar</a><a class="chip" href="/entry/page_view_swipe/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Swipe Between Pages</a><a class="chip" href="/glossary/tab/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>タブ</a><a class="chip" href="/glossary/indicator/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>インジケータ</a><a class="chip" href="/glossary/swipe/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>スワイプ</a></div></section>
+  
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="App Bar の下に「投稿／いいね／保存済み」の Tabs を作って。下線インジケータ付きで、内容は横スワイプでも切り替えられるように。" data-en="Add &quot;Posts / Likes / Saved&quot; Tabs under the App Bar with an underline indicator; content should also switch by horizontal swipe.">App Bar の下に「投稿／いいね／保存済み」の Tabs を作って。下線インジケータ付きで、内容は横スワイプでも切り替えられるように。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Tabs / タブ（上部タブ）
+
+- id: `tab_bar`  URL: https://uizukan.dev/entry/tab_bar/
+- 種別: 表示 / Navigation
+- 別名: Tab Bar, Top Tabs, Scrollable Tabs, Tab Layout
+- 呼び名: Material 3=Tabs（Primary / Secondary） / Material 2=Tabs（Fixed / Scrollable） / Android (Compose)=PrimaryTabRow / SecondaryTabRow / ScrollableTabRow + Tab / iOS (HIG)=該当なし（Segmented control で代替。iOS の Tab bar は画面下の別物） / SwiftUI=該当なし（Picker(.segmented) か TabView(.page)） / Web=Tabs（WAI-ARIA パターン。role="tablist"） / Flutter=TabBar + TabBarView + DefaultTabController
+- Flutter: `TabBar + TabBarView + DefaultTabController`
+- 関連: segmented_button, bottom_navigation_bar, page_view_swipe
+
+**説明**: 選択中のタブに下線インジケータが付き、内容を横スワイプで切り替えられる。タブが多いときは横スクロール（isScrollable）。
+
+**使いどころ**: 同じ画面内で内容のカテゴリを切り替える（プロフィールの「投稿／いいね」など）。アプリ全体の切替は Bottom Navigation。
+
+**AI への伝え方（日本語）**: App Bar の下に「投稿／いいね／保存済み」の Tabs を作って。下線インジケータ付きで、内容は横スワイプでも切り替えられるように。
+
+**Prompt (English)**: Add "Posts / Likes / Saved" Tabs under the App Bar with an underline indicator; content should also switch by horizontal swipe.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

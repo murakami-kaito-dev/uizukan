@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Radio Button（ラジオボタン） — UI図鑑</title>
+<meta name="description" content="複数の候補から1つだけ選ぶ丸いボタン。">
+<link rel="canonical" href="https://uizukan.dev/entry/radio_button/">
+<meta property="og:title" content="Radio Button（ラジオボタン） — UI図鑑">
+<meta property="og:description" content="複数の候補から1つだけ選ぶ丸いボタン。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/radio_button/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/radio_button.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Radio Button</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Inputs &amp; Selection · 06 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Radio Button</h1>
+  <p class="lead" style="margin-top:6px">ラジオボタン</p>
+  <div class="demo-plate">
+    <div class="head"><code>radio_button</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-radio_button" role="group" aria-label="Radio Button のデモ"><div class="in-col" role="radiogroup" aria-label="支払い方法"><button type="button" class="in-rd in-on" role="radio" aria-checked="true" data-v="credit"><span class="in-rd-b"><span class="in-rd-c"></span></span><span class="in-rd-t"><span class="in-t1">クレジットカード</span><span class="in-t2">手数料なし</span></span></button><button type="button" class="in-rd" role="radio" aria-checked="false" data-v="conv"><span class="in-rd-b"><span class="in-rd-c"></span></span><span class="in-rd-t"><span class="in-t1">コンビニ払い</span><span class="in-t2">手数料 ¥220</span></span></button><button type="button" class="in-rd" role="radio" aria-checked="false" data-v="bank"><span class="in-rd-b"><span class="in-rd-c"></span></span><span class="in-rd-t"><span class="in-t1">銀行振込</span><span class="in-t2">手数料 ¥330</span></span></button></div></div><style>#wd-radio_button .in-col{width:100%;max-width:300px;display:flex;flex-direction:column}
+#wd-radio_button .in-rd{display:flex;align-items:center;height:64px;padding:0 20px;text-align:left}
+#wd-radio_button .in-rd-b{flex:none;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background-color .15s}
+@media (hover:hover){#wd-radio_button .in-rd:hover .in-rd-b{background:color-mix(in srgb,var(--ink) 8%,transparent)}}
+#wd-radio_button .in-rd:active .in-rd-b{background:color-mix(in srgb,var(--accent) 12%,transparent)}
+#wd-radio_button .in-rd-c{position:relative;width:20px;height:20px;border-radius:50%;border:2px solid var(--ink2);transition:border-color .2s}
+#wd-radio_button .in-rd-c::after{content:"";position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:var(--accent);transform:scale(0);transition:transform .2s cubic-bezier(.4,0,.2,1)}
+#wd-radio_button .in-rd.in-on .in-rd-c{border-color:var(--accent)}
+#wd-radio_button .in-rd.in-on .in-rd-c::after{transform:scale(1)}
+#wd-radio_button .in-rd-t{display:flex;flex-direction:column;margin-left:16px;color:var(--ink)}
+#wd-radio_button .in-t1{font-size:13px;line-height:1.65}
+#wd-radio_button .in-t2{font-size:12px;line-height:1.65}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const rows=root.querySelectorAll('.in-rd');
+rows.forEach(function(r){r.addEventListener('click',function(){
+  if(r.classList.contains('in-on'))return;
+  UZ.haptic('selection');
+  rows.forEach(function(x){const on=x===r;x.classList.toggle('in-on',on);x.setAttribute('aria-checked',on?'true':'false');});
+});});})(document.getElementById("wd-radio_button"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Radio Group</span><span class="tag">Option Button</span><span class="tag">Radio List Tile</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Radio button</dd></div><div><dt>Material 2</dt><dd class="">Radio button（Selection controls）</dd></div><div><dt>Android (Compose)</dt><dd class="">RadioButton</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（iOS 標準には無い。チェックマーク付き List か Picker で代替。macOS は Radio button）</dd></div><div><dt>SwiftUI</dt><dd class="">Picker + .pickerStyle(.radioGroup)（macOS）/ .inline</dd></div><div><dt>Web</dt><dd class="">&lt;input type="radio"&gt;</dd></div><div><dt>Flutter</dt><dd class="mono">Radio / RadioListTile</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>同じ groupValue を共有する丸い選択肢。1つを選ぶと他は自動で外れる。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>2〜5個の排他的選択（配送方法、支払い方法）。候補が多ければ Dropdown、2択なら <a class="term" href="/entry/segmented_button/">Segmented Button</a> も検討。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/checkbox/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Checkbox</a><a class="chip" href="/entry/segmented_button/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Segmented Button</a><a class="chip" href="/entry/dropdown_menu/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Dropdown Menu</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/product/"><span class="ic s" style="--i:url(/assets/icons/scene-product.png)"></span>商品と購入</a><a class="chip" href="/scenes/paywall/"><span class="ic s" style="--i:url(/assets/icons/scene-paywall.png)"></span>ペイウォール</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="支払い方法（クレジットカード／コンビニ／銀行振込）を RadioListTile で1つだけ選べるようにして。" data-en="Let the user choose one payment method (Credit card / Convenience store / Bank transfer) using RadioListTiles.">支払い方法（クレジットカード／コンビニ／銀行振込）を RadioListTile で1つだけ選べるようにして。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Radio Button / ラジオボタン
+
+- id: `radio_button`  URL: https://uizukan.dev/entry/radio_button/
+- 種別: 表示 / Inputs &amp; Selection
+- 別名: Radio Group, Option Button, Radio List Tile
+- 呼び名: Material 3=Radio button / Material 2=Radio button（Selection controls） / Android (Compose)=RadioButton / iOS (HIG)=該当なし（iOS 標準には無い。チェックマーク付き List か Picker で代替。macOS は Radio button） / SwiftUI=Picker + .pickerStyle(.radioGroup)（macOS）/ .inline / Web=&lt;input type="radio"&gt; / Flutter=Radio / RadioListTile
+- Flutter: `Radio / RadioListTile`
+- 関連: checkbox, segmented_button, dropdown_menu
+
+**説明**: 同じ groupValue を共有する丸い選択肢。1つを選ぶと他は自動で外れる。
+
+**使いどころ**: 2〜5個の排他的選択（配送方法、支払い方法）。候補が多ければ Dropdown、2択なら Segmented Button も検討。
+
+**AI への伝え方（日本語）**: 支払い方法（クレジットカード／コンビニ／銀行振込）を RadioListTile で1つだけ選べるようにして。
+
+**Prompt (English)**: Let the user choose one payment method (Credit card / Convenience store / Bank transfer) using RadioListTiles.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

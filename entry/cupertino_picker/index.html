@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wheel Picker（ドラム式ピッカー（ホイールピッカー）） — UI図鑑</title>
+<meta name="description" content="iOS でおなじみの、ドラムを回して選ぶピッカー。">
+<link rel="canonical" href="https://uizukan.dev/entry/cupertino_picker/">
+<meta property="og:title" content="Wheel Picker（ドラム式ピッカー（ホイールピッカー）） — UI図鑑">
+<meta property="og:description" content="iOS でおなじみの、ドラムを回して選ぶピッカー。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/cupertino_picker/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/cupertino_picker.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Wheel Picker</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Inputs &amp; Selection · 13 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Wheel Picker</h1>
+  <p class="lead" style="margin-top:6px">ドラム式ピッカー（ホイールピッカー）</p>
+  <div class="demo-plate">
+    <div class="head"><code>cupertino_picker</code><span><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i> 振動は実機で</span></div>
+    <div class="stage"><div class="wd" id="wd-cupertino_picker" role="group" aria-label="Wheel Picker のデモ"><div class="in-col"><div class="in-pk"><div class="in-wh-band"></div></div><div class="in-lb">選択中: 25 分</div></div></div><style>#wd-cupertino_picker .in-wh{position:relative;overflow:hidden;touch-action:none;cursor:grab;color:var(--ink);font-family:var(--sans)}
+#wd-cupertino_picker .in-wh:active{cursor:grabbing}
+#wd-cupertino_picker .in-wh-l{position:absolute;inset:0}
+#wd-cupertino_picker .in-wh-dim{opacity:.447}
+#wd-cupertino_picker .in-wh-i{position:absolute;left:0;right:0;text-align:center;white-space:nowrap;will-change:transform}
+#wd-cupertino_picker .in-wh-i.in-dis{color:var(--ink3)}
+#wd-cupertino_picker .in-wh-band{position:absolute;left:9px;right:9px;top:50%;transform:translateY(-50%);border-radius:8px;background:color-mix(in srgb,var(--ink) 7%,transparent);pointer-events:none}
+#wd-cupertino_picker .in-col{display:flex;flex-direction:column;align-items:center}
+#wd-cupertino_picker .in-pk{width:200px;font-size:21px;letter-spacing:-.4px}
+#wd-cupertino_picker .in-pk .in-wh-band{height:36px}
+#wd-cupertino_picker .in-lb{font-size:15px;line-height:1.65;color:var(--ink2)}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";function wheel(host,o){
+  const ext=o.ext,H=o.h,R=H*0.42,K=R*1.09,n=o.count,loop=!!o.loop,mag=o.mag||1;
+  host.classList.add('in-wh');host.style.height=H+'px';
+  host.insertAdjacentHTML('afterbegin','<div class="in-wh-l in-wh-dim"></div><div class="in-wh-l in-wh-hi"></div>');
+  const layers=[host.querySelector('.in-wh-dim'),host.querySelector('.in-wh-hi')];
+  const V=Math.ceil((Math.PI/2)*K/ext)+1,bt=(H-ext)/2,bb=(H+ext)/2;
+  const nodes=layers.map(function(l){const a=[];for(let j=-V;j<=V;j++){const d=document.createElement('div');d.className='in-wh-i';d.style.top=bt+'px';d.style.height=ext+'px';d.style.lineHeight=ext+'px';if(o.align)d.style.textAlign=o.align;l.appendChild(d);a.push(d);}return a;});
+  layers[1].style.clipPath='inset('+bt+'px 0 '+bt+'px 0)';
+  const m='linear-gradient(#000 '+bt+'px,transparent '+bt+'px,transparent '+bb+'px,#000 '+bb+'px)';
+  layers[0].style.webkitMaskImage=m;layers[0].style.maskImage=m;
+  let off=(o.index||0)*ext,cur=o.index||0,anim=0;
+  const max=(n-1)*ext;
+  const norm=function(i){return ((i%n)+n)%n;};
+  const idxAt=function(){const b=Math.round(off/ext);return loop?norm(b):Math.max(0,Math.min(n-1,b));};
+  function draw(){
+    const base=Math.round(off/ext);
+    for(let L=0;L<2;L++){const arr=nodes[L];for(let j=-V;j<=V;j++){
+      const el=arr[j+V],idx=base+j;
+      if(!loop&&(idx<0||idx>=n)){el.style.visibility='hidden';continue;}
+      const th=(idx*ext-off)/K;
+      if(Math.abs(th)>=Math.PI/2){el.style.visibility='hidden';continue;}
+      el.style.visibility='';
+      const i=norm(idx),t=o.label(i);
+      if(el.textContent!==t)el.textContent=t;
+      el.classList.toggle('in-dis',!!(o.disabled&&o.disabled(i)));
+      const s=L===1?mag:1;
+      el.style.transform='translateY('+(R*Math.sin(th)).toFixed(2)+'px) scale('+s+','+(Math.cos(th)*s).toFixed(4)+')';
+    }}
+    const c=idxAt();
+    if(c!==cur){cur=c;if(o.onChange)o.onChange(c);}
+  }
+  function go(target,dur){
+    cancelAnimationFrame(anim);
+    const s=off,t0=performance.now();
+    const step=function(now){const p=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-p,3);off=s+(target-s)*e;draw();if(p<1)anim=requestAnimationFrame(step);else if(o.onSettle)o.onSettle(cur);};
+    anim=requestAnimationFrame(step);
+  }
+  function snap(idx,dur){if(!loop)idx=Math.max(0,Math.min(n-1,idx));go(idx*ext,dur||300);}
+  let pid=null,sy=0,so=0,moved=false,smp=[];
+  host.addEventListener('pointerdown',function(e){if(e.button>0)return;cancelAnimationFrame(anim);pid=e.pointerId;try{host.setPointerCapture(pid);}catch(_){}sy=e.clientY;so=off;moved=false;smp=[[e.timeStamp,e.clientY]];});
+  host.addEventListener('pointermove',function(e){
+    if(e.pointerId!==pid)return;
+    const dy=e.clientY-sy;if(Math.abs(dy)>4)moved=true;
+    let no=so-dy;
+    if(!loop){if(no<0)no*=0.4;if(no>max)no=max+(no-max)*0.4;}
+    off=no;draw();
+    smp.push([e.timeStamp,e.clientY]);while(smp.length>2&&e.timeStamp-smp[0][0]>100)smp.shift();
+  });
+  const up=function(e){
+    if(e.pointerId!==pid)return;pid=null;
+    if(!moved){const r=host.getBoundingClientRect(),y=e.clientY-r.top-H/2;const th=Math.asin(Math.max(-1,Math.min(1,y/R)));snap(Math.round((off+th*K)/ext),300);return;}
+    const a=smp[0],b=smp[smp.length-1],v=(b[1]-a[1])/Math.max(16,b[0]-a[0]);
+    const proj=off-v*320;
+    snap(Math.round(proj/ext),Math.min(900,260+Math.abs(v)*260));
+  };
+  host.addEventListener('pointerup',up);host.addEventListener('pointercancel',up);
+  let wt=0;
+  host.addEventListener('wheel',function(e){e.preventDefault();cancelAnimationFrame(anim);off+=e.deltaY*0.6;if(!loop)off=Math.max(0,Math.min(max,off));draw();clearTimeout(wt);wt=setTimeout(function(){snap(Math.round(off/ext),200);},120);},{passive:false});
+  draw();
+  return {
+    set:function(i){cancelAnimationFrame(anim);off=i*ext;cur=i;draw();},
+    to:function(i){let b=Math.round(off/ext);if(loop){const d=((i-norm(b))%n+n)%n;b+=d>n/2?d-n:d;}else b=i;snap(b,300);},
+    get:function(){return cur;},
+    redraw:draw
+  };
+}
+const lb=root.querySelector('.in-lb');
+wheel(root.querySelector('.in-pk'),{count:60,ext:36,h:160,label:function(i){return (i+1)+' 分';},index:24,onChange:function(i){UZ.haptic('selection');lb.textContent='選択中: '+(i+1)+' 分';}});})(document.getElementById("wd-cupertino_picker"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Cupertino Picker</span><span class="tag">Drum Roll Picker</span><span class="tag">Spinner Picker</span><span class="tag">Scroll Wheel</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="na">該当なし（iOS 固有）</dd></div><div><dt>Material 2</dt><dd class="na">該当なし（iOS 固有）</dd></div><div><dt>Android (Compose)</dt><dd class="na">該当なし（自作の wheel）</dd></div><div><dt>iOS (HIG)</dt><dd class="">Pickers（wheel）</dd></div><div><dt>SwiftUI</dt><dd class="">Picker + .pickerStyle(.wheel)</dd></div><div><dt>Web</dt><dd class="na">該当なし（iOS 固有）</dd></div><div><dt>Flutter</dt><dd class="mono">CupertinoPicker</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>縦に並んだ候補が円筒状に回転し、中央の行が選択される。行が切り替わるたびに「カチッ」という触覚（selection click）が鳴るのが iOS 流。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>候補が 10〜100 程度で、iOS らしい操作感にしたいとき（都道府県、回数、年齢）。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/dropdown_menu/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Dropdown Menu</a><a class="chip" href="/entry/date_picker/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Date Picker</a><a class="chip" href="/entry/haptic_selection/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Selection Haptic</a></div></section>
+  
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="iOS 風のドラム式ピッカー（CupertinoPicker）で 1〜60 分を選べるようにして。行が変わるたびに軽いカチッという触覚を鳴らして。" data-en="Let the user choose 1–60 minutes with an iOS-style wheel picker (CupertinoPicker). Play a light selection-click haptic each time the highlighted row changes.">iOS 風のドラム式ピッカー（CupertinoPicker）で 1〜60 分を選べるようにして。行が変わるたびに軽いカチッという触覚を鳴らして。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Wheel Picker / ドラム式ピッカー（ホイールピッカー）
+
+- id: `cupertino_picker`  URL: https://uizukan.dev/entry/cupertino_picker/
+- 種別: 表示 / Inputs &amp; Selection
+- 別名: Cupertino Picker, Drum Roll Picker, Spinner Picker, Scroll Wheel
+- 呼び名: Material 3=該当なし（iOS 固有） / Material 2=該当なし（iOS 固有） / Android (Compose)=該当なし（自作の wheel） / iOS (HIG)=Pickers（wheel） / SwiftUI=Picker + .pickerStyle(.wheel) / Web=該当なし（iOS 固有） / Flutter=CupertinoPicker
+- Flutter: `CupertinoPicker`
+- 実機でのみ体験可（触覚など）
+- 関連: dropdown_menu, date_picker, haptic_selection
+
+**説明**: 縦に並んだ候補が円筒状に回転し、中央の行が選択される。行が切り替わるたびに「カチッ」という触覚（selection click）が鳴るのが iOS 流。
+
+**使いどころ**: 候補が 10〜100 程度で、iOS らしい操作感にしたいとき（都道府県、回数、年齢）。
+
+**AI への伝え方（日本語）**: iOS 風のドラム式ピッカー（CupertinoPicker）で 1〜60 分を選べるようにして。行が変わるたびに軽いカチッという触覚を鳴らして。
+
+**Prompt (English)**: Let the user choose 1–60 minutes with an iOS-style wheel picker (CupertinoPicker). Play a light selection-click haptic each time the highlighted row changes.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

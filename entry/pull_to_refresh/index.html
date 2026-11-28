@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pull to Refresh（引っ張って更新） — UI図鑑</title>
+<meta name="description" content="一覧の先頭でさらに下へ引っ張ると、くるくるが出て再読み込みされる。">
+<link rel="canonical" href="https://uizukan.dev/entry/pull_to_refresh/">
+<meta property="og:title" content="Pull to Refresh（引っ張って更新） — UI図鑑">
+<meta property="og:description" content="一覧の先頭でさらに下へ引っ張ると、くるくるが出て再読み込みされる。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/pull_to_refresh/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/pull_to_refresh.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/actions/">アクション</a><span class="sep">/</span><span class="here">Pull to Refresh</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Gestures · 11 · アクション</div>
+  <h1 class="display" style="margin-top:10px">Pull to Refresh</h1>
+  <p class="lead" style="margin-top:6px">引っ張って更新</p>
+  <div class="demo-plate">
+    <div class="head"><code>pull_to_refresh</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-pull_to_refresh" role="group" aria-label="Pull to Refresh のデモ"><div class="gs-pr"><div class="gs-sc"><div class="gs-ct"><div class="gs-hd">↓ 下に引っ張ると、新着の投稿を読み込む</div><div class="gs-ls"><div class="gs-po"><span class="gs-av" style="background:#ef4444">山</span><div class="gs-pb"><div class="gs-pn"><span class="gs-nm">山田 花子</span><span class="gs-tm">2分前</span></div><div class="gs-px" style="-webkit-line-clamp:1;line-clamp:1">週末に行ったカフェ、窓際の席が最高でした</div></div></div><div class="gs-po"><span class="gs-av" style="background:#3b5bff">佐</span><div class="gs-pb"><div class="gs-pn"><span class="gs-nm">佐藤 健</span><span class="gs-tm">8分前</span></div><div class="gs-px" style="-webkit-line-clamp:1;line-clamp:1">新しいアプリをリリースしました！感想ください</div></div></div><div class="gs-po"><span class="gs-av" style="background:#8b5cf6">田</span><div class="gs-pb"><div class="gs-pn"><span class="gs-nm">田中 美咲</span><span class="gs-tm">15分前</span></div><div class="gs-px" style="-webkit-line-clamp:1;line-clamp:1">今日の夕焼け、写真じゃ伝わらないくらい綺麗</div></div></div><div class="gs-po"><span class="gs-av" style="background:#10b981">鈴</span><div class="gs-pb"><div class="gs-pn"><span class="gs-nm">鈴木 一郎</span><span class="gs-tm">32分前</span></div><div class="gs-px" style="-webkit-line-clamp:1;line-clamp:1">Flutter の新しいバージョン、ビルドが速くなった気がする</div></div></div><div class="gs-po"><span class="gs-av" style="background:#f59e0b">高</span><div class="gs-pb"><div class="gs-pn"><span class="gs-nm">高橋 さくら</span><span class="gs-tm">1時間前</span></div><div class="gs-px" style="-webkit-line-clamp:1;line-clamp:1">朝ランニング 5km 達成。続けて 30 日目です</div></div></div><div class="gs-po"><span class="gs-av" style="background:#0ea5e9">伊</span><div class="gs-pb"><div class="gs-pn"><span class="gs-nm">伊藤 大輔</span><span class="gs-tm">1時間前</span></div><div class="gs-px" style="-webkit-line-clamp:1;line-clamp:1">おすすめの技術書あれば教えてください</div></div></div><div class="gs-po"><span class="gs-av" style="background:#ec4899">渡</span><div class="gs-pb"><div class="gs-pn"><span class="gs-nm">渡辺 結衣</span><span class="gs-tm">2時間前</span></div><div class="gs-px" style="-webkit-line-clamp:1;line-clamp:1">手作りのパン、やっと上手に焼けた</div></div></div><div class="gs-po"><span class="gs-av" style="background:#64748b">中</span><div class="gs-pb"><div class="gs-pn"><span class="gs-nm">中村 翔</span><span class="gs-tm">3時間前</span></div><div class="gs-px" style="-webkit-line-clamp:1;line-clamp:1">雨の日はカフェで作業がはかどる</div></div></div></div></div></div><div class="gs-cir"><svg viewBox="0 0 17 17" aria-hidden="true"><circle class="gs-arc" cx="8.5" cy="8.5" r="7.25"/></svg></div><template><div class="gs-po gs-nw"><span class="gs-av" style="background:#22c55e">松</span><div class="gs-pb"><div class="gs-pn"><span class="gs-nm">松本 楓</span><span class="gs-tm">たった今</span><span class="gs-nb">NEW</span></div><div class="gs-px" style="-webkit-line-clamp:1;line-clamp:1">いま投稿しました！引っ張って更新すると出てきます</div></div></div><div class="gs-po gs-nw"><span class="gs-av" style="background:#e11d48">井</span><div class="gs-pb"><div class="gs-pn"><span class="gs-nm">井上 湊</span><span class="gs-tm">たった今</span><span class="gs-nb">NEW</span></div><div class="gs-px" style="-webkit-line-clamp:1;line-clamp:1">ランチのオムライス、ふわとろで感動</div></div></div><div class="gs-po gs-nw"><span class="gs-av" style="background:#0891b2">木</span><div class="gs-pb"><div class="gs-pn"><span class="gs-nm">木村 凛</span><span class="gs-tm">たった今</span><span class="gs-nb">NEW</span></div><div class="gs-px" style="-webkit-line-clamp:1;line-clamp:1">今日の作業はここまで。おつかれさまでした</div></div></div></template></div></div><style>#wd-pull_to_refresh .gs-po{display:flex;align-items:flex-start;gap:10px;padding:8px 12px}
+#wd-pull_to_refresh .gs-po.gs-nw{background:color-mix(in srgb,var(--m-primary) 6%,transparent)}
+#wd-pull_to_refresh .gs-av{width:30px;height:30px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700;line-height:1}
+#wd-pull_to_refresh .gs-pb{flex:1;min-width:0}
+#wd-pull_to_refresh .gs-pn{display:flex;align-items:center;gap:6px;line-height:1.65;white-space:nowrap}
+#wd-pull_to_refresh .gs-nm{font-size:12px;font-weight:700;overflow:hidden;text-overflow:ellipsis;min-width:0}
+#wd-pull_to_refresh .gs-tm{font-size:11px;color:var(--m-on-surface-v);flex:none}
+#wd-pull_to_refresh .gs-nb{flex:none;padding:1px 5px;border-radius:4px;background:var(--m-primary);color:var(--m-on-primary);font-size:9px;font-weight:800;line-height:1.65}
+#wd-pull_to_refresh .gs-px{margin-top:2px;font-size:12px;line-height:1.4;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden;word-break:break-all}
+
+#wd-pull_to_refresh .gs-pr{position:relative;width:300px;max-width:100%;height:240px;border-radius:12px;overflow:hidden;text-align:left}
+#wd-pull_to_refresh .gs-pr::after{content:"";position:absolute;inset:0;border:1px solid var(--rule);border-radius:12px;pointer-events:none}
+#wd-pull_to_refresh .gs-sc{position:absolute;inset:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none}
+#wd-pull_to_refresh .gs-sc::-webkit-scrollbar{display:none}
+#wd-pull_to_refresh .gs-ct{will-change:transform}
+#wd-pull_to_refresh .gs-hd{padding:10px 12px 6px;font-size:12px;line-height:1.65;color:var(--m-on-surface-v)}
+#wd-pull_to_refresh .gs-cir{position:absolute;left:50%;top:-50px;width:41px;height:41px;margin-left:-20.5px;border-radius:50%;background:var(--canvas);box-shadow:var(--e2);display:flex;align-items:center;justify-content:center;pointer-events:none}
+#wd-pull_to_refresh .gs-cir svg{width:17px;height:17px;transform:rotate(-90deg);overflow:visible}
+#wd-pull_to_refresh .gs-arc{fill:none;stroke:var(--m-primary);stroke-width:2.5;stroke-dasharray:0 46}
+#wd-pull_to_refresh .gs-cir.gs-busy svg{animation:wd-ptr-rot 1.4s linear infinite}
+#wd-pull_to_refresh .gs-cir.gs-busy .gs-arc{stroke-linecap:butt;animation:wd-ptr-dash 1.4s ease-in-out infinite}
+@keyframes wd-ptr-rot{from{transform:rotate(-90deg)}to{transform:rotate(270deg)}}
+@keyframes wd-ptr-dash{0%{stroke-dasharray:1 46;stroke-dashoffset:0}50%{stroke-dasharray:34 46;stroke-dashoffset:-8}100%{stroke-dasharray:34 46;stroke-dashoffset:-45}}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const sc = root.querySelector('.gs-sc'), ct = root.querySelector('.gs-ct'), hd = root.querySelector('.gs-hd'), ls = root.querySelector('.gs-ls');
+const cir = root.querySelector('.gs-cir'), arc = root.querySelector('.gs-arc'), news = root.querySelector('template').content.children;
+const C = 2 * Math.PI * 7.25;
+let o = 0, pulling = false, mode = 'idle', refreshed = 0;
+const H = () => sc.clientHeight;
+// RefreshIndicator：引いた量 ÷（高さの 25%）が 0〜1。2/3（= 40px）で「離せば更新」。丸は displacement 40 の所まで降りる
+const draw = (p) => {
+  const sf = 1.5 * p;
+  cir.style.top = (40 - (1 - sf) * 89 + 4) + 'px';
+  arc.style.strokeDasharray = (0.75 * p * C) + ' ' + C;
+  arc.style.strokeOpacity = Math.min(1, p * 1.5);
+};
+const setO = () => {
+  ct.style.transition = 'none';
+  ct.style.transform = o ? 'translateY(' + o + 'px)' : '';
+  if (mode === 'idle') { cir.style.transition = 'none'; draw(Math.min(1, o / (H() * 0.25))); }
+};
+// 指 1 回分の動き（下が正）。引っぱりを扱ったら true
+const move = (dy) => {
+  if (!pulling) {
+    if (sc.scrollTop <= 0 && dy > 0) pulling = true; else return false;
+  }
+  // iOS の弾み（BouncingScrollPhysics）：はみ出すほど重くなる
+  if (dy > 0) o += dy * 0.52 * Math.pow(1 - o / H(), 2); else o += dy;
+  if (o <= 0) { o = 0; pulling = false; }
+  setO();
+  return true;
+};
+const bounceBack = () => { ct.style.transition = 'transform 400ms cubic-bezier(.25,.8,.25,1)'; ct.style.transform = ''; o = 0; };
+const release = () => {
+  if (!pulling) return;
+  pulling = false;
+  if (mode === 'idle') {
+    if (o >= H() * 0.25 / 1.5) refresh();
+    else { cir.style.transition = 'top 200ms ease'; draw(0); }
+  }
+  bounceBack();
+};
+const refresh = () => {
+  mode = 'busy';
+  cir.style.transition = 'top 150ms ease';
+  draw(1 / 1.5);
+  arc.style.strokeOpacity = 1;
+  arc.style.strokeDasharray = '';
+  cir.classList.add('gs-busy');
+  setTimeout(() => {
+    UZ.haptic('light');
+    ls.insertBefore(news[refreshed % news.length].cloneNode(true), ls.firstChild);
+    refreshed++;
+    hd.textContent = '更新しました（新着 ' + refreshed + ' 件）';
+    cir.style.transition = 'transform 200ms ease';
+    cir.style.transform = 'scale(0)';
+    setTimeout(() => {
+      cir.classList.remove('gs-busy');
+      cir.style.transition = 'none'; cir.style.transform = '';
+      mode = 'idle'; draw(0);
+    }, 200);
+  }, 1200);
+};
+// タッチ：リストの上端で下へ引いたときだけ、ブラウザのスクロールを止めて自分で動かす
+let ty = null;
+sc.addEventListener('touchstart', (e) => { ty = e.touches.length === 1 ? e.touches[0].clientY : null; }, { passive: true });
+sc.addEventListener('touchmove', (e) => {
+  if (ty === null || e.touches.length !== 1) return;
+  const y = e.touches[0].clientY, dy = y - ty;
+  ty = y;
+  if (move(dy) && e.cancelable) e.preventDefault();
+}, { passive: false });
+sc.addEventListener('touchend', () => { ty = null; release(); });
+sc.addEventListener('touchcancel', () => { ty = null; release(); });
+// マウス：上端で下へドラッグすると同じように引ける
+let mid = null, my = 0;
+sc.addEventListener('pointerdown', (e) => {
+  if (e.pointerType !== 'mouse' || e.button !== 0) return;
+  mid = e.pointerId; my = e.clientY;
+  try { sc.setPointerCapture(mid); } catch (_) {}
+});
+sc.addEventListener('pointermove', (e) => { if (e.pointerId !== mid) return; move(e.clientY - my); my = e.clientY; });
+const mUp = (e) => { if (e.pointerId !== mid) return; mid = null; release(); };
+sc.addEventListener('pointerup', mUp);
+sc.addEventListener('pointercancel', mUp);
+draw(0);})(document.getElementById("wd-pull_to_refresh"),window.UZ);</script></div>
+    <a class="foot" href="https://apps.apple.com/jp/app/id6808997175" rel="noopener"><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i><span>本物の手触りは iOS アプリで</span><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a>
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Swipe to Refresh</span><span class="tag">Pull-down Refresh</span><span class="tag">Refresh Control</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Pull to refresh（Progress indicators の用法）</dd></div><div><dt>Material 2</dt><dd class="">Swipe to refresh（SwipeRefreshLayout）</dd></div><div><dt>Android (Compose)</dt><dd class="">PullToRefreshBox</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（慣習。UIKit の Refresh control）</dd></div><div><dt>SwiftUI</dt><dd class="">.refreshable</dd></div><div><dt>Web</dt><dd class="na">該当なし（ブラウザ機能。overscroll-behavior で制御）</dd></div><div><dt>Flutter</dt><dd class="mono">RefreshIndicator / CupertinoSliverRefreshControl</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>リスト最上部で下方向に<a class="term" href="/glossary/drag/">ドラッグ</a>すると更新<a class="term" href="/glossary/indicator/">インジケータ</a>が現れ、離すと再取得する。Material は円形の<a class="term" href="/glossary/indicator/">スピナー</a>が降りてくる、iOS は放射状<a class="term" href="/glossary/indicator/">インジケータ</a>が引き伸ばされる。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>フィード・受信箱・通知など、新着が発生する一覧。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/infinite_scroll/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Infinite Scroll (Pagination)</a><a class="chip" href="/entry/circular_progress/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Circular Progress Indicator</a><a class="chip" href="/entry/overscroll_bounce/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Overscroll Bounce (Rubber Band)</a><a class="chip" href="/glossary/drag/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>ドラッグ</a><a class="chip" href="/glossary/indicator/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>インジケータ</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/feed/"><span class="ic s" style="--i:url(/assets/icons/scene-feed.png)"></span>フィード</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="フィードを Pull to Refresh で更新できるようにして。iOS では iOS 風のインジケータ（CupertinoSliverRefreshControl）にして。" data-en="Add Pull to Refresh to the feed. On iOS use the native-style CupertinoSliverRefreshControl.">フィードを Pull to Refresh で更新できるようにして。iOS では iOS 風のインジケータ（CupertinoSliverRefreshControl）にして。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Pull to Refresh / 引っ張って更新
+
+- id: `pull_to_refresh`  URL: https://uizukan.dev/entry/pull_to_refresh/
+- 種別: アクション / Gestures
+- 別名: Swipe to Refresh, Pull-down Refresh, Refresh Control
+- 呼び名: Material 3=Pull to refresh（Progress indicators の用法） / Material 2=Swipe to refresh（SwipeRefreshLayout） / Android (Compose)=PullToRefreshBox / iOS (HIG)=該当なし（慣習。UIKit の Refresh control） / SwiftUI=.refreshable / Web=該当なし（ブラウザ機能。overscroll-behavior で制御） / Flutter=RefreshIndicator / CupertinoSliverRefreshControl
+- Flutter: `RefreshIndicator / CupertinoSliverRefreshControl`
+- 関連: infinite_scroll, circular_progress, overscroll_bounce
+
+**説明**: リスト最上部で下方向にドラッグすると更新インジケータが現れ、離すと再取得する。Material は円形のスピナーが降りてくる、iOS は放射状インジケータが引き伸ばされる。
+
+**使いどころ**: フィード・受信箱・通知など、新着が発生する一覧。
+
+**AI への伝え方（日本語）**: フィードを Pull to Refresh で更新できるようにして。iOS では iOS 風のインジケータ（CupertinoSliverRefreshControl）にして。
+
+**Prompt (English)**: Add Pull to Refresh to the feed. On iOS use the native-style CupertinoSliverRefreshControl.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

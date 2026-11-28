@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Press Scale (Spring Bounce)（押すと縮んで弾むボタン） — UI図鑑</title>
+<meta name="description" content="押している間 0.95 倍に縮み、離すとバネのように弾んで戻る。">
+<link rel="canonical" href="https://uizukan.dev/entry/press_scale/">
+<meta property="og:title" content="Press Scale (Spring Bounce)（押すと縮んで弾むボタン） — UI図鑑">
+<meta property="og:description" content="押している間 0.95 倍に縮み、離すとバネのように弾んで戻る。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/press_scale/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/press_scale.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/actions/">アクション</a><span class="sep">/</span><span class="here">Press Scale (Spring Bounce)</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Motion &amp; Micro-interactions · 02 · アクション</div>
+  <h1 class="display" style="margin-top:10px">Press Scale (Spring Bounce)</h1>
+  <p class="lead" style="margin-top:6px">押すと縮んで弾むボタン</p>
+  <div class="demo-plate">
+    <div class="head"><code>press_scale</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-press_scale" role="group" aria-label="Press Scale (Spring Bounce) のデモ"><div class="mo-ps" role="button" tabindex="0">押してみて</div></div><style>#wd-press_scale .mo-ps{width:240px;height:64px;border-radius:18px;background:linear-gradient(90deg,var(--m-primary),var(--m-primary));box-shadow:0 6px 16px color-mix(in srgb,var(--m-primary) 30%,transparent);color:#fff;font-weight:700;font-size:16px;line-height:1.2;display:flex;align-items:center;justify-content:center;cursor:pointer;touch-action:manipulation;transition:transform .25s cubic-bezier(.175,.885,.32,1.275)}
+#wd-press_scale .mo-ps.mo-dn{transform:scale(.95);transition:transform 80ms cubic-bezier(0,0,.58,1)}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const b=root.querySelector('.mo-ps'); let sx=0,sy=0,down=false;
+b.addEventListener('pointerdown',e=>{ if(e.button>0)return; down=true; sx=e.clientX; sy=e.clientY; b.classList.add('mo-dn'); try{b.setPointerCapture(e.pointerId);}catch(_){} });
+b.addEventListener('pointerup',()=>{ if(!down)return; down=false; UZ.haptic('light'); b.classList.remove('mo-dn'); });
+const off=()=>{ down=false; b.classList.remove('mo-dn'); };
+b.addEventListener('pointercancel',off);
+b.addEventListener('pointermove',e=>{ if(down&&Math.hypot(e.clientX-sx,e.clientY-sy)>18)off(); });})(document.getElementById("wd-press_scale"),window.UZ);</script></div>
+    <a class="foot" href="https://apps.apple.com/jp/app/id6808997175" rel="noopener"><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i><span>本物の手触りは iOS アプリで</span><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a>
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Tap Scale</span><span class="tag">Squash and Stretch</span><span class="tag">Bouncy Button</span><span class="tag">Spring Animation</span><span class="tag">Scale on Press</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="na">該当なし（M3 に無い）</dd></div><div><dt>Material 2</dt><dd class="na">該当なし（M2 に無い）</dd></div><div><dt>Android (Compose)</dt><dd class="">Modifier.scale + animateFloatAsState（InteractionSource）</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（慣習。Button の pressed 状態）</dd></div><div><dt>SwiftUI</dt><dd class="">.scaleEffect + .animation / ButtonStyle（configuration.isPressed）</dd></div><div><dt>Web</dt><dd class="">CSS :active + transform: scale()</dd></div><div><dt>Flutter</dt><dd class="mono">AnimatedScale + GestureDetector(onTapDown / Up / Cancel)</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>Material のリップルとは別系統の、iOS 寄りのタップ反応。押下中に縮み、離すと <a class="term" href="/glossary/curve/">overshoot</a> して戻る（<a class="term" href="/glossary/curve/">easeOutBack</a>）。「気持ちいい」ボタンの定番。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>カード・大きなボタン・ゲーム風 UI。小さなアイコンには過剰。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/ripple/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Ripple (Ink Splash)</a><a class="chip" href="/entry/tap/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Tap</a><a class="chip" href="/entry/like_burst/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Like Burst (Heart Pop)</a><a class="chip" href="/entry/cupertino_button/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Cupertino Button</a><a class="chip" href="/glossary/curve/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>イージング</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/paywall/"><span class="ic s" style="--i:url(/assets/icons/scene-paywall.png)"></span>ペイウォール</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="このボタンを、押している間は 0.95 倍に縮み、離すと少しオーバーシュートして弾んで戻る Press Scale アニメーションにして。リップルは無しで。" data-en="Give this button a Press Scale animation: shrink to 0.95 while pressed and spring back with a slight overshoot on release. No ripple.">このボタンを、押している間は 0.95 倍に縮み、離すと少しオーバーシュートして弾んで戻る Press Scale アニメーションにして。リップルは無しで。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Press Scale (Spring Bounce) / 押すと縮んで弾むボタン
+
+- id: `press_scale`  URL: https://uizukan.dev/entry/press_scale/
+- 種別: アクション / Motion &amp; Micro-interactions
+- 別名: Tap Scale, Squash and Stretch, Bouncy Button, Spring Animation, Scale on Press
+- 呼び名: Material 3=該当なし（M3 に無い） / Material 2=該当なし（M2 に無い） / Android (Compose)=Modifier.scale + animateFloatAsState（InteractionSource） / iOS (HIG)=該当なし（慣習。Button の pressed 状態） / SwiftUI=.scaleEffect + .animation / ButtonStyle（configuration.isPressed） / Web=CSS :active + transform: scale() / Flutter=AnimatedScale + GestureDetector(onTapDown / Up / Cancel)
+- Flutter: `AnimatedScale + GestureDetector(onTapDown / Up / Cancel)`
+- 関連: ripple, tap, like_burst, cupertino_button
+
+**説明**: Material のリップルとは別系統の、iOS 寄りのタップ反応。押下中に縮み、離すと overshoot して戻る（easeOutBack）。「気持ちいい」ボタンの定番。
+
+**使いどころ**: カード・大きなボタン・ゲーム風 UI。小さなアイコンには過剰。
+
+**AI への伝え方（日本語）**: このボタンを、押している間は 0.95 倍に縮み、離すと少しオーバーシュートして弾んで戻る Press Scale アニメーションにして。リップルは無しで。
+
+**Prompt (English)**: Give this button a Press Scale animation: shrink to 0.95 while pressed and spring back with a slight overshoot on release. No ripple.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

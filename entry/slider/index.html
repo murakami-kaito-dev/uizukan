@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Slider（スライダー） — UI図鑑</title>
+<meta name="description" content="つまみを横に動かして値を選ぶ。目盛り付きの離散型もある。">
+<link rel="canonical" href="https://uizukan.dev/entry/slider/">
+<meta property="og:title" content="Slider（スライダー） — UI図鑑">
+<meta property="og:description" content="つまみを横に動かして値を選ぶ。目盛り付きの離散型もある。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/slider/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/slider.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Slider</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Inputs &amp; Selection · 08 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Slider</h1>
+  <p class="lead" style="margin-top:6px">スライダー</p>
+  <div class="demo-plate">
+    <div class="head"><code>slider</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-slider" role="group" aria-label="Slider のデモ"><div class="in-col"><div class="in-r1"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e6c2.png);width:24px;height:24px" aria-hidden="true"></i><div class="in-msl" role="slider" aria-label="音量" aria-valuemin="0" aria-valuemax="100" aria-valuenow="40" tabindex="0"><div class="in-trk"><div class="in-in"></div><div class="in-act"></div><div class="in-tk"></div></div><div class="in-hov"></div><div class="in-th"></div><div class="in-vi"><span class="in-d"></span><span class="in-n">40</span></div></div><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e6c5.png);width:24px;height:24px" aria-hidden="true"></i></div><div class="in-csl" role="slider" aria-label="iOS 風" aria-valuemin="0" aria-valuemax="1" tabindex="0"><div class="in-ct"><div class="in-ca"></div></div><div class="in-cth"></div></div></div></div><style>#wd-slider .in-col{width:100%;max-width:320px;display:flex;flex-direction:column;align-items:center}
+#wd-slider .in-r1{display:flex;align-items:center;width:100%;color:var(--ink)}
+#wd-slider .in-msl{--p:.4;position:relative;flex:1;min-width:0;height:48px;touch-action:none;cursor:pointer;outline:none}
+#wd-slider .in-trk{position:absolute;left:24px;right:24px;top:50%}
+#wd-slider .in-trk .in-in{position:absolute;left:0;right:0;top:-2px;height:4px;border-radius:2px;background:var(--line)}
+#wd-slider .in-trk .in-act{position:absolute;left:-1px;top:-3px;height:6px;border-radius:3px;background:var(--accent);width:calc(var(--p) * 100% + 1px)}
+#wd-slider .in-tk i{position:absolute;top:-1px;width:2px;height:2px;margin-left:-1px;border-radius:50%;background:color-mix(in srgb,var(--ink2) 38%,transparent)}
+#wd-slider .in-tk i.in-a{background:color-mix(in srgb,#fff 38%,transparent)}
+#wd-slider .in-th,#wd-slider .in-hov{position:absolute;top:50%;left:calc(24px + (100% - 48px) * var(--p));border-radius:50%;transform:translate(-50%,-50%)}
+#wd-slider .in-th{width:20px;height:20px;background:var(--accent);box-shadow:0 1px 2px rgba(0,0,0,.3)}
+#wd-slider .in-hov{width:40px;height:40px;background:color-mix(in srgb,var(--accent) 12%,transparent);opacity:0;transition:opacity .1s}
+#wd-slider .in-msl.in-drag .in-hov{opacity:1}
+#wd-slider .in-vi{position:absolute;left:calc(24px + (100% - 48px) * var(--p));bottom:38px;width:28px;height:28px;margin-left:-14px;transform:scale(0);transform-origin:50% 120%;transition:transform .1s}
+#wd-slider .in-msl.in-drag .in-vi{transform:none}
+#wd-slider .in-vi .in-d{position:absolute;inset:0;background:var(--accent);border-radius:50% 50% 50% 0;transform:rotate(-45deg)}
+#wd-slider .in-vi .in-n{position:relative;display:block;text-align:center;line-height:28px;font-size:12px;font-weight:500;color:var(--m-on-primary)}
+#wd-slider .in-csl{--p:.5;position:relative;width:176px;height:44px;touch-action:none;outline:none}
+#wd-slider .in-ct{position:absolute;left:8px;right:8px;top:21px;height:2px;border-radius:1px;background:color-mix(in srgb,var(--ink) 11%,transparent)}
+#wd-slider .in-ca{position:absolute;left:0;top:0;bottom:0;border-radius:1px;background:var(--accent);width:calc(14px + (100% - 28px) * var(--p))}
+#wd-slider .in-cth{position:absolute;top:8px;left:calc(22px + (100% - 44px) * var(--p));width:28px;height:28px;margin-left:-14px;border-radius:50%;background:#fff;box-shadow:0 .25px .5px rgba(0,0,0,.24),0 3px 8px rgba(0,0,0,.15),0 3px 1px rgba(0,0,0,.06);cursor:grab}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const msl=root.querySelector('.in-msl'),tk=msl.querySelector('.in-tk'),vn=msl.querySelector('.in-vi .in-n');
+let v=40;
+tk.innerHTML=Array.from({length:21},function(_,i){return '<i style="left:'+(i*5)+'%"></i>';}).join('');
+const ticks=tk.querySelectorAll('i');
+function show(){msl.style.setProperty('--p',v/100);vn.textContent=String(v);msl.setAttribute('aria-valuenow',v);ticks.forEach(function(t,i){t.classList.toggle('in-a',i*5<v);});}
+function setFrom(e){const r=msl.getBoundingClientRect();const f=Math.max(0,Math.min(1,(e.clientX-r.left-24)/(r.width-48)));const nv=Math.round(f*20)*5;if(nv!==v){UZ.haptic('selection');v=nv;show();}}
+let pid=null;
+msl.addEventListener('pointerdown',function(e){pid=e.pointerId;try{msl.setPointerCapture(pid);}catch(_){}msl.classList.add('in-drag');setFrom(e);});
+msl.addEventListener('pointermove',function(e){if(e.pointerId===pid)setFrom(e);});
+const end=function(e){if(e.pointerId!==pid)return;pid=null;msl.classList.remove('in-drag');};
+msl.addEventListener('pointerup',end);msl.addEventListener('pointercancel',end);
+msl.addEventListener('keydown',function(e){const d=e.key==='ArrowRight'||e.key==='ArrowUp'?5:e.key==='ArrowLeft'||e.key==='ArrowDown'?-5:0;if(d){e.preventDefault();const nv=Math.max(0,Math.min(100,v+d));if(nv!==v){UZ.haptic('selection');v=nv;show();}}});
+show();
+// CupertinoSlider：つまみの近くからだけ引ける（タップで飛ばない）
+const csl=root.querySelector('.in-csl'),cth=csl.querySelector('.in-cth');
+let p=0.5,cp=null,cx=0,c0=0;
+function cshow(){csl.style.setProperty('--p',p);csl.setAttribute('aria-valuenow',p.toFixed(2));}
+csl.addEventListener('pointerdown',function(e){const r=csl.getBoundingClientRect();const tx=r.left+22+(r.width-44)*p;if(Math.abs(e.clientX-tx)>22)return;cp=e.pointerId;try{csl.setPointerCapture(cp);}catch(_){}cx=e.clientX;c0=p;});
+csl.addEventListener('pointermove',function(e){if(e.pointerId!==cp)return;const r=csl.getBoundingClientRect();p=Math.max(0,Math.min(1,c0+(e.clientX-cx)/(r.width-44)));cshow();});
+const cend=function(e){if(e.pointerId===cp)cp=null;};
+csl.addEventListener('pointerup',cend);csl.addEventListener('pointercancel',cend);
+csl.addEventListener('keydown',function(e){const d=e.key==='ArrowRight'?.1:e.key==='ArrowLeft'?-.1:0;if(d){e.preventDefault();p=Math.max(0,Math.min(1,p+d));cshow();}});
+cshow();})(document.getElementById("wd-slider"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Seek Bar</span><span class="tag">Range Input</span><span class="tag">Discrete Slider</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Slider</dd></div><div><dt>Material 2</dt><dd class="">Slider（Continuous / Discrete）</dd></div><div><dt>Android (Compose)</dt><dd class="">Slider</dd></div><div><dt>iOS (HIG)</dt><dd class="">Sliders</dd></div><div><dt>SwiftUI</dt><dd class="">Slider</dd></div><div><dt>Web</dt><dd class="">&lt;input type="range"&gt;</dd></div><div><dt>Flutter</dt><dd class="mono">Slider / CupertinoSlider</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p><a class="term" href="/glossary/thumb_track/">トラック</a>上の<a class="term" href="/glossary/thumb_track/">つまみ</a>を動かして連続値を選ぶ。divisions を指定すると目盛りに<a class="term" href="/glossary/snap/">吸着</a>する離散型になり、label で現在値を吹き出し表示できる。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>音量・明るさ・価格帯など「だいたい」でよい値。正確な数値が必要なら数値入力と併用。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/range_slider/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Range Slider</a><a class="chip" href="/entry/stepper_input/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Quantity Stepper</a><a class="chip" href="/glossary/thumb_track/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>つまみとトラック</a><a class="chip" href="/glossary/snap/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>スナップ</a></div></section>
+  
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="0〜100 を 5 刻みで選べる離散型 Slider を作って。ドラッグ中はつまみの上に現在値を吹き出し表示して。" data-en="Create a discrete Slider from 0 to 100 in steps of 5. While dragging, show the current value in a label bubble above the thumb.">0〜100 を 5 刻みで選べる離散型 Slider を作って。ドラッグ中はつまみの上に現在値を吹き出し表示して。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Slider / スライダー
+
+- id: `slider`  URL: https://uizukan.dev/entry/slider/
+- 種別: 表示 / Inputs &amp; Selection
+- 別名: Seek Bar, Range Input, Discrete Slider
+- 呼び名: Material 3=Slider / Material 2=Slider（Continuous / Discrete） / Android (Compose)=Slider / iOS (HIG)=Sliders / SwiftUI=Slider / Web=&lt;input type="range"&gt; / Flutter=Slider / CupertinoSlider
+- Flutter: `Slider / CupertinoSlider`
+- 関連: range_slider, stepper_input
+
+**説明**: トラック上のつまみを動かして連続値を選ぶ。divisions を指定すると目盛りに吸着する離散型になり、label で現在値を吹き出し表示できる。
+
+**使いどころ**: 音量・明るさ・価格帯など「だいたい」でよい値。正確な数値が必要なら数値入力と併用。
+
+**AI への伝え方（日本語）**: 0〜100 を 5 刻みで選べる離散型 Slider を作って。ドラッグ中はつまみの上に現在値を吹き出し表示して。
+
+**Prompt (English)**: Create a discrete Slider from 0 to 100 in steps of 5. While dragging, show the current value in a label bubble above the thumb.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

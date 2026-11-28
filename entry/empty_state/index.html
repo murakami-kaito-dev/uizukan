@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Empty State（空状態（エンプティステート）） — UI図鑑</title>
+<meta name="description" content="一覧に何もないとき、イラスト＋説明＋最初の行動を促す表示。">
+<link rel="canonical" href="https://uizukan.dev/entry/empty_state/">
+<meta property="og:title" content="Empty State（空状態（エンプティステート）） — UI図鑑">
+<meta property="og:description" content="一覧に何もないとき、イラスト＋説明＋最初の行動を促す表示。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/empty_state/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/empty_state.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Empty State</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Feedback &amp; Status · 07 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Empty State</h1>
+  <p class="lead" style="margin-top:6px">空状態（エンプティステート）</p>
+  <div class="demo-plate">
+    <div class="head"><code>empty_state</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-empty_state" role="group" aria-label="Empty State のデモ"><div class="fb-es"><div class="fb-pane fb-emp"><div class="fb-circ"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f030f.png);width:40px;height:40px" aria-hidden="true"></i></div><div class="fb-h">メモがありません</div><div class="fb-sub">下のボタンから最初のメモを作りましょう</div><button class="m-btn m-filled fb-add"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e047.png);width:18px;height:18px" aria-hidden="true"></i>最初のメモを作る</button></div><div class="fb-pane fb-lst"><div class="fb-hdr"><b class="fb-cnt">メモ 0 件</b><button class="m-btn m-text fb-clr">すべて削除</button></div><div class="fb-items"></div><button class="m-btn m-outlined fb-add"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e047.png);width:18px;height:18px" aria-hidden="true"></i>メモを追加</button></div><template><div class="m-card fb-memo"><i class="mi fb-icn" style="--i:url(/assets/icons/mi-materialicons-f3e8.png);width:24px;height:24px" aria-hidden="true"></i><div class="fb-tx"><div class="fb-t"></div><div class="fb-s">たった今</div></div></div></template></div></div><style>#wd-empty_state .fb-es{position:relative;width:100%;max-width:300px;height:230px}
+#wd-empty_state .fb-pane{position:absolute;inset:0;display:flex;flex-direction:column;transition:opacity .26s linear,transform .26s linear}
+#wd-empty_state .fb-pane.fb-off{opacity:0;transform:scale(.96);pointer-events:none}
+#wd-empty_state .fb-emp{align-items:center;justify-content:center}
+#wd-empty_state .fb-circ{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:color-mix(in srgb,var(--m-primary) 12%,transparent);color:var(--m-primary)}
+#wd-empty_state .fb-h{margin-top:12px;font-weight:700;font-size:16px}
+#wd-empty_state .fb-sub{margin-top:4px;font-size:12px;color:var(--ink2)}
+#wd-empty_state .fb-emp .fb-add{margin-top:14px}
+#wd-empty_state .fb-hdr{display:flex;align-items:center;justify-content:space-between}
+#wd-empty_state .fb-items{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none}
+#wd-empty_state .fb-items::-webkit-scrollbar{display:none}
+#wd-empty_state .fb-memo{display:flex;align-items:center;height:64px;margin-bottom:6px;padding:0 20px;gap:16px}
+#wd-empty_state .fb-memo .fb-icn{color:var(--m-primary)}
+#wd-empty_state .fb-memo .fb-t{font-size:13px;line-height:1.3}
+#wd-empty_state .fb-memo .fb-s{font-size:12px;line-height:1.4;color:var(--ink2)}
+#wd-empty_state .fb-lst .fb-add{align-self:center}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const emp = root.querySelector('.fb-emp'), lst = root.querySelector('.fb-lst'), items = root.querySelector('.fb-items');
+const tpl = root.querySelector('template'), cnt = root.querySelector('.fb-cnt');
+let n = 0;
+function show() { emp.classList.toggle('fb-off', n > 0); lst.classList.toggle('fb-off', n === 0); cnt.textContent = 'メモ ' + n + ' 件'; }
+root.querySelectorAll('.fb-add').forEach(function (b) {
+  b.addEventListener('click', function () {
+    UZ.haptic('light'); n++;
+    const m = tpl.content.firstElementChild.cloneNode(true);
+    m.querySelector('.fb-t').textContent = 'メモ ' + n; items.appendChild(m);
+    show();
+  });
+});
+root.querySelector('.fb-clr').addEventListener('click', function () { n = 0; items.innerHTML = ''; show(); });
+show();})(document.getElementById("wd-empty_state"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Zero State</span><span class="tag">Blank Slate</span><span class="tag">No Data View</span><span class="tag">Empty View</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="na">該当なし（M3 に無い）</dd></div><div><dt>Material 2</dt><dd class="na">該当なし（M2 に無い）</dd></div><div><dt>Android (Compose)</dt><dd class="na">該当なし（Column + Icon + Text + Button）</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（iOS 標準には無い）</dd></div><div><dt>SwiftUI</dt><dd class="">ContentUnavailableView</dd></div><div><dt>Web</dt><dd class="na">該当なし（Empty state）</dd></div><div><dt>Flutter</dt><dd class="mono">自作（Column + Icon + Text + FilledButton）</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>データがゼロの画面で、ただ真っ白にせず「なぜ空か」「次に何をすればよいか」を示す。イラスト・見出し・説明・<a class="term" href="/glossary/cta/">CTA</a> で構成。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>初回利用、検索結果ゼロ、エラーで取得できなかった時（それぞれ文言を変える）。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/filled_button/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Filled Button</a><a class="chip" href="/entry/banner/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Banner</a><a class="chip" href="/entry/circular_progress/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Circular Progress Indicator</a><a class="chip" href="/glossary/cta/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>CTA</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/search/"><span class="ic s" style="--i:url(/assets/icons/scene-search.png)"></span>検索</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="メモが 0 件のときに Empty State を出して。中央に大きなアイコン、「メモがありません」、説明文、「最初のメモを作る」ボタンで。" data-en="Show an Empty State when there are no notes: a large centered icon, &quot;No notes yet&quot;, a short description, and a &quot;Create your first note&quot; button.">メモが 0 件のときに Empty State を出して。中央に大きなアイコン、「メモがありません」、説明文、「最初のメモを作る」ボタンで。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Empty State / 空状態（エンプティステート）
+
+- id: `empty_state`  URL: https://uizukan.dev/entry/empty_state/
+- 種別: 表示 / Feedback &amp; Status
+- 別名: Zero State, Blank Slate, No Data View, Empty View
+- 呼び名: Material 3=該当なし（M3 に無い） / Material 2=該当なし（M2 に無い） / Android (Compose)=該当なし（Column + Icon + Text + Button） / iOS (HIG)=該当なし（iOS 標準には無い） / SwiftUI=ContentUnavailableView / Web=該当なし（Empty state） / Flutter=自作（Column + Icon + Text + FilledButton）
+- Flutter: `自作（Column + Icon + Text + FilledButton）`
+- 関連: filled_button, banner, circular_progress
+
+**説明**: データがゼロの画面で、ただ真っ白にせず「なぜ空か」「次に何をすればよいか」を示す。イラスト・見出し・説明・CTA で構成。
+
+**使いどころ**: 初回利用、検索結果ゼロ、エラーで取得できなかった時（それぞれ文言を変える）。
+
+**AI への伝え方（日本語）**: メモが 0 件のときに Empty State を出して。中央に大きなアイコン、「メモがありません」、説明文、「最初のメモを作る」ボタンで。
+
+**Prompt (English)**: Show an Empty State when there are no notes: a large centered icon, "No notes yet", a short description, and a "Create your first note" button.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

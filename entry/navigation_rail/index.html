@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Navigation Rail（ナビゲーションレール（縦タブ）） — UI図鑑</title>
+<meta name="description" content="タブレットや Web で、画面左に縦に並ぶタブ。">
+<link rel="canonical" href="https://uizukan.dev/entry/navigation_rail/">
+<meta property="og:title" content="Navigation Rail（ナビゲーションレール（縦タブ）） — UI図鑑">
+<meta property="og:description" content="タブレットや Web で、画面左に縦に並ぶタブ。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/navigation_rail/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/navigation_rail.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Navigation Rail</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Navigation · 04 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Navigation Rail</h1>
+  <p class="lead" style="margin-top:6px">ナビゲーションレール（縦タブ）</p>
+  <div class="demo-plate">
+    <div class="head"><code>navigation_rail</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-navigation_rail" role="group" aria-label="Navigation Rail のデモ"><div class="nv-fit-o"><div class="nv-fit-i" style="width:320px"><div class="nv-fr" style="width:320px;height:240px"><div class="nv-rw"><nav class="nv-rail"><button class="nv-dst nv-sel" data-i="0"><span class="nv-ic"><i class="mi nv-off" style="--i:url(/assets/icons/mi-materialicons-f107.png);width:24px;height:24px" aria-hidden="true"></i><i class="mi nv-on" style="--i:url(/assets/icons/mi-materialicons-e318.png);width:24px;height:24px" aria-hidden="true"></i></span><span class="nv-lb">ホーム</span></button><button class="nv-dst" data-i="1"><span class="nv-ic"><i class="mi nv-off" style="--i:url(/assets/icons/mi-materialicons-e567.png);width:24px;height:24px" aria-hidden="true"></i><i class="mi nv-on" style="--i:url(/assets/icons/mi-materialicons-e567.png);width:24px;height:24px" aria-hidden="true"></i></span><span class="nv-lb">検索</span></button><button class="nv-dst" data-i="2"><span class="nv-ic"><i class="mi nv-off" style="--i:url(/assets/icons/mi-materialicons-e497.png);width:24px;height:24px" aria-hidden="true"></i><i class="mi nv-on" style="--i:url(/assets/icons/mi-materialicons-e491.png);width:24px;height:24px" aria-hidden="true"></i></span><span class="nv-lb">マイページ</span></button></nav><div class="nv-vd"></div><div class="nv-pages"></div></div></div></div></div></div><style>#wd-navigation_rail .nv-fit-o{position:relative;flex:none}
+#wd-navigation_rail .nv-fit-i{position:absolute;left:0;top:0;transform-origin:0 0}
+#wd-navigation_rail .nv-fr{position:relative;overflow:hidden;border-radius:12px;isolation:isolate;text-align:left}
+#wd-navigation_rail .nv-fr::after{content:"";position:absolute;inset:0;border:1px solid var(--rule);border-radius:12px;pointer-events:none;z-index:60}
+#wd-navigation_rail .nv-sc{overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+#wd-navigation_rail .nv-sc::-webkit-scrollbar{display:none}
+#wd-navigation_rail .m-icon-btn .mi{width:22px;height:22px}
+
+#wd-navigation_rail .nv-pages{position:relative;overflow:hidden}
+#wd-navigation_rail .nv-pg{position:absolute;inset:0;padding:14px 14px 8px}
+#wd-navigation_rail .nv-ph{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+#wd-navigation_rail .nv-pi{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex:none}
+#wd-navigation_rail .nv-ph b{font-size:16px;font-weight:700;line-height:1.65}
+#wd-navigation_rail .nv-pr{margin-bottom:8px;padding:9px 10px;background:var(--surface);border:1px solid var(--rule);border-radius:8px;font-size:12px;line-height:1.65}
+
+#wd-navigation_rail .nv-rw{height:100%;display:flex;background:var(--surface)}
+#wd-navigation_rail .nv-rail{width:80px;flex:none;padding-top:8px;display:flex;flex-direction:column}
+#wd-navigation_rail .nv-vd{width:1px;background:var(--rule);flex:none}
+#wd-navigation_rail .nv-pages{flex:1}
+#wd-navigation_rail .nv-dst{display:flex;flex-direction:column;align-items:center;padding-bottom:12px;color:var(--ink3)}
+#wd-navigation_rail .nv-ic{height:32px;display:flex;align-items:center}
+#wd-navigation_rail .nv-ic .mi{display:block}
+#wd-navigation_rail .nv-dst .nv-on,#wd-navigation_rail .nv-dst.nv-sel .nv-off{display:none}
+#wd-navigation_rail .nv-dst.nv-sel .nv-on{display:block}
+#wd-navigation_rail .nv-lb{margin-top:4px;font-size:12px;font-weight:500;line-height:1.2;letter-spacing:.2px;white-space:nowrap}
+#wd-navigation_rail .nv-dst.nv-sel{color:var(--accent)}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const P = ["<div class=\"nv-pg nv-sc\"><div class=\"nv-ph\"><span class=\"nv-pi\" style=\"background:rgba(59,91,255,0.15);color:#3b5bff\"><i class=\"mi\" style=\"--i:url(/assets/icons/mi-materialicons-e318.png);width:18px;height:18px\" aria-hidden=\"true\"></i></span><b>ホーム</b></div><div class=\"nv-pr\">新着のお知らせ</div><div class=\"nv-pr\">おすすめの記事</div><div class=\"nv-pr\">最近見た項目</div></div>","<div class=\"nv-pg nv-sc\"><div class=\"nv-ph\"><span class=\"nv-pi\" style=\"background:rgba(14,165,233,0.15);color:#0ea5e9\"><i class=\"mi\" style=\"--i:url(/assets/icons/mi-materialicons-e567.png);width:18px;height:18px\" aria-hidden=\"true\"></i></span><b>検索</b></div><div class=\"nv-pr\">最近の検索：ボタン</div><div class=\"nv-pr\">最近の検索：タブ</div><div class=\"nv-pr\">人気：ボトムシート</div></div>","<div class=\"nv-pg nv-sc\"><div class=\"nv-ph\"><span class=\"nv-pi\" style=\"background:rgba(139,92,246,0.15);color:#8b5cf6\"><i class=\"mi\" style=\"--i:url(/assets/icons/mi-materialicons-e491.png);width:18px;height:18px\" aria-hidden=\"true\"></i></span><b>マイページ</b></div><div class=\"nv-pr\">プロフィール</div><div class=\"nv-pr\">お気に入り</div><div class=\"nv-pr\">設定</div></div>"];
+const fitO = root.querySelector('.nv-fit-o'), fitI = fitO.firstElementChild;
+let S = 1;
+const refit = () => {
+  const W = fitI.offsetWidth, H = fitI.offsetHeight, a = root.clientWidth || W;
+  S = Math.min(1, a / W);
+  fitI.style.transform = S < 1 ? 'scale(' + S + ')' : '';
+  fitO.style.width = W * S + 'px';
+  fitO.style.height = H * S + 'px';
+};
+refit();
+if (window.ResizeObserver) { const ro = new ResizeObserver(refit); ro.observe(root); ro.observe(fitI); }
+
+const swap = (host, html) => {
+  const box = document.createElement('div'); box.innerHTML = html;
+  const el = box.firstElementChild;
+  Array.prototype.forEach.call(host.children, (o) => {
+    if (o.dataset.gone) return;
+    o.dataset.gone = '1';
+    const a = o.animate([{ opacity: 1, transform: 'none' }, { opacity: 0, transform: 'translateY(4%)' }], { duration: 200, fill: 'forwards' });
+    a.onfinish = () => o.remove();
+  });
+  host.appendChild(el);
+  el.animate([{ opacity: 0, transform: 'translateY(4%)' }, { opacity: 1, transform: 'none' }], { duration: 200 });
+};
+
+const host = root.querySelector('.nv-pages');
+let index = 0;
+host.innerHTML = P[0];
+root.querySelectorAll('.nv-dst').forEach((d) => d.addEventListener('click', () => {
+  const i = +d.dataset.i;
+  if (i === index) return;
+  UZ.haptic('selection');
+  index = i;
+  root.querySelectorAll('.nv-dst').forEach((x) => x.classList.toggle('nv-sel', x === d));
+  swap(host, P[i]);
+}));})(document.getElementById("wd-navigation_rail"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Side Rail</span><span class="tag">Vertical Tab Bar</span><span class="tag">Sidebar (compact)</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Navigation rail</dd></div><div><dt>Material 2</dt><dd class="">Navigation rail</dd></div><div><dt>Android (Compose)</dt><dd class="">NavigationRail + NavigationRailItem</dd></div><div><dt>iOS (HIG)</dt><dd class="">Sidebars（近い）</dd></div><div><dt>SwiftUI</dt><dd class="">NavigationSplitView（sidebar）</dd></div><div><dt>Web</dt><dd class="na">該当なし（Vertical navigation）</dd></div><div><dt>Flutter</dt><dd class="mono">NavigationRail</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>横幅が広い画面向けに、Bottom Navigation の代わりとして左端に縦に並べる<a class="term" href="/glossary/tab/">タブ</a>。幅 80dp 程度。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>幅 600dp 以上（タブレット・PC・Web）。幅で Bottom Navigation と切り替える。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/bottom_navigation_bar/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Bottom Navigation Bar</a><a class="chip" href="/entry/navigation_drawer/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Navigation Drawer</a><a class="chip" href="/glossary/tab/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>タブ</a></div></section>
+  
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="画面幅が 600dp 以上なら左に Navigation Rail、未満なら下に Navigation Bar を出すレスポンシブなナビゲーションにして。" data-en="Make navigation responsive: show a Navigation Rail on the left when width ≥ 600dp, otherwise a bottom Navigation Bar.">画面幅が 600dp 以上なら左に Navigation Rail、未満なら下に Navigation Bar を出すレスポンシブなナビゲーションにして。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Navigation Rail / ナビゲーションレール（縦タブ）
+
+- id: `navigation_rail`  URL: https://uizukan.dev/entry/navigation_rail/
+- 種別: 表示 / Navigation
+- 別名: Side Rail, Vertical Tab Bar, Sidebar (compact)
+- 呼び名: Material 3=Navigation rail / Material 2=Navigation rail / Android (Compose)=NavigationRail + NavigationRailItem / iOS (HIG)=Sidebars（近い） / SwiftUI=NavigationSplitView（sidebar） / Web=該当なし（Vertical navigation） / Flutter=NavigationRail
+- Flutter: `NavigationRail`
+- 関連: bottom_navigation_bar, navigation_drawer
+
+**説明**: 横幅が広い画面向けに、Bottom Navigation の代わりとして左端に縦に並べるタブ。幅 80dp 程度。
+
+**使いどころ**: 幅 600dp 以上（タブレット・PC・Web）。幅で Bottom Navigation と切り替える。
+
+**AI への伝え方（日本語）**: 画面幅が 600dp 以上なら左に Navigation Rail、未満なら下に Navigation Bar を出すレスポンシブなナビゲーションにして。
+
+**Prompt (English)**: Make navigation responsive: show a Navigation Rail on the left when width ≥ 600dp, otherwise a bottom Navigation Bar.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

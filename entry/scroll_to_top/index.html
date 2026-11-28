@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scroll to Top（先頭へ戻る） — UI図鑑</title>
+<meta name="description" content="ステータスバーやタブの再タップ、または「↑」ボタンで一番上に戻る。">
+<link rel="canonical" href="https://uizukan.dev/entry/scroll_to_top/">
+<meta property="og:title" content="Scroll to Top（先頭へ戻る） — UI図鑑">
+<meta property="og:description" content="ステータスバーやタブの再タップ、または「↑」ボタンで一番上に戻る。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/scroll_to_top/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/scroll_to_top.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/actions/">アクション</a><span class="sep">/</span><span class="here">Scroll to Top</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Scrolling Behaviors · 07 · アクション</div>
+  <h1 class="display" style="margin-top:10px">Scroll to Top</h1>
+  <p class="lead" style="margin-top:6px">先頭へ戻る</p>
+  <div class="demo-plate">
+    <div class="head"><code>scroll_to_top</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-scroll_to_top" role="group" aria-label="Scroll to Top のデモ"><div class="sr-fit-o"><div class="sr-fit-i" style="width:300px"><div class="sr-fr" style="width:300px;height:240px"><div class="sr-sc"><div class="sr-lt"><span class="sr-no">1</span><span class="sr-lx">↓ 下へスクロールしてみてください</span></div><div class="sr-lt"><span class="sr-no">2</span><span class="sr-lx">長い一覧は、先頭へ戻るのに何度もスクロールが要ります</span></div><div class="sr-lt"><span class="sr-no">3</span><span class="sr-lx">そこで「先頭へ戻る」ボタンを用意します</span></div><div class="sr-lt"><span class="sr-no">4</span><span class="sr-lx">少し下へ進むと、右下に ↑ ボタンが現れます</span></div><div class="sr-lt"><span class="sr-no">5</span><span class="sr-lx">先頭の近くでは邪魔になるので出しません</span></div><div class="sr-lt"><span class="sr-no">6</span><span class="sr-lx">↑ を押すと、なめらかに先頭まで戻ります</span></div><div class="sr-lt"><span class="sr-no">7</span><span class="sr-lx">iOS では画面の上端のタップでも先頭へ戻れます</span></div><div class="sr-lt"><span class="sr-no">8</span><span class="sr-lx">よく見る場所：SNS のタイムライン</span></div><div class="sr-lt"><span class="sr-no">9</span><span class="sr-lx">よく見る場所：ニュースや記事の一覧</span></div><div class="sr-lt"><span class="sr-no">10</span><span class="sr-lx">よく見る場所：検索結果</span></div><div class="sr-lt"><span class="sr-no">11</span><span class="sr-lx">よく見る場所：ネットショップの商品一覧</span></div><div class="sr-lt"><span class="sr-no">12</span><span class="sr-lx">一瞬で飛ばず、動きで「戻った」と分かるようにする</span></div><div class="sr-lt"><span class="sr-no">13</span><span class="sr-lx">ボタンは小さめに、押しやすい右下へ</span></div><div class="sr-lt"><span class="sr-no">14</span><span class="sr-lx">読み途中の位置を失うので、勝手には戻さない</span></div><div class="sr-lt"><span class="sr-no">15</span><span class="sr-lx">さらに下へどうぞ</span></div><div class="sr-lt"><span class="sr-no">16</span><span class="sr-lx">…あと少し</span></div><div class="sr-lt"><span class="sr-no">17</span><span class="sr-lx">…もう少し</span></div><div class="sr-lt"><span class="sr-no">18</span><span class="sr-lx">ここで一覧はおしまいです</span></div><div class="sr-lt"><span class="sr-no">19</span><span class="sr-lx">右下の ↑ を押してみてください</span></div><div class="sr-lt"><span class="sr-no">20</span><span class="sr-lx">先頭まで一気に戻ります</span></div></div><button class="sr-fab sr-top" aria-label="先頭へ戻る"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e0a0.png);width:24px;height:24px" aria-hidden="true"></i></button></div></div></div></div><style>#wd-scroll_to_top .sr-fit-o{position:relative;flex:none}
+#wd-scroll_to_top .sr-fit-i{position:absolute;left:0;top:0;transform-origin:0 0}
+#wd-scroll_to_top .sr-fr{position:relative;overflow:hidden;border-radius:12px;isolation:isolate;text-align:left}
+#wd-scroll_to_top .sr-fr::after{content:"";position:absolute;inset:0;border:1px solid var(--rule);border-radius:12px;pointer-events:none;z-index:60}
+#wd-scroll_to_top .sr-sc{height:100%;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+#wd-scroll_to_top .sr-sc::-webkit-scrollbar{display:none}
+#wd-scroll_to_top .sr-fab{width:40px;height:40px;border-radius:12px;background:var(--accent-soft);color:var(--ink);display:flex;align-items:center;justify-content:center;box-shadow:var(--e3)}
+
+#wd-scroll_to_top .sr-lt{min-height:48px;display:flex;align-items:center;gap:16px;padding:8px 20px}
+#wd-scroll_to_top .sr-no{min-width:16px;font-size:11px;line-height:1.65;color:var(--ink2);flex:none}
+#wd-scroll_to_top .sr-lx{font-size:12px;line-height:1.3}
+
+#wd-scroll_to_top .sr-top{position:absolute;right:16px;bottom:16px;z-index:3;opacity:0;pointer-events:none;transition:opacity .2s linear}
+#wd-scroll_to_top .sr-top.sr-show{opacity:1;pointer-events:auto}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const fitO = root.querySelector('.sr-fit-o'), fitI = fitO.firstElementChild;
+let S = 1;
+const refit = () => {
+  const W = fitI.offsetWidth, H = fitI.offsetHeight, a = root.clientWidth || W;
+  S = Math.min(1, a / W);
+  fitI.style.transform = S < 1 ? 'scale(' + S + ')' : '';
+  fitO.style.width = W * S + 'px';
+  fitO.style.height = H * S + 'px';
+};
+refit();
+if (window.ResizeObserver) { const ro = new ResizeObserver(refit); ro.observe(root); ro.observe(fitI); }
+
+const tween = (dur, ease, fn, done) => {
+  const t0 = performance.now(); let id = 0;
+  const step = (now) => { const p = Math.min(1, (now - t0) / dur); fn(ease(p)); if (p < 1) id = requestAnimationFrame(step); else if (done) done(); };
+  id = requestAnimationFrame(step);
+  return () => cancelAnimationFrame(id);
+};
+const bez = (x1, y1, x2, y2) => (x) => {
+  if (x <= 0) return 0; if (x >= 1) return 1;
+  let t = x;
+  for (let i = 0; i < 8; i++) {
+    const cx = 3 * x1 * t * (1 - t) * (1 - t) + 3 * x2 * t * t * (1 - t) + t * t * t - x;
+    const d = 3 * x1 * (1 - t) * (1 - t) + 6 * (x2 - x1) * t * (1 - t) + 3 * (1 - x2) * t * t;
+    if (Math.abs(cx) < 1e-5 || !d) break;
+    t -= cx / d;
+  }
+  return 3 * y1 * t * (1 - t) * (1 - t) + 3 * y2 * t * t * (1 - t) + t * t * t;
+};
+const EASE = bez(0.25, 0.1, 0.25, 1);
+// 横スクロール（scroll-snap）の箱を、マウスでも引っぱってページ送りできるようにする（指はブラウザの横スクロールのまま）
+const pager = (el, step) => {
+  let id = null, sx = 0, sl = 0, lx = 0, lt = 0, v = 0, stop = null;
+  el.addEventListener('pointerdown', (e) => {
+    if (e.pointerType !== 'mouse' || e.button !== 0) return;
+    if (stop) { stop(); stop = null; }
+    id = e.pointerId; sx = lx = e.clientX; lt = e.timeStamp; sl = el.scrollLeft; v = 0;
+    el.style.scrollSnapType = 'none';
+    try { el.setPointerCapture(id); } catch (_) {}
+  });
+  el.addEventListener('pointermove', (e) => {
+    if (e.pointerId !== id) return;
+    const dt = e.timeStamp - lt; if (dt > 0) v = (e.clientX - lx) / S / dt;
+    lx = e.clientX; lt = e.timeStamp;
+    el.scrollLeft = sl - (e.clientX - sx) / S;
+  });
+  const up = (e) => {
+    if (e.pointerId !== id) return;
+    id = null;
+    const s = step(), max = Math.round((el.scrollWidth - el.clientWidth) / s);
+    let p = el.scrollLeft / s;
+    p = v < -0.05 ? Math.ceil(p) : v > 0.05 ? Math.floor(p) : Math.round(p); // 速さが 50px/秒を超えたら次のページへ（Flutter のページ送りと同じ）
+    p = Math.max(0, Math.min(max, p));
+    const from = el.scrollLeft, to = p * s;
+    stop = tween(300, EASE, (k) => { el.scrollLeft = from + (to - from) * k; }, () => { el.style.scrollSnapType = ''; stop = null; });
+  };
+  el.addEventListener('pointerup', up);
+  el.addEventListener('pointercancel', up);
+};
+
+const sc = root.querySelector('.sr-sc'), btn = root.querySelector('.sr-top');
+sc.addEventListener('scroll', () => btn.classList.toggle('sr-show', sc.scrollTop > 200), { passive: true });
+btn.addEventListener('click', () => {
+  const from = sc.scrollTop;
+  tween(400, (p) => 1 - Math.pow(1 - p, 3), (k) => { sc.scrollTop = from * (1 - k); });
+});})(document.getElementById("wd-scroll_to_top"),window.UZ);</script></div>
+    <a class="foot" href="https://apps.apple.com/jp/app/id6808997175" rel="noopener"><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i><span>本物の手触りは iOS アプリで</span><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a>
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Back to Top</span><span class="tag">Tap Status Bar to Scroll</span><span class="tag">Tap Tab to Scroll Top</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="na">該当なし（M3 に無い）</dd></div><div><dt>Material 2</dt><dd class="na">該当なし（M2 に無い）</dd></div><div><dt>Android (Compose)</dt><dd class="">LazyListState.animateScrollToItem(0)</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（慣習。Status bar タップで先頭へ）</dd></div><div><dt>SwiftUI</dt><dd class="">ScrollViewReader + proxy.scrollTo</dd></div><div><dt>Web</dt><dd class="">window.scrollTo({ top: 0, behavior: "smooth" })</dd></div><div><dt>Flutter</dt><dd class="mono">ScrollController.animateTo / PrimaryScrollController</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>iOS は<a class="term" href="/glossary/status_bar/">ステータスバー</a>のタップで先頭へ戻るのが OS 標準（Flutter は PrimaryScrollController を使えば自動）。選択中<a class="term" href="/glossary/tab/">タブ</a>の再タップで戻すのも定番。長い一覧では「↑」ボタンを出す。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>長いフィード・一覧すべて。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/bottom_navigation_bar/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Bottom Navigation Bar</a><a class="chip" href="/entry/fab/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Floating Action Button</a><a class="chip" href="/entry/infinite_scroll/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Infinite Scroll (Pagination)</a><a class="chip" href="/glossary/status_bar/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>ステータスバー</a><a class="chip" href="/glossary/tab/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>タブ</a></div></section>
+  
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="選択中のタブをもう一度タップしたら一覧の先頭へ滑らかにスクロールする Scroll to Top を付けて。iOS のステータスバーのタップでも戻れるように PrimaryScrollController を使って。" data-en="Tapping the already-selected tab should smoothly Scroll to Top of the list. Use PrimaryScrollController so tapping the iOS status bar also works.">選択中のタブをもう一度タップしたら一覧の先頭へ滑らかにスクロールする Scroll to Top を付けて。iOS のステータスバーのタップでも戻れるように PrimaryScrollController を使って。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Scroll to Top / 先頭へ戻る
+
+- id: `scroll_to_top`  URL: https://uizukan.dev/entry/scroll_to_top/
+- 種別: アクション / Scrolling Behaviors
+- 別名: Back to Top, Tap Status Bar to Scroll, Tap Tab to Scroll Top
+- 呼び名: Material 3=該当なし（M3 に無い） / Material 2=該当なし（M2 に無い） / Android (Compose)=LazyListState.animateScrollToItem(0) / iOS (HIG)=該当なし（慣習。Status bar タップで先頭へ） / SwiftUI=ScrollViewReader + proxy.scrollTo / Web=window.scrollTo({ top: 0, behavior: "smooth" }) / Flutter=ScrollController.animateTo / PrimaryScrollController
+- Flutter: `ScrollController.animateTo / PrimaryScrollController`
+- 関連: bottom_navigation_bar, fab, infinite_scroll
+
+**説明**: iOS はステータスバーのタップで先頭へ戻るのが OS 標準（Flutter は PrimaryScrollController を使えば自動）。選択中タブの再タップで戻すのも定番。長い一覧では「↑」ボタンを出す。
+
+**使いどころ**: 長いフィード・一覧すべて。
+
+**AI への伝え方（日本語）**: 選択中のタブをもう一度タップしたら一覧の先頭へ滑らかにスクロールする Scroll to Top を付けて。iOS のステータスバーのタップでも戻れるように PrimaryScrollController を使って。
+
+**Prompt (English)**: Tapping the already-selected tab should smoothly Scroll to Top of the list. Use PrimaryScrollController so tapping the iOS status bar also works.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

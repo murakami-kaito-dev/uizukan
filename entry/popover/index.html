@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Popover（ポップオーバー（矢印つきの小さな面）） — UI図鑑</title>
+<meta name="description" content="押した所から矢印つきで出る、小さな面。外を押すと閉じる。">
+<link rel="canonical" href="https://uizukan.dev/entry/popover/">
+<meta property="og:title" content="Popover（ポップオーバー（矢印つきの小さな面）） — UI図鑑">
+<meta property="og:description" content="押した所から矢印つきで出る、小さな面。外を押すと閉じる。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/popover/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/popover.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Popover</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Surfaces &amp; Overlays · 12 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Popover</h1>
+  <p class="lead" style="margin-top:6px">ポップオーバー（矢印つきの小さな面）</p>
+  <div class="demo-plate">
+    <div class="head"><code>popover</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-popover" role="group" aria-label="Popover のデモ"><div class="sf-pov"><button class="sf-pob" aria-expanded="true"><span class="sf-dot"></span>予定の色</button>
+<div class="sf-pop sf-on" role="dialog" aria-label="予定の色"><svg class="sf-arw" width="20" height="10" viewBox="0 0 20 10" aria-hidden="true"><path d="M0 11 L10 0 L20 11" /></svg>
+<div class="sf-pbox"><button class="sf-pit sf-ink" data-c="#3B6BFF" aria-checked="true" role="menuitemradio"><span class="sf-dot" style="background:#3B6BFF"></span><span class="sf-pl">青</span><i class="mi sf-chk" style="--i:url(/assets/icons/mi-materialicons-e156.png);width:18px;height:18px" aria-hidden="true"></i></button><button class="sf-pit sf-ink" data-c="#16A34A" role="menuitemradio"><span class="sf-dot" style="background:#16A34A"></span><span class="sf-pl">緑</span><i class="mi sf-chk" style="--i:url(/assets/icons/mi-materialicons-e156.png);width:18px;height:18px" aria-hidden="true"></i></button><button class="sf-pit sf-ink" data-c="#F97316" role="menuitemradio"><span class="sf-dot" style="background:#F97316"></span><span class="sf-pl">オレンジ</span><i class="mi sf-chk" style="--i:url(/assets/icons/mi-materialicons-e156.png);width:18px;height:18px" aria-hidden="true"></i></button></div></div></div></div><style>#wd-popover .sf-ink{position:relative;cursor:pointer}
+#wd-popover .sf-ink::after{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--ink);opacity:0;pointer-events:none;transition:opacity .2s}
+@media (hover:hover){#wd-popover .sf-ink:hover::after{opacity:.03}}
+#wd-popover .sf-ink.sf-down::after{opacity:.04}
+
+#wd-popover .sf-pov{position:relative;width:300px;max-width:100%;height:236px;display:flex;flex-direction:column;align-items:center}
+#wd-popover .sf-pob{margin-top:4px;display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 22px 0 16px;border-radius:999px;background:color-mix(in srgb,var(--m-primary) 14%,var(--surface));color:var(--ink);font-size:15px;font-weight:500;line-height:1.2}
+#wd-popover .sf-pob:active{filter:brightness(.96)}
+#wd-popover .sf-dot{width:14px;height:14px;border-radius:50%;background:#3B6BFF;flex:none}
+#wd-popover .sf-pop{position:absolute;top:56px;left:50%;width:220px;margin-left:-110px;display:flex;flex-direction:column;align-items:center;transform-origin:top center;opacity:0;transform:scale(.9);pointer-events:none;transition:opacity .16s linear,transform .2s cubic-bezier(.33,1,.68,1)}
+#wd-popover .sf-pop.sf-on{opacity:1;transform:none;pointer-events:auto}
+#wd-popover .sf-arw{display:block;position:relative;z-index:1;margin-bottom:-1px}
+#wd-popover .sf-arw path{fill:var(--surface);stroke:var(--rule);stroke-width:1}
+#wd-popover .sf-pbox{width:220px;padding:6px 0;background:var(--surface);border:1px solid var(--rule);border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.2);display:flex;flex-direction:column;overflow:hidden}
+#wd-popover .sf-pit{display:flex;align-items:center;gap:12px;padding:11px 16px;width:100%;text-align:left;font-size:15px;line-height:1.45;color:var(--ink)}
+#wd-popover .sf-pl{flex:1}
+#wd-popover .sf-chk{color:var(--m-primary);visibility:hidden}
+#wd-popover .sf-pit[aria-checked="true"] .sf-chk{visibility:visible}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const lock = (on) => { document.documentElement.style.overflow = on ? 'hidden' : ''; };
+const escKey = (fn) => { const h = (e) => { if (e.key === 'Escape') fn(); }; document.addEventListener('keydown', h); return () => document.removeEventListener('keydown', h); };
+const layer = (el, ms, outCls) => {
+  let shown = false, t = 0, off = null;
+  return {
+    get open() { return shown; },
+    show(close) {
+      if (shown) return false;
+      shown = true; clearTimeout(t); el.hidden = false; if (outCls) el.classList.remove(outCls); lock(true);
+      void el.offsetWidth; el.classList.add('sf-on'); off = escKey(close); return true;
+    },
+    hide() {
+      if (!shown) return false;
+      shown = false; if (outCls) el.classList.add(outCls); el.classList.remove('sf-on'); if (off) off();
+      t = setTimeout(() => { el.hidden = true; if (outCls) el.classList.remove(outCls); lock(false); }, ms); return true;
+    },
+  };
+};
+const press = (el) => {
+  const off = () => el.classList.remove('sf-down');
+  el.addEventListener('pointerdown', () => el.classList.add('sf-down'));
+  ['pointerup', 'pointercancel', 'pointerleave'].forEach((n) => el.addEventListener(n, off));
+};
+const btn = root.querySelector('.sf-pob'), pop = root.querySelector('.sf-pop'), items = [...root.querySelectorAll('.sf-pit')];
+items.forEach(press);
+const set = (on) => { pop.classList.toggle('sf-on', on); btn.setAttribute('aria-expanded', String(on)); };
+btn.addEventListener('click', (e) => { e.stopPropagation(); set(!pop.classList.contains('sf-on')); });
+items.forEach((it) => it.addEventListener('click', (e) => {
+  e.stopPropagation();
+  items.forEach((x) => x.setAttribute('aria-checked', String(x === it)));
+  btn.querySelector('.sf-dot').style.background = it.dataset.c;
+  set(false);
+}));
+// 外を押すと閉じる
+root.addEventListener('click', () => set(false));
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') set(false); });})(document.getElementById("wd-popover"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Popup</span><span class="tag">Callout</span><span class="tag">Flyout</span><span class="tag">吹き出しメニュー</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="na">該当なし（部品として無い。近いのは Menus と Rich tooltip）</dd></div><div><dt>Material 2</dt><dd class="na">該当なし（部品として無い。Menus を使う）</dd></div><div><dt>Android (Compose)</dt><dd class="">Popup</dd></div><div><dt>iOS (HIG)</dt><dd class="">Popovers</dd></div><div><dt>SwiftUI</dt><dd class="">.popover(isPresented:)</dd></div><div><dt>Web</dt><dd class="">Popover API（&lt;div popover&gt;）</dd></div><div><dt>Flutter</dt><dd class="mono">OverlayPortal + CompositedTransformFollower（専用の部品は無く、これで自作する）</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>ボタンなどを押すと、その場所を矢印で指しながら浮かぶ小さな面。少しの情報や、関連する 2〜3 個の操作を載せる。外側を押すか、中の項目を選ぶと閉じる。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>iPad や広い画面で、画面を移らずに少しだけ設定を変えたいとき。iPhone の縦持ちのような狭い画面では、Popover ではなくシートで出すのが Apple の方針。Popover の上に別の Popover を重ねない。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/popup_menu/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Menu (Popup / Overflow)</a><a class="chip" href="/entry/tooltip/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Tooltip</a><a class="chip" href="/entry/modal_bottom_sheet/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Bottom Sheet</a><a class="chip" href="/entry/context_menu/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Context Menu (Long-press Preview)</a></div></section>
+  
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="「予定の色」ボタンを押すと、ボタンを矢印で指す Popover が出て、色を 3 つから選べるようにして。外を押したら閉じて。" data-en="Tapping the &quot;Event color&quot; button should show a Popover with an arrow pointing at the button, offering three colors. Dismiss it on outside tap.">「予定の色」ボタンを押すと、ボタンを矢印で指す Popover が出て、色を 3 つから選べるようにして。外を押したら閉じて。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Popover / ポップオーバー（矢印つきの小さな面）
+
+- id: `popover`  URL: https://uizukan.dev/entry/popover/
+- 種別: 表示 / Surfaces &amp; Overlays
+- 別名: Popup, Callout, Flyout, 吹き出しメニュー
+- 呼び名: Material 3=該当なし（部品として無い。近いのは Menus と Rich tooltip） / Material 2=該当なし（部品として無い。Menus を使う） / Android (Compose)=Popup / iOS (HIG)=Popovers / SwiftUI=.popover(isPresented:) / Web=Popover API（&lt;div popover&gt;） / Flutter=OverlayPortal + CompositedTransformFollower（専用の部品は無く、これで自作する）
+- Flutter: `OverlayPortal + CompositedTransformFollower（専用の部品は無く、これで自作する）`
+- 関連: popup_menu, tooltip, modal_bottom_sheet, context_menu
+
+**説明**: ボタンなどを押すと、その場所を矢印で指しながら浮かぶ小さな面。少しの情報や、関連する 2〜3 個の操作を載せる。外側を押すか、中の項目を選ぶと閉じる。
+
+**使いどころ**: iPad や広い画面で、画面を移らずに少しだけ設定を変えたいとき。iPhone の縦持ちのような狭い画面では、Popover ではなくシートで出すのが Apple の方針。Popover の上に別の Popover を重ねない。
+
+**AI への伝え方（日本語）**: 「予定の色」ボタンを押すと、ボタンを矢印で指す Popover が出て、色を 3 つから選べるようにして。外を押したら閉じて。
+
+**Prompt (English)**: Tapping the "Event color" button should show a Popover with an arrow pointing at the button, offering three colors. Dismiss it on outside tap.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

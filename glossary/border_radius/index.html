@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>角丸 — UI図鑑</title>
+<meta name="description" content="四角の角をどれだけ丸めるか。丸める円の半径（dp）で指定する。">
+<link rel="canonical" href="https://uizukan.dev/glossary/border_radius/">
+<meta property="og:title" content="角丸 — UI図鑑">
+<meta property="og:description" content="四角の角をどれだけ丸めるか。丸める円の半径（dp）で指定する。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/glossary/border_radius/">
+<meta property="og:image" content="https://uizukan.dev/icons/Icon-512.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/library/">ライブラリ</a><span class="sep">/</span><a href="/glossary/">用語集</a><span class="sep">/</span><span class="here">角丸</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="centered">
+<div class="eyebrow" style="margin-top:24px">用語集</div><h1 class="display" style="margin-top:10px">角丸</h1><p class="lead" style="margin-top:6px">border radius / corner radius</p>
+<div class="plate" style="padding:20px;margin-top:20px;font-weight:500">四角の角をどれだけ丸めるか。丸める円の半径（dp）で指定する。</div>
+
+<section class="section"><h2 class="heading">説明</h2><p>四角の角を、半径いくつの円で丸めるかの値。0 なら直角、値を大きくするほど柔らかく見える。高さの半分以上にすると端が完全な半円になり、<a class="term" href="/glossary/pill/">カプセル型</a>になる。
+
+よく使う目安：入力欄や小さな部品は 4〜8dp、カード・ボトムシート・ダイアログは 12〜28dp、ボタン・チップ・検索バーは半円（<a class="term" href="/glossary/pill/">カプセル型</a>）。同じ画面の中では、入れ子の内側ほど小さくすると揃って見える。
+
+AI に頼むときは「角丸 12dp のカード」のように数値で伝えると確実。Flutter では BorderRadius.circular(12)、CSS では border-radius: 12px、<a class="term" href="/glossary/swiftui/">SwiftUI</a> では cornerRadius(12)。</p></section>
+<section class="section"><h2 class="heading">図鑑の項目</h2><div class="chips"><a class="chip" href="/entry/card/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Card</a><a class="chip" href="/entry/filled_button/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Filled Button</a><a class="chip" href="/entry/text_field_outlined/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Outlined Text Field</a><a class="chip" href="/entry/chips/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Chip</a><a class="chip" href="/entry/search_bar/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Search Bar</a><a class="chip" href="/entry/modal_bottom_sheet/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Bottom Sheet</a></div></section>
+<section class="section"><h2 class="heading">関連する用語</h2><div class="chips"><a class="chip" href="/glossary/pill/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>カプセル型</a><a class="chip" href="/glossary/dp/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>dp</a></div></section>
+</div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bottom Navigation Bar（ボトムナビゲーション（下タブ）） — UI図鑑</title>
+<meta name="description" content="画面下部に 3〜5 個並ぶ、アプリの主要セクションを切り替えるタブ。">
+<link rel="canonical" href="https://uizukan.dev/entry/bottom_navigation_bar/">
+<meta property="og:title" content="Bottom Navigation Bar（ボトムナビゲーション（下タブ）） — UI図鑑">
+<meta property="og:description" content="画面下部に 3〜5 個並ぶ、アプリの主要セクションを切り替えるタブ。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/bottom_navigation_bar/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/bottom_navigation_bar.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Bottom Navigation Bar</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Navigation · 03 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Bottom Navigation Bar</h1>
+  <p class="lead" style="margin-top:6px">ボトムナビゲーション（下タブ）</p>
+  <div class="demo-plate">
+    <div class="head"><code>bottom_navigation_bar</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-bottom_navigation_bar" role="group" aria-label="Bottom Navigation Bar のデモ"><div class="nv-fit-o"><div class="nv-fit-i" style="width:320px"><div class="nv-col"><div class="nv-seg" role="group"><button class="nv-sg nv-on" data-v="0">Material</button><button class="nv-sg" data-v="1">iOS</button></div><div class="nv-fr" style="width:320px;height:320px"><div class="nv-scaf"><div class="nv-pages"></div><nav class="nv-mbar"><button class="nv-dst nv-sel" data-i="0"><span class="nv-ic"><i class="mi nv-off" style="--i:url(/assets/icons/mi-materialicons-f107.png);width:24px;height:24px" aria-hidden="true"></i><i class="mi nv-on" style="--i:url(/assets/icons/mi-materialicons-e318.png);width:24px;height:24px" aria-hidden="true"></i></span><span class="nv-lb">ホーム</span></button><button class="nv-dst" data-i="1"><span class="nv-ic"><i class="mi nv-off" style="--i:url(/assets/icons/mi-materialicons-e567.png);width:24px;height:24px" aria-hidden="true"></i><i class="mi nv-on" style="--i:url(/assets/icons/mi-materialicons-e567.png);width:24px;height:24px" aria-hidden="true"></i></span><span class="nv-lb">検索</span></button><button class="nv-dst" data-i="2"><span class="nv-ic"><i class="mi nv-off" style="--i:url(/assets/icons/mi-materialicons-f237.png);width:24px;height:24px" aria-hidden="true"></i><i class="mi nv-on" style="--i:url(/assets/icons/mi-materialicons-e44f.png);width:24px;height:24px" aria-hidden="true"></i><span class="nv-badge">3</span></span><span class="nv-lb">通知</span></button><button class="nv-dst" data-i="3"><span class="nv-ic"><i class="mi nv-off" style="--i:url(/assets/icons/mi-materialicons-e497.png);width:24px;height:24px" aria-hidden="true"></i><i class="mi nv-on" style="--i:url(/assets/icons/mi-materialicons-e491.png);width:24px;height:24px" aria-hidden="true"></i></span><span class="nv-lb">マイページ</span></button></nav><nav class="nv-ibar" hidden><button class="nv-dst nv-sel" data-i="0"><span class="nv-ic"><i class="mi nv-off" style="--i:url(/assets/icons/mi-cupertinoicons-f447.png);width:30px;height:30px" aria-hidden="true"></i><i class="mi nv-on" style="--i:url(/assets/icons/mi-cupertinoicons-f6ca.png);width:30px;height:30px" aria-hidden="true"></i></span><span class="nv-lb">ホーム</span></button><button class="nv-dst" data-i="1"><span class="nv-ic"><i class="mi nv-off" style="--i:url(/assets/icons/mi-cupertinoicons-f4a5.png);width:30px;height:30px" aria-hidden="true"></i><i class="mi nv-on" style="--i:url(/assets/icons/mi-cupertinoicons-f4a5.png);width:30px;height:30px" aria-hidden="true"></i></span><span class="nv-lb">検索</span></button><button class="nv-dst" data-i="2"><span class="nv-ic"><i class="mi nv-off" style="--i:url(/assets/icons/mi-cupertinoicons-f3e1.png);width:30px;height:30px" aria-hidden="true"></i><i class="mi nv-on" style="--i:url(/assets/icons/mi-cupertinoicons-f3e2.png);width:30px;height:30px" aria-hidden="true"></i><span class="nv-badge">3</span></span><span class="nv-lb">通知</span></button><button class="nv-dst" data-i="3"><span class="nv-ic"><i class="mi nv-off" style="--i:url(/assets/icons/mi-cupertinoicons-f47d.png);width:30px;height:30px" aria-hidden="true"></i><i class="mi nv-on" style="--i:url(/assets/icons/mi-cupertinoicons-f47e.png);width:30px;height:30px" aria-hidden="true"></i></span><span class="nv-lb">マイページ</span></button></nav></div></div></div></div></div></div><style>#wd-bottom_navigation_bar .nv-fit-o{position:relative;flex:none}
+#wd-bottom_navigation_bar .nv-fit-i{position:absolute;left:0;top:0;transform-origin:0 0}
+#wd-bottom_navigation_bar .nv-fr{position:relative;overflow:hidden;border-radius:12px;isolation:isolate;text-align:left}
+#wd-bottom_navigation_bar .nv-fr::after{content:"";position:absolute;inset:0;border:1px solid var(--rule);border-radius:12px;pointer-events:none;z-index:60}
+#wd-bottom_navigation_bar .nv-sc{overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+#wd-bottom_navigation_bar .nv-sc::-webkit-scrollbar{display:none}
+#wd-bottom_navigation_bar .m-icon-btn .mi{width:22px;height:22px}
+
+#wd-bottom_navigation_bar .nv-pages{position:relative;overflow:hidden}
+#wd-bottom_navigation_bar .nv-pg{position:absolute;inset:0;padding:14px 14px 8px}
+#wd-bottom_navigation_bar .nv-ph{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+#wd-bottom_navigation_bar .nv-pi{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex:none}
+#wd-bottom_navigation_bar .nv-ph b{font-size:16px;font-weight:700;line-height:1.65}
+#wd-bottom_navigation_bar .nv-pr{margin-bottom:8px;padding:9px 10px;background:var(--surface);border:1px solid var(--rule);border-radius:8px;font-size:12px;line-height:1.65}
+
+#wd-bottom_navigation_bar .nv-col{display:flex;flex-direction:column;align-items:center;gap:12px}
+#wd-bottom_navigation_bar .nv-seg{display:flex;border:1px solid var(--edge);border-radius:6px;overflow:hidden}
+#wd-bottom_navigation_bar .nv-sg{width:73px;height:30px;font-size:13px;font-weight:500;line-height:1.2;background:var(--surface);color:var(--ink2);transition:background-color .2s,color .2s}
+#wd-bottom_navigation_bar .nv-sg+.nv-sg{border-left:1px solid var(--edge)}
+#wd-bottom_navigation_bar .nv-sg.nv-on{background:var(--accent);color:#fff}
+#wd-bottom_navigation_bar .nv-scaf{height:100%;display:flex;flex-direction:column;background:var(--surface)}
+#wd-bottom_navigation_bar .nv-pages{flex:1}
+#wd-bottom_navigation_bar .nv-dst{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0}
+#wd-bottom_navigation_bar .nv-ic{position:relative;display:block}
+#wd-bottom_navigation_bar .nv-ic .mi{display:block}
+#wd-bottom_navigation_bar .nv-dst .nv-on,#wd-bottom_navigation_bar .nv-dst.nv-sel .nv-off{display:none}
+#wd-bottom_navigation_bar .nv-dst.nv-sel .nv-on{display:block}
+#wd-bottom_navigation_bar .nv-badge{position:absolute;left:12px;top:0;min-width:16px;height:16px;padding:0 4px;border-radius:8px;background:var(--danger);color:#fff;font-size:12px;font-weight:500;line-height:16px;letter-spacing:.2px;text-align:center}
+#wd-bottom_navigation_bar .nv-mbar{height:64px;background:var(--surface);display:flex}
+#wd-bottom_navigation_bar .nv-mbar .nv-ic{height:32px;display:flex;align-items:center}
+#wd-bottom_navigation_bar .nv-mbar .nv-lb{margin-top:4px;font-size:12px;font-weight:500;line-height:1.2;letter-spacing:.2px;color:var(--ink3);white-space:nowrap}
+#wd-bottom_navigation_bar .nv-mbar .nv-dst{color:var(--ink3)}
+#wd-bottom_navigation_bar .nv-mbar .nv-dst.nv-sel,#wd-bottom_navigation_bar .nv-mbar .nv-dst.nv-sel .nv-lb{color:var(--accent)}
+#wd-bottom_navigation_bar .nv-ibar{--ios-bg:rgba(249,249,249,.94);--ios-line:rgba(0,0,0,.3);--ios-off:#999;height:50px;display:flex;background:var(--ios-bg);box-shadow:inset 0 .5px 0 var(--ios-line);font-family:-apple-system,BlinkMacSystemFont,system-ui,"Hiragino Sans",sans-serif}
+#wd-bottom_navigation_bar:where(:root[data-theme="dark"] *) .nv-ibar{--ios-bg:rgba(29,29,29,.94);--ios-line:rgba(255,255,255,.16);--ios-off:#757575}
+@media (prefers-color-scheme:dark){#wd-bottom_navigation_bar:where(:root:not([data-theme="light"]) *) .nv-ibar{--ios-bg:rgba(29,29,29,.94);--ios-line:rgba(255,255,255,.16);--ios-off:#757575}}
+#wd-bottom_navigation_bar .nv-ibar[hidden],#wd-bottom_navigation_bar .nv-mbar[hidden]{display:none}
+#wd-bottom_navigation_bar .nv-ibar .nv-dst{justify-content:flex-end;padding-bottom:4px;color:var(--ios-off)}
+#wd-bottom_navigation_bar .nv-ibar .nv-ic{flex:1;display:flex;align-items:center;justify-content:center}
+#wd-bottom_navigation_bar .nv-ibar .nv-ic .nv-badge{left:auto;top:auto}
+#wd-bottom_navigation_bar .nv-ibar .nv-ic>span.nv-badge{position:absolute}
+#wd-bottom_navigation_bar .nv-ibar .nv-lb{font-size:10px;letter-spacing:-.24px;line-height:normal;white-space:nowrap}
+#wd-bottom_navigation_bar .nv-ibar .nv-dst.nv-sel{color:var(--accent)}
+#wd-bottom_navigation_bar .nv-ibar .nv-bwrap{position:relative;display:block}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const P = ["<div class=\"nv-pg nv-sc\"><div class=\"nv-ph\"><span class=\"nv-pi\" style=\"background:rgba(59,91,255,0.15);color:#3b5bff\"><i class=\"mi\" style=\"--i:url(/assets/icons/mi-materialicons-e318.png);width:18px;height:18px\" aria-hidden=\"true\"></i></span><b>ホーム</b></div><div class=\"nv-pr\">新着のお知らせ</div><div class=\"nv-pr\">おすすめの記事</div><div class=\"nv-pr\">最近見た項目</div></div>","<div class=\"nv-pg nv-sc\"><div class=\"nv-ph\"><span class=\"nv-pi\" style=\"background:rgba(14,165,233,0.15);color:#0ea5e9\"><i class=\"mi\" style=\"--i:url(/assets/icons/mi-materialicons-e567.png);width:18px;height:18px\" aria-hidden=\"true\"></i></span><b>検索</b></div><div class=\"nv-pr\">最近の検索：ボタン</div><div class=\"nv-pr\">最近の検索：タブ</div><div class=\"nv-pr\">人気：ボトムシート</div></div>","<div class=\"nv-pg nv-sc\"><div class=\"nv-ph\"><span class=\"nv-pi\" style=\"background:rgba(249,115,22,0.15);color:#f97316\"><i class=\"mi\" style=\"--i:url(/assets/icons/mi-materialicons-e44f.png);width:18px;height:18px\" aria-hidden=\"true\"></i></span><b>通知</b></div><div class=\"nv-pr\">山田さんがいいねしました</div><div class=\"nv-pr\">新しいフォロワー</div><div class=\"nv-pr\">アップデートのお知らせ</div></div>","<div class=\"nv-pg nv-sc\"><div class=\"nv-ph\"><span class=\"nv-pi\" style=\"background:rgba(139,92,246,0.15);color:#8b5cf6\"><i class=\"mi\" style=\"--i:url(/assets/icons/mi-materialicons-e491.png);width:18px;height:18px\" aria-hidden=\"true\"></i></span><b>マイページ</b></div><div class=\"nv-pr\">プロフィール</div><div class=\"nv-pr\">お気に入り</div><div class=\"nv-pr\">設定</div></div>"];
+const fitO = root.querySelector('.nv-fit-o'), fitI = fitO.firstElementChild;
+let S = 1;
+const refit = () => {
+  const W = fitI.offsetWidth, H = fitI.offsetHeight, a = root.clientWidth || W;
+  S = Math.min(1, a / W);
+  fitI.style.transform = S < 1 ? 'scale(' + S + ')' : '';
+  fitO.style.width = W * S + 'px';
+  fitO.style.height = H * S + 'px';
+};
+refit();
+if (window.ResizeObserver) { const ro = new ResizeObserver(refit); ro.observe(root); ro.observe(fitI); }
+
+const swap = (host, html) => {
+  const box = document.createElement('div'); box.innerHTML = html;
+  const el = box.firstElementChild;
+  Array.prototype.forEach.call(host.children, (o) => {
+    if (o.dataset.gone) return;
+    o.dataset.gone = '1';
+    const a = o.animate([{ opacity: 1, transform: 'none' }, { opacity: 0, transform: 'translateY(4%)' }], { duration: 200, fill: 'forwards' });
+    a.onfinish = () => o.remove();
+  });
+  host.appendChild(el);
+  el.animate([{ opacity: 0, transform: 'translateY(4%)' }, { opacity: 1, transform: 'none' }], { duration: 200 });
+};
+
+const host = root.querySelector('.nv-pages');
+const mbar = root.querySelector('.nv-mbar'), ibar = root.querySelector('.nv-ibar');
+let index = 0, ios = false;
+host.innerHTML = P[0];
+// iOS のバッジは 30px のアイコンの右上から (4, 2) ずらす（アプリと同じ）
+ibar.querySelectorAll('.nv-ic').forEach((ic) => {
+  const b = ic.querySelector('.nv-badge'); if (!b) return;
+  const w = document.createElement('span'); w.className = 'nv-bwrap';
+  ic.insertBefore(w, ic.firstChild);
+  ic.querySelectorAll('.mi').forEach((m) => w.appendChild(m));
+  w.appendChild(b);
+  b.style.left = '18px'; b.style.top = '2px';
+});
+const sync = () => root.querySelectorAll('.nv-dst').forEach((d) => d.classList.toggle('nv-sel', +d.dataset.i === index));
+root.querySelectorAll('.nv-dst').forEach((d) => d.addEventListener('click', () => {
+  const i = +d.dataset.i;
+  if (i === index) return;
+  UZ.haptic('selection');
+  index = i;
+  if (i === 2) root.querySelectorAll('.nv-badge').forEach((b) => b.remove());
+  sync();
+  swap(host, P[i]);
+}));
+root.querySelectorAll('.nv-sg').forEach((s) => s.addEventListener('click', () => {
+  const v = s.dataset.v === '1';
+  if (v === ios) return;
+  UZ.haptic('selection');
+  ios = v;
+  root.querySelectorAll('.nv-sg').forEach((x) => x.classList.toggle('nv-on', x === s));
+  mbar.hidden = ios; ibar.hidden = !ios;
+}));})(document.getElementById("wd-bottom_navigation_bar"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Navigation Bar (M3)</span><span class="tag">Tab Bar (iOS)</span><span class="tag">Bottom Tabs</span><span class="tag">Bottom Nav</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Navigation bar</dd></div><div><dt>Material 2</dt><dd class="">Bottom navigation</dd></div><div><dt>Android (Compose)</dt><dd class="">NavigationBar + NavigationBarItem</dd></div><div><dt>iOS (HIG)</dt><dd class="">Tab bars</dd></div><div><dt>SwiftUI</dt><dd class="">TabView</dd></div><div><dt>Web</dt><dd class="">&lt;nav&gt;（Bottom navigation）</dd></div><div><dt>Flutter</dt><dd class="mono">NavigationBar / BottomNavigationBar / CupertinoTabBar</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>画面最下部に固定され、アイコン＋ラベルで主要セクションを切り替える。<a class="term" href="/glossary/material3/">Material 3</a> では選択中のアイコンに <a class="term" href="/glossary/pill/">pill</a> 型の<a class="term" href="/glossary/indicator/">インジケータ</a>が付く。iOS では Tab Bar と呼ぶ。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>対等な 3〜5 個の<a class="term" href="/glossary/top_level/">トップレベル画面</a>（ホーム／検索／通知／マイページ）。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/navigation_rail/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Navigation Rail</a><a class="chip" href="/entry/tab_bar/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Tabs</a><a class="chip" href="/entry/badge/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Badge</a><a class="chip" href="/entry/scroll_to_hide_bar/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Hide on Scroll</a><a class="chip" href="/glossary/material3/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>Material 3</a><a class="chip" href="/glossary/pill/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>カプセル型</a><a class="chip" href="/glossary/indicator/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>インジケータ</a><a class="chip" href="/glossary/top_level/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>トップレベル画面</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/feed/"><span class="ic s" style="--i:url(/assets/icons/scene-feed.png)"></span>フィード</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="ホーム／検索／通知／マイページの 4 タブの Bottom Navigation Bar を作って。Material 3 の NavigationBar で、通知タブに未読数のバッジを出して。" data-en="Create a 4-tab Bottom Navigation Bar (Home / Search / Notifications / Profile) using Material 3 NavigationBar, with an unread-count badge on the Notifications tab.">ホーム／検索／通知／マイページの 4 タブの Bottom Navigation Bar を作って。Material 3 の NavigationBar で、通知タブに未読数のバッジを出して。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Bottom Navigation Bar / ボトムナビゲーション（下タブ）
+
+- id: `bottom_navigation_bar`  URL: https://uizukan.dev/entry/bottom_navigation_bar/
+- 種別: 表示 / Navigation
+- 別名: Navigation Bar (M3), Tab Bar (iOS), Bottom Tabs, Bottom Nav
+- 呼び名: Material 3=Navigation bar / Material 2=Bottom navigation / Android (Compose)=NavigationBar + NavigationBarItem / iOS (HIG)=Tab bars / SwiftUI=TabView / Web=&lt;nav&gt;（Bottom navigation） / Flutter=NavigationBar / BottomNavigationBar / CupertinoTabBar
+- Flutter: `NavigationBar / BottomNavigationBar / CupertinoTabBar`
+- 関連: navigation_rail, tab_bar, badge, scroll_to_hide_bar
+
+**説明**: 画面最下部に固定され、アイコン＋ラベルで主要セクションを切り替える。Material 3 では選択中のアイコンに pill 型のインジケータが付く。iOS では Tab Bar と呼ぶ。
+
+**使いどころ**: 対等な 3〜5 個のトップレベル画面（ホーム／検索／通知／マイページ）。
+
+**AI への伝え方（日本語）**: ホーム／検索／通知／マイページの 4 タブの Bottom Navigation Bar を作って。Material 3 の NavigationBar で、通知タブに未読数のバッジを出して。
+
+**Prompt (English)**: Create a 4-tab Bottom Navigation Bar (Home / Search / Notifications / Profile) using Material 3 NavigationBar, with an unread-count badge on the Notifications tab.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

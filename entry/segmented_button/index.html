@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Segmented Button（セグメントボタン（セグメンテッドコントロール）） — UI図鑑</title>
+<meta name="description" content="複数の選択肢を横一列につなげ、1つ（または複数）を選ぶ切替ボタン。">
+<link rel="canonical" href="https://uizukan.dev/entry/segmented_button/">
+<meta property="og:title" content="Segmented Button（セグメントボタン（セグメンテッドコントロール）） — UI図鑑">
+<meta property="og:description" content="複数の選択肢を横一列につなげ、1つ（または複数）を選ぶ切替ボタン。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/segmented_button/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/segmented_button.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Segmented Button</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Buttons · 09 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Segmented Button</h1>
+  <p class="lead" style="margin-top:6px">セグメントボタン（セグメンテッドコントロール）</p>
+  <div class="demo-plate">
+    <div class="head"><code>segmented_button</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-segmented_button" role="group" aria-label="Segmented Button のデモ"><div class="col"><div class="b-seg" role="radiogroup"><button class="b-s" data-v="day" role="radio"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e156.png);width:18px;height:18px" aria-hidden="true"></i><span>日</span></button><button class="b-s sel" data-v="week" role="radio"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e156.png);width:18px;height:18px" aria-hidden="true"></i><span>週</span></button><button class="b-s" data-v="month" role="radio"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e156.png);width:18px;height:18px" aria-hidden="true"></i><span>月</span></button></div><div class="cseg" role="radiogroup"><div class="thumb"></div><button class="c" role="radio"><span>日</span></button><i class="sp"></i><button class="c sel" role="radio"><span>週</span></button><i class="sp"></i><button class="c" role="radio"><span>月</span></button></div></div></div><style>#wd-segmented_button .col{display:flex;flex-direction:column;align-items:center}
+#wd-segmented_button .b-seg{display:inline-grid;grid-template-columns:repeat(3,1fr);margin:4px 0;border:1px solid var(--edge);border-radius:6px;overflow:hidden}
+#wd-segmented_button .b-s{position:relative;height:30px;padding:0 12px;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--surface);color:var(--ink2);font-size:13px;font-weight:500;line-height:1.2;white-space:nowrap}
+#wd-segmented_button .b-s + .b-s{border-left:1px solid var(--edge)}
+#wd-segmented_button .b-s .mi{display:none}
+#wd-segmented_button .b-s.sel{background:var(--accent);color:#fff;padding:0 16px 0 12px}
+#wd-segmented_button .b-s.sel .mi{display:inline-block}
+#wd-segmented_button .b-s::after{content:"";position:absolute;inset:0;background:var(--ink);opacity:0;transition:opacity .15s;pointer-events:none}
+@media (hover:hover){#wd-segmented_button .b-s:hover::after{opacity:.08}}
+#wd-segmented_button .b-s:active::after{opacity:.1}
+#wd-segmented_button .cseg{position:relative;margin-top:28px;display:inline-flex;padding:2px 3px;border-radius:8px;background:rgba(118,118,128,.12);background:light-dark(rgba(118,118,128,.12),rgba(118,118,128,.24));touch-action:none;font-family:var(--sans)}
+#wd-segmented_button .thumb{position:absolute;top:2px;left:0;height:28px;border-radius:6.93px;background:#fff;background:light-dark(#fff,#636366);box-shadow:0 3px 8px rgba(0,0,0,.12),0 3px 1px rgba(0,0,0,.04);transition:transform .412s cubic-bezier(.3,.6,.3,1),width .412s cubic-bezier(.3,.6,.3,1);transition-timing-function:linear(0,.115,.321,.517,.672,.784,.861,.912,.945,.966,.979,.987,.992,.995,.997,.998,1)}
+#wd-segmented_button .c{position:relative;z-index:1;height:28px;padding:0 9.25px;font-size:15px;line-height:28px;color:var(--ink);font-weight:400;transition:opacity .47s ease}
+#wd-segmented_button .c span{display:inline-block;transition:font-weight .2s ease}
+#wd-segmented_button .c.sel{font-weight:500}
+#wd-segmented_button .c.fade{opacity:.2}
+#wd-segmented_button .sp{position:relative;z-index:1;width:1px;margin:6px 0;border-radius:.5px;background:rgba(142,142,147,.3);transition:opacity .412s ease}
+#wd-segmented_button .sp.hide{opacity:0}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const segs = root.querySelectorAll('.b-s');
+segs.forEach((b) => b.addEventListener('click', () => {
+  if (b.classList.contains('sel')) return;
+  UZ.haptic('selection');
+  segs.forEach((x) => { x.classList.toggle('sel', x === b); x.setAttribute('aria-checked', String(x === b)); });
+}));
+segs.forEach((x) => x.setAttribute('aria-checked', String(x.classList.contains('sel'))));
+
+const box = root.querySelector('.cseg');
+const thumb = root.querySelector('.thumb');
+const cs = Array.from(root.querySelectorAll('.c'));
+const sps = root.querySelectorAll('.sp');
+let sel = 1, scale = 1, onThumb = false, pressed = -1, pid = null;
+function place() {
+  const c = cs[sel];
+  thumb.style.width = (c.offsetWidth + 2) + 'px';
+  thumb.style.transform = 'translateX(' + (c.offsetLeft - 1) + 'px) scale(' + scale + ')';
+  cs.forEach((x, i) => { x.classList.toggle('sel', i === sel); x.setAttribute('aria-checked', String(i === sel)); });
+  sps.forEach((s, i) => s.classList.toggle('hide', i === sel || i + 1 === sel));
+}
+function indexAt(x) {
+  const r = box.getBoundingClientRect();
+  const w = r.width / cs.length;
+  return Math.max(0, Math.min(cs.length - 1, Math.floor((x - r.left) / w)));
+}
+function inside(e) {
+  const r = box.getBoundingClientRect();
+  return e.clientX >= r.left - 20 && e.clientX <= r.right + 20 && e.clientY >= r.top - 50 && e.clientY <= r.bottom + 50;
+}
+function setPressed(i) {
+  pressed = i;
+  cs.forEach((x, k) => x.classList.toggle('fade', k === pressed && k !== sel));
+}
+box.addEventListener('pointerdown', (e) => {
+  if (pid !== null) return;
+  pid = e.pointerId;
+  box.setPointerCapture(pid);
+  const i = indexAt(e.clientX);
+  onThumb = i === sel;
+  if (onThumb) { scale = 0.95; place(); } else setPressed(i);
+});
+box.addEventListener('pointermove', (e) => {
+  if (e.pointerId !== pid) return;
+  const i = indexAt(e.clientX);
+  if (onThumb) {
+    if (i !== sel) { sel = i; place(); }
+  } else {
+    setPressed(inside(e) ? i : -1);
+  }
+});
+function end(e, ok) {
+  if (e.pointerId !== pid) return;
+  pid = null;
+  if (!onThumb && ok && pressed >= 0) sel = pressed;
+  onThumb = false;
+  scale = 1;
+  setPressed(-1);
+  place();
+}
+box.addEventListener('pointerup', (e) => end(e, true));
+box.addEventListener('pointercancel', (e) => end(e, false));
+thumb.style.transition = 'none';
+place();
+thumb.getBoundingClientRect();
+thumb.style.transition = '';})(document.getElementById("wd-segmented_button"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Segmented Control</span><span class="tag">Sliding Segmented Control</span><span class="tag">Tab Switch</span><span class="tag">Pill Toggle</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Segmented button（M3 Expressive では非推奨。後継は Connected button group）</dd></div><div><dt>Material 2</dt><dd class="na">該当なし（Toggle button（MaterialButtonToggleGroup）が相当）</dd></div><div><dt>Android (Compose)</dt><dd class="">SingleChoiceSegmentedButtonRow / MultiChoiceSegmentedButtonRow + SegmentedButton</dd></div><div><dt>iOS (HIG)</dt><dd class="">Segmented control</dd></div><div><dt>SwiftUI</dt><dd class="">Picker + .pickerStyle(.segmented)</dd></div><div><dt>Web</dt><dd class="na">該当なし（role="radiogroup" で実装）</dd></div><div><dt>Flutter</dt><dd class="mono">SegmentedButton / CupertinoSlidingSegmentedControl</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>2〜5個の選択肢を同じ幅で横に並べ、選択中の区画を強調するコントロール。iOS ではハイライトが滑らかにスライドする「Sliding Segmented Control」が標準。
+
+Material では、<a class="term" href="/glossary/material3/">M3</a> Expressive（2025）で非推奨になり、後継は <a class="term" href="/entry/button_group/">Button Group</a>（つながった形）とされている。iOS では今も標準の部品で、Flutter の SegmentedButton も使える。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>表示モードの切替（リスト／グリッド）、期間の切替（日／週／月）など、少数の排他的な選択。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/button_group/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Button Group</a><a class="chip" href="/entry/toggle_buttons/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Toggle Button Group</a><a class="chip" href="/entry/tab_bar/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Tabs</a><a class="chip" href="/entry/chips/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Chip</a><a class="chip" href="/glossary/material3/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>Material 3</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/search/"><span class="ic s" style="--i:url(/assets/icons/scene-search.png)"></span>検索</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="「日 / 週 / 月」を切り替える Segmented Button を作って。iOS 風に、選択のハイライトが滑らかにスライドする Sliding Segmented Control で。" data-en="Create a Segmented Control to switch between &quot;Day / Week / Month&quot;. Use the iOS-style sliding segmented control where the highlight slides smoothly.">「日 / 週 / 月」を切り替える Segmented Button を作って。iOS 風に、選択のハイライトが滑らかにスライドする Sliding Segmented Control で。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Segmented Button / セグメントボタン（セグメンテッドコントロール）
+
+- id: `segmented_button`  URL: https://uizukan.dev/entry/segmented_button/
+- 種別: 表示 / Buttons
+- 別名: Segmented Control, Sliding Segmented Control, Tab Switch, Pill Toggle
+- 呼び名: Material 3=Segmented button（M3 Expressive では非推奨。後継は Connected button group） / Material 2=該当なし（Toggle button（MaterialButtonToggleGroup）が相当） / Android (Compose)=SingleChoiceSegmentedButtonRow / MultiChoiceSegmentedButtonRow + SegmentedButton / iOS (HIG)=Segmented control / SwiftUI=Picker + .pickerStyle(.segmented) / Web=該当なし（role="radiogroup" で実装） / Flutter=SegmentedButton / CupertinoSlidingSegmentedControl
+- Flutter: `SegmentedButton / CupertinoSlidingSegmentedControl`
+- 関連: button_group, toggle_buttons, tab_bar, chips
+
+**説明**: 2〜5個の選択肢を同じ幅で横に並べ、選択中の区画を強調するコントロール。iOS ではハイライトが滑らかにスライドする「Sliding Segmented Control」が標準。
+
+Material では、M3 Expressive（2025）で非推奨になり、後継は Button Group（つながった形）とされている。iOS では今も標準の部品で、Flutter の SegmentedButton も使える。
+
+**使いどころ**: 表示モードの切替（リスト／グリッド）、期間の切替（日／週／月）など、少数の排他的な選択。
+
+**AI への伝え方（日本語）**: 「日 / 週 / 月」を切り替える Segmented Button を作って。iOS 風に、選択のハイライトが滑らかにスライドする Sliding Segmented Control で。
+
+**Prompt (English)**: Create a Segmented Control to switch between "Day / Week / Month". Use the iOS-style sliding segmented control where the highlight slides smoothly.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

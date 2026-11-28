@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Banner（バナー（インライン通知）） — UI図鑑</title>
+<meta name="description" content="画面上部に留まり、ユーザーが閉じるまで消えない通知。">
+<link rel="canonical" href="https://uizukan.dev/entry/banner/">
+<meta property="og:title" content="Banner（バナー（インライン通知）） — UI図鑑">
+<meta property="og:description" content="画面上部に留まり、ユーザーが閉じるまで消えない通知。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/banner/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/banner.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Banner</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Feedback &amp; Status · 02 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Banner</h1>
+  <p class="lead" style="margin-top:6px">バナー（インライン通知）</p>
+  <div class="demo-plate">
+    <div class="head"><code>banner</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-banner" role="group" aria-label="Banner のデモ"><div class="fb-bn"><div class="fb-clip"><div class="fb-mb"><div class="fb-main"><i class="mi fb-icn" style="--i:url(/assets/icons/mi-materialicons-e6eb.png);width:24px;height:24px" aria-hidden="true"></i><div class="fb-ct">インターネットに接続されていません</div></div><div class="fb-acts"><button class="m-btn m-text">再試行</button><button class="m-btn m-text fb-close">閉じる</button></div><hr class="m-divider"></div></div><button class="m-btn m-text fb-again">もう一度出す</button></div></div><style>#wd-banner .fb-bn{width:100%;max-width:320px;display:flex;flex-direction:column;align-items:center}
+#wd-banner .fb-clip{width:100%;overflow:hidden;transition:height .2s linear}
+#wd-banner .fb-mb{background:color-mix(in srgb,var(--danger) 12%,transparent)}
+#wd-banner .fb-main{display:flex;align-items:center;padding:24px 16px 4px 16px}
+#wd-banner .fb-icn{color:var(--danger);margin-right:16px}
+#wd-banner .fb-ct{flex:1;min-width:0}
+#wd-banner .fb-acts{min-height:52px;padding:0 8px;display:flex;align-items:center;justify-content:flex-end;gap:8px}
+#wd-banner .fb-acts .m-btn{min-width:64px}
+#wd-banner .fb-again{display:none}
+#wd-banner .fb-bn.fb-off .fb-again{display:inline-flex}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const bn = root.querySelector('.fb-bn'), clip = root.querySelector('.fb-clip'), mb = root.querySelector('.fb-mb');
+function set(shown) {
+  const from = clip.offsetHeight;
+  bn.classList.toggle('fb-off', !shown);
+  clip.style.height = from + 'px'; void clip.offsetHeight;
+  clip.style.height = (shown ? mb.offsetHeight : 0) + 'px';
+}
+clip.addEventListener('transitionend', function () { if (!bn.classList.contains('fb-off')) clip.style.height = ''; });
+root.querySelector('.fb-close').addEventListener('click', function () { set(false); });
+root.querySelector('.fb-again').addEventListener('click', function () { set(true); });})(document.getElementById("wd-banner"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Material Banner</span><span class="tag">Inline Alert</span><span class="tag">Notice Bar</span><span class="tag">Callout</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="na">該当なし（M3 の部品一覧から外れた。Snackbar / Dialog を推奨）</dd></div><div><dt>Material 2</dt><dd class="">Banner</dd></div><div><dt>Android (Compose)</dt><dd class="na">該当なし（自作）</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（iOS 標準には無い）</dd></div><div><dt>SwiftUI</dt><dd class="na">該当なし（自作）</dd></div><div><dt>Web</dt><dd class="na">該当なし（Alert bar。role="alert"）</dd></div><div><dt>Flutter</dt><dd class="mono">MaterialBanner</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p><a class="term" href="/entry/snackbar/">Snackbar</a> と違い自動では消えず、対処を促す（オフライン・未認証・アップデート）。1〜2 個のアクションを持つ。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>ネットワーク切断、メール未確認、課金の期限切れなど「対応が必要な継続状態」。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/snackbar/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Snackbar</a><a class="chip" href="/entry/alert_dialog/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Alert Dialog</a><a class="chip" href="/entry/empty_state/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Empty State</a></div></section>
+  
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="オフラインになったら画面上部に「インターネットに接続されていません」の Banner を出して。閉じるまで消えず、「再試行」ボタン付きで。" data-en="When offline, show a Banner at the top: &quot;No internet connection&quot;, persistent until dismissed, with a &quot;Retry&quot; button.">オフラインになったら画面上部に「インターネットに接続されていません」の Banner を出して。閉じるまで消えず、「再試行」ボタン付きで。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Banner / バナー（インライン通知）
+
+- id: `banner`  URL: https://uizukan.dev/entry/banner/
+- 種別: 表示 / Feedback &amp; Status
+- 別名: Material Banner, Inline Alert, Notice Bar, Callout
+- 呼び名: Material 3=該当なし（M3 の部品一覧から外れた。Snackbar / Dialog を推奨） / Material 2=Banner / Android (Compose)=該当なし（自作） / iOS (HIG)=該当なし（iOS 標準には無い） / SwiftUI=該当なし（自作） / Web=該当なし（Alert bar。role="alert"） / Flutter=MaterialBanner
+- Flutter: `MaterialBanner`
+- 関連: snackbar, alert_dialog, empty_state
+
+**説明**: Snackbar と違い自動では消えず、対処を促す（オフライン・未認証・アップデート）。1〜2 個のアクションを持つ。
+
+**使いどころ**: ネットワーク切断、メール未確認、課金の期限切れなど「対応が必要な継続状態」。
+
+**AI への伝え方（日本語）**: オフラインになったら画面上部に「インターネットに接続されていません」の Banner を出して。閉じるまで消えず、「再試行」ボタン付きで。
+
+**Prompt (English)**: When offline, show a Banner at the top: "No internet connection", persistent until dismissed, with a "Retry" button.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

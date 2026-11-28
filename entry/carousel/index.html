@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Carousel（カルーセル（横スワイプの画像送り）） — UI図鑑</title>
+<meta name="description" content="横にスワイプして画像やカードを 1 枚ずつ送る表示。">
+<link rel="canonical" href="https://uizukan.dev/entry/carousel/">
+<meta property="og:title" content="Carousel（カルーセル（横スワイプの画像送り）） — UI図鑑">
+<meta property="og:description" content="横にスワイプして画像やカードを 1 枚ずつ送る表示。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/carousel/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/carousel.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Carousel</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Data Display · 02 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Carousel</h1>
+  <p class="lead" style="margin-top:6px">カルーセル（横スワイプの画像送り）</p>
+  <div class="demo-plate">
+    <div class="head"><code>carousel</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-carousel" role="group" aria-label="Carousel のデモ"><div class="dp-car"><div class="dp-vp"><div class="dp-track"><div class="dp-pg"><div class="dp-pcard"><img src="/assets/images/products/1_sneakers.jpg" alt="" draggable="false"><div class="dp-cap">スニーカー</div></div></div><div class="dp-pg"><div class="dp-pcard"><img src="/assets/images/products/2_leather_shoes.jpg" alt="" draggable="false"><div class="dp-cap">レザーシューズ</div></div></div><div class="dp-pg"><div class="dp-pcard"><img src="/assets/images/products/3_notebook.jpg" alt="" draggable="false"><div class="dp-cap">ノート</div></div></div><div class="dp-pg"><div class="dp-pcard"><img src="/assets/images/products/4_plant.jpg" alt="" draggable="false"><div class="dp-cap">観葉植物</div></div></div></div></div><div class="dp-dots"><i class="dp-on"></i><i></i><i></i><i></i></div></div></div><style>#wd-carousel .dp-car{width:100%;max-width:320px}
+#wd-carousel .dp-vp{height:150px;overflow:hidden;touch-action:pan-y;cursor:grab}
+#wd-carousel .dp-vp.dp-drag{cursor:grabbing}
+#wd-carousel .dp-track{display:flex;height:100%;will-change:transform}
+#wd-carousel .dp-pg{flex:none;width:85%;height:100%;padding:0 6px}
+#wd-carousel .dp-pcard{position:relative;height:100%;border-radius:16px;overflow:hidden}
+#wd-carousel .dp-pcard img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+#wd-carousel .dp-cap{position:absolute;left:0;right:0;bottom:0;padding:18px 12px 10px;background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.55));color:#fff;font-weight:700}
+#wd-carousel .dp-dots{display:flex;justify-content:center;margin-top:10px}
+#wd-carousel .dp-dots i{width:8px;height:8px;margin:0 3px;border-radius:4px;background:var(--rule);transition:width .2s,background-color .2s}
+#wd-carousel .dp-dots i.dp-on{width:20px;background:var(--m-primary)}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const vp = root.querySelector('.dp-vp'), track = root.querySelector('.dp-track'), dots = root.querySelectorAll('.dp-dots i');
+const N = 4;
+let pos = 0, page = 0, drag = null;
+function pw() { return vp.clientWidth * 0.85; }
+function render(anim) {
+  track.style.transition = anim ? 'transform .4s cubic-bezier(.25,.8,.25,1)' : 'none';
+  track.style.transform = 'translateX(' + ((vp.clientWidth - pw()) / 2 - pos * pw()) + 'px)';
+  const p = Math.min(Math.max(Math.round(pos), 0), N - 1);
+  if (p !== page) { page = p; dots.forEach(function (d, i) { d.classList.toggle('dp-on', i === p); }); }
+}
+vp.addEventListener('pointerdown', function (e) {
+  if (e.button !== 0) return;
+  drag = { x: e.clientX, p: pos, t: performance.now(), vx: 0, lx: e.clientX, lt: performance.now() };
+  vp.setPointerCapture(e.pointerId); vp.classList.add('dp-drag');
+});
+vp.addEventListener('pointermove', function (e) {
+  if (!drag) return;
+  const now = performance.now();
+  if (now > drag.lt) { drag.vx = (e.clientX - drag.lx) / (now - drag.lt); drag.lx = e.clientX; drag.lt = now; }
+  let p = drag.p - (e.clientX - drag.x) / pw();
+  if (p < 0) p = p * 0.4; else if (p > N - 1) p = N - 1 + (p - N + 1) * 0.4;
+  pos = p; render(false);
+});
+function end() {
+  if (!drag) return;
+  const v = performance.now() - drag.lt > 80 ? 0 : drag.vx;
+  let target = Math.round(pos);
+  if (Math.abs(v) > 0.3) target = v < 0 ? Math.floor(pos) + 1 : Math.ceil(pos) - 1;
+  target = Math.min(Math.max(target, Math.max(drag.p - 1, 0)), Math.min(drag.p + 1, N - 1));
+  drag = null; vp.classList.remove('dp-drag');
+  pos = target; render(true);
+}
+vp.addEventListener('pointerup', end);
+vp.addEventListener('pointercancel', end);
+addEventListener('resize', function () { render(false); });
+render(false);})(document.getElementById("wd-carousel"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Image Slider</span><span class="tag">Slideshow</span><span class="tag">Horizontal Pager</span><span class="tag">Swiper</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Carousel（Multi-browse / Uncontained / Hero / Full-screen）</dd></div><div><dt>Material 2</dt><dd class="na">該当なし（Image list が近い）</dd></div><div><dt>Android (Compose)</dt><dd class="">HorizontalMultiBrowseCarousel / HorizontalUncontainedCarousel</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（Scroll view のページング + Page control）</dd></div><div><dt>SwiftUI</dt><dd class="">TabView + .tabViewStyle(.page) / ScrollView + .scrollTargetBehavior(.paging)</dd></div><div><dt>Web</dt><dd class="">Carousel（WAI-ARIA パターン）</dd></div><div><dt>Flutter</dt><dd class="mono">PageView / CarouselView</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>横スクロールでカードを送る。1 枚ずつ<a class="term" href="/glossary/snap/">吸着</a>（<a class="term" href="/glossary/snap/">snap</a>）するタイプと、端が少し見える <a class="term" href="/glossary/peek/">peek</a> タイプがある。下にドットを付けることが多い。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>商品画像、キャンペーンバナー、おすすめの横並び。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/page_indicator/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Page Indicator</a><a class="chip" href="/entry/snap_scrolling/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Snap Scrolling</a><a class="chip" href="/entry/page_view_swipe/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Swipe Between Pages</a><a class="chip" href="/glossary/snap/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>スナップ</a><a class="chip" href="/glossary/peek/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>チラ見せ</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/product/"><span class="ic s" style="--i:url(/assets/icons/scene-product.png)"></span>商品と購入</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="商品画像の Carousel を作って。横スワイプで 1 枚ずつ吸着し、次の画像の端が少し見える peek 表示、下にドットの Page Indicator。" data-en="Create a product image Carousel: horizontal swipe snapping one image at a time, with the next image peeking at the edge and dot indicators below.">商品画像の Carousel を作って。横スワイプで 1 枚ずつ吸着し、次の画像の端が少し見える peek 表示、下にドットの Page Indicator。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Carousel / カルーセル（横スワイプの画像送り）
+
+- id: `carousel`  URL: https://uizukan.dev/entry/carousel/
+- 種別: 表示 / Data Display
+- 別名: Image Slider, Slideshow, Horizontal Pager, Swiper
+- 呼び名: Material 3=Carousel（Multi-browse / Uncontained / Hero / Full-screen） / Material 2=該当なし（Image list が近い） / Android (Compose)=HorizontalMultiBrowseCarousel / HorizontalUncontainedCarousel / iOS (HIG)=該当なし（Scroll view のページング + Page control） / SwiftUI=TabView + .tabViewStyle(.page) / ScrollView + .scrollTargetBehavior(.paging) / Web=Carousel（WAI-ARIA パターン） / Flutter=PageView / CarouselView
+- Flutter: `PageView / CarouselView`
+- 関連: page_indicator, snap_scrolling, page_view_swipe
+
+**説明**: 横スクロールでカードを送る。1 枚ずつ吸着（snap）するタイプと、端が少し見える peek タイプがある。下にドットを付けることが多い。
+
+**使いどころ**: 商品画像、キャンペーンバナー、おすすめの横並び。
+
+**AI への伝え方（日本語）**: 商品画像の Carousel を作って。横スワイプで 1 枚ずつ吸着し、次の画像の端が少し見える peek 表示、下にドットの Page Indicator。
+
+**Prompt (English)**: Create a product image Carousel: horizontal swipe snapping one image at a time, with the next image peeking at the edge and dot indicators below.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

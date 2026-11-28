@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chip（チップ） — UI図鑑</title>
+<meta name="description" content="小さな角丸の「粒」。フィルタ・選択・入力済みタグなど、種類ごとに名前がある。">
+<link rel="canonical" href="https://uizukan.dev/entry/chips/">
+<meta property="og:title" content="Chip（チップ） — UI図鑑">
+<meta property="og:description" content="小さな角丸の「粒」。フィルタ・選択・入力済みタグなど、種類ごとに名前がある。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/chips/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/chips.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Chip</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Buttons · 11 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Chip</h1>
+  <p class="lead" style="margin-top:6px">チップ</p>
+  <div class="demo-plate">
+    <div class="head"><code>chips</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-chips" role="group" aria-label="Chip のデモ"><div class="ch"><div class="w f"><span class="tt"><button class="b-chip" aria-pressed="false">すべて</button></span><span class="tt"><button class="b-chip b-on" aria-pressed="true">未読</button></span><span class="tt"><button class="b-chip" aria-pressed="false">スター付き</button></span></div><div class="w c"><span class="tt"><button class="b-chip b-on" role="radio">S</button></span><span class="tt"><button class="b-chip" role="radio">M</button></span><span class="tt"><button class="b-chip" role="radio">L</button></span><span class="tt"><button class="b-chip av"><span class="a"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e047.png);width:16px;height:16px" aria-hidden="true"></i></span>追加</button></span></div><div class="w i"><span class="tt"><span class="b-chip in">Flutter<button class="x" aria-label="削除"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e168.png);width:18px;height:18px" aria-hidden="true"></i></button></span></span><span class="tt"><span class="b-chip in">iOS<button class="x" aria-label="削除"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e168.png);width:18px;height:18px" aria-hidden="true"></i></button></span></span></div></div></div><style>#wd-chips .ch{width:100%;max-width:320px;display:flex;flex-direction:column;align-items:flex-start;row-gap:6px}
+#wd-chips .w{display:flex;flex-wrap:wrap;column-gap:6px}
+#wd-chips .tt{min-width:48px;min-height:48px;display:flex;align-items:center;justify-content:center}
+#wd-chips .b-chip{position:relative;height:32px;padding:0 18px;display:inline-flex;align-items:center;border:1px solid var(--edge);border-radius:6px;background:var(--surface);color:var(--ink);font-size:13px;line-height:1.2;white-space:nowrap;transition:background-color 195ms}
+#wd-chips button.b-chip::after{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--ink);opacity:0;transition:opacity .15s;pointer-events:none}
+@media (hover:hover){#wd-chips button.b-chip:hover::after{opacity:.03}}
+#wd-chips button.b-chip:active::after{opacity:.04}
+#wd-chips .b-chip.b-on{background:var(--accent-soft)}
+#wd-chips .av{padding-left:10px}
+#wd-chips .a{width:20px;height:20px;margin-right:8px;display:flex;align-items:center;justify-content:center;color:var(--ink2)}
+#wd-chips .in{padding-right:10px}
+#wd-chips .x{position:relative;width:20px;height:20px;margin-left:8px;display:flex;align-items:center;justify-content:center;color:var(--ink2)}
+#wd-chips .x::before{content:"";position:absolute;inset:-14px -10px -14px -8px}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";root.querySelectorAll('.f .b-chip').forEach((c) => c.addEventListener('click', () => {
+  const on = !c.classList.contains('b-on');
+  c.classList.toggle('b-on', on);
+  c.setAttribute('aria-pressed', String(on));
+}));
+const cc = root.querySelectorAll('.c .b-chip[role=radio]');
+cc.forEach((c) => c.addEventListener('click', () => {
+  cc.forEach((x) => { x.classList.toggle('b-on', x === c); x.setAttribute('aria-checked', String(x === c)); });
+}));
+cc.forEach((x) => x.setAttribute('aria-checked', String(x.classList.contains('b-on'))));
+root.querySelectorAll('.x').forEach((x) => x.addEventListener('click', () => x.closest('.tt').remove()));})(document.getElementById("wd-chips"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Filter Chip</span><span class="tag">Choice Chip</span><span class="tag">Input Chip</span><span class="tag">Assist Chip</span><span class="tag">Tag</span><span class="tag">Pill</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Chips（Assist / Filter / Input / Suggestion）</dd></div><div><dt>Material 2</dt><dd class="">Chips（Action / Choice / Filter / Input）</dd></div><div><dt>Android (Compose)</dt><dd class="">AssistChip / FilterChip / InputChip / SuggestionChip</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（Token field（macOS）が近い。iOS は自作）</dd></div><div><dt>SwiftUI</dt><dd class="na">該当なし（Button / Label + Capsule で自作）</dd></div><div><dt>Web</dt><dd class="na">該当なし（Chip / Tag。role="button" か checkbox で実装）</dd></div><div><dt>Flutter</dt><dd class="mono">FilterChip / ChoiceChip / InputChip / ActionChip</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>短いラベルを持つコンパクトな要素。<a class="term" href="/glossary/material3/">Material 3</a> では用途で4種類に分かれる：Assist（操作の起点）、Filter（絞り込み <a class="term" href="/glossary/toggle/">ON/OFF</a>）、Input（入力済みの値、×で削除）、Suggestion（候補）。1つだけ選ぶ Choice Chip は Filter Chip の単一選択版。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>検索結果の絞り込み（Filter）、複数タグの入力（Input）、カテゴリ選択（Choice）。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/segmented_button/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Segmented Button</a><a class="chip" href="/entry/search_bar/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Search Bar</a><a class="chip" href="/entry/toggle_buttons/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Toggle Button Group</a><a class="chip" href="/glossary/material3/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>Material 3</a><a class="chip" href="/glossary/toggle/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>トグル</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/product/"><span class="ic s" style="--i:url(/assets/icons/scene-product.png)"></span>商品と購入</a><a class="chip" href="/scenes/search/"><span class="ic s" style="--i:url(/assets/icons/scene-search.png)"></span>検索</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="検索画面の上に、横スクロールする Filter Chip の列を作って。「すべて／未読／スター付き／添付あり」で、複数 ON にできるように。" data-en="Above the search results, add a horizontally scrolling row of Filter Chips: &quot;All / Unread / Starred / Attachments&quot;, allowing multiple selection.">検索画面の上に、横スクロールする Filter Chip の列を作って。「すべて／未読／スター付き／添付あり」で、複数 ON にできるように。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Chip / チップ
+
+- id: `chips`  URL: https://uizukan.dev/entry/chips/
+- 種別: 表示 / Buttons
+- 別名: Filter Chip, Choice Chip, Input Chip, Assist Chip, Tag, Pill
+- 呼び名: Material 3=Chips（Assist / Filter / Input / Suggestion） / Material 2=Chips（Action / Choice / Filter / Input） / Android (Compose)=AssistChip / FilterChip / InputChip / SuggestionChip / iOS (HIG)=該当なし（Token field（macOS）が近い。iOS は自作） / SwiftUI=該当なし（Button / Label + Capsule で自作） / Web=該当なし（Chip / Tag。role="button" か checkbox で実装） / Flutter=FilterChip / ChoiceChip / InputChip / ActionChip
+- Flutter: `FilterChip / ChoiceChip / InputChip / ActionChip`
+- 関連: segmented_button, search_bar, toggle_buttons
+
+**説明**: 短いラベルを持つコンパクトな要素。Material 3 では用途で4種類に分かれる：Assist（操作の起点）、Filter（絞り込み ON/OFF）、Input（入力済みの値、×で削除）、Suggestion（候補）。1つだけ選ぶ Choice Chip は Filter Chip の単一選択版。
+
+**使いどころ**: 検索結果の絞り込み（Filter）、複数タグの入力（Input）、カテゴリ選択（Choice）。
+
+**AI への伝え方（日本語）**: 検索画面の上に、横スクロールする Filter Chip の列を作って。「すべて／未読／スター付き／添付あり」で、複数 ON にできるように。
+
+**Prompt (English)**: Above the search results, add a horizontally scrolling row of Filter Chips: "All / Unread / Starred / Attachments", allowing multiple selection.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Long Press → Haptic → Navigate（長押し → 振動 → 画面遷移） — UI図鑑</title>
+<meta name="description" content="ボタンを長押しすると端末が短く震え、その勢いで次の画面へ遷移する複合アクション。">
+<link rel="canonical" href="https://uizukan.dev/entry/long_press_haptic_navigate/">
+<meta property="og:title" content="Long Press → Haptic → Navigate（長押し → 振動 → 画面遷移） — UI図鑑">
+<meta property="og:description" content="ボタンを長押しすると端末が短く震え、その勢いで次の画面へ遷移する複合アクション。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/long_press_haptic_navigate/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/long_press_haptic_navigate.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/actions/">アクション</a><span class="sep">/</span><span class="here">Long Press → Haptic → Navigate</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Gestures · 04 · アクション</div>
+  <h1 class="display" style="margin-top:10px">Long Press → Haptic → Navigate</h1>
+  <p class="lead" style="margin-top:6px">長押し → 振動 → 画面遷移</p>
+  <div class="demo-plate">
+    <div class="head"><code>long_press_haptic_navigate</code><span><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i> 振動は実機で</span></div>
+    <div class="stage"><div class="wd" id="wd-long_press_haptic_navigate" role="group" aria-label="Long Press → Haptic → Navigate のデモ"><div class="gs-col"><div class="gs-bt" role="button">長押しで開く</div><div class="gs-gap"></div></div><div class="gs-pg" aria-hidden="true"><div class="gs-bar"><span class="gs-lead"><button class="m-icon-btn gs-bk" aria-label="戻る"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f570.png);width:22px;height:22px" aria-hidden="true"></i></button></span><span class="gs-ttl">遷移先</span></div><div class="gs-bd">長押し → 振動 → ここに遷移</div></div></div><style>#wd-long_press_haptic_navigate .gs-col{display:flex;flex-direction:column;align-items:center}
+#wd-long_press_haptic_navigate .gs-gap{height:8px}
+#wd-long_press_haptic_navigate .gs-bt{width:240px;max-width:100%;height:56px;display:flex;align-items:center;justify-content:center;background:var(--m-primary);color:var(--m-on-primary);border-radius:14px;font-weight:700;cursor:pointer;-webkit-touch-callout:none;transition:transform .1s linear}
+#wd-long_press_haptic_navigate .gs-bt.gs-pr{transform:scale(.96)}
+#wd-long_press_haptic_navigate .gs-pg{position:fixed;inset:0;z-index:1000;display:none;flex-direction:column;background:var(--canvas);color:var(--ink);transform:translateX(100%);box-shadow:-6px 0 18px rgba(0,0,0,.12);overscroll-behavior:contain;touch-action:pan-y}
+#wd-long_press_haptic_navigate .gs-pg.gs-on{display:flex}
+#wd-long_press_haptic_navigate .gs-bar{flex:none;display:flex;align-items:center;height:calc(56px + env(safe-area-inset-top));padding-top:env(safe-area-inset-top)}
+#wd-long_press_haptic_navigate .gs-lead{width:56px;display:flex;justify-content:center}
+#wd-long_press_haptic_navigate .gs-ttl{margin-left:16px;font-size:18px;font-weight:600;line-height:1.3;letter-spacing:-.18px}
+#wd-long_press_haptic_navigate .gs-bd{flex:1;display:flex;align-items:center;justify-content:center;font-size:15px}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const bt = root.querySelector('.gs-bt'), pg = root.querySelector('.gs-pg');
+const IN = 'transform 500ms cubic-bezier(.18,.85,.25,1)', OUT = 'transform 500ms cubic-bezier(.75,0,.82,.15)';
+let id = null, sx = 0, sy = 0, tDown = 0, tLong = 0, open = false;
+const stop = () => { clearTimeout(tDown); clearTimeout(tLong); id = null; bt.classList.remove('gs-pr'); };
+const push = () => {
+  open = true;
+  pg.classList.add('gs-on'); pg.setAttribute('aria-hidden', 'false');
+  pg.style.transition = 'none'; pg.style.transform = 'translateX(100%)';
+  void pg.offsetWidth;
+  pg.style.transition = IN; pg.style.transform = 'translateX(0)';
+};
+const pop = (from) => {
+  if (!open) return;
+  open = false;
+  pg.style.transition = from ? 'transform 300ms cubic-bezier(.2,.6,.3,1)' : OUT;
+  pg.style.transform = 'translateX(100%)';
+  setTimeout(() => { if (!open) { pg.classList.remove('gs-on'); pg.setAttribute('aria-hidden', 'true'); } }, from ? 300 : 500);
+};
+bt.addEventListener('contextmenu', (e) => e.preventDefault());
+bt.addEventListener('pointerdown', (e) => {
+  if (e.button !== 0) return;
+  id = e.pointerId; sx = e.clientX; sy = e.clientY;
+  // タップと長押しが競うので、押した見た目は 100ms 後（kPressTimeout）に出る
+  tDown = setTimeout(() => bt.classList.add('gs-pr'), 100);
+  tLong = setTimeout(() => { stop(); UZ.haptic('medium'); push(); }, 500);
+});
+bt.addEventListener('pointermove', (e) => { if (e.pointerId === id && Math.hypot(e.clientX - sx, e.clientY - sy) > 18) stop(); });
+bt.addEventListener('pointerup', (e) => { if (e.pointerId === id) stop(); });
+bt.addEventListener('pointercancel', stop);
+root.querySelector('.gs-bk').addEventListener('click', () => pop());
+// iOS の画面の左端から右へスワイプで戻る（左端 20px から。半分以上か速く払うと戻る）
+let ed = null, ex = 0, dx = 0, lt = 0, lx = 0, v = 0;
+pg.addEventListener('pointerdown', (e) => {
+  if (!open || e.clientX > 20) return;
+  ed = e.pointerId; ex = e.clientX; dx = 0; lt = e.timeStamp; lx = e.clientX; v = 0;
+  try { pg.setPointerCapture(ed); } catch (_) {}
+  pg.style.transition = 'none';
+});
+pg.addEventListener('pointermove', (e) => {
+  if (e.pointerId !== ed) return;
+  dx = Math.max(0, e.clientX - ex);
+  const dt = e.timeStamp - lt;
+  if (dt > 0) v = (e.clientX - lx) / dt;
+  lt = e.timeStamp; lx = e.clientX;
+  pg.style.transform = 'translateX(' + dx + 'px)';
+});
+const edgeEnd = (e) => {
+  if (e.pointerId !== ed) return;
+  ed = null;
+  const w = pg.clientWidth;
+  if (v * 1000 / w > 1 || dx > w / 2) pop(true);
+  else { pg.style.transition = 'transform 300ms cubic-bezier(.2,.6,.3,1)'; pg.style.transform = 'translateX(0)'; }
+};
+pg.addEventListener('pointerup', edgeEnd);
+pg.addEventListener('pointercancel', edgeEnd);})(document.getElementById("wd-long_press_haptic_navigate"),window.UZ);</script></div>
+    <a class="foot" href="https://apps.apple.com/jp/app/id6808997175" rel="noopener"><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i><span>振動と本物の手触りは iOS アプリで</span><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a>
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Hold to Confirm</span><span class="tag">Press-and-hold Action</span><span class="tag">Haptic Long Press</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="na">該当なし（Long press + Haptics + Transition の組み合わせ）</dd></div><div><dt>Material 2</dt><dd class="na">該当なし（組み合わせ）</dd></div><div><dt>Android (Compose)</dt><dd class="">combinedClickable(onLongClick) + performHapticFeedback(LongPress) + NavController.navigate</dd></div><div><dt>iOS (HIG)</dt><dd class="">Touch and hold + Impact haptic + push</dd></div><div><dt>SwiftUI</dt><dd class="">.onLongPressGesture + .sensoryFeedback(.impact) + NavigationLink</dd></div><div><dt>Web</dt><dd class="na">該当なし（pointer + navigator.vibrate() + History API）</dd></div><div><dt>Flutter</dt><dd class="mono">GestureDetector(onLongPress:) + HapticFeedback.mediumImpact() + Navigator.push</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>「長押し」「<a class="term" href="/glossary/haptic/">触覚フィードバック</a>（Impact）」「画面遷移」の 3 つを組み合わせたパターン。誤タップで遷移したくない操作や、隠しショートカット的な入口に使う。Claude に伝えるときは 3 要素を分けて言うと確実。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>重要だが誤操作を避けたい遷移（削除確認画面、管理モード）、上級者向けショートカット。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/long_press/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Long Press</a><a class="chip" href="/entry/haptic_impact/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Impact Haptic (Light / Medium / Heavy)</a><a class="chip" href="/entry/push_slide/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Push Transition</a><a class="chip" href="/entry/press_scale/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Press Scale (Spring Bounce)</a><a class="chip" href="/glossary/haptic/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>ハプティクス</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/tasks/"><span class="ic s" style="--i:url(/assets/icons/scene-tasks.png)"></span>タスク一覧</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="このボタンを長押し（約 0.5 秒）したら、HapticFeedback.mediumImpact() で端末を短く振動させてから、次の画面に push 遷移して。通常のタップでは何も起きないように。押している間はボタンを少し縮めて「溜め」を見せて。" data-en="When this button is long-pressed (~0.5s), fire HapticFeedback.mediumImpact() and then push the next screen. A normal tap should do nothing. While pressed, scale the button down slightly to show the &quot;charge&quot;.">このボタンを長押し（約 0.5 秒）したら、HapticFeedback.mediumImpact() で端末を短く振動させてから、次の画面に push 遷移して。通常のタップでは何も起きないように。押している間はボタンを少し縮めて「溜め」を見せて。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Long Press → Haptic → Navigate / 長押し → 振動 → 画面遷移
+
+- id: `long_press_haptic_navigate`  URL: https://uizukan.dev/entry/long_press_haptic_navigate/
+- 種別: アクション / Gestures
+- 別名: Hold to Confirm, Press-and-hold Action, Haptic Long Press
+- 呼び名: Material 3=該当なし（Long press + Haptics + Transition の組み合わせ） / Material 2=該当なし（組み合わせ） / Android (Compose)=combinedClickable(onLongClick) + performHapticFeedback(LongPress) + NavController.navigate / iOS (HIG)=Touch and hold + Impact haptic + push / SwiftUI=.onLongPressGesture + .sensoryFeedback(.impact) + NavigationLink / Web=該当なし（pointer + navigator.vibrate() + History API） / Flutter=GestureDetector(onLongPress:) + HapticFeedback.mediumImpact() + Navigator.push
+- Flutter: `GestureDetector(onLongPress:) + HapticFeedback.mediumImpact() + Navigator.push`
+- 実機でのみ体験可（触覚など）
+- 関連: long_press, haptic_impact, push_slide, press_scale
+
+**説明**: 「長押し」「触覚フィードバック（Impact）」「画面遷移」の 3 つを組み合わせたパターン。誤タップで遷移したくない操作や、隠しショートカット的な入口に使う。Claude に伝えるときは 3 要素を分けて言うと確実。
+
+**使いどころ**: 重要だが誤操作を避けたい遷移（削除確認画面、管理モード）、上級者向けショートカット。
+
+**AI への伝え方（日本語）**: このボタンを長押し（約 0.5 秒）したら、HapticFeedback.mediumImpact() で端末を短く振動させてから、次の画面に push 遷移して。通常のタップでは何も起きないように。押している間はボタンを少し縮めて「溜め」を見せて。
+
+**Prompt (English)**: When this button is long-pressed (~0.5s), fire HapticFeedback.mediumImpact() and then push the next screen. A normal tap should do nothing. While pressed, scale the button down slightly to show the "charge".
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

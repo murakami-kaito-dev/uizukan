@@ -1,0 +1,164 @@
+# UI図鑑 (UI Zukan)
+
+> UI 部品（コンポーネント）と UI アクション（ジェスチャー・触覚・遷移・アニメーション）の
+> 標準的な英語名・日本語名・別名・プラットフォーム別の呼び名と、AI コーディングアシスタントに
+> 伝えるためのプロンプト例をまとめた、インディー開発者向けの図鑑。
+
+用途: ユーザーが「Z 軸に浮いてるボタン」「長押しでブルッと震えて遷移」のように曖昧に説明した UI を、
+標準名（例: Elevated Button / Long Press + Impact Haptic + Push transition）に対応づけるための参照。
+
+- 全項目の機械可読データ: https://uizukan.dev/catalog.json
+- 全文（Markdown）: https://uizukan.dev/llms-full.txt
+- Claude Code スキル: https://uizukan.dev/skill/SKILL.md
+
+## 表示 (Components)
+
+### Buttons / ボタン
+- [Elevated Button](https://uizukan.dev/entry/elevated_button/): エレベーテッドボタン（浮き上がったボタン） — 影が付いて画面から少し浮き上がって見えるボタン。
+- [Filled Button](https://uizukan.dev/entry/filled_button/): フィルドボタン（塗りつぶしボタン） — 画面で一番目立つ、塗りつぶされた主要アクション用ボタン。
+- [Filled Tonal Button](https://uizukan.dev/entry/filled_tonal_button/): トーナルボタン（淡色の塗りつぶしボタン） — 主要ボタンより一段控えめな、淡い色で塗られたボタン。
+- [Outlined Button](https://uizukan.dev/entry/outlined_button/): アウトラインボタン（枠線ボタン） — 背景を塗らず、枠線だけで形を作った控えめなボタン。
+- [Text Button](https://uizukan.dev/entry/text_button/): テキストボタン — 文字だけで背景も枠もない、最も控えめなボタン。
+- [Icon Button](https://uizukan.dev/entry/icon_button/): アイコンボタン — アイコンだけのボタン。ON/OFF で見た目が変わるトグル型もある。
+- [Floating Action Button](https://uizukan.dev/entry/fab/): フローティングアクションボタン（FAB） — 画面右下に浮かぶ、最重要アクション用の丸いボタン。
+- [Extended FAB](https://uizukan.dev/entry/extended_fab/): 拡張 FAB（ラベル付き FAB） — アイコンと文字ラベルが付いた横長の FAB。
+- [Segmented Button](https://uizukan.dev/entry/segmented_button/): セグメントボタン（セグメンテッドコントロール） — 複数の選択肢を横一列につなげ、1つ（または複数）を選ぶ切替ボタン。
+- [Toggle Button Group](https://uizukan.dev/entry/toggle_buttons/): トグルボタン群 — 複数の ON/OFF ボタンを連結したもの。書式（太字・斜体）の切替が典型。
+- [Chip](https://uizukan.dev/entry/chips/): チップ — 小さな角丸の「粒」。フィルタ・選択・入力済みタグなど、種類ごとに名前がある。
+- [Cupertino Button](https://uizukan.dev/entry/cupertino_button/): iOS 風ボタン — iOS 標準の見た目のボタン。押すと半透明に沈むのが特徴。
+- [Loading Button](https://uizukan.dev/entry/loading_button/): ローディング状態付きボタン — 押すと中身がスピナーに変わり、処理中は再タップできないボタン。
+- [Split Button](https://uizukan.dev/entry/split_button/): スプリットボタン（主な操作＋メニューの 2 分割） — 左で主な操作、右の小さな ▾ で関連する別の操作を選べる、2 つに分かれたボタン。
+- [Button Group](https://uizukan.dev/entry/button_group/): ボタングループ（つながって形が変わるボタンの並び） — 並んだボタンが、押すと幅が広がり、選ぶと丸く形が変わる。
+- [FAB Menu](https://uizukan.dev/entry/fab_menu/): FAB メニュー（FAB から開く操作の一覧） — 右下の FAB を押すと、その上に関連する操作が 2〜6 個ならんで開く。
+
+### Inputs & Selection / 入力
+- [Outlined Text Field](https://uizukan.dev/entry/text_field_outlined/): アウトライン付きテキストフィールド — 枠線で囲まれ、ラベルが枠の上に浮き上がる文字入力欄。
+- [Filled Text Field](https://uizukan.dev/entry/text_field_filled/): 塗りつぶしテキストフィールド — 背景を薄く塗り、下線だけで区切った入力欄。
+- [Password Field with Visibility Toggle](https://uizukan.dev/entry/password_field/): 表示切替付きパスワード欄 — 入力を●で隠し、目のアイコンで表示／非表示を切り替えるパスワード欄。
+- [Search Bar](https://uizukan.dev/entry/search_bar/): 検索バー — 虫眼鏡アイコン付きの角丸の入力欄。タップで検索画面に展開することもある。
+- [Checkbox](https://uizukan.dev/entry/checkbox/): チェックボックス — 複数選択できる四角いチェック。行全体をタップできる CheckboxListTile もある。
+- [Radio Button](https://uizukan.dev/entry/radio_button/): ラジオボタン — 複数の候補から1つだけ選ぶ丸いボタン。
+- [Toggle Switch](https://uizukan.dev/entry/switch_toggle/): トグルスイッチ — 左右にスライドして ON/OFF を切り替える。設定画面の定番。
+- [Slider](https://uizukan.dev/entry/slider/): スライダー — つまみを横に動かして値を選ぶ。目盛り付きの離散型もある。
+- [Range Slider](https://uizukan.dev/entry/range_slider/): 範囲スライダー — つまみが2つあり、下限と上限を同時に選ぶスライダー。
+- [Dropdown Menu](https://uizukan.dev/entry/dropdown_menu/): ドロップダウン（プルダウン） — タップすると候補リストが下に開き、1つ選ぶ入力欄。
+- [Date Picker](https://uizukan.dev/entry/date_picker/): 日付ピッカー（カレンダー選択） — カレンダーから日付を選ぶダイアログ。iOS ではドラム式もある。
+- [Time Picker](https://uizukan.dev/entry/time_picker/): 時刻ピッカー — 時計の文字盤や数値入力で時刻を選ぶダイアログ。
+- [Wheel Picker](https://uizukan.dev/entry/cupertino_picker/): ドラム式ピッカー（ホイールピッカー） — iOS でおなじみの、ドラムを回して選ぶピッカー。
+- [Quantity Stepper](https://uizukan.dev/entry/stepper_input/): 数量ステッパー（＋−ボタン） — 「−」「＋」ボタンで数値を1つずつ増減する入力。
+- [OTP / PIN Code Field](https://uizukan.dev/entry/otp_field/): 認証コード入力（マス目入力） — 6桁の数字を1桁ずつマス目に入れる認証コード欄。
+- [Autocomplete](https://uizukan.dev/entry/autocomplete/): オートコンプリート（入力候補） — 入力中の文字に合わせて候補が下に出る入力欄。
+
+### Navigation / ナビゲーション
+- [Top App Bar](https://uizukan.dev/entry/app_bar/): アプリバー（画面上部のバー） — 画面上部の、タイトル・戻る・アクションが並ぶバー。
+- [Large Title App Bar](https://uizukan.dev/entry/large_title_app_bar/): 大見出しアプリバー（ラージタイトル） — 大きなタイトルが、スクロールすると小さくなって上部に収まるバー。
+- [Bottom Navigation Bar](https://uizukan.dev/entry/bottom_navigation_bar/): ボトムナビゲーション（下タブ） — 画面下部に 3〜5 個並ぶ、アプリの主要セクションを切り替えるタブ。
+- [Navigation Rail](https://uizukan.dev/entry/navigation_rail/): ナビゲーションレール（縦タブ） — タブレットや Web で、画面左に縦に並ぶタブ。
+- [Navigation Drawer](https://uizukan.dev/entry/navigation_drawer/): ナビゲーションドロワー（ハンバーガーメニュー） — 左端から横にスライドして出てくるメニューパネル。
+- [Tabs](https://uizukan.dev/entry/tab_bar/): タブ（上部タブ） — App Bar の下に並び、横スワイプでも切り替えられるタブ。
+- [Bottom App Bar](https://uizukan.dev/entry/bottom_app_bar/): ボトムアプリバー（下部ツールバー） — 画面下部に操作アイコンを並べるバー。FAB を埋め込むこともある。
+- [Breadcrumb](https://uizukan.dev/entry/breadcrumb/): パンくずリスト — 「ホーム › カテゴリ › 商品」のように現在地までの階層を示す。
+- [Page Indicator](https://uizukan.dev/entry/page_indicator/): ページインジケータ（ドット） — オンボーディングやカルーセルで、現在何ページ目かを示す点の列。
+- [Floating Toolbar](https://uizukan.dev/entry/floating_toolbar/): フローティングツールバー（浮かぶ操作の帯） — 内容の上に浮かぶ、カプセル型の操作の帯。いまの画面で使う操作をまとめる。
+
+### Surfaces & Overlays / 面・オーバーレイ
+- [Card](https://uizukan.dev/entry/card/): カード — 関連する情報をひとまとまりにした角丸の面。影付き・塗り・枠線の 3 種。
+- [List Item](https://uizukan.dev/entry/list_tile/): リスト項目（セル） — 左にアイコン、中央にタイトルと補足、右に矢印やスイッチ、の 1 行。
+- [Accordion](https://uizukan.dev/entry/expansion_tile/): アコーディオン（展開パネル） — タップすると下に内容が伸びて開き、もう一度で閉じる行。
+- [Bottom Sheet](https://uizukan.dev/entry/modal_bottom_sheet/): ボトムシート（ハーフモーダル） — 画面下からせり上がる面。ドラッグで高さ調整や閉じることができる。
+- [Alert Dialog](https://uizukan.dev/entry/alert_dialog/): アラートダイアログ（確認ダイアログ） — 画面中央に出て、判断を求める小さな窓。
+- [Action Sheet](https://uizukan.dev/entry/action_sheet/): アクションシート — iOS で下から出る、縦に並んだ選択肢のリスト。赤い破壊的操作とキャンセルが付く。
+- [Menu (Popup / Overflow)](https://uizukan.dev/entry/popup_menu/): ポップアップメニュー（⋮ メニュー） — ⋮ や ⋯ を押すと、その場に浮かぶ小さなメニュー。
+- [Tooltip](https://uizukan.dev/entry/tooltip/): ツールチップ — アイコンに長押し・ホバーすると出る小さな説明ラベル。
+- [Divider](https://uizukan.dev/entry/divider/): 区切り線 — リストやセクションを区切る細い線。左を空けた inset 型もある。
+- [Full-screen Dialog](https://uizukan.dev/entry/full_screen_dialog/): 全画面ダイアログ（モーダル画面） — 下からせり上がって画面全体を覆う、作成・編集用の画面。左上が × で右上が「保存」。
+- [Sticky Bottom Action Bar](https://uizukan.dev/entry/bottom_action_bar/): 下部固定 CTA バー — 商品ページなどで、スクロールしても下に固定される「カートに入れる」バー。
+- [Popover](https://uizukan.dev/entry/popover/): ポップオーバー（矢印つきの小さな面） — 押した所から矢印つきで出る、小さな面。外を押すと閉じる。
+- [Share Sheet](https://uizukan.dev/entry/share_sheet/): 共有シート（送り先と操作の一覧） — 共有ボタンを押すと下から出る、送り先のアプリと操作の一覧。
+- [Edit Menu](https://uizukan.dev/entry/edit_menu/): 編集メニュー（コピー・ペーストの帯） — 文字を選ぶと真上に出る、「コピー」「ペースト」などの横並びのメニュー。
+- [Side Sheet](https://uizukan.dev/entry/side_sheet/): サイドシート（横から出る補助の面） — 画面の横の端から出る面。絞り込みや詳細など、補助の内容を載せる。
+
+### Feedback & Status / フィードバック
+- [Snackbar](https://uizukan.dev/entry/snackbar/): スナックバー（トースト） — 画面下に数秒だけ出て自動で消える短いメッセージ。「元に戻す」を付けられる。
+- [Banner](https://uizukan.dev/entry/banner/): バナー（インライン通知） — 画面上部に留まり、ユーザーが閉じるまで消えない通知。
+- [Circular Progress Indicator](https://uizukan.dev/entry/circular_progress/): 円形プログレス（スピナー） — くるくる回る読み込み中の表示。iOS では放射状のグレーが標準。
+- [Linear Progress Indicator](https://uizukan.dev/entry/linear_progress/): 進捗バー（プログレスバー） — 横に伸びるバーで進捗（％）を示す。
+- [Skeleton Screen](https://uizukan.dev/entry/skeleton/): スケルトンスクリーン — 読み込み中に、これから出る内容の形をグレーの箱で先に見せる。
+- [Badge](https://uizukan.dev/entry/badge/): バッジ（未読数・赤い点） — アイコンの右上に付く赤い点や未読数。
+- [Empty State](https://uizukan.dev/entry/empty_state/): 空状態（エンプティステート） — 一覧に何もないとき、イラスト＋説明＋最初の行動を促す表示。
+- [Loading Indicator](https://uizukan.dev/entry/loading_indicator/): ローディングインジケータ（形が変わる読み込み表示） — 形が次々に変わりながら回る、短い待ち時間用の読み込み表示。
+
+### Data Display / 表示
+- [Avatar](https://uizukan.dev/entry/avatar/): アバター（丸いプロフィール画像） — 丸く切り抜いたユーザー画像。画像がなければイニシャル。
+- [Carousel](https://uizukan.dev/entry/carousel/): カルーセル（横スワイプの画像送り） — 横にスワイプして画像やカードを 1 枚ずつ送る表示。
+- [Grid](https://uizukan.dev/entry/grid/): グリッド（格子状の一覧） — 写真や商品を 2〜3 列の格子に並べた一覧。
+- [Sticky Section Header](https://uizukan.dev/entry/sticky_header/): 固定セクションヘッダー — 連絡先の「あ」「か」のように、スクロールしても上に張り付く見出し。
+- [Rating Bar](https://uizukan.dev/entry/rating_bar/): 星評価 — ★★★★☆ で評価を表示・入力する。
+- [Progress Stepper](https://uizukan.dev/entry/stepper_progress/): ステップ表示（手順の進捗） — 「配送先 → 支払い → 確認」のように、複数ステップの現在地を示す。
+- [Chat Bubble](https://uizukan.dev/entry/chat_bubble/): チャットの吹き出し — 自分は右の青、相手は左のグレー、の吹き出し。
+- [Stat Tile](https://uizukan.dev/entry/stat_tile/): 数値タイル（KPI カード） — 「今月の支出 ¥42,300」のように、大きな数字と小さなラベルのカード。
+- [Donut Chart](https://uizukan.dev/entry/donut_chart/): ドーナツグラフ — 全体に対する内訳を、輪の長さで見せるグラフ。真ん中に合計を置ける。
+- [Chart Legend](https://uizukan.dev/entry/chart_legend/): 凡例（グラフの色と名前・値の一覧） — グラフの色が何を表すかを、色の印・名前・値で並べた一覧。
+
+## アクション (Actions)
+
+### Gestures / ジェスチャー
+- [Tap](https://uizukan.dev/entry/tap/): タップ — 指で一度触れて離す、最も基本の操作。
+- [Double Tap](https://uizukan.dev/entry/double_tap/): ダブルタップ — 素早く 2 回タップ。Instagram の「いいね」、地図のズームが典型。
+- [Long Press](https://uizukan.dev/entry/long_press/): 長押し — 約 0.5 秒押し続けると発火する。隠れたメニューや選択モードの入口。
+- [Long Press → Haptic → Navigate](https://uizukan.dev/entry/long_press_haptic_navigate/): 長押し → 振動 → 画面遷移 — ボタンを長押しすると端末が短く震え、その勢いで次の画面へ遷移する複合アクション。
+- [Swipe to Dismiss](https://uizukan.dev/entry/swipe_to_dismiss/): スワイプで削除 — 行を横にスワイプし切ると、その行が消える（削除される）。
+- [Swipe Actions](https://uizukan.dev/entry/swipe_actions/): スワイプで操作ボタンを出す — 行を少し横にずらすと、裏から「アーカイブ」「削除」などのボタンが現れる。
+- [Drag to Reorder](https://uizukan.dev/entry/drag_reorder/): ドラッグで並べ替え — 長押しして持ち上げ、上下に動かして順番を変える。
+- [Pinch In / Pinch Out](https://uizukan.dev/entry/pinch_zoom/): ピンチイン／ピンチアウト — 2 本指を広げて拡大（ピンチアウト）、つまんで縮小（ピンチイン）。ドラッグで移動。
+- [Context Menu (Long-press Preview)](https://uizukan.dev/entry/context_menu/): コンテキストメニュー（長押しプレビュー） — 長押しすると対象が浮き上がって拡大され、その下にメニューが出る iOS の挙動。
+- [Tap Outside to Dismiss Keyboard](https://uizukan.dev/entry/tap_outside_dismiss_keyboard/): 外側タップでキーボードを閉じる — 入力欄以外をタップするとキーボードが引っ込む。
+- [Pull to Refresh](https://uizukan.dev/entry/pull_to_refresh/): 引っ張って更新 — 一覧の先頭でさらに下へ引っ張ると、くるくるが出て再読み込みされる。
+- [Drag to Dismiss](https://uizukan.dev/entry/drag_to_dismiss_sheet/): ドラッグで閉じる — シートや画像ビューアを下に引っ張ると、指に追従して閉じる。
+
+### Haptics / 触覚フィードバック
+- [Selection Haptic](https://uizukan.dev/entry/haptic_selection/): 選択の触覚（カチッ） — ピッカーを回したときの「カチッ」。最も軽い触覚。
+- [Impact Haptic (Light / Medium / Heavy)](https://uizukan.dev/entry/haptic_impact/): 衝撃の触覚（軽・中・重の「ブルッ」） — 「何かが当たった／はまった」感触。強さが 3 段階。
+- [Notification Haptic (Success / Warning / Error)](https://uizukan.dev/entry/haptic_notification/): 結果通知の触覚（成功・警告・エラー） — 成功は「トントン」、エラーは「ブブブッ」。結果を振動で伝える。
+- [Haptic on Toggle](https://uizukan.dev/entry/haptic_on_toggle/): スイッチ切替時の触覚 — スイッチを切り替えた瞬間に軽く「コトッ」と鳴る。
+
+### Transitions / 画面遷移
+- [Push Transition](https://uizukan.dev/entry/push_slide/): プッシュ遷移（右からスライド） — 新しい画面が右から滑り込み、前の画面は少し左にずれて暗くなる。
+- [Slide Up (Modal Presentation)](https://uizukan.dev/entry/slide_up_modal/): 下からせり上がる遷移（モーダル） — 画面が下から上に出てくる。作成・編集など「別の作業」に入る合図。
+- [Fade Through](https://uizukan.dev/entry/fade_through/): フェードスルー（タブ切替の遷移） — 前の画面がフェードアウトし、次の画面が少し拡大しながらフェードイン。
+- [Hero Transition (Shared Element)](https://uizukan.dev/entry/hero_transition/): ヒーロー遷移（共有要素アニメーション） — 一覧のサムネイルが、そのまま詳細画面の大きな画像に「飛んで」拡大する。
+- [Swipe Between Pages](https://uizukan.dev/entry/page_view_swipe/): 横スワイプでページ送り — 指で横にスワイプすると、ページが 1 枚ずつ切り替わる。
+
+### Motion & Micro-interactions / マイクロインタラクション
+- [Ripple (Ink Splash)](https://uizukan.dev/entry/ripple/): リップル（波紋） — タップした位置から円形の波紋が広がる Material 特有の反応。
+- [Press Scale (Spring Bounce)](https://uizukan.dev/entry/press_scale/): 押すと縮んで弾むボタン — 押している間 0.95 倍に縮み、離すとバネのように弾んで戻る。
+- [Shake (Error Wiggle)](https://uizukan.dev/entry/shake/): シェイク（エラー時の左右振動） — 入力が間違っていると、欄が左右に小刻みに揺れて「ダメ」を伝える。
+- [Expand / Collapse](https://uizukan.dev/entry/expand_collapse/): 展開・折りたたみアニメーション — 「もっと見る」で下に伸びて内容が現れ、もう一度で縮む。
+- [Cross-fade Switch](https://uizukan.dev/entry/crossfade/): クロスフェード切替 — ローディング → 内容、アイコン A → B のように、中身が溶けるように入れ替わる。
+- [Animated Counter](https://uizukan.dev/entry/animated_counter/): 数字のカウントアップ — 0 → 1,234 のように数字が増えていく、または桁がロールする。
+- [Shimmer](https://uizukan.dev/entry/shimmer/): シマー（光が流れるローディング） — グレーの箱の上を、白い光が左から右へ繰り返し流れる。
+- [Confetti (Celebration)](https://uizukan.dev/entry/confetti/): 紙吹雪（達成演出） — 目標達成や購入完了で、画面に紙吹雪が舞う。
+- [Like Burst (Heart Pop)](https://uizukan.dev/entry/like_burst/): いいねのポップ（ハートが弾ける） — ハートをタップすると、拡大→縮小しながら赤くなり、周りに小さな粒が飛ぶ。
+- [Undo Pattern](https://uizukan.dev/entry/snackbar_undo/): 「元に戻す」パターン — 削除をすぐ画面に反映しつつ、数秒間だけ「元に戻す」で取り消せる。
+- [Staggered Entrance](https://uizukan.dev/entry/staggered_list/): 順番に現れるリスト（スタッガー） — リストの行が、上から順に少しずつ遅れてフェードイン＋スライドインする。
+
+### Scrolling Behaviors / スクロール挙動
+- [Collapsing Toolbar](https://uizukan.dev/entry/collapsing_toolbar/): 縮むヘッダー（コラプシングツールバー） — 大きな画像ヘッダーが、スクロールに合わせて縮んで通常の App Bar になる。
+- [Parallax Scrolling](https://uizukan.dev/entry/parallax_header/): パララックス（視差スクロール） — 背景画像が前景より遅く動いて、奥行きがあるように見える。
+- [Infinite Scroll (Pagination)](https://uizukan.dev/entry/infinite_scroll/): 無限スクロール（追加読み込み） — 一覧の末尾に近づくと、自動で次のページを読み込んで継ぎ足す。
+- [Hide on Scroll](https://uizukan.dev/entry/scroll_to_hide_bar/): スクロールでバーを隠す — 下にスクロールすると上のバー（App Bar）と FAB が隠れ、少しでも上に戻すと現れる。下のタブは残す。
+- [Overscroll Bounce (Rubber Band)](https://uizukan.dev/entry/overscroll_bounce/): バウンス（端で跳ね返る） — リストの端を越えて引っ張ると、ゴムのように伸びて跳ね返る iOS の挙動。
+- [Snap Scrolling](https://uizukan.dev/entry/snap_scrolling/): スナップ（要素に吸着するスクロール） — 指を離すと、いちばん近い要素の位置にピタッと止まる。
+- [Scroll to Top](https://uizukan.dev/entry/scroll_to_top/): 先頭へ戻る — ステータスバーやタブの再タップ、または「↑」ボタンで一番上に戻る。
+
+## シーン (Scenes)
+
+- [Login](https://uizukan.dev/scenes/login): ログイン — メール＋パスワードのログイン画面。入力欄・パスワード表示切替・主要 CTA・補助リンク。
+- [Onboarding](https://uizukan.dev/scenes/onboarding): オンボーディング — 初回起動の 3 ページ紹介。横スワイプ・ドット・スキップ・はじめるボタン。
+- [Feed](https://uizukan.dev/scenes/feed): フィード — SNS のタイムライン。カード・アバター・いいね・引っ張って更新・下タブ・FAB。
+- [Settings](https://uizukan.dev/scenes/settings): 設定 — iOS 風の設定画面。ラージタイトル・リスト行・スイッチ・区切り線・セクション。
+- [Product & Checkout](https://uizukan.dev/scenes/product): 商品と購入 — EC の商品ページと購入。縮む画像ヘッダー・カルーセル・セール価格・星評価・カラー・サイズ・数量・レビュー・関連商品・下部固定 CTA・購入シート（配送先→支払い→確認→完了）。
+- [Chat](https://uizukan.dev/scenes/chat): チャット — メッセージ画面。吹き出し・アバター・入力バー・送信ボタン・長押しメニュー。
+- [Search & Filter](https://uizukan.dev/scenes/search): 検索 — 検索バー・フィルタチップ・結果グリッド・フィルタ用ボトムシート・空状態・お気に入りのハート。チップと価格帯で実際に絞り込める。
+- [Tasks](https://uizukan.dev/scenes/tasks): タスク一覧 — ToDo アプリ。チェック・スワイプ削除・並べ替え・Undo・達成の紙吹雪。
+- [Paywall](https://uizukan.dev/scenes/paywall): ペイウォール — 有料プランの案内。全画面モーダル・プラン選択・特典リスト・購入ボタン・復元リンク。

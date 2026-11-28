@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Like Burst (Heart Pop)（いいねのポップ（ハートが弾ける）） — UI図鑑</title>
+<meta name="description" content="ハートをタップすると、拡大→縮小しながら赤くなり、周りに小さな粒が飛ぶ。">
+<link rel="canonical" href="https://uizukan.dev/entry/like_burst/">
+<meta property="og:title" content="Like Burst (Heart Pop)（いいねのポップ（ハートが弾ける）） — UI図鑑">
+<meta property="og:description" content="ハートをタップすると、拡大→縮小しながら赤くなり、周りに小さな粒が飛ぶ。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/like_burst/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/like_burst.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/actions/">アクション</a><span class="sep">/</span><span class="here">Like Burst (Heart Pop)</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Motion &amp; Micro-interactions · 09 · アクション</div>
+  <h1 class="display" style="margin-top:10px">Like Burst (Heart Pop)</h1>
+  <p class="lead" style="margin-top:6px">いいねのポップ（ハートが弾ける）</p>
+  <div class="demo-plate">
+    <div class="head"><code>like_burst</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-like_burst" role="group" aria-label="Like Burst (Heart Pop) のデモ"><div class="mo-lk"><button class="m-icon-btn mo-hb" aria-label="いいね" aria-pressed="false"><span class="mo-sc"><i class="mi mo-off" style="--i:url(/assets/icons/mi-materialicons-e25c.png);width:36px;height:36px" aria-hidden="true"></i><i class="mi mo-on" style="--i:url(/assets/icons/mi-materialicons-e25b.png);width:36px;height:36px" aria-hidden="true"></i></span></button><span class="mo-n">128</span></div></div><style>#wd-like_burst .mo-lk{display:flex;align-items:center}
+#wd-like_burst .mo-hb{width:52px;height:52px}
+#wd-like_burst .mo-sc{display:flex;transition:transform .2s cubic-bezier(.175,.885,.32,1.275)}
+#wd-like_burst .mo-on{display:none;color:#F44336}
+#wd-like_burst .mo-off{color:var(--ink)}
+#wd-like_burst .mo-hb[aria-pressed="true"] .mo-on{display:inline-block}
+#wd-like_burst .mo-hb[aria-pressed="true"] .mo-off{display:none}
+#wd-like_burst .mo-n{font-size:18px;line-height:1.3;color:var(--ink);font-variant-numeric:tabular-nums}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const b=root.querySelector('.mo-hb'), sc=b.querySelector('.mo-sc'), n=root.querySelector('.mo-n');
+let liked=false, likes=128, tm=0;
+b.addEventListener('click',()=>{
+  UZ.haptic('light');
+  liked=!liked; likes+=liked?1:-1;
+  b.setAttribute('aria-pressed',String(liked)); n.textContent=likes;
+  sc.style.transform='scale(1.35)';
+  clearTimeout(tm); tm=setTimeout(()=>{ sc.style.transform='scale(1)'; },150);
+});})(document.getElementById("wd-like_burst"),window.UZ);</script></div>
+    <a class="foot" href="https://apps.apple.com/jp/app/id6808997175" rel="noopener"><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i><span>本物の手触りは iOS アプリで</span><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a>
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Heart Animation</span><span class="tag">Like Animation</span><span class="tag">Favorite Pop</span><span class="tag">Twitter Heart</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="na">該当なし（M3 に無い）</dd></div><div><dt>Material 2</dt><dd class="na">該当なし（M2 に無い）</dd></div><div><dt>Android (Compose)</dt><dd class="na">該当なし（Animatable + scale で自作）</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（iOS 標準には無い）</dd></div><div><dt>SwiftUI</dt><dd class="">.symbolEffect(.bounce)（iOS 17）</dd></div><div><dt>Web</dt><dd class="">CSS @keyframes</dd></div><div><dt>Flutter</dt><dd class="mono">AnimatedScale + IconButton</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>Twitter / Instagram の「いいね」。scale 0→1.3→1.0 の<a class="term" href="/glossary/spring/">バネ</a>動作、色の変化、周囲の粒子（任意）を 400ms 程度で。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>いいね・お気に入り・ブックマークなど、感情を伴う ON 操作。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/icon_button/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Icon Button</a><a class="chip" href="/entry/double_tap/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Double Tap</a><a class="chip" href="/entry/press_scale/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Press Scale (Spring Bounce)</a><a class="chip" href="/entry/confetti/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Confetti (Celebration)</a><a class="chip" href="/glossary/spring/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>スプリング</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/feed/"><span class="ic s" style="--i:url(/assets/icons/scene-feed.png)"></span>フィード</a><a class="chip" href="/scenes/search/"><span class="ic s" style="--i:url(/assets/icons/scene-search.png)"></span>検索</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="いいねボタンをタップしたら、ハートが 1.3 倍に弾んでから戻りつつ赤くなる Like Burst アニメーションにして。軽い触覚付きで。" data-en="On tapping the like button, play a Like Burst: the heart springs to 1.3x then settles while turning red, with a light haptic.">いいねボタンをタップしたら、ハートが 1.3 倍に弾んでから戻りつつ赤くなる Like Burst アニメーションにして。軽い触覚付きで。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Like Burst (Heart Pop) / いいねのポップ（ハートが弾ける）
+
+- id: `like_burst`  URL: https://uizukan.dev/entry/like_burst/
+- 種別: アクション / Motion &amp; Micro-interactions
+- 別名: Heart Animation, Like Animation, Favorite Pop, Twitter Heart
+- 呼び名: Material 3=該当なし（M3 に無い） / Material 2=該当なし（M2 に無い） / Android (Compose)=該当なし（Animatable + scale で自作） / iOS (HIG)=該当なし（iOS 標準には無い） / SwiftUI=.symbolEffect(.bounce)（iOS 17） / Web=CSS @keyframes / Flutter=AnimatedScale + IconButton
+- Flutter: `AnimatedScale + IconButton`
+- 関連: icon_button, double_tap, press_scale, confetti
+
+**説明**: Twitter / Instagram の「いいね」。scale 0→1.3→1.0 のバネ動作、色の変化、周囲の粒子（任意）を 400ms 程度で。
+
+**使いどころ**: いいね・お気に入り・ブックマークなど、感情を伴う ON 操作。
+
+**AI への伝え方（日本語）**: いいねボタンをタップしたら、ハートが 1.3 倍に弾んでから戻りつつ赤くなる Like Burst アニメーションにして。軽い触覚付きで。
+
+**Prompt (English)**: On tapping the like button, play a Like Burst: the heart springs to 1.3x then settles while turning red, with a light haptic.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

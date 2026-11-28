@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI 連携 — UI図鑑</title>
+<meta name="description" content="llms.txt・llms-full.txt・catalog.json、Claude Code スキル、MCP サーバーへのつなぎ方。AI にこの図鑑を参照させる方法。">
+<link rel="canonical" href="https://uizukan.dev/ai/">
+<meta property="og:title" content="AI 連携 — UI図鑑">
+<meta property="og:description" content="llms.txt・llms-full.txt・catalog.json、Claude Code スキル、MCP サーバーへのつなぎ方。AI にこの図鑑を参照させる方法。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/ai/">
+<meta property="og:image" content="https://uizukan.dev/icons/Icon-512.png">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/library/">ライブラリ</a><span class="sep">/</span><span class="here">AI 連携</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="centered">
+<div class="eyebrow" style="margin-top:24px">AI 向けファイル · 無料</div><h1 class="display" style="margin-top:10px">AI にも、同じ図鑑を。</h1>
+<p class="lead" style="margin-top:12px">「浮いてるボタン」「ブルッ」を、AI が標準名に言い換えられるように。全文を AI 向けの形式で公開。すべて無料。</p>
+<div class="list" style="margin-top:24px"><div><span class="ic" style="--i:url(/assets/icons/doc.png)" aria-hidden="true"></span><span class="body"><b class="mono" style="font-size:13px;font-weight:500">llms.txt</b><span class="sm">概要と全項目へのリンク。AI 検索やエージェントが最初に読む入口</span><span class="sm mono" style="font-size:11px;color:var(--ink3)">https://uizukan.dev/llms.txt</span></span><button type="button" class="iconbtn" data-copy="#u-doc" title="URL をコピー"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i></button><span id="u-doc" class="sr">https://uizukan.dev/llms.txt</span><a class="iconbtn" href="/llms.txt" title="開く"><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a></div><div><span class="ic" style="--i:url(/assets/icons/article.png)" aria-hidden="true"></span><span class="body"><b class="mono" style="font-size:13px;font-weight:500">llms-full.txt</b><span class="sm">全項目の本文（Markdown）。これ 1 つで図鑑の全部を渡せる</span><span class="sm mono" style="font-size:11px;color:var(--ink3)">https://uizukan.dev/llms-full.txt</span></span><button type="button" class="iconbtn" data-copy="#u-article" title="URL をコピー"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i></button><span id="u-article" class="sr">https://uizukan.dev/llms-full.txt</span><a class="iconbtn" href="/llms-full.txt" title="開く"><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a></div><div><span class="ic" style="--i:url(/assets/icons/json.png)" aria-hidden="true"></span><span class="body"><b class="mono" style="font-size:13px;font-weight:500">catalog.json</b><span class="sm">全データの JSON。自分のツールやスクリプトから使える</span><span class="sm mono" style="font-size:11px;color:var(--ink3)">https://uizukan.dev/catalog.json</span></span><button type="button" class="iconbtn" data-copy="#u-json" title="URL をコピー"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i></button><span id="u-json" class="sr">https://uizukan.dev/catalog.json</span><a class="iconbtn" href="/catalog.json" title="開く"><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a></div></div>
+<section class="section" style="margin-top:40px"><div class="eyebrow">Claude Code</div><h2 class="title" style="margin:8px 0 10px">Claude Code のスキルにする</h2><p class="lead" style="margin:0 0 16px">.claude/skills/ui-zukan/ に置くと、「この動きなんて言う？」「浮いてるボタン作って」のときに Claude Code が自動で図鑑を参照する。</p>
+<div class="plate" style="padding:16px 16px 8px"><div class="eyebrow" style="margin-bottom:8px">ターミナル</div><pre class="note" id="install" style="padding:0;min-height:0;background:none">mkdir -p .claude/skills &amp;&amp; curl -L https://uizukan.dev/skill/ui-zukan-skill.zip -o /tmp/ui-zukan.zip &amp;&amp; unzip -o /tmp/ui-zukan.zip -d .claude/skills/</pre><p style="text-align:right;margin:8px 0 0"><button type="button" class="copybtn" data-copy="#install"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></p></div>
+<div class="list" style="margin-top:12px"><div><span class="ic" style="--i:url(/assets/icons/zip.png)" aria-hidden="true"></span><span class="body"><b class="mono" style="font-size:13px;font-weight:500">ui-zukan-skill.zip</b><span class="sm">SKILL.md と references/（表示、アクション）一式</span></span><a class="btn secondary small" href="/skill/ui-zukan-skill.zip">ダウンロード</a></div></div>
+<details style="margin-top:12px"><summary style="cursor:pointer;font-weight:500;padding:8px 0">SKILL.md を表示</summary><pre class="note" style="margin-top:8px">---
+name: ui-zukan
+description: &gt;
+  UI 部品・UI アクションの標準名リファレンス。ユーザーが「浮いてるボタン」「長押しでブルッと震えて遷移」
+  「下から出てくるやつ」「くるくる」のように UI を曖昧・擬音・見た目で説明したとき、
+  Material / iOS HIG / Flutter の標準名に対応づけ、正しい部品・ジェスチャー・触覚・遷移・アニメーションを
+  選んで実装するために使う。Flutter UI の実装依頼全般、UI の名前を聞かれたとき、
+  「この動きなんて言う？」と聞かれたときに発動。
+---
+
+# UI図鑑スキル
+
+## 使い方
+
+1. ユーザーの説明から、見た目（部品）と振る舞い（アクション）を分けて読み取る。
+2. `references/components.md` と `references/actions.md` で、別名・日本語・擬音（ブルッ／カチッ／くるくる）を含めて該当項目を探す。
+3. 実装前に「○○（標準名）として実装します」と一言で確認し、迷いがあれば 2〜3 候補を提示する。
+4. 各項目の「AI への伝え方」を仕様の骨子として使い、Flutter API 欄の widget で実装する。
+5. 複合アクション（例: 長押し→触覚→遷移）は要素ごとに分解して実装する。
+
+## よくある言い換え → 標準名
+
+| ユーザーの言い方 | 標準名 | id |
+|---|---|---|
+| 浮いてる／影付きの／Z 軸に浮いたボタン | Elevated Button | `elevated_button` |
+| 一番目立つ／塗りつぶしのボタン | Filled Button | `filled_button` |
+| 右下の丸い＋ボタン | Floating Action Button | `fab` |
+| 下からせり上がる／ハーフモーダル | Bottom Sheet | `modal_bottom_sheet` |
+| iOS の下から出る選択肢 | Action Sheet | `action_sheet` |
+| 画面下に一瞬出るメッセージ／トースト | Snackbar | `snackbar` |
+| くるくる／ローディング | Circular Progress Indicator | `circular_progress` |
+| グレーの箱がチラチラ光る読み込み | Skeleton + Shimmer | `skeleton` |
+| ドラム式／回すやつ | Wheel Picker | `cupertino_picker` |
+| 日／週／月の切替 | Segmented Button | `segmented_button` |
+| 小さな角丸のタグ | Chip | `chips` |
+| 大きいタイトルが縮む | Large Title App Bar | `large_title_app_bar` |
+| 画像ヘッダーが縮む | Collapsing Toolbar | `collapsing_toolbar` |
+| ブルッ（1 回） | Impact Haptic (medium) | `haptic_impact` |
+| カチッ | Selection Haptic | `haptic_selection` |
+| 成功でトントン／失敗でブブブ | Notification Haptic | `haptic_notification` |
+| 長押しでブルッと震えて遷移 | Long Press → Haptic → Navigate | `long_press_haptic_navigate` |
+| 押すと縮んで弾む | Press Scale (Spring) | `press_scale` |
+| 間違えたら左右に揺れる | Shake | `shake` |
+| 画像がそのまま拡大して次画面へ | Hero Transition | `hero_transition` |
+| 横にスワイプして削除 | Swipe to Dismiss | `swipe_to_dismiss` |
+| 引っ張って更新 | Pull to Refresh | `pull_to_refresh` |
+| 紙吹雪 | Confetti | `confetti` |
+| ハートがポンと弾ける | Like Burst | `like_burst` |
+
+## 参照ファイル
+
+- `references/components.md` — 表示 75 項目
+- `references/actions.md` — アクション 39 項目
+- オンライン: https://uizukan.dev（項目ごとの URL とデモ）、機械可読: https://uizukan.dev/catalog.json
+
+## 実装時の作法
+
+- 触覚は `HapticFeedback`（services）を使い、Web では no-op になることを前提にする。
+- iOS らしさが求められたら Cupertino 系（CupertinoPageRoute / CupertinoActionSheet / CupertinoPicker）を優先。
+- Material 3 の名称（Filled / Tonal / Elevated / Outlined / Text）で強調度を揃える。
+- 複合アクションは「ジェスチャー」「フィードバック」「遷移」の順に分けて実装する。
+</pre></details></section>
+<section class="section" style="margin-top:40px" id="mcp"><div class="eyebrow">MCP サーバー</div><h2 class="title" style="margin:8px 0 10px">MCP サーバーにつなぐ</h2><p class="lead" style="margin:0 0 16px">Claude Code や Cursor が、作業の途中で図鑑を直接引けるようになる。名前を探す・項目を読むところまでは無料で、登録もキーも要らない。</p>
+<div class="plate" style="padding:16px 16px 8px"><div class="eyebrow" style="margin-bottom:8px">ターミナル（Claude Code）</div><pre class="note" id="mcp-add" style="padding:0;min-height:0;background:none">claude mcp add --transport http --scope user uizukan https://mcp.uizukan.dev/mcp</pre><p style="text-align:right;margin:8px 0 0"><button type="button" class="copybtn" data-copy="#mcp-add"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></p></div>
+<p class="sm" style="margin:12px 0 0">ほかの AI ツールでは、MCP サーバーの URL に <span class="mono">https://mcp.uizukan.dev/mcp</span> を指定する。</p>
+<div class="list" style="margin-top:12px"><div><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><span class="body"><b style="font-weight:500">詳細プロンプトと Flutter コードは Pro</b><span class="sm">寸法・状態・動きの時間まで AI に取らせるには、開発者向け Pro の購入が必要（準備中）。</span></span><a class="btn secondary small" href="/pro/">Pro の案内</a></div></div></section>
+<section class="section" style="margin-top:40px"><div class="eyebrow">チャット</div><h2 class="title" style="margin:8px 0 12px">チャットに貼る一文</h2><div class="plate" style="padding:16px 16px 8px"><p id="hint" style="margin:0">UI の名前は https://uizukan.dev/llms-full.txt を参照し、標準名（Material・iOS HIG・Flutter）で確認してから実装して。曖昧に言ったら候補を 2〜3 個挙げて。</p><p style="text-align:right;margin:8px 0 0"><button type="button" class="copybtn" data-copy="#hint"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></p></div></section>
+</div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

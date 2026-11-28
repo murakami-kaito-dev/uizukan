@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ripple (Ink Splash)（リップル（波紋）） — UI図鑑</title>
+<meta name="description" content="タップした位置から円形の波紋が広がる Material 特有の反応。">
+<link rel="canonical" href="https://uizukan.dev/entry/ripple/">
+<meta property="og:title" content="Ripple (Ink Splash)（リップル（波紋）） — UI図鑑">
+<meta property="og:description" content="タップした位置から円形の波紋が広がる Material 特有の反応。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/ripple/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/ripple.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/actions/">アクション</a><span class="sep">/</span><span class="here">Ripple (Ink Splash)</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Motion &amp; Micro-interactions · 01 · アクション</div>
+  <h1 class="display" style="margin-top:10px">Ripple (Ink Splash)</h1>
+  <p class="lead" style="margin-top:6px">リップル（波紋）</p>
+  <div class="demo-plate">
+    <div class="head"><code>ripple</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-ripple" role="group" aria-label="Ripple (Ink Splash) のデモ"><div class="mo-rp" role="button" tabindex="0"><span class="mo-hl"></span><span class="mo-lb">タップした位置から波紋</span></div></div><style>#wd-ripple .mo-rp{position:relative;width:260px;max-width:100%;height:100px;border-radius:16px;background:var(--m-surface);border:1px solid var(--rule);display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;touch-action:manipulation;isolation:isolate;outline:none}
+#wd-ripple .mo-hl{position:absolute;inset:0;background:color-mix(in srgb,var(--m-primary) 8%,transparent);opacity:0;transition:opacity .2s;pointer-events:none}
+#wd-ripple .mo-rp.mo-on .mo-hl{opacity:1}
+#wd-ripple .mo-rp::before{content:"";position:absolute;inset:0;background:color-mix(in srgb,var(--ink) 3%,transparent);opacity:0;transition:opacity 50ms;pointer-events:none}
+@media (hover:hover){#wd-ripple .mo-rp:hover::before{opacity:1}}
+#wd-ripple .mo-ink{position:absolute;left:0;top:0;border-radius:50%;background:color-mix(in srgb,var(--m-primary) 12%,transparent);pointer-events:none;will-change:transform,opacity}
+#wd-ripple .mo-lb{position:relative;z-index:1}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";function cb(a,b,c,d){
+  const ev=(p1,p2,t)=>3*p1*(1-t)*(1-t)*t+3*p2*(1-t)*t*t+t*t*t;
+  return function(x){
+    if(x<=0)return 0; if(x>=1)return 1;
+    let lo=0,hi=1;
+    for(let i=0;i<30;i++){const m=(lo+hi)/2; if(ev(a,c,m)<x)lo=m; else hi=m;}
+    return ev(b,d,(lo+hi)/2);
+  };
+}
+const box=root.querySelector('.mo-rp'), lb=box.querySelector('.mo-lb');
+const ease=cb(.25,.1,.25,1);
+let cur=null;
+function start(e){
+  if(e.button>0)return;
+  const r=box.getBoundingClientRect(), s=r.width/box.offsetWidth||1;
+  const w=box.clientWidth,h=box.clientHeight, bw=(box.offsetWidth-w)/2;
+  const x=(e.clientX-r.left)/s-bw, y=(e.clientY-r.top)/s-bw;
+  const R=Math.hypot(w,h)/2;
+  const el=document.createElement('span'); el.className='mo-ink'; box.insertBefore(el,lb);
+  const now=performance.now();
+  const rp={el,x,y,w,h,R,sx:e.clientX,sy:e.clientY,
+    rv:0,rt:now,rdur:1000,            // 半径の進み（0→1）。押している間は 1 秒、離すと残りを 225ms で
+    fin:now,                          // 濃くなる 75ms の始まり
+    fo:null,fodur:375,foInt:225/375,  // 薄れる（離したら 375ms、後ろ 150ms で消える）
+    done:false};
+  cur=rp; box.classList.add('mo-on');
+  try{box.setPointerCapture(e.pointerId);}catch(_){}
+  tick(rp);
+}
+function tick(rp){
+  const now=performance.now();
+  rp.rv=Math.min(1,rp.rv+(now-rp.rt)/rp.rdur); rp.rt=now;
+  const t=ease(rp.rv);
+  const rad=rp.R*.3+(rp.R+5-rp.R*.3)*t;
+  const cx=rp.x+(rp.w/2-rp.x)*t, cy=rp.y+(rp.h/2-rp.y)*t;
+  let a=Math.min(1,(now-rp.fin)/75);
+  if(rp.fo!==null){
+    const f=Math.min(1,(now-rp.fo)/rp.fodur);
+    const k=rp.foInt>0?Math.max(0,(f-rp.foInt)/(1-rp.foInt)):f;
+    a=Math.min(a,1-k);
+    if(f>=1){rp.el.remove();return;}
+  }
+  rp.el.style.width=rp.el.style.height=(rad*2)+'px';
+  rp.el.style.transform='translate('+(cx-rad)+'px,'+(cy-rad)+'px)';
+  rp.el.style.opacity=a;
+  requestAnimationFrame(()=>tick(rp));
+}
+function confirm(){
+  if(!cur)return; const rp=cur; cur=null; box.classList.remove('mo-on');
+  rp.rdur=225; rp.fo=performance.now(); rp.fin=Math.min(rp.fin,performance.now()-75);
+}
+function cancel(){
+  if(!cur)return; const rp=cur; cur=null; box.classList.remove('mo-on');
+  rp.fo=performance.now(); rp.fodur=75; rp.foInt=0;
+}
+box.addEventListener('pointerdown',start);
+box.addEventListener('pointerup',confirm);
+box.addEventListener('pointercancel',cancel);
+box.addEventListener('pointermove',e=>{ if(cur&&Math.hypot(e.clientX-cur.sx,e.clientY-cur.sy)>18)cancel(); });})(document.getElementById("wd-ripple"),window.UZ);</script></div>
+    <a class="foot" href="https://apps.apple.com/jp/app/id6808997175" rel="noopener"><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i><span>本物の手触りは iOS アプリで</span><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a>
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Ink Splash</span><span class="tag">Ink Ripple</span><span class="tag">Touch Ripple</span><span class="tag">Material Ripple</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">State layer（ripple は Android の実装名）</dd></div><div><dt>Material 2</dt><dd class="">Ripple（Touch feedback）</dd></div><div><dt>Android (Compose)</dt><dd class="">Modifier.clickable の indication（ripple()）</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（Highlight のみ）</dd></div><div><dt>SwiftUI</dt><dd class="na">該当なし（ButtonStyle の isPressed で表現）</dd></div><div><dt>Web</dt><dd class="na">該当なし（CSS で自作）</dd></div><div><dt>Flutter</dt><dd class="mono">InkWell / Ink</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>押した点を中心に<a class="term" href="/glossary/opacity/">半透明</a>の円が広がり、面全体を薄く覆う。<a class="term" href="/glossary/material3/">Material Design</a> の「触れた」フィードバック。Ink 系 widget は Material の上でしか描けない点に注意。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>Material 風アプリのタップ可能な面すべて。iOS 風にしたいなら使わない。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/tap/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Tap</a><a class="chip" href="/entry/press_scale/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Press Scale (Spring Bounce)</a><a class="chip" href="/entry/elevated_button/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Elevated Button</a><a class="chip" href="/entry/cupertino_button/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Cupertino Button</a><a class="chip" href="/glossary/opacity/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>不透明度</a><a class="chip" href="/glossary/material3/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>Material 3</a></div></section>
+  
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="このカードをタップしたとき、押した位置から Material のリップル（波紋）が広がるようにして。角丸の中にクリップして。" data-en="When this card is tapped, show a Material ripple expanding from the touch point, clipped to the rounded corners.">このカードをタップしたとき、押した位置から Material のリップル（波紋）が広がるようにして。角丸の中にクリップして。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Ripple (Ink Splash) / リップル（波紋）
+
+- id: `ripple`  URL: https://uizukan.dev/entry/ripple/
+- 種別: アクション / Motion &amp; Micro-interactions
+- 別名: Ink Splash, Ink Ripple, Touch Ripple, Material Ripple
+- 呼び名: Material 3=State layer（ripple は Android の実装名） / Material 2=Ripple（Touch feedback） / Android (Compose)=Modifier.clickable の indication（ripple()） / iOS (HIG)=該当なし（Highlight のみ） / SwiftUI=該当なし（ButtonStyle の isPressed で表現） / Web=該当なし（CSS で自作） / Flutter=InkWell / Ink
+- Flutter: `InkWell / Ink`
+- 関連: tap, press_scale, elevated_button, cupertino_button
+
+**説明**: 押した点を中心に半透明の円が広がり、面全体を薄く覆う。Material Design の「触れた」フィードバック。Ink 系 widget は Material の上でしか描けない点に注意。
+
+**使いどころ**: Material 風アプリのタップ可能な面すべて。iOS 風にしたいなら使わない。
+
+**AI への伝え方（日本語）**: このカードをタップしたとき、押した位置から Material のリップル（波紋）が広がるようにして。角丸の中にクリップして。
+
+**Prompt (English)**: When this card is tapped, show a Material ripple expanding from the touch point, clipped to the rounded corners.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

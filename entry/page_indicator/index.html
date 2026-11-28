@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Page Indicator（ページインジケータ（ドット）） — UI図鑑</title>
+<meta name="description" content="オンボーディングやカルーセルで、現在何ページ目かを示す点の列。">
+<link rel="canonical" href="https://uizukan.dev/entry/page_indicator/">
+<meta property="og:title" content="Page Indicator（ページインジケータ（ドット）） — UI図鑑">
+<meta property="og:description" content="オンボーディングやカルーセルで、現在何ページ目かを示す点の列。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/page_indicator/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/page_indicator.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Page Indicator</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Navigation · 09 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Page Indicator</h1>
+  <p class="lead" style="margin-top:6px">ページインジケータ（ドット）</p>
+  <div class="demo-plate">
+    <div class="head"><code>page_indicator</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-page_indicator" role="group" aria-label="Page Indicator のデモ"><div class="nv-fit-o"><div class="nv-fit-i" style="width:280px"><div class="nv-pv"><div class="nv-pp"><div class="nv-pc">ページ 1（横スワイプ）</div></div><div class="nv-pp"><div class="nv-pc">ページ 2（横スワイプ）</div></div><div class="nv-pp"><div class="nv-pc">ページ 3（横スワイプ）</div></div></div><div class="nv-dots"><span class="nv-dot nv-on"></span><span class="nv-dot"></span><span class="nv-dot"></span></div></div></div></div><style>#wd-page_indicator .nv-fit-o{position:relative;flex:none}
+#wd-page_indicator .nv-fit-i{position:absolute;left:0;top:0;transform-origin:0 0}
+#wd-page_indicator .nv-fr{position:relative;overflow:hidden;border-radius:12px;isolation:isolate;text-align:left}
+#wd-page_indicator .nv-fr::after{content:"";position:absolute;inset:0;border:1px solid var(--rule);border-radius:12px;pointer-events:none;z-index:60}
+#wd-page_indicator .nv-sc{overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+#wd-page_indicator .nv-sc::-webkit-scrollbar{display:none}
+#wd-page_indicator .m-icon-btn .mi{width:22px;height:22px}
+
+#wd-page_indicator .nv-pv{height:120px;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch;cursor:grab}
+#wd-page_indicator .nv-pv::-webkit-scrollbar{display:none}
+#wd-page_indicator .nv-pp{flex:0 0 100%;scroll-snap-align:start;scroll-snap-stop:always;padding:0 8px}
+#wd-page_indicator .nv-pc{height:100%;border-radius:12px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;font-size:15px;line-height:1.65}
+#wd-page_indicator .nv-dots{display:flex;justify-content:center;margin-top:12px}
+#wd-page_indicator .nv-dot{width:8px;height:8px;margin:0 4px;border-radius:4px;background:var(--rule);transition:width .2s linear,background-color .2s linear}
+#wd-page_indicator .nv-dot.nv-on{width:24px;background:var(--accent)}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const fitO = root.querySelector('.nv-fit-o'), fitI = fitO.firstElementChild;
+let S = 1;
+const refit = () => {
+  const W = fitI.offsetWidth, H = fitI.offsetHeight, a = root.clientWidth || W;
+  S = Math.min(1, a / W);
+  fitI.style.transform = S < 1 ? 'scale(' + S + ')' : '';
+  fitO.style.width = W * S + 'px';
+  fitO.style.height = H * S + 'px';
+};
+refit();
+if (window.ResizeObserver) { const ro = new ResizeObserver(refit); ro.observe(root); ro.observe(fitI); }
+
+const bez = (x1, y1, x2, y2) => (x) => {
+  if (x <= 0) return 0; if (x >= 1) return 1;
+  let t = x;
+  for (let i = 0; i < 8; i++) {
+    const cx = 3 * x1 * t * (1 - t) * (1 - t) + 3 * x2 * t * t * (1 - t) + t * t * t - x;
+    const d = 3 * x1 * (1 - t) * (1 - t) + 6 * (x2 - x1) * t * (1 - t) + 3 * (1 - x2) * t * t;
+    if (Math.abs(cx) < 1e-5 || !d) break;
+    t -= cx / d;
+  }
+  return 3 * y1 * t * (1 - t) * (1 - t) + 3 * y2 * t * t * (1 - t) + t * t * t;
+};
+const tween = (dur, ease, fn, done) => {
+  const t0 = performance.now(); let id = 0;
+  const step = (now) => { const p = Math.min(1, (now - t0) / dur); fn(ease(p)); if (p < 1) id = requestAnimationFrame(step); else if (done) done(); };
+  id = requestAnimationFrame(step);
+  return () => cancelAnimationFrame(id);
+};
+const EASE = bez(0.25, 0.1, 0.25, 1);
+// 横スクロール（scroll-snap）の箱を、マウスでも引っぱってページ送りできるようにする（指はブラウザの横スクロールのまま）
+const pager = (el, step) => {
+  let id = null, sx = 0, sl = 0, lx = 0, lt = 0, v = 0, stop = null;
+  el.addEventListener('pointerdown', (e) => {
+    if (e.pointerType !== 'mouse' || e.button !== 0) return;
+    if (stop) { stop(); stop = null; }
+    id = e.pointerId; sx = lx = e.clientX; lt = e.timeStamp; sl = el.scrollLeft; v = 0;
+    el.style.scrollSnapType = 'none';
+    try { el.setPointerCapture(id); } catch (_) {}
+  });
+  el.addEventListener('pointermove', (e) => {
+    if (e.pointerId !== id) return;
+    const dt = e.timeStamp - lt; if (dt > 0) v = (e.clientX - lx) / S / dt;
+    lx = e.clientX; lt = e.timeStamp;
+    el.scrollLeft = sl - (e.clientX - sx) / S;
+  });
+  const up = (e) => {
+    if (e.pointerId !== id) return;
+    id = null;
+    const s = step(), max = Math.round((el.scrollWidth - el.clientWidth) / s);
+    let p = el.scrollLeft / s;
+    p = v < -0.05 ? Math.ceil(p) : v > 0.05 ? Math.floor(p) : Math.round(p); // 速さが 50px/秒を超えたら次のページへ（Flutter のページ送りと同じ）
+    p = Math.max(0, Math.min(max, p));
+    const from = el.scrollLeft, to = p * s;
+    stop = tween(300, EASE, (k) => { el.scrollLeft = from + (to - from) * k; }, () => { el.style.scrollSnapType = ''; stop = null; });
+  };
+  el.addEventListener('pointerup', up);
+  el.addEventListener('pointercancel', up);
+};
+
+const pv = root.querySelector('.nv-pv'), dots = root.querySelectorAll('.nv-dot');
+let page = 0;
+pv.addEventListener('scroll', () => {
+  const p = Math.round(pv.scrollLeft / (pv.clientWidth || 1));
+  if (p === page) return;
+  page = p;
+  dots.forEach((d, i) => d.classList.toggle('nv-on', i === p));
+}, { passive: true });
+pager(pv, () => pv.clientWidth);})(document.getElementById("wd-page_indicator"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Dots Indicator</span><span class="tag">Page Control</span><span class="tag">Carousel Dots</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="na">該当なし（Carousel の indicator として言及のみ）</dd></div><div><dt>Material 2</dt><dd class="na">該当なし（M2 に無い）</dd></div><div><dt>Android (Compose)</dt><dd class="na">該当なし（HorizontalPager + 自作の点）</dd></div><div><dt>iOS (HIG)</dt><dd class="">Page controls</dd></div><div><dt>SwiftUI</dt><dd class="">TabView(.page) の indicator / .indexViewStyle(.page)</dd></div><div><dt>Web</dt><dd class="na">該当なし（Pagination dots）</dd></div><div><dt>Flutter</dt><dd class="mono">自作（Row of AnimatedContainer）/ smooth_page_indicator</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>小さな点を横に並べ、現在ページの点だけ色や幅を変える。PageView の controller と連動させる。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>オンボーディング、画像カルーセル。ページ数が 10 を超えるなら数値表示。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/carousel/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Carousel</a><a class="chip" href="/entry/page_view_swipe/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Swipe Between Pages</a><a class="chip" href="/entry/snap_scrolling/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Snap Scrolling</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/onboarding/"><span class="ic s" style="--i:url(/assets/icons/scene-onboarding.png)"></span>オンボーディング</a><a class="chip" href="/scenes/product/"><span class="ic s" style="--i:url(/assets/icons/scene-product.png)"></span>商品と購入</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="オンボーディング 3 ページの下に Page Indicator（ドット）を置いて。現在ページのドットは横に伸びて primary 色になるアニメーション付きで。" data-en="Add a Page Indicator (dots) under the 3-page onboarding. The active dot stretches horizontally and turns primary, animated.">オンボーディング 3 ページの下に Page Indicator（ドット）を置いて。現在ページのドットは横に伸びて primary 色になるアニメーション付きで。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Page Indicator / ページインジケータ（ドット）
+
+- id: `page_indicator`  URL: https://uizukan.dev/entry/page_indicator/
+- 種別: 表示 / Navigation
+- 別名: Dots Indicator, Page Control, Carousel Dots
+- 呼び名: Material 3=該当なし（Carousel の indicator として言及のみ） / Material 2=該当なし（M2 に無い） / Android (Compose)=該当なし（HorizontalPager + 自作の点） / iOS (HIG)=Page controls / SwiftUI=TabView(.page) の indicator / .indexViewStyle(.page) / Web=該当なし（Pagination dots） / Flutter=自作（Row of AnimatedContainer）/ smooth_page_indicator
+- Flutter: `自作（Row of AnimatedContainer）/ smooth_page_indicator`
+- 関連: carousel, page_view_swipe, snap_scrolling
+
+**説明**: 小さな点を横に並べ、現在ページの点だけ色や幅を変える。PageView の controller と連動させる。
+
+**使いどころ**: オンボーディング、画像カルーセル。ページ数が 10 を超えるなら数値表示。
+
+**AI への伝え方（日本語）**: オンボーディング 3 ページの下に Page Indicator（ドット）を置いて。現在ページのドットは横に伸びて primary 色になるアニメーション付きで。
+
+**Prompt (English)**: Add a Page Indicator (dots) under the 3-page onboarding. The active dot stretches horizontally and turns primary, animated.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

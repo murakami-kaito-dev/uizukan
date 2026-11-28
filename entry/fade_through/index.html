@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fade Through（フェードスルー（タブ切替の遷移）） — UI図鑑</title>
+<meta name="description" content="前の画面がフェードアウトし、次の画面が少し拡大しながらフェードイン。">
+<link rel="canonical" href="https://uizukan.dev/entry/fade_through/">
+<meta property="og:title" content="Fade Through（フェードスルー（タブ切替の遷移）） — UI図鑑">
+<meta property="og:description" content="前の画面がフェードアウトし、次の画面が少し拡大しながらフェードイン。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/fade_through/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/fade_through.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/actions/">アクション</a><span class="sep">/</span><span class="here">Fade Through</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Transitions · 03 · アクション</div>
+  <h1 class="display" style="margin-top:10px">Fade Through</h1>
+  <p class="lead" style="margin-top:6px">フェードスルー（タブ切替の遷移）</p>
+  <div class="demo-plate">
+    <div class="head"><code>fade_through</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-fade_through" role="group" aria-label="Fade Through のデモ"><div class="tr-ft"><div class="tr-fr2"><div class="tr-st"><div class="tr-fp tr-on" data-i="0"><div class="tr-t">ホーム</div><div class="tr-bx" style="height:86px;background:rgba(59,91,255,.18);display:flex;align-items:center;justify-content:center;color:#3B5BFF"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e0b7.png);width:24px;height:24px" aria-hidden="true"></i></div><div class="tr-r2"><div class="tr-bx" style="height:70px;background:rgba(249,115,22,.18)"></div><div class="tr-bx" style="height:70px;background:rgba(34,197,94,.18)"></div></div></div><div class="tr-fp" data-i="1" aria-hidden="true"><div class="tr-t">検索</div><div class="tr-sf"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e567.png);width:18px;height:18px" aria-hidden="true"></i><span>キーワードで探す</span></div><div class="tr-cw"><span>ボタン</span><span>タブ</span><span>カード</span><span>シート</span><span>スイッチ</span></div></div><div class="tr-fp" data-i="2" aria-hidden="true"><div class="tr-t">マイページ</div><div class="tr-me"><div class="tr-av">山</div><div><div class="tr-mn">山田 太郎</div><div class="tr-mi2">@yamada</div></div></div><div class="tr-rw"><span>お気に入り</span><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e15f.png);width:18px;height:18px" aria-hidden="true"></i></div><div class="tr-rw"><span>設定</span><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e15f.png);width:18px;height:18px" aria-hidden="true"></i></div></div></div><div class="m-divider"></div><nav class="tr-nb"><button class="tr-nd tr-sel" data-i="0" aria-label="ホーム" aria-current="page"><span class="tr-ic"><i class="mi tr-i0" style="--i:url(/assets/icons/mi-materialicons-f107.png);width:24px;height:24px" aria-hidden="true"></i><i class="mi tr-i1" style="--i:url(/assets/icons/mi-materialicons-e318.png);width:24px;height:24px" aria-hidden="true"></i></span><span class="tr-nl">ホーム</span></button><button class="tr-nd" data-i="1" aria-label="検索"><span class="tr-ic"><i class="mi tr-i0" style="--i:url(/assets/icons/mi-materialicons-e567.png);width:24px;height:24px" aria-hidden="true"></i><i class="mi tr-i1" style="--i:url(/assets/icons/mi-materialicons-e567.png);width:24px;height:24px" aria-hidden="true"></i></span><span class="tr-nl">検索</span></button><button class="tr-nd" data-i="2" aria-label="マイページ"><span class="tr-ic"><i class="mi tr-i0" style="--i:url(/assets/icons/mi-materialicons-e497.png);width:24px;height:24px" aria-hidden="true"></i><i class="mi tr-i1" style="--i:url(/assets/icons/mi-materialicons-e491.png);width:24px;height:24px" aria-hidden="true"></i></span><span class="tr-nl">マイページ</span></button></nav></div><div class="tr-cap">前の画面が消えてから、次の画面が少し大きくなりながら現れる</div></div></div><style>#wd-fade_through .tr-ft{width:300px;max-width:100%;display:flex;flex-direction:column;align-items:center}
+#wd-fade_through .tr-fr2{position:relative;width:100%;background:var(--m-surface);border-radius:16px;overflow:hidden}
+#wd-fade_through .tr-fr2::after{content:"";position:absolute;inset:0;border:1px solid var(--rule);border-radius:16px;pointer-events:none;z-index:3}
+#wd-fade_through .tr-st{position:relative;height:230px}
+#wd-fade_through .tr-fp{position:absolute;inset:0;padding:14px 16px 8px;display:flex;flex-direction:column;opacity:0;visibility:hidden;color:var(--ink)}
+#wd-fade_through .tr-fp.tr-on,#wd-fade_through .tr-fp.tr-out{visibility:visible}
+#wd-fade_through .tr-fp.tr-on{opacity:1}
+#wd-fade_through .tr-t{margin-bottom:10px;font-size:16px;font-weight:700;line-height:1.3}
+#wd-fade_through .tr-bx{border-radius:10px}
+#wd-fade_through .tr-r2{display:flex;gap:8px;margin-top:8px}
+#wd-fade_through .tr-r2 .tr-bx{flex:1}
+#wd-fade_through .tr-sf{display:flex;align-items:center;gap:8px;height:40px;padding:0 12px;border-radius:999px;background:var(--m-s-high);font-size:13px;color:var(--ink2)}
+#wd-fade_through .tr-cw{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+#wd-fade_through .tr-cw span{padding:5px 10px;border:1px solid var(--rule);border-radius:999px;font-size:12px;line-height:1.3}
+#wd-fade_through .tr-me{display:flex;align-items:center;gap:12px}
+#wd-fade_through .tr-av{width:44px;height:44px;border-radius:50%;background:#8B5CF6;color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:600}
+#wd-fade_through .tr-mn{font-weight:600;font-size:15px;line-height:1.5}
+#wd-fade_through .tr-mi2{font-size:12px;line-height:1.4;color:var(--ink2)}
+#wd-fade_through .tr-rw{display:flex;align-items:center;margin-top:6px;padding:9px 12px;border:1px solid var(--rule);border-radius:8px;font-size:13px;line-height:1.4}
+#wd-fade_through .tr-me+.tr-rw{margin-top:12px}
+#wd-fade_through .tr-rw span{flex:1}
+#wd-fade_through .tr-nb{display:flex;height:60px;background:var(--m-surface)}
+#wd-fade_through .tr-nd{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;color:var(--ink3)}
+#wd-fade_through .tr-nd.tr-sel{color:var(--accent)}
+#wd-fade_through .tr-nd .tr-ic{display:flex;width:64px;height:32px;align-items:center;justify-content:center}
+#wd-fade_through .tr-nd .tr-i1{display:none}
+#wd-fade_through .tr-nd.tr-sel .tr-i1{display:inline-block}
+#wd-fade_through .tr-nd.tr-sel .tr-i0{display:none}
+#wd-fade_through .tr-nl{font-size:12px;font-weight:500;line-height:1.2;letter-spacing:.2px}
+#wd-fade_through .tr-cap{margin-top:10px;font-size:12px;line-height:1.55;color:var(--ink2);text-align:center}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const pages=root.querySelectorAll('.tr-fp'), dests=root.querySelectorAll('.tr-nd'); let index=0;
+const anims=new Map();
+const E='cubic-bezier(.215,.61,.355,1)';
+function stop(el){ const a=anims.get(el); if(a){ a.cancel(); anims.delete(el); } }
+dests.forEach(d=>d.addEventListener('click',()=>{
+  const i=+d.dataset.i; if(i===index)return;
+  UZ.haptic('selection');
+  const outEl=pages[index], inEl=pages[i];
+  dests.forEach(x=>{ const s=+x.dataset.i===i; x.classList.toggle('tr-sel',s); if(s)x.setAttribute('aria-current','page'); else x.removeAttribute('aria-current'); });
+  index=i;
+  // 出ていく：始まってから 35% の間に消える（直線）
+  const o0=parseFloat(getComputedStyle(outEl).opacity)||0; stop(outEl);
+  outEl.classList.remove('tr-on'); outEl.classList.add('tr-out'); outEl.setAttribute('aria-hidden','true');
+  const ao=outEl.animate([{opacity:o0,transform:getComputedStyle(outEl).transform==='none'?'none':getComputedStyle(outEl).transform},{opacity:0,offset:.35},{opacity:0}],{duration:600,easing:'linear'});
+  anims.set(outEl,ao); ao.onfinish=()=>{ outEl.classList.remove('tr-out'); anims.delete(outEl); };
+  // 入ってくる：35% から現れ、0.92 倍 → 等倍（easeOutCubic）
+  stop(inEl); inEl.classList.remove('tr-out'); inEl.classList.add('tr-on'); inEl.removeAttribute('aria-hidden');
+  const ai=inEl.animate([{opacity:0,transform:'scale(.92)'},{opacity:0,transform:'scale(.92)',offset:.35,easing:E},{opacity:1,transform:'scale(1)'}],{duration:600});
+  anims.set(inEl,ai); ai.onfinish=()=>anims.delete(inEl);
+}));})(document.getElementById("wd-fade_through"),window.UZ);</script></div>
+    <a class="foot" href="https://apps.apple.com/jp/app/id6808997175" rel="noopener"><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i><span>本物の手触りは iOS アプリで</span><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a>
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Cross Fade</span><span class="tag">Fade Transition</span><span class="tag">Top-level Transition</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Fade through / Top level</dd></div><div><dt>Material 2</dt><dd class="">Fade through</dd></div><div><dt>Android (Compose)</dt><dd class="">AnimatedContent(fadeIn + scaleIn) / NavHost fadeIn</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（Cross-dissolve）</dd></div><div><dt>SwiftUI</dt><dd class="">.transition(.opacity)</dd></div><div><dt>Web</dt><dd class="">View Transitions API（既定の cross-fade）</dd></div><div><dt>Flutter</dt><dd class="mono">animations: PageTransitionSwitcher + FadeThroughTransition</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>階層関係のない画面同士（<a class="term" href="/glossary/tab/">タブ</a>切替など）の遷移。方向性を持たせないのが特徴。Material の animations パッケージに FadeThroughTransition がある。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>Bottom Navigation の<a class="term" href="/glossary/tab/">タブ</a>切替、ステップ間の内容差し替え。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/bottom_navigation_bar/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Bottom Navigation Bar</a><a class="chip" href="/entry/crossfade/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Cross-fade Switch</a><a class="chip" href="/entry/push_slide/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Push Transition</a><a class="chip" href="/glossary/tab/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>タブ</a></div></section>
+  
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="Bottom Navigation のタブを切り替えるときに、Material の Fade Through（前がフェードアウト、次が少し拡大しつつフェードイン）を使って。" data-en="When switching bottom navigation tabs, use Material Fade Through: the old page fades out and the new page fades in while scaling up slightly.">Bottom Navigation のタブを切り替えるときに、Material の Fade Through（前がフェードアウト、次が少し拡大しつつフェードイン）を使って。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Fade Through / フェードスルー（タブ切替の遷移）
+
+- id: `fade_through`  URL: https://uizukan.dev/entry/fade_through/
+- 種別: アクション / Transitions
+- 別名: Cross Fade, Fade Transition, Top-level Transition
+- 呼び名: Material 3=Fade through / Top level / Material 2=Fade through / Android (Compose)=AnimatedContent(fadeIn + scaleIn) / NavHost fadeIn / iOS (HIG)=該当なし（Cross-dissolve） / SwiftUI=.transition(.opacity) / Web=View Transitions API（既定の cross-fade） / Flutter=animations: PageTransitionSwitcher + FadeThroughTransition
+- Flutter: `animations: PageTransitionSwitcher + FadeThroughTransition`
+- 関連: bottom_navigation_bar, crossfade, push_slide
+
+**説明**: 階層関係のない画面同士（タブ切替など）の遷移。方向性を持たせないのが特徴。Material の animations パッケージに FadeThroughTransition がある。
+
+**使いどころ**: Bottom Navigation のタブ切替、ステップ間の内容差し替え。
+
+**AI への伝え方（日本語）**: Bottom Navigation のタブを切り替えるときに、Material の Fade Through（前がフェードアウト、次が少し拡大しつつフェードイン）を使って。
+
+**Prompt (English)**: When switching bottom navigation tabs, use Material Fade Through: the old page fades out and the new page fades in while scaling up slightly.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

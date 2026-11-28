@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Snap Scrolling（スナップ（要素に吸着するスクロール）） — UI図鑑</title>
+<meta name="description" content="指を離すと、いちばん近い要素の位置にピタッと止まる。">
+<link rel="canonical" href="https://uizukan.dev/entry/snap_scrolling/">
+<meta property="og:title" content="Snap Scrolling（スナップ（要素に吸着するスクロール）） — UI図鑑">
+<meta property="og:description" content="指を離すと、いちばん近い要素の位置にピタッと止まる。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/snap_scrolling/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/snap_scrolling.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/actions/">アクション</a><span class="sep">/</span><span class="here">Snap Scrolling</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Scrolling Behaviors · 06 · アクション</div>
+  <h1 class="display" style="margin-top:10px">Snap Scrolling</h1>
+  <p class="lead" style="margin-top:6px">スナップ（要素に吸着するスクロール）</p>
+  <div class="demo-plate">
+    <div class="head"><code>snap_scrolling</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-snap_scrolling" role="group" aria-label="Snap Scrolling のデモ"><div class="sr-fit-o"><div class="sr-fit-i" style="width:320px"><b class="sr-ttl">あなたへのおすすめ</b><div class="sr-pv"><div class="sr-it"><div class="sr-ph"><img src="/assets/images/products/1_sneakers.jpg" alt="" class="sr-pi" draggable="false"></div><b class="sr-nm">キャンバス スニーカー</b><b class="sr-pc">¥4,980</b></div><div class="sr-it"><div class="sr-ph"><img src="/assets/images/products/5_lamp.jpg" alt="" class="sr-pi" draggable="false"></div><b class="sr-nm">デスクランプ</b><b class="sr-pc">¥6,200</b></div><div class="sr-it"><div class="sr-ph"><img src="/assets/images/products/8_sunglasses.jpg" alt="" class="sr-pi" draggable="false"></div><b class="sr-nm">サングラス</b><b class="sr-pc">¥8,800</b></div><div class="sr-it"><div class="sr-ph"><img src="/assets/images/products/7_satchel.jpg" alt="" class="sr-pi" draggable="false"></div><b class="sr-nm">サッチェルバッグ</b><b class="sr-pc">¥9,800</b></div><div class="sr-it"><div class="sr-ph"><img src="/assets/images/products/2_leather_shoes.jpg" alt="" class="sr-pi" draggable="false"></div><b class="sr-nm">レザーシューズ</b><b class="sr-pc">¥15,400</b></div><div class="sr-it"><div class="sr-ph"><img src="/assets/images/products/4_plant.jpg" alt="" class="sr-pi" draggable="false"></div><b class="sr-nm">観葉植物（小）</b><b class="sr-pc">¥2,480</b></div><div class="sr-it"><div class="sr-ph"><img src="/assets/images/products/6_bottle.jpg" alt="" class="sr-pi" draggable="false"></div><b class="sr-nm">ステンレスボトル</b><b class="sr-pc">¥3,300</b></div><div class="sr-it"><div class="sr-ph"><img src="/assets/images/products/3_notebook.jpg" alt="" class="sr-pi" draggable="false"></div><b class="sr-nm">リングノート</b><b class="sr-pc">¥880</b></div><div class="sr-pad"></div></div><p class="sr-cap">横にスワイプすると、1 枚ずつぴたっと止まる</p></div></div></div><style>#wd-snap_scrolling .sr-fit-o{position:relative;flex:none}
+#wd-snap_scrolling .sr-fit-i{position:absolute;left:0;top:0;transform-origin:0 0}
+#wd-snap_scrolling .sr-fr{position:relative;overflow:hidden;border-radius:12px;isolation:isolate;text-align:left}
+#wd-snap_scrolling .sr-fr::after{content:"";position:absolute;inset:0;border:1px solid var(--rule);border-radius:12px;pointer-events:none;z-index:60}
+#wd-snap_scrolling .sr-sc{height:100%;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+#wd-snap_scrolling .sr-sc::-webkit-scrollbar{display:none}
+#wd-snap_scrolling .sr-fab{width:40px;height:40px;border-radius:12px;background:var(--accent-soft);color:var(--ink);display:flex;align-items:center;justify-content:center;box-shadow:var(--e3)}
+
+#wd-snap_scrolling .sr-fit-i{text-align:left}
+#wd-snap_scrolling .sr-ttl{display:block;padding:0 12px 8px;font-size:15px;font-weight:700;line-height:1.65}
+#wd-snap_scrolling .sr-pv{height:206px;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch;cursor:grab}
+#wd-snap_scrolling .sr-pv::-webkit-scrollbar{display:none}
+#wd-snap_scrolling .sr-it{flex:0 0 198.4px;padding-left:12px;display:flex;flex-direction:column;scroll-snap-align:start;scroll-snap-stop:always;min-width:0}
+#wd-snap_scrolling .sr-pad{flex:0 0 121.6px}
+#wd-snap_scrolling .sr-ph{flex:1;min-height:0;border-radius:12px;overflow:hidden}
+#wd-snap_scrolling .sr-pi{width:100%;height:100%;object-fit:cover;display:block}
+#wd-snap_scrolling .sr-nm{margin-top:8px;font-size:13px;font-weight:600;line-height:1.65;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#wd-snap_scrolling .sr-pc{margin-top:2px;font-size:13px;font-weight:700;line-height:1.65}
+#wd-snap_scrolling .sr-cap{margin:6px 0 0;text-align:center;font-size:11px;line-height:1.65;color:var(--ink2)}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const fitO = root.querySelector('.sr-fit-o'), fitI = fitO.firstElementChild;
+let S = 1;
+const refit = () => {
+  const W = fitI.offsetWidth, H = fitI.offsetHeight, a = root.clientWidth || W;
+  S = Math.min(1, a / W);
+  fitI.style.transform = S < 1 ? 'scale(' + S + ')' : '';
+  fitO.style.width = W * S + 'px';
+  fitO.style.height = H * S + 'px';
+};
+refit();
+if (window.ResizeObserver) { const ro = new ResizeObserver(refit); ro.observe(root); ro.observe(fitI); }
+
+const tween = (dur, ease, fn, done) => {
+  const t0 = performance.now(); let id = 0;
+  const step = (now) => { const p = Math.min(1, (now - t0) / dur); fn(ease(p)); if (p < 1) id = requestAnimationFrame(step); else if (done) done(); };
+  id = requestAnimationFrame(step);
+  return () => cancelAnimationFrame(id);
+};
+const bez = (x1, y1, x2, y2) => (x) => {
+  if (x <= 0) return 0; if (x >= 1) return 1;
+  let t = x;
+  for (let i = 0; i < 8; i++) {
+    const cx = 3 * x1 * t * (1 - t) * (1 - t) + 3 * x2 * t * t * (1 - t) + t * t * t - x;
+    const d = 3 * x1 * (1 - t) * (1 - t) + 6 * (x2 - x1) * t * (1 - t) + 3 * (1 - x2) * t * t;
+    if (Math.abs(cx) < 1e-5 || !d) break;
+    t -= cx / d;
+  }
+  return 3 * y1 * t * (1 - t) * (1 - t) + 3 * y2 * t * t * (1 - t) + t * t * t;
+};
+const EASE = bez(0.25, 0.1, 0.25, 1);
+// 横スクロール（scroll-snap）の箱を、マウスでも引っぱってページ送りできるようにする（指はブラウザの横スクロールのまま）
+const pager = (el, step) => {
+  let id = null, sx = 0, sl = 0, lx = 0, lt = 0, v = 0, stop = null;
+  el.addEventListener('pointerdown', (e) => {
+    if (e.pointerType !== 'mouse' || e.button !== 0) return;
+    if (stop) { stop(); stop = null; }
+    id = e.pointerId; sx = lx = e.clientX; lt = e.timeStamp; sl = el.scrollLeft; v = 0;
+    el.style.scrollSnapType = 'none';
+    try { el.setPointerCapture(id); } catch (_) {}
+  });
+  el.addEventListener('pointermove', (e) => {
+    if (e.pointerId !== id) return;
+    const dt = e.timeStamp - lt; if (dt > 0) v = (e.clientX - lx) / S / dt;
+    lx = e.clientX; lt = e.timeStamp;
+    el.scrollLeft = sl - (e.clientX - sx) / S;
+  });
+  const up = (e) => {
+    if (e.pointerId !== id) return;
+    id = null;
+    const s = step(), max = Math.round((el.scrollWidth - el.clientWidth) / s);
+    let p = el.scrollLeft / s;
+    p = v < -0.05 ? Math.ceil(p) : v > 0.05 ? Math.floor(p) : Math.round(p); // 速さが 50px/秒を超えたら次のページへ（Flutter のページ送りと同じ）
+    p = Math.max(0, Math.min(max, p));
+    const from = el.scrollLeft, to = p * s;
+    stop = tween(300, EASE, (k) => { el.scrollLeft = from + (to - from) * k; }, () => { el.style.scrollSnapType = ''; stop = null; });
+  };
+  el.addEventListener('pointerup', up);
+  el.addEventListener('pointercancel', up);
+};
+
+const pv = root.querySelector('.sr-pv');
+const W = 198.4;
+let page = 0;
+pv.addEventListener('scroll', () => {
+  const p = Math.round(pv.scrollLeft / W);
+  if (p === page) return;
+  page = p;
+  UZ.haptic('selection');
+}, { passive: true });
+pager(pv, () => W);})(document.getElementById("wd-snap_scrolling"),window.UZ);</script></div>
+    <a class="foot" href="https://apps.apple.com/jp/app/id6808997175" rel="noopener"><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i><span>本物の手触りは iOS アプリで</span><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a>
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Paging Scroll</span><span class="tag">Snap to Item</span><span class="tag">Scroll Snapping</span><span class="tag">Magnetic Scroll</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Carousel（snap）</dd></div><div><dt>Material 2</dt><dd class="na">該当なし（M2 に無い）</dd></div><div><dt>Android (Compose)</dt><dd class="">LazyRow + rememberSnapFlingBehavior / HorizontalPager</dd></div><div><dt>iOS (HIG)</dt><dd class="">Scroll views（paging）</dd></div><div><dt>SwiftUI</dt><dd class="">.scrollTargetBehavior(.viewAligned / .paging)</dd></div><div><dt>Web</dt><dd class="">CSS scroll-snap-type</dd></div><div><dt>Flutter</dt><dd class="mono">PageView(viewportFraction:) / SnapScrollPhysics（自作）</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>自由なスクロールではなく、要素の境界で必ず止まる。カルーセル、時間選択、カード送りで使う。PageView は 1 画面ずつ、ListWheelScrollView は行ごとに<a class="term" href="/glossary/snap/">吸着</a>。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>カルーセル、横並びカード、<a class="term" href="/glossary/drum_picker/">ドラム</a>式ピッカー、ストーリー UI。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/carousel/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Carousel</a><a class="chip" href="/entry/page_view_swipe/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Swipe Between Pages</a><a class="chip" href="/entry/cupertino_picker/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Wheel Picker</a><a class="chip" href="/entry/page_indicator/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Page Indicator</a><a class="chip" href="/glossary/snap/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>スナップ</a><a class="chip" href="/glossary/drum_picker/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>ドラムロール</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/onboarding/"><span class="ic s" style="--i:url(/assets/icons/scene-onboarding.png)"></span>オンボーディング</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="横に並んだカード（幅 280、隙間 16）を、指を離すと最寄りのカードの左端に吸着する Snap Scrolling にして。" data-en="Make the horizontal row of cards (width 280, gap 16) snap so that on release it settles on the nearest card's left edge.">横に並んだカード（幅 280、隙間 16）を、指を離すと最寄りのカードの左端に吸着する Snap Scrolling にして。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Snap Scrolling / スナップ（要素に吸着するスクロール）
+
+- id: `snap_scrolling`  URL: https://uizukan.dev/entry/snap_scrolling/
+- 種別: アクション / Scrolling Behaviors
+- 別名: Paging Scroll, Snap to Item, Scroll Snapping, Magnetic Scroll
+- 呼び名: Material 3=Carousel（snap） / Material 2=該当なし（M2 に無い） / Android (Compose)=LazyRow + rememberSnapFlingBehavior / HorizontalPager / iOS (HIG)=Scroll views（paging） / SwiftUI=.scrollTargetBehavior(.viewAligned / .paging) / Web=CSS scroll-snap-type / Flutter=PageView(viewportFraction:) / SnapScrollPhysics（自作）
+- Flutter: `PageView(viewportFraction:) / SnapScrollPhysics（自作）`
+- 関連: carousel, page_view_swipe, cupertino_picker, page_indicator
+
+**説明**: 自由なスクロールではなく、要素の境界で必ず止まる。カルーセル、時間選択、カード送りで使う。PageView は 1 画面ずつ、ListWheelScrollView は行ごとに吸着。
+
+**使いどころ**: カルーセル、横並びカード、ドラム式ピッカー、ストーリー UI。
+
+**AI への伝え方（日本語）**: 横に並んだカード（幅 280、隙間 16）を、指を離すと最寄りのカードの左端に吸着する Snap Scrolling にして。
+
+**Prompt (English)**: Make the horizontal row of cards (width 280, gap 16) snap so that on release it settles on the nearest card's left edge.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

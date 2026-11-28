@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FAB Menu（FAB メニュー（FAB から開く操作の一覧）） — UI図鑑</title>
+<meta name="description" content="右下の FAB を押すと、その上に関連する操作が 2〜6 個ならんで開く。">
+<link rel="canonical" href="https://uizukan.dev/entry/fab_menu/">
+<meta property="og:title" content="FAB Menu（FAB メニュー（FAB から開く操作の一覧）） — UI図鑑">
+<meta property="og:description" content="右下の FAB を押すと、その上に関連する操作が 2〜6 個ならんで開く。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/fab_menu/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/fab_menu.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">FAB Menu</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Buttons · 16 · 表示</div>
+  <h1 class="display" style="margin-top:10px">FAB Menu</h1>
+  <p class="lead" style="margin-top:6px">FAB メニュー（FAB から開く操作の一覧）</p>
+  <div class="demo-plate">
+    <div class="head"><code>fab_menu</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-fab_menu" role="group" aria-label="FAB Menu のデモ"><div class="ex-fm ex-on"><div class="ex-fmn"></div>
+<button class="ex-fmi ex-ink" style="bottom:200px;--k:2" data-l="撮影"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f29b.png);width:24px;height:24px" aria-hidden="true"></i><span>撮影</span></button><button class="ex-fmi ex-ink" style="bottom:136px;--k:1" data-l="画像"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f120.png);width:24px;height:24px" aria-hidden="true"></i><span>画像</span></button><button class="ex-fmi ex-ink" style="bottom:72px;--k:0" data-l="ファイル"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e0b1.png);width:24px;height:24px" aria-hidden="true"></i><span>ファイル</span></button>
+<button class="ex-fab" aria-label="閉じる" aria-expanded="true"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e047.png);width:24px;height:24px" aria-hidden="true"></i></button></div></div><style>#wd-fab_menu .ex-ink{position:relative;overflow:hidden}
+#wd-fab_menu .ex-ink::after{content:"";position:absolute;inset:0;background:currentColor;opacity:0;transition:opacity .15s}
+#wd-fab_menu .ex-ink.ex-down::after{opacity:.1}
+
+#wd-fab_menu .ex-fm{position:relative;width:280px;max-width:100%;height:268px}
+#wd-fab_menu .ex-fmn{position:absolute;left:4px;bottom:22px;font-size:13px;line-height:1.45;color:var(--ink2);white-space:nowrap}
+#wd-fab_menu .ex-fmi{position:absolute;right:4px;display:flex;align-items:center;gap:10px;height:56px;padding:0 22px 0 18px;border-radius:28px;background:color-mix(in srgb,var(--m-primary) 14%,var(--surface));color:var(--ink);font-size:16px;font-weight:500;line-height:1.2;white-space:nowrap;opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .2s cubic-bezier(.33,1,.68,1),transform .2s cubic-bezier(.33,1,.68,1)}
+#wd-fab_menu .ex-fm.ex-on .ex-fmi{opacity:1;transform:none;pointer-events:auto;transition-delay:calc(var(--k) * 58ms)}
+#wd-fab_menu .ex-fab{position:absolute;right:4px;bottom:4px;width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:16px;background:color-mix(in srgb,var(--m-primary) 14%,var(--surface));color:var(--ink);box-shadow:var(--e3);transition:border-radius .32s linear,background-color .32s linear,color .32s linear}
+#wd-fab_menu .ex-fab .mi{transition:transform .32s linear}
+#wd-fab_menu .ex-fm.ex-on .ex-fab{border-radius:28px;background:var(--m-primary);color:var(--m-on-primary)}
+#wd-fab_menu .ex-fm.ex-on .ex-fab .mi{transform:rotate(45deg)}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const press = (el) => {
+  const off = () => el.classList.remove('ex-down');
+  el.addEventListener('pointerdown', () => el.classList.add('ex-down'));
+  ['pointerup', 'pointercancel', 'pointerleave'].forEach((n) => el.addEventListener(n, off));
+};
+const box = root.querySelector('.ex-fm'), fab = root.querySelector('.ex-fab'), note = root.querySelector('.ex-fmn');
+const set = (on) => { box.classList.toggle('ex-on', on); fab.setAttribute('aria-expanded', String(on)); fab.setAttribute('aria-label', on ? '閉じる' : '追加'); };
+fab.addEventListener('click', () => set(!box.classList.contains('ex-on')));
+[...root.querySelectorAll('.ex-fmi')].forEach((b) => { press(b); b.addEventListener('click', () => { note.textContent = '「' + b.dataset.l + '」を選びました'; set(false); }); });})(document.getElementById("wd-fab_menu"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Speed Dial</span><span class="tag">Expandable FAB</span><span class="tag">FAB Speed Dial</span><span class="tag">スピードダイヤル</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">FAB menu</dd></div><div><dt>Material 2</dt><dd class="">Speed dial（Floating action button の一種）</dd></div><div><dt>Android (Compose)</dt><dd class="">FloatingActionButtonMenu</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（iOS 標準には FAB が無い。メニューは Pull-down button で出す）</dd></div><div><dt>SwiftUI</dt><dd class="na">該当なし（Menu で代替する）</dd></div><div><dt>Web</dt><dd class="">Menu Button（WAI-ARIA パターン）</dd></div><div><dt>Flutter</dt><dd class="mono">FloatingActionButton + Overlay（専用の部品は無い。flutter_speed_dial パッケージなど）</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p><a class="term" href="/entry/fab/">FAB</a>（右下の丸い主要ボタン）を押すと、<a class="term" href="/entry/fab/">FAB</a> が「閉じる」ボタンに変わり、その上に操作が縦に並んで出る。項目は大きめの<a class="term" href="/glossary/pill/">カプセル型</a>で、アイコンと名前が付く。以前の Speed Dial や、小さな <a class="term" href="/entry/fab/">FAB</a> を重ねる作りの後継。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>「新規作成」に種類が 2〜6 個あるとき（撮影・画像・ファイルなど）。1 つだけなら、ふつうの <a class="term" href="/entry/fab/">FAB</a> にする。7 個以上なら、別の画面かシートにする。文字つきの <a class="term" href="/entry/extended_fab/">Extended FAB</a> とは組み合わせない。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/fab/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Floating Action Button</a><a class="chip" href="/entry/extended_fab/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Extended FAB</a><a class="chip" href="/entry/popup_menu/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Menu (Popup / Overflow)</a><a class="chip" href="/entry/modal_bottom_sheet/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Bottom Sheet</a><a class="chip" href="/glossary/pill/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>カプセル型</a></div></section>
+  
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="右下の FAB を FAB Menu にして。押すと × に変わり、上に「撮影／画像／ファイル」の 3 つが下から順に出るように。" data-en="Turn the bottom-right FAB into a FAB Menu: on tap it becomes a close button and reveals &quot;Camera / Image / File&quot; stacked above it, staggered from the bottom.">右下の FAB を FAB Menu にして。押すと × に変わり、上に「撮影／画像／ファイル」の 3 つが下から順に出るように。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># FAB Menu / FAB メニュー（FAB から開く操作の一覧）
+
+- id: `fab_menu`  URL: https://uizukan.dev/entry/fab_menu/
+- 種別: 表示 / Buttons
+- 別名: Speed Dial, Expandable FAB, FAB Speed Dial, スピードダイヤル
+- 呼び名: Material 3=FAB menu / Material 2=Speed dial（Floating action button の一種） / Android (Compose)=FloatingActionButtonMenu / iOS (HIG)=該当なし（iOS 標準には FAB が無い。メニューは Pull-down button で出す） / SwiftUI=該当なし（Menu で代替する） / Web=Menu Button（WAI-ARIA パターン） / Flutter=FloatingActionButton + Overlay（専用の部品は無い。flutter_speed_dial パッケージなど）
+- Flutter: `FloatingActionButton + Overlay（専用の部品は無い。flutter_speed_dial パッケージなど）`
+- 関連: fab, extended_fab, popup_menu, modal_bottom_sheet
+
+**説明**: FAB（右下の丸い主要ボタン）を押すと、FAB が「閉じる」ボタンに変わり、その上に操作が縦に並んで出る。項目は大きめのカプセル型で、アイコンと名前が付く。以前の Speed Dial や、小さな FAB を重ねる作りの後継。
+
+**使いどころ**: 「新規作成」に種類が 2〜6 個あるとき（撮影・画像・ファイルなど）。1 つだけなら、ふつうの FAB にする。7 個以上なら、別の画面かシートにする。文字つきの Extended FAB とは組み合わせない。
+
+**AI への伝え方（日本語）**: 右下の FAB を FAB Menu にして。押すと × に変わり、上に「撮影／画像／ファイル」の 3 つが下から順に出るように。
+
+**Prompt (English)**: Turn the bottom-right FAB into a FAB Menu: on tap it becomes a close button and reveals "Camera / Image / File" stacked above it, staggered from the bottom.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

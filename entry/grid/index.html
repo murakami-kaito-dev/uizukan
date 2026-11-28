@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Grid（グリッド（格子状の一覧）） — UI図鑑</title>
+<meta name="description" content="写真や商品を 2〜3 列の格子に並べた一覧。">
+<link rel="canonical" href="https://uizukan.dev/entry/grid/">
+<meta property="og:title" content="Grid（グリッド（格子状の一覧）） — UI図鑑">
+<meta property="og:description" content="写真や商品を 2〜3 列の格子に並べた一覧。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/grid/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/grid.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Grid</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Data Display · 03 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Grid</h1>
+  <p class="lead" style="margin-top:6px">グリッド（格子状の一覧）</p>
+  <div class="demo-plate">
+    <div class="head"><code>grid</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-grid" role="group" aria-label="Grid のデモ"><div class="dp-g"><img src="/assets/images/products/1_sneakers.jpg" alt="" draggable="false"><img src="/assets/images/products/2_leather_shoes.jpg" alt="" draggable="false"><img src="/assets/images/products/3_notebook.jpg" alt="" draggable="false"><img src="/assets/images/products/4_plant.jpg" alt="" draggable="false"><img src="/assets/images/products/5_lamp.jpg" alt="" draggable="false"><img src="/assets/images/products/6_bottle.jpg" alt="" draggable="false"></div></div><style>#wd-grid .dp-g{width:100%;max-width:300px;aspect-ratio:3/2;display:grid;grid-template-columns:repeat(3,1fr);gap:2px;align-content:start;overflow:hidden}
+#wd-grid .dp-g img{width:100%;aspect-ratio:1;object-fit:cover;display:block}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Photo Grid</span><span class="tag">Grid View</span><span class="tag">Collection View</span><span class="tag">Tile Grid</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="na">該当なし（Layout の Grid。部品ではない）</dd></div><div><dt>Material 2</dt><dd class="">Image list（旧称 Grid list）</dd></div><div><dt>Android (Compose)</dt><dd class="">LazyVerticalGrid</dd></div><div><dt>iOS (HIG)</dt><dd class="">Collections</dd></div><div><dt>SwiftUI</dt><dd class="">LazyVGrid / Grid</dd></div><div><dt>Web</dt><dd class="">display: grid（CSS Grid）/ Grid（WAI-ARIA パターン）</dd></div><div><dt>Flutter</dt><dd class="mono">GridView / SliverGrid</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>同じ大きさのセルを格子状に並べる。列数は画面幅で変える（<a class="term" href="/glossary/responsive/">レスポンシブ</a>）。高さがバラバラなら staggered grid。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>写真・商品・アルバムなど、画像が主役の一覧。文字が主役ならリスト。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/card/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Card</a><a class="chip" href="/entry/list_tile/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>List Item</a><a class="chip" href="/entry/infinite_scroll/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Infinite Scroll (Pagination)</a><a class="chip" href="/entry/pinch_zoom/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Pinch In / Pinch Out</a><a class="chip" href="/glossary/responsive/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>レスポンシブ</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/search/"><span class="ic s" style="--i:url(/assets/icons/scene-search.png)"></span>検索</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="写真の Grid を作って。スマホでは 3 列、タブレットでは 5 列、正方形セル、隙間 2dp。タップで拡大表示に遷移。" data-en="Create a photo Grid: 3 columns on phones, 5 on tablets, square cells with 2dp gaps. Tapping opens a full-screen viewer.">写真の Grid を作って。スマホでは 3 列、タブレットでは 5 列、正方形セル、隙間 2dp。タップで拡大表示に遷移。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Grid / グリッド（格子状の一覧）
+
+- id: `grid`  URL: https://uizukan.dev/entry/grid/
+- 種別: 表示 / Data Display
+- 別名: Photo Grid, Grid View, Collection View, Tile Grid
+- 呼び名: Material 3=該当なし（Layout の Grid。部品ではない） / Material 2=Image list（旧称 Grid list） / Android (Compose)=LazyVerticalGrid / iOS (HIG)=Collections / SwiftUI=LazyVGrid / Grid / Web=display: grid（CSS Grid）/ Grid（WAI-ARIA パターン） / Flutter=GridView / SliverGrid
+- Flutter: `GridView / SliverGrid`
+- 関連: card, list_tile, infinite_scroll, pinch_zoom
+
+**説明**: 同じ大きさのセルを格子状に並べる。列数は画面幅で変える（レスポンシブ）。高さがバラバラなら staggered grid。
+
+**使いどころ**: 写真・商品・アルバムなど、画像が主役の一覧。文字が主役ならリスト。
+
+**AI への伝え方（日本語）**: 写真の Grid を作って。スマホでは 3 列、タブレットでは 5 列、正方形セル、隙間 2dp。タップで拡大表示に遷移。
+
+**Prompt (English)**: Create a photo Grid: 3 columns on phones, 5 on tablets, square cells with 2dp gaps. Tapping opens a full-screen viewer.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

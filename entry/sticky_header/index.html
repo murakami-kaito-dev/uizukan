@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sticky Section Header（固定セクションヘッダー） — UI図鑑</title>
+<meta name="description" content="連絡先の「あ」「か」のように、スクロールしても上に張り付く見出し。">
+<link rel="canonical" href="https://uizukan.dev/entry/sticky_header/">
+<meta property="og:title" content="Sticky Section Header（固定セクションヘッダー） — UI図鑑">
+<meta property="og:description" content="連絡先の「あ」「か」のように、スクロールしても上に張り付く見出し。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/sticky_header/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/sticky_header.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Sticky Section Header</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Data Display · 04 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Sticky Section Header</h1>
+  <p class="lead" style="margin-top:6px">固定セクションヘッダー</p>
+  <div class="demo-plate">
+    <div class="head"><code>sticky_header</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-sticky_header" role="group" aria-label="Sticky Section Header のデモ"><div class="dp-box"><div class="dp-sh"><div class="dp-sec"><div class="dp-hd">9月5日（金）</div><div class="dp-lt"><span class="dp-ld" style="--c:#8B5E3C"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f175.png);width:17px;height:17px" aria-hidden="true"></i></span><span class="dp-tx"><span class="dp-t">スターバックス</span><span class="dp-s">カフェ</span></span><span class="dp-tr">¥-620</span></div><div class="dp-lt"><span class="dp-ld" style="--c:#F97316"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f316.png);width:17px;height:17px" aria-hidden="true"></i></span><span class="dp-tx"><span class="dp-t">ランチ（定食屋）</span><span class="dp-s">食費</span></span><span class="dp-tr">¥-980</span></div><div class="dp-lt"><span class="dp-ld" style="--c:#22C55E"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f458.png);width:17px;height:17px" aria-hidden="true"></i></span><span class="dp-tx"><span class="dp-t">Suica チャージ</span><span class="dp-s">交通</span></span><span class="dp-tr">¥-3,000</span></div></div><div class="dp-sec"><div class="dp-hd">9月4日（木）</div><div class="dp-lt"><span class="dp-ld" style="--c:#0EA5E9"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f177.png);width:17px;height:17px" aria-hidden="true"></i></span><span class="dp-tx"><span class="dp-t">コンビニ</span><span class="dp-s">日用品</span></span><span class="dp-tr">¥-458</span></div><div class="dp-lt"><span class="dp-ld" style="--c:#EF4444"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f1f5.png);width:17px;height:17px" aria-hidden="true"></i></span><span class="dp-tx"><span class="dp-t">Netflix</span><span class="dp-s">サブスク</span></span><span class="dp-tr">¥-1,590</span></div><div class="dp-lt"><span class="dp-ld" style="--c:#F97316"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f37f.png);width:17px;height:17px" aria-hidden="true"></i></span><span class="dp-tx"><span class="dp-t">スーパー</span><span class="dp-s">食費</span></span><span class="dp-tr">¥-2,846</span></div><div class="dp-lt"><span class="dp-ld" style="--c:#0EA5E9"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f186.png);width:17px;height:17px" aria-hidden="true"></i></span><span class="dp-tx"><span class="dp-t">ドラッグストア</span><span class="dp-s">日用品</span></span><span class="dp-tr">¥-1,230</span></div></div><div class="dp-sec"><div class="dp-hd">9月3日（水）</div><div class="dp-lt"><span class="dp-ld" style="--c:#8B5CF6"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f1c2.png);width:17px;height:17px" aria-hidden="true"></i></span><span class="dp-tx"><span class="dp-t">書店</span><span class="dp-s">書籍</span></span><span class="dp-tr">¥-1,980</span></div><div class="dp-lt"><span class="dp-ld" style="--c:#F59E0B"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-eedd.png);width:17px;height:17px" aria-hidden="true"></i></span><span class="dp-tx"><span class="dp-t">電気代</span><span class="dp-s">光熱費</span></span><span class="dp-tr">¥-6,420</span></div><div class="dp-lt"><span class="dp-ld" style="--c:#22C55E"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f18f.png);width:17px;height:17px" aria-hidden="true"></i></span><span class="dp-tx"><span class="dp-t">タクシー</span><span class="dp-s">交通</span></span><span class="dp-tr">¥-1,780</span></div></div></div></div></div><style>#wd-sticky_header .dp-sh{position:relative;width:100%;height:220px;overflow-y:auto;overscroll-behavior:contain;background:var(--surface);border-radius:12px;-webkit-overflow-scrolling:touch;touch-action:pan-y;scrollbar-width:none}
+#wd-sticky_header .dp-sh::-webkit-scrollbar{display:none}
+#wd-sticky_header .dp-hd{position:sticky;top:0;z-index:1;height:32px;padding:0 16px;display:flex;align-items:center;background:var(--m-s);border-bottom:1px solid var(--edge);font-size:12px;font-weight:700;color:var(--ink2);line-height:1.2}
+#wd-sticky_header .dp-lt{display:flex;align-items:center;height:64px;padding:0 20px;gap:16px}
+#wd-sticky_header .dp-ld{width:30px;height:30px;border-radius:8px;flex:none;display:flex;align-items:center;justify-content:center;color:var(--c);background:color-mix(in srgb,var(--c) 15%,transparent)}
+#wd-sticky_header .dp-tx{flex:1;min-width:0;display:flex;flex-direction:column}
+#wd-sticky_header .dp-t{font-size:13px;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#wd-sticky_header .dp-s{font-size:11px;line-height:1.4;color:var(--ink2)}
+#wd-sticky_header .dp-tr{font-size:15px;line-height:1.2;color:var(--ink2);letter-spacing:.2px;flex:none}
+#wd-sticky_header .dp-box{position:relative;width:100%;max-width:300px}
+#wd-sticky_header .dp-box::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;border:1px solid var(--edge);border-radius:12px}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Pinned Header</span><span class="tag">Section Header</span><span class="tag">Group Header</span><span class="tag">Sticky Header</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="na">該当なし（List の section header。固定は規定なし）</dd></div><div><dt>Material 2</dt><dd class="">Subheader（Lists）</dd></div><div><dt>Android (Compose)</dt><dd class="">LazyColumn stickyHeader</dd></div><div><dt>iOS (HIG)</dt><dd class="">Lists and tables（section header）</dd></div><div><dt>SwiftUI</dt><dd class="">Section(header:) / LazyVStack(pinnedViews: [.sectionHeaders])</dd></div><div><dt>Web</dt><dd class="">position: sticky</dd></div><div><dt>Flutter</dt><dd class="mono">SliverPersistentHeader(pinned: true) / sticky_headers パッケージ</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>リストのグループ見出しが、そのグループが画面内にある間、上端に固定される。次の見出しが来ると押し上げられる。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>日付ごと・頭文字ごとにグループ化された長いリスト。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/list_tile/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>List Item</a><a class="chip" href="/entry/large_title_app_bar/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Large Title App Bar</a><a class="chip" href="/entry/divider/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Divider</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/settings/"><span class="ic s" style="--i:url(/assets/icons/scene-settings.png)"></span>設定</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="取引履歴を日付ごとにグループ化して、日付の見出しがスクロールで上に張り付く Sticky Section Header にして。" data-en="Group the transaction history by date and make each date heading a Sticky Section Header that pins to the top while scrolling.">取引履歴を日付ごとにグループ化して、日付の見出しがスクロールで上に張り付く Sticky Section Header にして。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Sticky Section Header / 固定セクションヘッダー
+
+- id: `sticky_header`  URL: https://uizukan.dev/entry/sticky_header/
+- 種別: 表示 / Data Display
+- 別名: Pinned Header, Section Header, Group Header, Sticky Header
+- 呼び名: Material 3=該当なし（List の section header。固定は規定なし） / Material 2=Subheader（Lists） / Android (Compose)=LazyColumn stickyHeader / iOS (HIG)=Lists and tables（section header） / SwiftUI=Section(header:) / LazyVStack(pinnedViews: [.sectionHeaders]) / Web=position: sticky / Flutter=SliverPersistentHeader(pinned: true) / sticky_headers パッケージ
+- Flutter: `SliverPersistentHeader(pinned: true) / sticky_headers パッケージ`
+- 関連: list_tile, large_title_app_bar, divider
+
+**説明**: リストのグループ見出しが、そのグループが画面内にある間、上端に固定される。次の見出しが来ると押し上げられる。
+
+**使いどころ**: 日付ごと・頭文字ごとにグループ化された長いリスト。
+
+**AI への伝え方（日本語）**: 取引履歴を日付ごとにグループ化して、日付の見出しがスクロールで上に張り付く Sticky Section Header にして。
+
+**Prompt (English)**: Group the transaction history by date and make each date heading a Sticky Section Header that pins to the top while scrolling.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

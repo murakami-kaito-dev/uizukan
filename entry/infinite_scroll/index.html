@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Infinite Scroll (Pagination)（無限スクロール（追加読み込み）） — UI図鑑</title>
+<meta name="description" content="一覧の末尾に近づくと、自動で次のページを読み込んで継ぎ足す。">
+<link rel="canonical" href="https://uizukan.dev/entry/infinite_scroll/">
+<meta property="og:title" content="Infinite Scroll (Pagination)（無限スクロール（追加読み込み）） — UI図鑑">
+<meta property="og:description" content="一覧の末尾に近づくと、自動で次のページを読み込んで継ぎ足す。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/infinite_scroll/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/infinite_scroll.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/actions/">アクション</a><span class="sep">/</span><span class="here">Infinite Scroll (Pagination)</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Scrolling Behaviors · 03 · アクション</div>
+  <h1 class="display" style="margin-top:10px">Infinite Scroll (Pagination)</h1>
+  <p class="lead" style="margin-top:6px">無限スクロール（追加読み込み）</p>
+  <div class="demo-plate">
+    <div class="head"><code>infinite_scroll</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-infinite_scroll" role="group" aria-label="Infinite Scroll (Pagination) のデモ"><div class="sr-fit-o"><div class="sr-fit-i" style="width:300px"><div class="sr-fr" style="width:300px;height:240px"><div class="sr-sc"><p class="sr-lead">↓ 下までスクロールすると、続きの 12 件を自動で読み込みます</p><div class="sr-ls"><div class="sr-po"><span class="sr-pa" style="background:#ef4444">山</span><div class="sr-pb"><div class="sr-pn"><b>山田 花子</b><span>2分前</span></div><div class="sr-pt">週末に行ったカフェ、窓際の席が最高でした</div></div></div><div class="sr-po"><span class="sr-pa" style="background:#3b5bff">佐</span><div class="sr-pb"><div class="sr-pn"><b>佐藤 健</b><span>8分前</span></div><div class="sr-pt">新しいアプリをリリースしました！感想ください</div></div></div><div class="sr-po"><span class="sr-pa" style="background:#8b5cf6">田</span><div class="sr-pb"><div class="sr-pn"><b>田中 美咲</b><span>15分前</span></div><div class="sr-pt">今日の夕焼け、写真じゃ伝わらないくらい綺麗</div></div></div><div class="sr-po"><span class="sr-pa" style="background:#10b981">鈴</span><div class="sr-pb"><div class="sr-pn"><b>鈴木 一郎</b><span>32分前</span></div><div class="sr-pt">Flutter の新しいバージョン、ビルドが速くなった気がする</div></div></div><div class="sr-po"><span class="sr-pa" style="background:#f59e0b">高</span><div class="sr-pb"><div class="sr-pn"><b>高橋 さくら</b><span>1時間前</span></div><div class="sr-pt">朝ランニング 5km 達成。続けて 30 日目です</div></div></div><div class="sr-po"><span class="sr-pa" style="background:#0ea5e9">伊</span><div class="sr-pb"><div class="sr-pn"><b>伊藤 大輔</b><span>1時間前</span></div><div class="sr-pt">おすすめの技術書あれば教えてください</div></div></div><div class="sr-po"><span class="sr-pa" style="background:#ec4899">渡</span><div class="sr-pb"><div class="sr-pn"><b>渡辺 結衣</b><span>2時間前</span></div><div class="sr-pt">手作りのパン、やっと上手に焼けた</div></div></div><div class="sr-po"><span class="sr-pa" style="background:#64748b">中</span><div class="sr-pb"><div class="sr-pn"><b>中村 翔</b><span>3時間前</span></div><div class="sr-pt">雨の日はカフェで作業がはかどる</div></div></div><div class="sr-po"><span class="sr-pa" style="background:#14b8a6">小</span><div class="sr-pb"><div class="sr-pn"><b>小林 葵</b><span>4時間前</span></div><div class="sr-pt">旅行の計画中。京都でおすすめの場所ある？</div></div></div><div class="sr-po"><span class="sr-pa" style="background:#f97316">加</span><div class="sr-pb"><div class="sr-pn"><b>加藤 蓮</b><span>5時間前</span></div><div class="sr-pt">デザインの勉強を始めました。毎日 1 枚模写する</div></div></div><div class="sr-po"><span class="sr-pa" style="background:#db2777">吉</span><div class="sr-pb"><div class="sr-pn"><b>吉田 陽菜</b><span>6時間前</span></div><div class="sr-pt">近所の公園の桜が咲き始めてた</div></div></div><div class="sr-po"><span class="sr-pa" style="background:#6366f1">山</span><div class="sr-pb"><div class="sr-pn"><b>山本 悠真</b><span>8時間前</span></div><div class="sr-pt">在宅勤務の椅子を変えたら腰が楽になった</div></div></div></div><div class="sr-more"><svg class="sr-spin" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="8"/></svg><span>続きを読み込み中…</span></div><p class="sr-end" hidden>すべての投稿を表示しました（36 件）</p></div></div></div></div></div><style>#wd-infinite_scroll .sr-fit-o{position:relative;flex:none}
+#wd-infinite_scroll .sr-fit-i{position:absolute;left:0;top:0;transform-origin:0 0}
+#wd-infinite_scroll .sr-fr{position:relative;overflow:hidden;border-radius:12px;isolation:isolate;text-align:left}
+#wd-infinite_scroll .sr-fr::after{content:"";position:absolute;inset:0;border:1px solid var(--rule);border-radius:12px;pointer-events:none;z-index:60}
+#wd-infinite_scroll .sr-sc{height:100%;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+#wd-infinite_scroll .sr-sc::-webkit-scrollbar{display:none}
+#wd-infinite_scroll .sr-fab{width:40px;height:40px;border-radius:12px;background:var(--accent-soft);color:var(--ink);display:flex;align-items:center;justify-content:center;box-shadow:var(--e3)}
+
+#wd-infinite_scroll .sr-po{display:flex;align-items:flex-start;gap:10px;padding:8px 12px}
+#wd-infinite_scroll .sr-pa{width:30px;height:30px;border-radius:50%;color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:none}
+#wd-infinite_scroll .sr-pb{flex:1;min-width:0}
+#wd-infinite_scroll .sr-pn{display:flex;align-items:baseline;gap:6px;line-height:1.65;white-space:nowrap}
+#wd-infinite_scroll .sr-pn b{font-size:12px;font-weight:700;overflow:hidden;text-overflow:ellipsis;min-width:0}
+#wd-infinite_scroll .sr-pn span{font-size:11px;color:var(--ink2);flex:none}
+#wd-infinite_scroll .sr-pt{margin-top:2px;font-size:12px;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+#wd-infinite_scroll .sr-spin{width:18px;height:18px;flex:none;animation:sr-rot 1.568s linear infinite}
+#wd-infinite_scroll .sr-spin circle{fill:none;stroke:var(--accent);stroke-width:2;stroke-dasharray:1 60;animation:sr-dash 1.333s cubic-bezier(.4,0,.2,1) infinite}
+@keyframes sr-rot{to{transform:rotate(360deg)}}
+@keyframes sr-dash{0%{stroke-dasharray:1 60;stroke-dashoffset:0}50%{stroke-dasharray:38 60;stroke-dashoffset:-6}100%{stroke-dasharray:38 60;stroke-dashoffset:-49}}
+
+#wd-infinite_scroll .sr-lead{margin:0;padding:10px 12px 4px;font-size:12px;line-height:1.65;color:var(--ink2)}
+#wd-infinite_scroll .sr-sep{display:flex;align-items:center;padding:6px 0}
+#wd-infinite_scroll .sr-sep i{flex:1;height:1px;background:var(--rule);margin:0 8px 0 12px}
+#wd-infinite_scroll .sr-sep i+span+i{margin:0 12px 0 8px}
+#wd-infinite_scroll .sr-sep span{font-size:10px;line-height:1.65;color:var(--ink2);white-space:nowrap}
+#wd-infinite_scroll .sr-more{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px;font-size:12px;line-height:1.65}
+#wd-infinite_scroll .sr-end{margin:0;padding:16px;text-align:center;font-size:12px;line-height:1.65}
+#wd-infinite_scroll .sr-end[hidden],#wd-infinite_scroll .sr-more[hidden]{display:none}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const POSTS = ["<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#ef4444\">山</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>山田 花子</b><span>2分前</span></div><div class=\"sr-pt\">週末に行ったカフェ、窓際の席が最高でした</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#3b5bff\">佐</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>佐藤 健</b><span>8分前</span></div><div class=\"sr-pt\">新しいアプリをリリースしました！感想ください</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#8b5cf6\">田</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>田中 美咲</b><span>15分前</span></div><div class=\"sr-pt\">今日の夕焼け、写真じゃ伝わらないくらい綺麗</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#10b981\">鈴</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>鈴木 一郎</b><span>32分前</span></div><div class=\"sr-pt\">Flutter の新しいバージョン、ビルドが速くなった気がする</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#f59e0b\">高</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>高橋 さくら</b><span>1時間前</span></div><div class=\"sr-pt\">朝ランニング 5km 達成。続けて 30 日目です</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#0ea5e9\">伊</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>伊藤 大輔</b><span>1時間前</span></div><div class=\"sr-pt\">おすすめの技術書あれば教えてください</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#ec4899\">渡</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>渡辺 結衣</b><span>2時間前</span></div><div class=\"sr-pt\">手作りのパン、やっと上手に焼けた</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#64748b\">中</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>中村 翔</b><span>3時間前</span></div><div class=\"sr-pt\">雨の日はカフェで作業がはかどる</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#14b8a6\">小</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>小林 葵</b><span>4時間前</span></div><div class=\"sr-pt\">旅行の計画中。京都でおすすめの場所ある？</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#f97316\">加</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>加藤 蓮</b><span>5時間前</span></div><div class=\"sr-pt\">デザインの勉強を始めました。毎日 1 枚模写する</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#db2777\">吉</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>吉田 陽菜</b><span>6時間前</span></div><div class=\"sr-pt\">近所の公園の桜が咲き始めてた</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#6366f1\">山</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>山本 悠真</b><span>8時間前</span></div><div class=\"sr-pt\">在宅勤務の椅子を変えたら腰が楽になった</div></div></div>","<div class=\"sr-sep\"><i></i><span>ここから 2 ページ目（自動で読み込み）</span><i></i></div><div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#ef4444\">山</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>山田 花子</b><span>9時間前</span></div><div class=\"sr-pt\">週末に行ったカフェ、窓際の席が最高でした</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#3b5bff\">佐</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>佐藤 健</b><span>10時間前</span></div><div class=\"sr-pt\">新しいアプリをリリースしました！感想ください</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#8b5cf6\">田</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>田中 美咲</b><span>11時間前</span></div><div class=\"sr-pt\">今日の夕焼け、写真じゃ伝わらないくらい綺麗</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#10b981\">鈴</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>鈴木 一郎</b><span>12時間前</span></div><div class=\"sr-pt\">Flutter の新しいバージョン、ビルドが速くなった気がする</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#f59e0b\">高</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>高橋 さくら</b><span>13時間前</span></div><div class=\"sr-pt\">朝ランニング 5km 達成。続けて 30 日目です</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#0ea5e9\">伊</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>伊藤 大輔</b><span>14時間前</span></div><div class=\"sr-pt\">おすすめの技術書あれば教えてください</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#ec4899\">渡</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>渡辺 結衣</b><span>15時間前</span></div><div class=\"sr-pt\">手作りのパン、やっと上手に焼けた</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#64748b\">中</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>中村 翔</b><span>16時間前</span></div><div class=\"sr-pt\">雨の日はカフェで作業がはかどる</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#14b8a6\">小</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>小林 葵</b><span>17時間前</span></div><div class=\"sr-pt\">旅行の計画中。京都でおすすめの場所ある？</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#f97316\">加</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>加藤 蓮</b><span>18時間前</span></div><div class=\"sr-pt\">デザインの勉強を始めました。毎日 1 枚模写する</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#db2777\">吉</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>吉田 陽菜</b><span>19時間前</span></div><div class=\"sr-pt\">近所の公園の桜が咲き始めてた</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#6366f1\">山</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>山本 悠真</b><span>20時間前</span></div><div class=\"sr-pt\">在宅勤務の椅子を変えたら腰が楽になった</div></div></div>","<div class=\"sr-sep\"><i></i><span>ここから 3 ページ目（自動で読み込み）</span><i></i></div><div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#ef4444\">山</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>山田 花子</b><span>2日前</span></div><div class=\"sr-pt\">週末に行ったカフェ、窓際の席が最高でした</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#3b5bff\">佐</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>佐藤 健</b><span>3日前</span></div><div class=\"sr-pt\">新しいアプリをリリースしました！感想ください</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#8b5cf6\">田</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>田中 美咲</b><span>4日前</span></div><div class=\"sr-pt\">今日の夕焼け、写真じゃ伝わらないくらい綺麗</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#10b981\">鈴</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>鈴木 一郎</b><span>5日前</span></div><div class=\"sr-pt\">Flutter の新しいバージョン、ビルドが速くなった気がする</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#f59e0b\">高</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>高橋 さくら</b><span>6日前</span></div><div class=\"sr-pt\">朝ランニング 5km 達成。続けて 30 日目です</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#0ea5e9\">伊</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>伊藤 大輔</b><span>7日前</span></div><div class=\"sr-pt\">おすすめの技術書あれば教えてください</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#ec4899\">渡</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>渡辺 結衣</b><span>8日前</span></div><div class=\"sr-pt\">手作りのパン、やっと上手に焼けた</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#64748b\">中</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>中村 翔</b><span>9日前</span></div><div class=\"sr-pt\">雨の日はカフェで作業がはかどる</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#14b8a6\">小</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>小林 葵</b><span>10日前</span></div><div class=\"sr-pt\">旅行の計画中。京都でおすすめの場所ある？</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#f97316\">加</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>加藤 蓮</b><span>11日前</span></div><div class=\"sr-pt\">デザインの勉強を始めました。毎日 1 枚模写する</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#db2777\">吉</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>吉田 陽菜</b><span>12日前</span></div><div class=\"sr-pt\">近所の公園の桜が咲き始めてた</div></div></div>","<div class=\"sr-po\"><span class=\"sr-pa\" style=\"background:#6366f1\">山</span><div class=\"sr-pb\"><div class=\"sr-pn\"><b>山本 悠真</b><span>13日前</span></div><div class=\"sr-pt\">在宅勤務の椅子を変えたら腰が楽になった</div></div></div>"];
+const fitO = root.querySelector('.sr-fit-o'), fitI = fitO.firstElementChild;
+let S = 1;
+const refit = () => {
+  const W = fitI.offsetWidth, H = fitI.offsetHeight, a = root.clientWidth || W;
+  S = Math.min(1, a / W);
+  fitI.style.transform = S < 1 ? 'scale(' + S + ')' : '';
+  fitO.style.width = W * S + 'px';
+  fitO.style.height = H * S + 'px';
+};
+refit();
+if (window.ResizeObserver) { const ro = new ResizeObserver(refit); ro.observe(root); ro.observe(fitI); }
+
+const sc = root.querySelector('.sr-sc'), ls = root.querySelector('.sr-ls'), more = root.querySelector('.sr-more'), end = root.querySelector('.sr-end');
+let count = 12, loading = false;
+sc.addEventListener('scroll', () => {
+  if (loading || count >= 36) return;
+  if (sc.scrollTop >= sc.scrollHeight - sc.clientHeight - 80) {
+    loading = true;
+    setTimeout(() => {
+      ls.insertAdjacentHTML('beforeend', POSTS.slice(count, count + 12).join(''));
+      count += 12; loading = false;
+      if (count >= 36) { more.hidden = true; end.hidden = false; }
+    }, 900);
+  }
+}, { passive: true });})(document.getElementById("wd-infinite_scroll"),window.UZ);</script></div>
+    <a class="foot" href="https://apps.apple.com/jp/app/id6808997175" rel="noopener"><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i><span>本物の手触りは iOS アプリで</span><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a>
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Load More</span><span class="tag">Endless Scroll</span><span class="tag">Lazy Loading</span><span class="tag">Paging</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="na">該当なし（M3 に無い）</dd></div><div><dt>Material 2</dt><dd class="na">該当なし（M2 に無い）</dd></div><div><dt>Android (Compose)</dt><dd class="">LazyColumn + LazyListState（末尾検知）/ Paging 3</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（iOS 標準には無い）</dd></div><div><dt>SwiftUI</dt><dd class="">List + .onAppear（末尾で読み込み）</dd></div><div><dt>Web</dt><dd class="">IntersectionObserver / Feed（WAI-ARIA パターン）</dd></div><div><dt>Flutter</dt><dd class="mono">ListView.builder + ScrollController / infinite_scroll_pagination</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>スクロール位置が末尾から一定距離に入ったら次ページを取得し、末尾にローディング行を出す。重複取得の防止と「これ以上ない」の表示が必要。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>SNS のフィード、検索結果、商品一覧など、件数が多い一覧。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/pull_to_refresh/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Pull to Refresh</a><a class="chip" href="/entry/skeleton/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Skeleton Screen</a><a class="chip" href="/entry/circular_progress/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Circular Progress Indicator</a><a class="chip" href="/entry/empty_state/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Empty State</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/feed/"><span class="ic s" style="--i:url(/assets/icons/scene-feed.png)"></span>フィード</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="フィードを Infinite Scroll にして。末尾の 200px 手前で次ページを取得し、末尾にスピナー行を出す。読み込み中の二重取得を防ぎ、最後まで来たら「以上です」を表示。" data-en="Make the feed Infinite Scroll: fetch the next page when within 200px of the end, show a spinner row at the bottom, guard against duplicate fetches, and show &quot;That's all&quot; at the end.">フィードを Infinite Scroll にして。末尾の 200px 手前で次ページを取得し、末尾にスピナー行を出す。読み込み中の二重取得を防ぎ、最後まで来たら「以上です」を表示。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Infinite Scroll (Pagination) / 無限スクロール（追加読み込み）
+
+- id: `infinite_scroll`  URL: https://uizukan.dev/entry/infinite_scroll/
+- 種別: アクション / Scrolling Behaviors
+- 別名: Load More, Endless Scroll, Lazy Loading, Paging
+- 呼び名: Material 3=該当なし（M3 に無い） / Material 2=該当なし（M2 に無い） / Android (Compose)=LazyColumn + LazyListState（末尾検知）/ Paging 3 / iOS (HIG)=該当なし（iOS 標準には無い） / SwiftUI=List + .onAppear（末尾で読み込み） / Web=IntersectionObserver / Feed（WAI-ARIA パターン） / Flutter=ListView.builder + ScrollController / infinite_scroll_pagination
+- Flutter: `ListView.builder + ScrollController / infinite_scroll_pagination`
+- 関連: pull_to_refresh, skeleton, circular_progress, empty_state
+
+**説明**: スクロール位置が末尾から一定距離に入ったら次ページを取得し、末尾にローディング行を出す。重複取得の防止と「これ以上ない」の表示が必要。
+
+**使いどころ**: SNS のフィード、検索結果、商品一覧など、件数が多い一覧。
+
+**AI への伝え方（日本語）**: フィードを Infinite Scroll にして。末尾の 200px 手前で次ページを取得し、末尾にスピナー行を出す。読み込み中の二重取得を防ぎ、最後まで来たら「以上です」を表示。
+
+**Prompt (English)**: Make the feed Infinite Scroll: fetch the next page when within 200px of the end, show a spinner row at the bottom, guard against duplicate fetches, and show "That's all" at the end.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

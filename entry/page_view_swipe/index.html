@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Swipe Between Pages（横スワイプでページ送り） — UI図鑑</title>
+<meta name="description" content="指で横にスワイプすると、ページが 1 枚ずつ切り替わる。">
+<link rel="canonical" href="https://uizukan.dev/entry/page_view_swipe/">
+<meta property="og:title" content="Swipe Between Pages（横スワイプでページ送り） — UI図鑑">
+<meta property="og:description" content="指で横にスワイプすると、ページが 1 枚ずつ切り替わる。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/page_view_swipe/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/page_view_swipe.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/actions/">アクション</a><span class="sep">/</span><span class="here">Swipe Between Pages</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Transitions · 05 · アクション</div>
+  <h1 class="display" style="margin-top:10px">Swipe Between Pages</h1>
+  <p class="lead" style="margin-top:6px">横スワイプでページ送り</p>
+  <div class="demo-plate">
+    <div class="head"><code>page_view_swipe</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-page_view_swipe" role="group" aria-label="Swipe Between Pages のデモ"><div class="tr-pv"><div class="tr-vp"><div class="tr-tr"><div class="tr-pp"><div class="tr-cd">ようこそ</div></div><div class="tr-pp"><div class="tr-cd">部品の名前がわかる</div></div><div class="tr-pp"><div class="tr-cd">AI に伝えられる</div></div></div></div><div class="tr-ctl"><button class="m-btn m-text tr-sk">スキップ</button><div class="tr-dots"><i class="tr-on"></i><i></i><i></i></div><button class="m-btn m-filled tr-nx">次へ</button></div></div></div><style>#wd-page_view_swipe .tr-pv{width:300px;max-width:100%}
+#wd-page_view_swipe .tr-vp{height:150px;overflow:hidden;touch-action:pan-y;cursor:grab}
+#wd-page_view_swipe .tr-tr{display:flex;height:100%;will-change:transform}
+#wd-page_view_swipe .tr-pp{flex:none;width:100%;height:100%;padding:0 6px}
+#wd-page_view_swipe .tr-cd{height:100%;border-radius:16px;background:var(--m-primary-c);display:flex;align-items:center;justify-content:center;font-size:16px;line-height:1.3;color:var(--ink)}
+#wd-page_view_swipe .tr-ctl{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+#wd-page_view_swipe .tr-sk{min-width:64px}
+#wd-page_view_swipe .tr-dots{display:flex}
+#wd-page_view_swipe .tr-dots i{width:8px;height:8px;margin:3px;border-radius:50%;background:var(--rule)}
+#wd-page_view_swipe .tr-dots i.tr-on{background:var(--m-primary)}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";function cb(a,b,c,d){
+  const ev=(p1,p2,t)=>3*p1*(1-t)*(1-t)*t+3*p2*(1-t)*t*t+t*t*t;
+  return function(x){ if(x<=0)return 0; if(x>=1)return 1; let lo=0,hi=1;
+    for(let i=0;i<30;i++){const m=(lo+hi)/2; if(ev(a,c,m)<x)lo=m; else hi=m;} return ev(b,d,(lo+hi)/2); };
+}
+// Curves.fastEaseInToSlowEaseOut（ThreePointCubic）
+const G=(function(){
+  const mid=[.198,.541], A1=[.056,.024], B1=[.108,.3085], A2=[.3655,1], B2=[.5465,.989];
+  const c1=cb(A1[0]/mid[0],A1[1]/mid[1],B1[0]/mid[0],B1[1]/mid[1]);
+  const sx=1-mid[0], sy=1-mid[1];
+  const c2=cb((A2[0]-mid[0])/sx,(A2[1]-mid[1])/sy,(B2[0]-mid[0])/sx,(B2[1]-mid[1])/sy);
+  return t=>t<mid[0]?c1(t/mid[0])*mid[1]:c2((t-mid[0])/sx)*sy+mid[1];
+})();
+const L2E=cb(.35,.91,.33,.97), EIL=cb(.67,.03,.65,.09), EASE=cb(.25,.1,.25,1), FLSE=cb(.18,1,.04,1), FOSI=cb(.4,0,.2,1);
+function nav(fr,o){
+  const home=fr.querySelector('.tr-home'), bar=fr.querySelector('.tr-bar');
+  let page=null, v=0, raf=0, mode='fwd', anim=false;
+  function render(){
+    if(!page)return;
+    const lin=mode==='lin';
+    if(o.kind==='modal'){
+      const c=lin?v:(mode==='fwd'?L2E(v):1-L2E(1-v));
+      page.style.transform='translateY('+((1-c)*100)+'%)';
+    }else{
+      const c=lin?v:(mode==='fwd'?G(v):1-G(1-v));
+      const s=lin?v:(mode==='fwd'?L2E(v):EIL(v));
+      page.style.transform='translateX('+((1-c)*100)+'%)';
+      home.style.transform='translateX('+(-s*100/3)+'%)';
+      if(o.barrier)bar.style.opacity=EASE(v);
+      const sh=page.querySelector('.tr-sh'); if(sh)sh.style.opacity=lin?v:L2E(v);
+    }
+    if(o.onTick)o.onTick(v,mode);
+  }
+  function run(to,dur,m,curve,done){
+    cancelAnimationFrame(raf); anim=true; mode=m;
+    const from=v, t0=performance.now(), d=Math.max(1,dur);
+    const f=now=>{ const k=Math.min(1,(now-t0)/d); v=from+(to-from)*(curve?curve(k):k); render();
+      if(k<1)raf=requestAnimationFrame(f); else { anim=false; done&&done(); } };
+    raf=requestAnimationFrame(f);
+  }
+  function finishPop(){ const p=page; page=null; p.hidden=true; p.style.transform=''; home.style.transform=''; bar.style.opacity=0; home.inert=false; o.onDone&&o.onDone('pop',p); }
+  const api={
+    busy:()=>anim||drag!==null,
+    push(p){ if(api.busy()||page)return; page=p; v=0; p.hidden=false; home.inert=true; render();
+      o.onStart&&o.onStart('push',p);
+      run(1,o.dur,'fwd',null,()=>{ o.onDone&&o.onDone('push',p); }); },
+    pop(){ if(api.busy()||!page)return; o.onStart&&o.onStart('pop',page); run(0,o.dur,'rev',null,finishPop); },
+  };
+  // 左端 20px からのスワイプで戻る（Cupertino の戻るジェスチャー）
+  let drag=null;
+  if(o.kind!=='modal'){
+    fr.addEventListener('pointerdown',e=>{
+      if(!page||anim||e.button>0)return;
+      const r=page.getBoundingClientRect(); const sc=r.width/page.offsetWidth||1;
+      if((e.clientX-r.left)/sc>20)return;
+      drag={id:e.pointerId,x0:e.clientX,y0:e.clientY,on:false,w:r.width,hist:[]};
+    });
+    fr.addEventListener('pointermove',e=>{
+      if(!drag||e.pointerId!==drag.id)return;
+      const dx=e.clientX-drag.x0, dy=e.clientY-drag.y0;
+      if(!drag.on){ if(Math.abs(dx)<4&&Math.abs(dy)<4)return; if(Math.abs(dy)>Math.abs(dx)||dx<0){drag=null;return;} drag.on=true; try{fr.setPointerCapture(e.pointerId);}catch(_){} o.onStart&&o.onStart('gesture',page); }
+      mode='lin'; v=Math.max(0,Math.min(1,1-dx/drag.w)); render();
+      const now=performance.now(); drag.hist.push([now,e.clientX]); while(drag.hist.length>2&&now-drag.hist[0][0]>100)drag.hist.shift();
+      e.preventDefault();
+    });
+    const end=e=>{
+      if(!drag||e.pointerId!==drag.id)return; const d=drag; drag=null; if(!d.on)return;
+      let vel=0; if(d.hist.length>1){ const a=d.hist[0], b=d.hist[d.hist.length-1]; if(b[0]>a[0])vel=(b[1]-a[1])/(b[0]-a[0])*1000/d.w; }
+      const fwd=Math.abs(vel)>=1?vel<=0:v>.5;
+      if(fwd)run(1,Math.min(Math.floor(800*(1-v)),300),'lin',FLSE,()=>{mode='fwd'; o.onDone&&o.onDone('stay',page);});
+      else run(0,Math.floor(800*v),'lin',FLSE,finishPop);
+    };
+    fr.addEventListener('pointerup',end); fr.addEventListener('pointercancel',end);
+  }
+  return api;
+}
+const vp=root.querySelector('.tr-vp'), tr=root.querySelector('.tr-tr'), dots=root.querySelectorAll('.tr-dots i'), nx=root.querySelector('.tr-nx');
+const N=3, EO=cb(0,0,.58,1);
+let pos=0, page=0, raf=0, drag=null;
+const W=()=>vp.clientWidth||1;
+function set(p){
+  pos=p; tr.style.transform='translateX('+(-p)+'px)';
+  const pg=Math.max(0,Math.min(N-1,Math.round(p/W())));
+  if(pg!==page){ page=pg; dots.forEach((d,i)=>d.classList.toggle('tr-on',i===page)); nx.textContent=page<N-1?'次へ':'はじめる'; }
+}
+function animTo(to,dur){ cancelAnimationFrame(raf); const from=pos,t0=performance.now();
+  const f=now=>{ const k=Math.min(1,(now-t0)/dur); set(from+(to-from)*EO(k)); if(k<1)raf=requestAnimationFrame(f); }; raf=requestAnimationFrame(f); }
+// iOS の PageScrollPhysics（ばね：質量 0.5・硬さ 100・減衰比 1.1）で近いページへ収める
+function spring(to,v0){ cancelAnimationFrame(raf); let x=pos,v=v0,last=performance.now();
+  const m=.5,k=100,c=1.1*2*Math.sqrt(m*k);
+  const f=now=>{ let dt=Math.min(.032,(now-last)/1000); last=now;
+    while(dt>0){ const h=Math.min(dt,.004); const a=(-k*(x-to)-c*v)/m; v+=a*h; x+=v*h; dt-=h; }
+    if(Math.abs(x-to)<.5&&Math.abs(v)<20){ set(to); return; } set(x); raf=requestAnimationFrame(f); };
+  raf=requestAnimationFrame(f); }
+const jump=i=>{ cancelAnimationFrame(raf); set(i*W()); };
+vp.addEventListener('pointerdown',e=>{ if(e.button>0)return; cancelAnimationFrame(raf); drag={id:e.pointerId,x:e.clientX,y:e.clientY,p:pos,on:false,hist:[[performance.now(),e.clientX]]}; });
+vp.addEventListener('pointermove',e=>{
+  if(!drag||e.pointerId!==drag.id)return;
+  const dx=e.clientX-drag.x, dy=e.clientY-drag.y;
+  if(!drag.on){ if(Math.abs(dx)<6&&Math.abs(dy)<6)return; if(Math.abs(dy)>Math.abs(dx)){drag=null;return;} drag.on=true; drag.x=e.clientX; try{vp.setPointerCapture(e.pointerId);}catch(_){} return; }
+  // 端の外は引っぱるほど重くなる（BouncingScrollPhysics）
+  const max=(N-1)*W(); let delta=drag.lx===undefined?e.clientX-drag.x:e.clientX-drag.lx; drag.lx=e.clientX;
+  let p=pos-delta;
+  if(p<0||p>max){ const over=p<0?-p:p-max; const fr=.52*Math.pow(1-Math.min(1,over/W()),2); p=pos-delta*fr; }
+  set(p);
+  const now=performance.now(); drag.hist.push([now,e.clientX]); while(drag.hist.length>2&&now-drag.hist[0][0]>100)drag.hist.shift();
+});
+const end=e=>{
+  if(!drag||e.pointerId!==drag.id)return; const d=drag; drag=null; if(!d.on)return;
+  let vel=0; const a=d.hist[0], b=d.hist[d.hist.length-1]; if(b[0]>a[0])vel=-(b[1]-a[1])/(b[0]-a[0])*1000;
+  if(Math.abs(vel)<50)vel=0;
+  let pg=pos/W(); if(vel<0)pg-=.5; else if(vel>0)pg+=.5;
+  pg=Math.max(0,Math.min(N-1,Math.round(pg)));
+  spring(pg*W(),vel);
+};
+vp.addEventListener('pointerup',end); vp.addEventListener('pointercancel',end);
+root.querySelector('.tr-sk').addEventListener('click',()=>jump(N-1));
+nx.addEventListener('click',()=>{ if(page<N-1)animTo((page+1)*W(),300); else jump(0); });
+addEventListener('resize',()=>set(page*W()));})(document.getElementById("wd-page_view_swipe"),window.UZ);</script></div>
+    <a class="foot" href="https://apps.apple.com/jp/app/id6808997175" rel="noopener"><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i><span>本物の手触りは iOS アプリで</span><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a>
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Paging</span><span class="tag">Horizontal Paging</span><span class="tag">Swipe Navigation</span><span class="tag">Pager</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Lateral（Tabs の swipe）</dd></div><div><dt>Material 2</dt><dd class="">Lateral navigation</dd></div><div><dt>Android (Compose)</dt><dd class="">HorizontalPager</dd></div><div><dt>iOS (HIG)</dt><dd class="">Page controls（swipe between pages）</dd></div><div><dt>SwiftUI</dt><dd class="">TabView + .tabViewStyle(.page)</dd></div><div><dt>Web</dt><dd class="">CSS scroll-snap（Carousel）</dd></div><div><dt>Flutter</dt><dd class="mono">PageView + PageController</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>ページ単位で<a class="term" href="/glossary/snap/">吸着</a>（<a class="term" href="/glossary/snap/">snap</a>）する横スクロール。オンボーディング、<a class="term" href="/glossary/tab/">タブ</a>内容、写真ビューアの基本。ドットや Tab と連動させる。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>オンボーディング、ストーリー形式のコンテンツ、Tab の内容切替。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/page_indicator/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Page Indicator</a><a class="chip" href="/entry/carousel/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Carousel</a><a class="chip" href="/entry/tab_bar/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Tabs</a><a class="chip" href="/entry/snap_scrolling/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Snap Scrolling</a><a class="chip" href="/glossary/snap/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>スナップ</a><a class="chip" href="/glossary/tab/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>タブ</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/onboarding/"><span class="ic s" style="--i:url(/assets/icons/scene-onboarding.png)"></span>オンボーディング</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="オンボーディングを 3 ページの横スワイプ（PageView）にして。最後のページだけ「はじめる」ボタン、それ以外は「次へ」でプログラム的にページ送り。" data-en="Build onboarding as 3 horizontally swipeable pages (PageView). Show &quot;Get started&quot; only on the last page; otherwise a &quot;Next&quot; button that advances programmatically.">オンボーディングを 3 ページの横スワイプ（PageView）にして。最後のページだけ「はじめる」ボタン、それ以外は「次へ」でプログラム的にページ送り。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Swipe Between Pages / 横スワイプでページ送り
+
+- id: `page_view_swipe`  URL: https://uizukan.dev/entry/page_view_swipe/
+- 種別: アクション / Transitions
+- 別名: Paging, Horizontal Paging, Swipe Navigation, Pager
+- 呼び名: Material 3=Lateral（Tabs の swipe） / Material 2=Lateral navigation / Android (Compose)=HorizontalPager / iOS (HIG)=Page controls（swipe between pages） / SwiftUI=TabView + .tabViewStyle(.page) / Web=CSS scroll-snap（Carousel） / Flutter=PageView + PageController
+- Flutter: `PageView + PageController`
+- 関連: page_indicator, carousel, tab_bar, snap_scrolling
+
+**説明**: ページ単位で吸着（snap）する横スクロール。オンボーディング、タブ内容、写真ビューアの基本。ドットや Tab と連動させる。
+
+**使いどころ**: オンボーディング、ストーリー形式のコンテンツ、Tab の内容切替。
+
+**AI への伝え方（日本語）**: オンボーディングを 3 ページの横スワイプ（PageView）にして。最後のページだけ「はじめる」ボタン、それ以外は「次へ」でプログラム的にページ送り。
+
+**Prompt (English)**: Build onboarding as 3 horizontally swipeable pages (PageView). Show "Get started" only on the last page; otherwise a "Next" button that advances programmatically.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

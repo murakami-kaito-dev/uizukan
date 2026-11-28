@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Icon Button（アイコンボタン） — UI図鑑</title>
+<meta name="description" content="アイコンだけのボタン。ON/OFF で見た目が変わるトグル型もある。">
+<link rel="canonical" href="https://uizukan.dev/entry/icon_button/">
+<meta property="og:title" content="Icon Button（アイコンボタン） — UI図鑑">
+<meta property="og:description" content="アイコンだけのボタン。ON/OFF で見た目が変わるトグル型もある。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/icon_button/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/icon_button.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Icon Button</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Buttons · 06 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Icon Button</h1>
+  <p class="lead" style="margin-top:6px">アイコンボタン</p>
+  <div class="demo-plate">
+    <div class="head"><code>icon_button</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-icon_button" role="group" aria-label="Icon Button のデモ"><div class="b-row"><button class="ibt" data-tip="検索" aria-label="検索"><span class="v"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e567.png);width:24px;height:24px" aria-hidden="true"></i></span></button><button class="ibt" data-tip="共有" aria-label="共有"><span class="v tonal"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e593.png);width:24px;height:24px" aria-hidden="true"></i></span></button><button class="ibt" data-tip="その他" aria-label="その他"><span class="v outl"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e404.png);width:24px;height:24px" aria-hidden="true"></i></span></button><button class="ibt b-fav" data-tip="お気に入り" aria-label="お気に入り" aria-pressed="false"><span class="v"><i class="mi off" style="--i:url(/assets/icons/mi-materialicons-e25c.png);width:24px;height:24px" aria-hidden="true"></i><i class="mi b-on" style="--i:url(/assets/icons/mi-materialicons-e25b.png);width:24px;height:24px" aria-hidden="true"></i></span></button><div class="tip" role="tooltip"></div></div></div><style>#wd-icon_button .b-row{display:flex;position:relative}
+#wd-icon_button .ibt{width:48px;height:48px;display:flex;align-items:center;justify-content:center;color:var(--ink);-webkit-touch-callout:none}
+#wd-icon_button .v{position:relative;width:40px;height:40px;border-radius:999px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+#wd-icon_button .v::after{content:"";position:absolute;inset:0;border-radius:inherit;background:currentColor;opacity:0;transition:opacity .15s;pointer-events:none}
+@media (hover:hover){#wd-icon_button .ibt:hover .v::after{opacity:.08}}
+#wd-icon_button .ibt:active .v::after{opacity:.1}
+#wd-icon_button .tonal{background:var(--m-primary-c);color:var(--m-on-primary-c)}
+#wd-icon_button .outl{border:1px solid var(--edge)}
+#wd-icon_button .b-fav .b-on{display:none;color:#F44336}
+#wd-icon_button .b-fav.sel .b-on{display:inline-block}
+#wd-icon_button .b-fav.sel .off{display:none}
+#wd-icon_button .tip{position:absolute;top:48px;left:0;transform:translateX(-50%);min-height:32px;padding:4px 16px;display:flex;align-items:center;background:var(--ink);color:var(--surface);border-radius:6px;font-size:12px;font-weight:500;line-height:1.2;letter-spacing:.2px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity 75ms;z-index:2}
+#wd-icon_button .tip.show{opacity:1;transition-duration:150ms}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const tip = root.querySelector('.tip');
+let hideT = 0, lpT = 0, longPressed = false;
+function show(b) {
+  clearTimeout(hideT);
+  tip.textContent = b.dataset.tip;
+  tip.style.left = (b.offsetLeft + b.offsetWidth / 2) + 'px';
+  tip.classList.add('show');
+}
+function hide(ms) {
+  clearTimeout(hideT);
+  hideT = setTimeout(() => tip.classList.remove('show'), ms);
+}
+root.querySelectorAll('.ibt').forEach((b) => {
+  b.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') show(b); });
+  b.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') hide(100); });
+  b.addEventListener('pointerdown', (e) => {
+    if (e.pointerType === 'mouse') return;
+    longPressed = false;
+    clearTimeout(lpT);
+    lpT = setTimeout(() => { longPressed = true; show(b); }, 500);
+  });
+  const end = () => { clearTimeout(lpT); if (longPressed) hide(1500); };
+  b.addEventListener('pointerup', end);
+  b.addEventListener('pointercancel', end);
+  b.addEventListener('contextmenu', (e) => e.preventDefault());
+});
+const fav = root.querySelector('.b-fav');
+fav.addEventListener('click', () => {
+  // 長押しでツールチップを出したときは、押したことにしない（Flutter と同じ）
+  if (longPressed) { longPressed = false; return; }
+  const on = !fav.classList.contains('sel');
+  fav.classList.toggle('sel', on);
+  fav.setAttribute('aria-pressed', String(on));
+});})(document.getElementById("wd-icon_button"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Toggle Icon Button</span><span class="tag">Icon-only Button</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Icon button（Standard / Filled / Filled tonal / Outlined）</dd></div><div><dt>Material 2</dt><dd class="">Icon button</dd></div><div><dt>Android (Compose)</dt><dd class="">IconButton / FilledIconButton / FilledTonalIconButton / OutlinedIconButton</dd></div><div><dt>iOS (HIG)</dt><dd class="">Button（SF Symbol のみ。専用名は無い）</dd></div><div><dt>SwiftUI</dt><dd class="">Button { Image(systemName:) } / Label + .labelStyle(.iconOnly)</dd></div><div><dt>Web</dt><dd class="">&lt;button aria-label="…"&gt;（Icon button）</dd></div><div><dt>Flutter</dt><dd class="mono">IconButton / IconButton.filled / IconButton.filledTonal / IconButton.outlined</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>文字のないアイコンだけのボタン。App Bar の右上や、カードの「お気に入り」などに使われる。<a class="term" href="/glossary/material3/">Material 3</a> では standard / filled / tonal / outlined の4段階と、<a class="term" href="/glossary/states/">選択状態</a>を持つ <a class="term" href="/glossary/toggle/">toggle</a> 型がある。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>意味がアイコンで十分伝わる操作（検索・共有・お気に入り・その他メニュー）。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/fab/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Floating Action Button</a><a class="chip" href="/entry/like_burst/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Like Burst (Heart Pop)</a><a class="chip" href="/entry/app_bar/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Top App Bar</a><a class="chip" href="/glossary/material3/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>Material 3</a><a class="chip" href="/glossary/states/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>状態（ステート）</a><a class="chip" href="/glossary/toggle/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>トグル</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/feed/"><span class="ic s" style="--i:url(/assets/icons/scene-feed.png)"></span>フィード</a><a class="chip" href="/scenes/product/"><span class="ic s" style="--i:url(/assets/icons/scene-product.png)"></span>商品と購入</a><a class="chip" href="/scenes/chat/"><span class="ic s" style="--i:url(/assets/icons/scene-chat.png)"></span>チャット</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="ハートのトグル型 Icon Button を作って。未選択は Icons.favorite_border、選択中は Icons.favorite を赤で表示。" data-en="Create a toggle Icon Button with a heart: Icons.favorite_border when unselected, Icons.favorite in red when selected.">ハートのトグル型 Icon Button を作って。未選択は Icons.favorite_border、選択中は Icons.favorite を赤で表示。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Icon Button / アイコンボタン
+
+- id: `icon_button`  URL: https://uizukan.dev/entry/icon_button/
+- 種別: 表示 / Buttons
+- 別名: Toggle Icon Button, Icon-only Button
+- 呼び名: Material 3=Icon button（Standard / Filled / Filled tonal / Outlined） / Material 2=Icon button / Android (Compose)=IconButton / FilledIconButton / FilledTonalIconButton / OutlinedIconButton / iOS (HIG)=Button（SF Symbol のみ。専用名は無い） / SwiftUI=Button { Image(systemName:) } / Label + .labelStyle(.iconOnly) / Web=&lt;button aria-label="…"&gt;（Icon button） / Flutter=IconButton / IconButton.filled / IconButton.filledTonal / IconButton.outlined
+- Flutter: `IconButton / IconButton.filled / IconButton.filledTonal / IconButton.outlined`
+- 関連: fab, like_burst, app_bar
+
+**説明**: 文字のないアイコンだけのボタン。App Bar の右上や、カードの「お気に入り」などに使われる。Material 3 では standard / filled / tonal / outlined の4段階と、選択状態を持つ toggle 型がある。
+
+**使いどころ**: 意味がアイコンで十分伝わる操作（検索・共有・お気に入り・その他メニュー）。
+
+**AI への伝え方（日本語）**: ハートのトグル型 Icon Button を作って。未選択は Icons.favorite_border、選択中は Icons.favorite を赤で表示。
+
+**Prompt (English)**: Create a toggle Icon Button with a heart: Icons.favorite_border when unselected, Icons.favorite in red when selected.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

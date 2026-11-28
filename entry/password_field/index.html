@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Password Field with Visibility Toggle（表示切替付きパスワード欄） — UI図鑑</title>
+<meta name="description" content="入力を●で隠し、目のアイコンで表示／非表示を切り替えるパスワード欄。">
+<link rel="canonical" href="https://uizukan.dev/entry/password_field/">
+<meta property="og:title" content="Password Field with Visibility Toggle（表示切替付きパスワード欄） — UI図鑑">
+<meta property="og:description" content="入力を●で隠し、目のアイコンで表示／非表示を切り替えるパスワード欄。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/password_field/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/password_field.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Password Field with Visibility Toggle</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Inputs &amp; Selection · 03 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Password Field with Visibility Toggle</h1>
+  <p class="lead" style="margin-top:6px">表示切替付きパスワード欄</p>
+  <div class="demo-plate">
+    <div class="head"><code>password_field</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-password_field" role="group" aria-label="Password Field with Visibility Toggle のデモ"><div class="in-col"><label class="in-tf in-fill"><span class="in-tf-pre"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e3b1.png);width:24px;height:24px" aria-hidden="true"></i></span><span class="in-tf-iw"><input type="password" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="パスワード"></span><span class="in-tf-lab" style="--lx:48px">パスワード</span><button type="button" class="in-tf-suf in-eye" aria-label="パスワードを表示"><span class="in-off"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e6be.png);width:24px;height:24px" aria-hidden="true"></i></span><span class="in-on" hidden><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e6bd.png);width:24px;height:24px" aria-hidden="true"></i></span></button><fieldset aria-hidden="true"><legend><span>パスワード</span></legend></fieldset></label></div></div><style>#wd-password_field [hidden]{display:none!important}
+#wd-password_field .in-tf{--r:6px;--bc:var(--ink3);--bw:1px;--lx:14px;position:relative;display:flex;align-items:center;width:100%;height:52px;border-radius:var(--r);cursor:text;font-size:15px}
+#wd-password_field .in-tf.in-fill{background:var(--surface)}
+#wd-password_field .in-tf fieldset{position:absolute;left:0;right:0;bottom:0;top:-5px;margin:0;padding:0 0 0 calc(10px - var(--bw));border:var(--bw) solid var(--bc);border-radius:var(--r);pointer-events:none;min-width:0;transition:border-color .167s}
+#wd-password_field .in-tf legend{display:block;float:none;width:auto;max-width:.01px;height:11px;padding:0;font-size:9.75px;line-height:11px;visibility:hidden;white-space:nowrap;overflow:hidden;transition:max-width 50ms}
+#wd-password_field .in-tf legend span{display:inline-block;padding:0 4px}
+#wd-password_field .in-tf.in-up legend{max-width:100%;transition:max-width 100ms 50ms}
+#wd-password_field .in-tf.in-f{--bc:var(--accent);--bw:1.5px}
+#wd-password_field .in-tf.in-e{--bc:var(--danger)}
+#wd-password_field .in-tf-lab{position:absolute;left:var(--lx);top:50%;transform:translateY(-50%);transform-origin:0 50%;font-size:13px;line-height:1;color:var(--ink2);white-space:nowrap;pointer-events:none;transition:left .167s cubic-bezier(.4,0,.2,1),top .167s cubic-bezier(.4,0,.2,1),transform .167s cubic-bezier(.4,0,.2,1)}
+#wd-password_field .in-tf.in-up .in-tf-lab{left:14px;top:0;transform:translateY(-50%) scale(.75)}
+#wd-password_field .in-tf-pre,#wd-password_field .in-tf-suf{flex:none;width:48px;height:48px;display:flex;align-items:center;justify-content:center;color:var(--ink);border-radius:999px}
+@media (hover:hover){#wd-password_field button.in-tf-suf:hover{background:color-mix(in srgb,var(--ink) 8%,transparent)}}
+#wd-password_field .in-tf-iw{position:relative;flex:1;min-width:0;align-self:stretch}
+#wd-password_field .in-tf-iw.in-ps{margin-left:14px}
+#wd-password_field .in-tf-iw.in-pe{margin-right:14px}
+#wd-password_field .in-tf-iw input{position:absolute;left:0;top:0;width:106.667%;height:100%;transform:scale(.9375);transform-origin:0 50%;border:0;outline:0;background:transparent;padding:0;margin:0;font:inherit;font-size:16px;line-height:normal;color:var(--ink);caret-color:var(--accent);-webkit-user-select:text;user-select:text;-webkit-appearance:none;appearance:none;border-radius:0;text-overflow:ellipsis}
+#wd-password_field .in-tf-iw input::placeholder{color:transparent;opacity:1;transition:color .167s}
+#wd-password_field .in-tf.in-f .in-tf-iw input::placeholder{color:var(--ink3)}
+#wd-password_field .in-tf-sub{padding:4px 14px 0;font-size:13px;line-height:1.55;color:var(--ink2)}
+#wd-password_field .in-tf-sub.in-err{color:var(--danger);animation:inp-sub .167s cubic-bezier(.4,0,.2,1)}
+@keyframes inp-sub{from{opacity:0;transform:translateY(-25%)}}
+#wd-password_field .in-col{width:100%;max-width:300px}
+#wd-password_field .in-eye span{display:flex}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";function bindTf(tf){
+  const i=tf.querySelector('input');
+  const up=function(){tf.classList.toggle('in-up',document.activeElement===i||i.value!=='');};
+  i.addEventListener('focus',function(){tf.classList.add('in-f');up();});
+  i.addEventListener('blur',function(){tf.classList.remove('in-f');up();});
+  i.addEventListener('input',up);
+  tf.querySelectorAll('button').forEach(function(b){b.addEventListener('mousedown',function(e){e.preventDefault();});});
+  up();
+  return {input:i,up:up};
+}
+const t=bindTf(root.querySelector('.in-tf')),eye=root.querySelector('.in-eye');
+let hidden=true;
+eye.addEventListener('click',function(e){
+  e.preventDefault();
+  hidden=!hidden;
+  t.input.type=hidden?'password':'text';
+  eye.querySelector('.in-off').hidden=!hidden;eye.querySelector('.in-on').hidden=hidden;
+  eye.setAttribute('aria-label',hidden?'パスワードを表示':'パスワードを隠す');
+});})(document.getElementById("wd-password_field"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Obscured Text Field</span><span class="tag">Secure Text Field</span><span class="tag">Show/Hide Password</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="na">該当なし（Text field の trailing icon で表現）</dd></div><div><dt>Material 2</dt><dd class="na">該当なし（Text field の trailing icon で表現）</dd></div><div><dt>Android (Compose)</dt><dd class="">TextField + PasswordVisualTransformation</dd></div><div><dt>iOS (HIG)</dt><dd class="">Text fields（Secure text field）</dd></div><div><dt>SwiftUI</dt><dd class="">SecureField（表示切替は TextField と入れ替え）</dd></div><div><dt>Web</dt><dd class="">&lt;input type="password"&gt;</dd></div><div><dt>Flutter</dt><dd class="mono">TextField(obscureText:) + suffixIcon</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>obscureText で文字を隠した入力欄。末尾（suffix）の目アイコンで一時的に平文表示できる。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>ログイン・登録・パスワード変更。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/text_field_outlined/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Outlined Text Field</a><a class="chip" href="/entry/icon_button/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Icon Button</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/login/"><span class="ic s" style="--i:url(/assets/icons/scene-login.png)"></span>ログイン</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="パスワード入力欄を作って。●で隠し、右端の目のアイコン（visibility / visibility_off）で表示・非表示を切り替えられるように。" data-en="Create a password field that masks input with dots and has an eye icon (visibility / visibility_off) at the trailing edge to toggle visibility.">パスワード入力欄を作って。●で隠し、右端の目のアイコン（visibility / visibility_off）で表示・非表示を切り替えられるように。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Password Field with Visibility Toggle / 表示切替付きパスワード欄
+
+- id: `password_field`  URL: https://uizukan.dev/entry/password_field/
+- 種別: 表示 / Inputs &amp; Selection
+- 別名: Obscured Text Field, Secure Text Field, Show/Hide Password
+- 呼び名: Material 3=該当なし（Text field の trailing icon で表現） / Material 2=該当なし（Text field の trailing icon で表現） / Android (Compose)=TextField + PasswordVisualTransformation / iOS (HIG)=Text fields（Secure text field） / SwiftUI=SecureField（表示切替は TextField と入れ替え） / Web=&lt;input type="password"&gt; / Flutter=TextField(obscureText:) + suffixIcon
+- Flutter: `TextField(obscureText:) + suffixIcon`
+- 関連: text_field_outlined, icon_button
+
+**説明**: obscureText で文字を隠した入力欄。末尾（suffix）の目アイコンで一時的に平文表示できる。
+
+**使いどころ**: ログイン・登録・パスワード変更。
+
+**AI への伝え方（日本語）**: パスワード入力欄を作って。●で隠し、右端の目のアイコン（visibility / visibility_off）で表示・非表示を切り替えられるように。
+
+**Prompt (English)**: Create a password field that masks input with dots and has an eye icon (visibility / visibility_off) at the trailing edge to toggle visibility.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

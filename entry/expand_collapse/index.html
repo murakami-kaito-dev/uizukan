@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Expand / Collapse（展開・折りたたみアニメーション） — UI図鑑</title>
+<meta name="description" content="「もっと見る」で下に伸びて内容が現れ、もう一度で縮む。">
+<link rel="canonical" href="https://uizukan.dev/entry/expand_collapse/">
+<meta property="og:title" content="Expand / Collapse（展開・折りたたみアニメーション） — UI図鑑">
+<meta property="og:description" content="「もっと見る」で下に伸びて内容が現れ、もう一度で縮む。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/expand_collapse/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/expand_collapse.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/actions/">アクション</a><span class="sep">/</span><span class="here">Expand / Collapse</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Motion &amp; Micro-interactions · 04 · アクション</div>
+  <h1 class="display" style="margin-top:10px">Expand / Collapse</h1>
+  <p class="lead" style="margin-top:6px">展開・折りたたみアニメーション</p>
+  <div class="demo-plate">
+    <div class="head"><code>expand_collapse</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-expand_collapse" role="group" aria-label="Expand / Collapse のデモ"><div class="mo-ex"><div class="mo-cl"><p class="mo-tx mo-lc">UI図鑑は、UI 部品と振る舞いの「名前」がわかる図鑑です。名前がわかれば、AI に正確に伝えられます。曖昧な「浮いてるボタン」ではなく「Elevated Button」と言えるようになります。さらに各項目には、そのまま Claude に貼れるプロンプトが付いています。</p></div><button class="m-btn m-text mo-tb" aria-expanded="false"><i class="mi mo-ar" style="--i:url(/assets/icons/mi-materialicons-e246.png);width:18px;height:18px" aria-hidden="true"></i><span>もっと見る</span></button></div></div><style>#wd-expand_collapse .mo-ex{width:300px;max-width:100%;display:flex;flex-direction:column;align-items:flex-start}
+#wd-expand_collapse .mo-cl{overflow:hidden;width:100%}
+#wd-expand_collapse .mo-tx{margin:0;font-size:15px;line-height:1.65;color:var(--ink)}
+#wd-expand_collapse .mo-lc{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+#wd-expand_collapse .mo-tb{padding:8px 16px 8px 12px}
+#wd-expand_collapse .mo-ar{transition:transform .25s linear}
+#wd-expand_collapse .mo-tb[aria-expanded="true"] .mo-ar{transform:rotate(180deg)}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const cl=root.querySelector('.mo-cl'), tx=root.querySelector('.mo-tx'), tb=root.querySelector('.mo-tb'), lbl=tb.querySelector('span');
+let open=false, an=null;
+tb.addEventListener('click',()=>{
+  const from=cl.getBoundingClientRect().height;
+  if(an){an.cancel(); an=null;}
+  open=!open; tx.classList.toggle('mo-lc',!open);
+  tb.setAttribute('aria-expanded',String(open)); lbl.textContent=open?'閉じる':'もっと見る';
+  const to=cl.getBoundingClientRect().height;
+  an=cl.animate([{height:from+'px'},{height:to+'px'}],{duration:250,easing:'cubic-bezier(.42,0,.58,1)'});
+  an.onfinish=()=>{an=null;};
+});})(document.getElementById("wd-expand_collapse"),window.UZ);</script></div>
+    <a class="foot" href="https://apps.apple.com/jp/app/id6808997175" rel="noopener"><i class="ic s" style="--i:url(/assets/icons/vibration.png)" aria-hidden="true"></i><span>本物の手触りは iOS アプリで</span><i class="ic s" style="--i:url(/assets/icons/open.png)" aria-hidden="true"></i></a>
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Animated Size</span><span class="tag">Reveal</span><span class="tag">Disclosure Animation</span><span class="tag">Accordion Animation</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="na">該当なし（Motion に個別名は無い）</dd></div><div><dt>Material 2</dt><dd class="na">該当なし（M2 に無い）</dd></div><div><dt>Android (Compose)</dt><dd class="">AnimatedVisibility / Modifier.animateContentSize</dd></div><div><dt>iOS (HIG)</dt><dd class="">Disclosure controls</dd></div><div><dt>SwiftUI</dt><dd class="">DisclosureGroup / withAnimation</dd></div><div><dt>Web</dt><dd class="">&lt;details&gt; / CSS grid-template-rows の transition</dd></div><div><dt>Flutter</dt><dd class="mono">AnimatedSize / AnimatedCrossFade</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>サイズの変化を<a class="term" href="/glossary/interpolate/">補間</a>して、内容が滑らかに現れる／消える動き。矢印アイコンの回転を添えると状態が伝わる。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>「もっと見る」、詳細設定の開閉、FAQ、フィルタパネル。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/expansion_tile/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Accordion</a><a class="chip" href="/entry/crossfade/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Cross-fade Switch</a><a class="chip" href="/glossary/interpolate/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>補間</a></div></section>
+  
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="説明文を 3 行で省略し、「もっと見る」をタップすると全文が下に滑らかに伸びて表示される Expand / Collapse にして。矢印も 180° 回転させて。" data-en="Truncate the description to 3 lines; tapping &quot;Read more&quot; smoothly expands to the full text. Rotate the chevron 180° as well.">説明文を 3 行で省略し、「もっと見る」をタップすると全文が下に滑らかに伸びて表示される Expand / Collapse にして。矢印も 180° 回転させて。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Expand / Collapse / 展開・折りたたみアニメーション
+
+- id: `expand_collapse`  URL: https://uizukan.dev/entry/expand_collapse/
+- 種別: アクション / Motion &amp; Micro-interactions
+- 別名: Animated Size, Reveal, Disclosure Animation, Accordion Animation
+- 呼び名: Material 3=該当なし（Motion に個別名は無い） / Material 2=該当なし（M2 に無い） / Android (Compose)=AnimatedVisibility / Modifier.animateContentSize / iOS (HIG)=Disclosure controls / SwiftUI=DisclosureGroup / withAnimation / Web=&lt;details&gt; / CSS grid-template-rows の transition / Flutter=AnimatedSize / AnimatedCrossFade
+- Flutter: `AnimatedSize / AnimatedCrossFade`
+- 関連: expansion_tile, crossfade
+
+**説明**: サイズの変化を補間して、内容が滑らかに現れる／消える動き。矢印アイコンの回転を添えると状態が伝わる。
+
+**使いどころ**: 「もっと見る」、詳細設定の開閉、FAQ、フィルタパネル。
+
+**AI への伝え方（日本語）**: 説明文を 3 行で省略し、「もっと見る」をタップすると全文が下に滑らかに伸びて表示される Expand / Collapse にして。矢印も 180° 回転させて。
+
+**Prompt (English)**: Truncate the description to 3 lines; tapping "Read more" smoothly expands to the full text. Rotate the chevron 180° as well.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

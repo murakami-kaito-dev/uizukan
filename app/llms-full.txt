@@ -1,0 +1,2092 @@
+# UI図鑑 (UI Zukan) — 全項目
+
+各項目は「標準英語名 / 日本語名」「別名」「プラットフォーム別の呼び名」「説明」「使いどころ」
+「AI への伝え方（日本語・英語）」で構成。
+
+# 表示 (Components)
+
+## Buttons / ボタン
+
+### Elevated Button / エレベーテッドボタン（浮き上がったボタン）
+
+- id: `elevated_button`  URL: https://uizukan.dev/entry/elevated_button/
+- 種別: 表示 / Buttons
+- 別名: Raised Button, Shadow Button, Z軸に浮いたボタン
+- 呼び名: Material 3=Elevated button / Material 2=Contained button（影付き。さらに旧称は Raised button） / Android (Compose)=ElevatedButton / iOS (HIG)=該当なし（Filled button に shadow を付けて表現） / SwiftUI=該当なし（Button + .shadow() で表現） / Web=<button>（box-shadow で elevation を表現） / Flutter=ElevatedButton
+- Flutter: `ElevatedButton`
+- 関連: filled_button, filled_tonal_button, press_scale, ripple
+
+**説明**: 背景色の面に影（elevation）を付け、Z軸方向に浮いているように見せたボタン。押すと影が深くなり「持ち上がる」ように反応する。Material 2 では Raised Button と呼ばれていた。
+
+**使いどころ**: 背景と同系色の面の上でボタンを目立たせたいとき。ただし Material 3 では「影は控えめに」が方針なので、主要アクションには Filled Button、影で浮かせたいときだけ Elevated Button を使う。
+
+**AI への伝え方（日本語）**: Material 3 の Elevated Button（影付きで少し浮き上がって見えるボタン）を作って。押している間は elevation が上がり、押し込んだ感が出るようにして。
+
+**Prompt (English)**: Create a Material 3 Elevated Button (a button with a drop shadow that appears to float above the surface). Increase its elevation while pressed so it feels tactile.
+
+
+### Filled Button / フィルドボタン（塗りつぶしボタン）
+
+- id: `filled_button`  URL: https://uizukan.dev/entry/filled_button/
+- 種別: 表示 / Buttons
+- 別名: Primary Button, Contained Button, CTA Button, Solid Button
+- 呼び名: Material 3=Filled button / Material 2=Contained button / Android (Compose)=Button（既定が Filled） / iOS (HIG)=Button（prominent。UIKit の filled style） / SwiftUI=Button + .buttonStyle(.borderedProminent) / Web=<button>（Primary button） / Flutter=FilledButton
+- Flutter: `FilledButton`
+- 関連: elevated_button, filled_tonal_button, outlined_button, loading_button
+
+**説明**: primary 色でベタ塗りされたボタン。画面内で「一番押してほしい操作」を示す。影は基本なし（Material 3）。1画面に1つが原則。
+
+**使いどころ**: 「保存」「購入」「次へ」など、その画面の主目的となる操作。複数並べると強調が薄れるので、2番手は Filled Tonal / Outlined にする。
+
+**AI への伝え方（日本語）**: 画面の主要アクション用に、primary 色で塗りつぶした Filled Button（CTA ボタン）を作って。幅は画面いっぱい、高さ 52dp、角丸 14dp で。
+
+**Prompt (English)**: Create a full-width primary Filled Button (CTA) for the main action of the screen. Height 52dp, corner radius 14dp, primary background with onPrimary text.
+
+
+### Filled Tonal Button / トーナルボタン（淡色の塗りつぶしボタン）
+
+- id: `filled_tonal_button`  URL: https://uizukan.dev/entry/filled_tonal_button/
+- 種別: 表示 / Buttons
+- 別名: Secondary Button, Tonal Button, Soft Button
+- 呼び名: Material 3=Filled tonal button / Material 2=該当なし（M3 で追加。近いのは secondary 色の Contained button） / Android (Compose)=FilledTonalButton / iOS (HIG)=Button（UIKit の tinted style が相当） / SwiftUI=Button + .buttonStyle(.bordered) + .tint() / Web=該当なし（Secondary button として実装） / Flutter=FilledButton.tonal
+- Flutter: `FilledButton.tonal`
+- 関連: filled_button, outlined_button
+
+**説明**: secondaryContainer 色で塗った中間の強調度のボタン。Filled ほど叫ばず、Outlined より存在感がある。iOS の「Tinted」ボタンに相当。
+
+**使いどころ**: 主要 CTA の隣に置く「もう一つの選択肢」（例：購入する／カートに入れる）。
+
+**AI への伝え方（日本語）**: 主要ボタンの隣に、secondaryContainer 色で淡く塗った Filled Tonal Button を置いて。
+
+**Prompt (English)**: Next to the primary button, add a Filled Tonal Button using the secondaryContainer color.
+
+
+### Outlined Button / アウトラインボタン（枠線ボタン）
+
+- id: `outlined_button`  URL: https://uizukan.dev/entry/outlined_button/
+- 種別: 表示 / Buttons
+- 別名: Ghost Button, Secondary Button, Bordered Button
+- 呼び名: Material 3=Outlined button / Material 2=Outlined button / Android (Compose)=OutlinedButton / iOS (HIG)=該当なし（UIKit の style は plain / gray / tinted / filled の 4 種） / SwiftUI=該当なし（.overlay(Capsule().stroke()) で自作） / Web=<button>（Outlined / Secondary button） / Flutter=OutlinedButton
+- Flutter: `OutlinedButton`
+- 関連: text_button, filled_tonal_button
+
+**説明**: 1dp の枠線と透明背景のボタン。主要アクションの邪魔をしない補助的な操作に向く。
+
+**使いどころ**: 「キャンセル」「あとで」「詳細を見る」など、主要 CTA と並ぶ二次的な操作。
+
+**AI への伝え方（日本語）**: 枠線だけの Outlined Button を作って。枠は 1dp の outline 色、角丸 12dp、文字は primary 色。
+
+**Prompt (English)**: Create an Outlined Button: 1dp outline-colored border, transparent background, 12dp corner radius, primary-colored label.
+
+
+### Text Button / テキストボタン
+
+- id: `text_button`  URL: https://uizukan.dev/entry/text_button/
+- 種別: 表示 / Buttons
+- 別名: Flat Button, Link Button, Plain Button
+- 呼び名: Material 3=Text button / Material 2=Text button / Android (Compose)=TextButton / iOS (HIG)=Button（UIKit の plain style） / SwiftUI=Button + .buttonStyle(.plain) / .borderless / Web=<button>（Tertiary / Link-style button） / Flutter=TextButton
+- Flutter: `TextButton`
+- 関連: outlined_button, alert_dialog
+
+**説明**: 文字色（primary）だけで「押せる」ことを示す。ダイアログの「OK / キャンセル」や、カード内の補助リンクに使う。
+
+**使いどころ**: ダイアログのアクション、「すべて見る」「パスワードをお忘れですか？」のような補助リンク。
+
+**AI への伝え方（日本語）**: 「パスワードをお忘れですか？」を Text Button（背景も枠もない文字だけのボタン）にして、フォームの右下に置いて。
+
+**Prompt (English)**: Make "Forgot password?" a Text Button (label only, no background or border), aligned to the bottom-right of the form.
+
+
+### Icon Button / アイコンボタン
+
+- id: `icon_button`  URL: https://uizukan.dev/entry/icon_button/
+- 種別: 表示 / Buttons
+- 別名: Toggle Icon Button, Icon-only Button
+- 呼び名: Material 3=Icon button（Standard / Filled / Filled tonal / Outlined） / Material 2=Icon button / Android (Compose)=IconButton / FilledIconButton / FilledTonalIconButton / OutlinedIconButton / iOS (HIG)=Button（SF Symbol のみ。専用名は無い） / SwiftUI=Button { Image(systemName:) } / Label + .labelStyle(.iconOnly) / Web=<button aria-label="…">（Icon button） / Flutter=IconButton / IconButton.filled / IconButton.filledTonal / IconButton.outlined
+- Flutter: `IconButton / IconButton.filled / IconButton.filledTonal / IconButton.outlined`
+- 関連: fab, like_burst, app_bar
+
+**説明**: 文字のないアイコンだけのボタン。App Bar の右上や、カードの「お気に入り」などに使われる。Material 3 では standard / filled / tonal / outlined の4段階と、選択状態を持つ toggle 型がある。
+
+**使いどころ**: 意味がアイコンで十分伝わる操作（検索・共有・お気に入り・その他メニュー）。
+
+**AI への伝え方（日本語）**: ハートのトグル型 Icon Button を作って。未選択は Icons.favorite_border、選択中は Icons.favorite を赤で表示。
+
+**Prompt (English)**: Create a toggle Icon Button with a heart: Icons.favorite_border when unselected, Icons.favorite in red when selected.
+
+
+### Floating Action Button / フローティングアクションボタン（FAB）
+
+- id: `fab`  URL: https://uizukan.dev/entry/fab/
+- 種別: 表示 / Buttons
+- 別名: FAB, Floating Button, 浮いている丸ボタン
+- 呼び名: Material 3=Floating action button（FAB） / Material 2=Floating action button（Regular / Mini） / Android (Compose)=FloatingActionButton / SmallFloatingActionButton / LargeFloatingActionButton / iOS (HIG)=該当なし（iOS 標準には無い。Toolbar の主ボタンで代替） / SwiftUI=該当なし（ZStack + Button で自作） / Web=該当なし（Material 系ライブラリの FAB） / Flutter=FloatingActionButton
+- Flutter: `FloatingActionButton`
+- 関連: extended_fab, icon_button, scroll_to_hide_bar
+
+**説明**: 画面のスクロール内容の上に固定で浮かぶボタン。「新規作成」「投稿」など、その画面の代表的な操作を1つだけ載せる。Material 3 では角丸四角（16dp）が標準。
+
+**使いどころ**: リスト画面での「追加」、メール画面での「作成」など、どの位置でも押せる必要がある主要操作。
+
+**AI への伝え方（日本語）**: 画面右下に「＋」の Floating Action Button（FAB）を置いて。Material 3 の角丸四角スタイルで。
+
+**Prompt (English)**: Add a "+" Floating Action Button (FAB) at the bottom-right of the screen, Material 3 rounded-square style.
+
+
+### Extended FAB / 拡張 FAB（ラベル付き FAB）
+
+- id: `extended_fab`  URL: https://uizukan.dev/entry/extended_fab/
+- 種別: 表示 / Buttons
+- 別名: Extended Floating Action Button, Labeled FAB
+- 呼び名: Material 3=Extended FAB / Material 2=Extended FAB / Android (Compose)=ExtendedFloatingActionButton / iOS (HIG)=該当なし（iOS 標準には無い） / SwiftUI=該当なし（ZStack + Button + Label で自作） / Web=該当なし（Material 系ライブラリの Extended FAB） / Flutter=FloatingActionButton.extended
+- Flutter: `FloatingActionButton.extended`
+- 関連: fab, scroll_to_hide_bar
+
+**説明**: 通常の FAB にテキストを添えた横長版。スクロールで通常 FAB に縮む（collapse）動きと組み合わせることが多い。
+
+**使いどころ**: アイコンだけでは意味が伝わりにくい主要操作（例：「新しいメモ」「ルートを開始」）。
+
+**AI への伝え方（日本語）**: アイコン＋「新規作成」ラベル付きの Extended FAB を右下に置いて。下にスクロールするとラベルが消えて丸い FAB に縮むようにして。
+
+**Prompt (English)**: Add an Extended FAB with an icon and a "Create" label at the bottom-right. When scrolling down, collapse it into a regular icon-only FAB.
+
+
+### Segmented Button / セグメントボタン（セグメンテッドコントロール）
+
+- id: `segmented_button`  URL: https://uizukan.dev/entry/segmented_button/
+- 種別: 表示 / Buttons
+- 別名: Segmented Control, Sliding Segmented Control, Tab Switch, Pill Toggle
+- 呼び名: Material 3=Segmented button（M3 Expressive では非推奨。後継は Connected button group） / Material 2=該当なし（Toggle button（MaterialButtonToggleGroup）が相当） / Android (Compose)=SingleChoiceSegmentedButtonRow / MultiChoiceSegmentedButtonRow + SegmentedButton / iOS (HIG)=Segmented control / SwiftUI=Picker + .pickerStyle(.segmented) / Web=該当なし（role="radiogroup" で実装） / Flutter=SegmentedButton / CupertinoSlidingSegmentedControl
+- Flutter: `SegmentedButton / CupertinoSlidingSegmentedControl`
+- 関連: button_group, toggle_buttons, tab_bar, chips
+
+**説明**: 2〜5個の選択肢を同じ幅で横に並べ、選択中の区画を強調するコントロール。iOS ではハイライトが滑らかにスライドする「Sliding Segmented Control」が標準。
+
+Material では、M3 Expressive（2025）で非推奨になり、後継は Button Group（つながった形）とされている。iOS では今も標準の部品で、Flutter の SegmentedButton も使える。
+
+**使いどころ**: 表示モードの切替（リスト／グリッド）、期間の切替（日／週／月）など、少数の排他的な選択。
+
+**AI への伝え方（日本語）**: 「日 / 週 / 月」を切り替える Segmented Button を作って。iOS 風に、選択のハイライトが滑らかにスライドする Sliding Segmented Control で。
+
+**Prompt (English)**: Create a Segmented Control to switch between "Day / Week / Month". Use the iOS-style sliding segmented control where the highlight slides smoothly.
+
+
+### Toggle Button Group / トグルボタン群
+
+- id: `toggle_buttons`  URL: https://uizukan.dev/entry/toggle_buttons/
+- 種別: 表示 / Buttons
+- 別名: Toggle Buttons, Button Group, Icon Toggle Group
+- 呼び名: Material 3=Toggle button / Button group（connected） / Material 2=Toggle button / Android (Compose)=IconToggleButton / ButtonGroup / iOS (HIG)=該当なし（Segmented control で代替。macOS は Toggle 型ボタン） / SwiftUI=Toggle + .toggleStyle(.button) / Web=<button aria-pressed>（Toggle button） / Flutter=ToggleButtons
+- Flutter: `ToggleButtons`
+- 関連: segmented_button, chips
+
+**説明**: アイコンボタンを横につなげ、それぞれを独立して ON/OFF できる。Material 3 では Segmented Button（multi-select）で代替される。
+
+**使いどころ**: テキストエディタの太字／斜体／下線、整列（左／中央／右）など、複数同時に成立する設定。
+
+**AI への伝え方（日本語）**: 太字・斜体・下線を個別に ON/OFF できる Toggle Button Group（複数選択可）を作って。
+
+**Prompt (English)**: Create a Toggle Button Group for bold / italic / underline where each can be toggled independently.
+
+
+### Chip / チップ
+
+- id: `chips`  URL: https://uizukan.dev/entry/chips/
+- 種別: 表示 / Buttons
+- 別名: Filter Chip, Choice Chip, Input Chip, Assist Chip, Tag, Pill
+- 呼び名: Material 3=Chips（Assist / Filter / Input / Suggestion） / Material 2=Chips（Action / Choice / Filter / Input） / Android (Compose)=AssistChip / FilterChip / InputChip / SuggestionChip / iOS (HIG)=該当なし（Token field（macOS）が近い。iOS は自作） / SwiftUI=該当なし（Button / Label + Capsule で自作） / Web=該当なし（Chip / Tag。role="button" か checkbox で実装） / Flutter=FilterChip / ChoiceChip / InputChip / ActionChip
+- Flutter: `FilterChip / ChoiceChip / InputChip / ActionChip`
+- 関連: segmented_button, search_bar, toggle_buttons
+
+**説明**: 短いラベルを持つコンパクトな要素。Material 3 では用途で4種類に分かれる：Assist（操作の起点）、Filter（絞り込み ON/OFF）、Input（入力済みの値、×で削除）、Suggestion（候補）。1つだけ選ぶ Choice Chip は Filter Chip の単一選択版。
+
+**使いどころ**: 検索結果の絞り込み（Filter）、複数タグの入力（Input）、カテゴリ選択（Choice）。
+
+**AI への伝え方（日本語）**: 検索画面の上に、横スクロールする Filter Chip の列を作って。「すべて／未読／スター付き／添付あり」で、複数 ON にできるように。
+
+**Prompt (English)**: Above the search results, add a horizontally scrolling row of Filter Chips: "All / Unread / Starred / Attachments", allowing multiple selection.
+
+
+### Cupertino Button / iOS 風ボタン
+
+- id: `cupertino_button`  URL: https://uizukan.dev/entry/cupertino_button/
+- 種別: 表示 / Buttons
+- 別名: iOS Button, Plain Button (iOS), System Button
+- 呼び名: Material 3=該当なし（iOS 固有） / Material 2=該当なし（iOS 固有） / Android (Compose)=該当なし（iOS 固有） / iOS (HIG)=Button（UIKit の style: plain / gray / tinted / filled） / SwiftUI=Button + .buttonStyle(.plain / .bordered / .borderedProminent) / Web=該当なし（iOS 固有） / Flutter=CupertinoButton / CupertinoButton.filled / CupertinoButton.tinted
+- Flutter: `CupertinoButton / CupertinoButton.filled / CupertinoButton.tinted`
+- 関連: text_button, filled_button, press_scale
+
+**説明**: iOS の HIG に沿ったボタン。Material のリップルではなく、押下中に不透明度が下がる（opacity 0.4）反応をする。plain（文字のみ）と filled（塗りつぶし）がある。
+
+**使いどころ**: iOS らしさを保ちたい画面。Material のリップルが浮いて見えるとき。
+
+**AI への伝え方（日本語）**: iOS 標準風の CupertinoButton.filled を作って。押している間は不透明度が下がる iOS らしい反応で、リップルは出さないで。
+
+**Prompt (English)**: Create an iOS-style CupertinoButton.filled. It should dim (opacity) while pressed, without a Material ripple.
+
+
+### Loading Button / ローディング状態付きボタン
+
+- id: `loading_button`  URL: https://uizukan.dev/entry/loading_button/
+- 種別: 表示 / Buttons
+- 別名: Async Button, Progress Button, Submit Button with Spinner
+- 呼び名: Material 3=該当なし（Button + Loading indicator（M3 Expressive）の組み合わせ） / Material 2=該当なし（Button + Circular progress indicator） / Android (Compose)=該当なし（Button + CircularProgressIndicator / LoadingIndicator） / iOS (HIG)=該当なし（Button + Activity indicator） / SwiftUI=該当なし（Button + ProgressView） / Web=該当なし（<button aria-busy="true"> + spinner） / Flutter=FilledButton + CircularProgressIndicator
+- Flutter: `FilledButton + CircularProgressIndicator`
+- 関連: filled_button, circular_progress, crossfade
+
+**説明**: ボタン内のラベルが処理中は小さな CircularProgressIndicator に置き換わり、完了後は元に戻る（またはチェックマークになる）。二重送信を防ぎ、「待ち」を伝える定番パターン。
+
+**使いどころ**: ログイン・購入・送信など、サーバー通信を伴うすべての主要ボタン。
+
+**AI への伝え方（日本語）**: 「ログイン」ボタンを、押すとラベルが小さなスピナーに変わり、処理中は無効化される Loading Button にして。完了したら 0.8 秒だけチェックマークを見せてから元に戻して。
+
+**Prompt (English)**: Make the "Log in" button a Loading Button: on tap the label becomes a small spinner and the button is disabled while busy. On success show a checkmark for 0.8s, then restore.
+
+
+### Split Button / スプリットボタン（主な操作＋メニューの 2 分割）
+
+- id: `split_button`  URL: https://uizukan.dev/entry/split_button/
+- 種別: 表示 / Buttons
+- 別名: Dropdown Button, Menu Button, Button with Menu, 分割ボタン
+- 呼び名: Material 3=Split button / Material 2=該当なし（Material 2 に無い。M3 Expressive で加わった） / Android (Compose)=SplitButtonLayout / iOS (HIG)=該当なし（iOS 標準には無い。メニュー付きのボタンは Pull-down button で作る） / SwiftUI=Menu（primaryAction: を付ける） / Web=該当なし（<button> 2 つと Menu Button パターンで自作） / Flutter=Row + FilledButton + MenuAnchor（専用の部品は無く、これで自作する）
+- Flutter: `Row + FilledButton + MenuAnchor（専用の部品は無く、これで自作する）`
+- 関連: filled_button, popup_menu, button_group, dropdown_menu
+
+**説明**: 1 つのボタンを 2 つに割ったもの。左（leading）はいちばん使う操作をそのまま実行し、右（trailing）の小さなボタンは関連する操作のメニューを開く。開くと右のボタンの矢印が回り、形が丸に変わる。Material 3 Expressive で加わった。
+
+**使いどころ**: 「送信」と「予約して送信」のように、主な操作に近い別のやり方が 2〜4 個あるとき。関係のない操作をメニューに入れない。メニューが主役なら、ふつうのメニューボタンにする。
+
+**AI への伝え方（日本語）**: 「送信」を Split Button にして。左を押すとそのまま送信、右の ▾ を押すと「予約して送信／下書きに保存」のメニューが出るように。
+
+**Prompt (English)**: Make "Send" a Split Button: the leading part sends immediately, the trailing ▾ opens a menu with "Schedule send / Save as draft".
+
+
+### Button Group / ボタングループ（つながって形が変わるボタンの並び）
+
+- id: `button_group`  URL: https://uizukan.dev/entry/button_group/
+- 種別: 表示 / Buttons
+- 別名: Connected Button Group, Standard Button Group, Button Bar, ボタンの並び
+- 呼び名: Material 3=Button groups（Standard / Connected） / Material 2=該当なし（Material 2 に無い。近いのは Toggle button） / Android (Compose)=ButtonGroup / iOS (HIG)=該当なし（iOS 標準には無い。近いのは Segmented controls） / SwiftUI=ControlGroup / Web=role="group"（WAI-ARIA。<fieldset> でも） / Flutter=Row + AnimatedContainer（専用の部品は無い。1 つ選ぶだけなら SegmentedButton）
+- Flutter: `Row + AnimatedContainer（専用の部品は無い。1 つ選ぶだけなら SegmentedButton）`
+- 関連: segmented_button, toggle_buttons, split_button, chips
+
+**説明**: 関係のあるボタンを横に並べ、ボタン同士を反応させる入れ物。押している間はそのボタンの幅が広がって隣が縮み、選んだボタンは角が丸くなって色が濃くなる。間を空けて並べる Standard と、すき間 2dp でつなげる Connected の 2 種。Material 3 Expressive で加わり、Segmented Button の後継とされている。
+
+**使いどころ**: 表示の切り替え（日／週／月）や、書式（太字・斜体・下線）のように、同じ種類の選択肢を 2〜5 個並べるとき。関係のない操作を 1 つのグループにまとめない。
+
+**AI への伝え方（日本語）**: 「日／週／月」の切り替えを Connected Button Group にして。選んだボタンは丸く濃い色に、押している間は幅が少し広がるように。
+
+**Prompt (English)**: Make the "Day / Week / Month" switcher a Connected Button Group: the selected button becomes fully rounded and filled, and a pressed button widens slightly.
+
+
+### FAB Menu / FAB メニュー（FAB から開く操作の一覧）
+
+- id: `fab_menu`  URL: https://uizukan.dev/entry/fab_menu/
+- 種別: 表示 / Buttons
+- 別名: Speed Dial, Expandable FAB, FAB Speed Dial, スピードダイヤル
+- 呼び名: Material 3=FAB menu / Material 2=Speed dial（Floating action button の一種） / Android (Compose)=FloatingActionButtonMenu / iOS (HIG)=該当なし（iOS 標準には FAB が無い。メニューは Pull-down button で出す） / SwiftUI=該当なし（Menu で代替する） / Web=Menu Button（WAI-ARIA パターン） / Flutter=FloatingActionButton + Overlay（専用の部品は無い。flutter_speed_dial パッケージなど）
+- Flutter: `FloatingActionButton + Overlay（専用の部品は無い。flutter_speed_dial パッケージなど）`
+- 関連: fab, extended_fab, popup_menu, modal_bottom_sheet
+
+**説明**: FAB（右下の丸い主要ボタン）を押すと、FAB が「閉じる」ボタンに変わり、その上に操作が縦に並んで出る。項目は大きめのカプセル型で、アイコンと名前が付く。以前の Speed Dial や、小さな FAB を重ねる作りの後継。
+
+**使いどころ**: 「新規作成」に種類が 2〜6 個あるとき（撮影・画像・ファイルなど）。1 つだけなら、ふつうの FAB にする。7 個以上なら、別の画面かシートにする。文字つきの Extended FAB とは組み合わせない。
+
+**AI への伝え方（日本語）**: 右下の FAB を FAB Menu にして。押すと × に変わり、上に「撮影／画像／ファイル」の 3 つが下から順に出るように。
+
+**Prompt (English)**: Turn the bottom-right FAB into a FAB Menu: on tap it becomes a close button and reveals "Camera / Image / File" stacked above it, staggered from the bottom.
+
+
+## Inputs & Selection / 入力
+
+### Outlined Text Field / アウトライン付きテキストフィールド
+
+- id: `text_field_outlined`  URL: https://uizukan.dev/entry/text_field_outlined/
+- 種別: 表示 / Inputs & Selection
+- 別名: Outlined Input, Text Input, Bordered Text Field
+- 呼び名: Material 3=Outlined text field / Material 2=Outlined text field / Android (Compose)=OutlinedTextField / iOS (HIG)=Text fields / SwiftUI=TextField + .textFieldStyle(.roundedBorder) / Web=<input type="text"> / Flutter=TextField / TextFormField + OutlineInputBorder
+- Flutter: `TextField / TextFormField + OutlineInputBorder`
+- 関連: text_field_filled, password_field, shake
+
+**説明**: 枠線（outline）で囲まれた入力欄。フォーカスすると枠が primary 色になり、ラベルが枠線の切れ目に小さく浮き上がる（floating label）。ヒント・エラー文・文字数カウンタを下に出せる。
+
+**使いどころ**: フォーム全般。背景が白っぽく Filled だと目立たないとき。
+
+**AI への伝え方（日本語）**: メールアドレス用の Outlined Text Field を作って。ラベル「メールアドレス」がフォーカスで枠の上に浮き上がり、不正な形式なら枠が赤くなって下にエラー文が出るように。
+
+**Prompt (English)**: Create an Outlined Text Field for email. The "Email" label should float onto the border on focus; when the format is invalid, turn the border red and show an error message below.
+
+
+### Filled Text Field / 塗りつぶしテキストフィールド
+
+- id: `text_field_filled`  URL: https://uizukan.dev/entry/text_field_filled/
+- 種別: 表示 / Inputs & Selection
+- 別名: Filled Input, Underline Text Field
+- 呼び名: Material 3=Filled text field / Material 2=Filled text field / Android (Compose)=TextField（既定が Filled） / iOS (HIG)=Text fields / SwiftUI=TextField（.plain + 背景で表現） / Web=<input type="text"> / Flutter=TextField + InputDecoration(filled: true)
+- Flutter: `TextField + InputDecoration(filled: true)`
+- 関連: text_field_outlined, search_bar
+
+**説明**: 薄い背景色（surfaceContainerHighest）と下線で構成される入力欄。上部の角だけ丸い。Material らしさが強い。
+
+**使いどころ**: 入力欄が多く枠線だらけになるフォーム。検索や1行入力の軽い場面。
+
+**AI への伝え方（日本語）**: 背景を薄く塗って下線だけで区切る Filled Text Field を作って。上の角だけ丸くして。
+
+**Prompt (English)**: Create a Filled Text Field: light filled background, bottom underline only, top corners rounded.
+
+
+### Password Field with Visibility Toggle / 表示切替付きパスワード欄
+
+- id: `password_field`  URL: https://uizukan.dev/entry/password_field/
+- 種別: 表示 / Inputs & Selection
+- 別名: Obscured Text Field, Secure Text Field, Show/Hide Password
+- 呼び名: Material 3=該当なし（Text field の trailing icon で表現） / Material 2=該当なし（Text field の trailing icon で表現） / Android (Compose)=TextField + PasswordVisualTransformation / iOS (HIG)=Text fields（Secure text field） / SwiftUI=SecureField（表示切替は TextField と入れ替え） / Web=<input type="password"> / Flutter=TextField(obscureText:) + suffixIcon
+- Flutter: `TextField(obscureText:) + suffixIcon`
+- 関連: text_field_outlined, icon_button
+
+**説明**: obscureText で文字を隠した入力欄。末尾（suffix）の目アイコンで一時的に平文表示できる。
+
+**使いどころ**: ログイン・登録・パスワード変更。
+
+**AI への伝え方（日本語）**: パスワード入力欄を作って。●で隠し、右端の目のアイコン（visibility / visibility_off）で表示・非表示を切り替えられるように。
+
+**Prompt (English)**: Create a password field that masks input with dots and has an eye icon (visibility / visibility_off) at the trailing edge to toggle visibility.
+
+
+### Search Bar / 検索バー
+
+- id: `search_bar`  URL: https://uizukan.dev/entry/search_bar/
+- 種別: 表示 / Inputs & Selection
+- 別名: Search Field, Search Box, Search Input
+- 呼び名: Material 3=Search（Search bar / Search view） / Material 2=該当なし（Text field で実装） / Android (Compose)=SearchBar / DockedSearchBar / iOS (HIG)=Search fields / SwiftUI=.searchable(text:) / Web=<input type="search"> / <search> / Flutter=SearchBar / SearchAnchor / CupertinoSearchTextField
+- Flutter: `SearchBar / SearchAnchor / CupertinoSearchTextField`
+- 関連: chips, autocomplete, text_field_filled
+
+**説明**: 丸みの強い（pill 型）入力欄に検索アイコンを添えたもの。Material 3 では SearchBar と、タップで全画面の候補一覧に広がる SearchAnchor（Search view）がセット。iOS では入力中に「キャンセル」が右に現れる。
+
+**使いどころ**: 一覧画面の先頭、App Bar の中。
+
+**AI への伝え方（日本語）**: 一覧画面の上に Material 3 の Search Bar（pill 型・虫眼鏡アイコン付き）を置いて。タップすると候補一覧が全画面で開く SearchAnchor にして。
+
+**Prompt (English)**: Put a Material 3 Search Bar (pill-shaped with a search icon) above the list. Tapping it should open a full-screen suggestions view using SearchAnchor.
+
+
+### Checkbox / チェックボックス
+
+- id: `checkbox`  URL: https://uizukan.dev/entry/checkbox/
+- 種別: 表示 / Inputs & Selection
+- 別名: Check Box, Tick Box, Checkbox List Tile
+- 呼び名: Material 3=Checkbox / Material 2=Checkbox（Selection controls） / Android (Compose)=Checkbox / TriStateCheckbox / iOS (HIG)=該当なし（iOS 標準には無い。iOS は Toggle、macOS は Checkbox） / SwiftUI=Toggle + .toggleStyle(.checkbox)（macOS） / Web=<input type="checkbox"> / Flutter=Checkbox / CheckboxListTile
+- Flutter: `Checkbox / CheckboxListTile`
+- 関連: radio_button, switch_toggle, list_tile
+
+**説明**: 四角の中にチェックマークが入る ON/OFF。tristate で「一部選択（−）」も表せる。ラベル付き行にするなら CheckboxListTile。
+
+**使いどころ**: 複数項目の同時選択（利用規約への同意、設定の複数 ON など）。単一の ON/OFF なら Switch の方が自然。
+
+**AI への伝え方（日本語）**: 「利用規約に同意する」を CheckboxListTile で作って。行全体をタップしてチェックできて、チェックが入るまで「登録」ボタンは無効にして。
+
+**Prompt (English)**: Create an "I agree to the Terms" CheckboxListTile. The whole row should be tappable, and the "Sign up" button stays disabled until it is checked.
+
+
+### Radio Button / ラジオボタン
+
+- id: `radio_button`  URL: https://uizukan.dev/entry/radio_button/
+- 種別: 表示 / Inputs & Selection
+- 別名: Radio Group, Option Button, Radio List Tile
+- 呼び名: Material 3=Radio button / Material 2=Radio button（Selection controls） / Android (Compose)=RadioButton / iOS (HIG)=該当なし（iOS 標準には無い。チェックマーク付き List か Picker で代替。macOS は Radio button） / SwiftUI=Picker + .pickerStyle(.radioGroup)（macOS）/ .inline / Web=<input type="radio"> / Flutter=Radio / RadioListTile
+- Flutter: `Radio / RadioListTile`
+- 関連: checkbox, segmented_button, dropdown_menu
+
+**説明**: 同じ groupValue を共有する丸い選択肢。1つを選ぶと他は自動で外れる。
+
+**使いどころ**: 2〜5個の排他的選択（配送方法、支払い方法）。候補が多ければ Dropdown、2択なら Segmented Button も検討。
+
+**AI への伝え方（日本語）**: 支払い方法（クレジットカード／コンビニ／銀行振込）を RadioListTile で1つだけ選べるようにして。
+
+**Prompt (English)**: Let the user choose one payment method (Credit card / Convenience store / Bank transfer) using RadioListTiles.
+
+
+### Toggle Switch / トグルスイッチ
+
+- id: `switch_toggle`  URL: https://uizukan.dev/entry/switch_toggle/
+- 種別: 表示 / Inputs & Selection
+- 別名: Switch, Toggle, On/Off Switch
+- 呼び名: Material 3=Switch / Material 2=Switch（Selection controls） / Android (Compose)=Switch / iOS (HIG)=Toggles（Switch） / SwiftUI=Toggle（.switch） / Web=<input type="checkbox" role="switch"> / Flutter=Switch / Switch.adaptive / CupertinoSwitch
+- Flutter: `Switch / Switch.adaptive / CupertinoSwitch`
+- 関連: checkbox, list_tile, haptic_on_toggle
+
+**説明**: つまみ（thumb）が左右に動いて ON/OFF を示す。切り替えた瞬間に効果が反映されるのが原則（保存ボタン不要）。
+
+**使いどころ**: 設定の即時 ON/OFF（通知・ダークモード）。フォームの送信を伴う選択には Checkbox。
+
+**AI への伝え方（日本語）**: 設定画面の「プッシュ通知」行を SwitchListTile にして。iOS では iOS 風、Android では Material 風になる Switch.adaptive で。
+
+**Prompt (English)**: Make the "Push notifications" row a SwitchListTile using Switch.adaptive, so it looks native on both iOS and Android.
+
+
+### Slider / スライダー
+
+- id: `slider`  URL: https://uizukan.dev/entry/slider/
+- 種別: 表示 / Inputs & Selection
+- 別名: Seek Bar, Range Input, Discrete Slider
+- 呼び名: Material 3=Slider / Material 2=Slider（Continuous / Discrete） / Android (Compose)=Slider / iOS (HIG)=Sliders / SwiftUI=Slider / Web=<input type="range"> / Flutter=Slider / CupertinoSlider
+- Flutter: `Slider / CupertinoSlider`
+- 関連: range_slider, stepper_input
+
+**説明**: トラック上のつまみを動かして連続値を選ぶ。divisions を指定すると目盛りに吸着する離散型になり、label で現在値を吹き出し表示できる。
+
+**使いどころ**: 音量・明るさ・価格帯など「だいたい」でよい値。正確な数値が必要なら数値入力と併用。
+
+**AI への伝え方（日本語）**: 0〜100 を 5 刻みで選べる離散型 Slider を作って。ドラッグ中はつまみの上に現在値を吹き出し表示して。
+
+**Prompt (English)**: Create a discrete Slider from 0 to 100 in steps of 5. While dragging, show the current value in a label bubble above the thumb.
+
+
+### Range Slider / 範囲スライダー
+
+- id: `range_slider`  URL: https://uizukan.dev/entry/range_slider/
+- 種別: 表示 / Inputs & Selection
+- 別名: Dual Slider, Two-thumb Slider, Min-Max Slider
+- 呼び名: Material 3=Range slider / Material 2=Range slider / Android (Compose)=RangeSlider / iOS (HIG)=該当なし（iOS 標準には無い） / SwiftUI=該当なし（Slider を 2 本、または自作） / Web=該当なし（Slider (Multi-Thumb)（WAI-ARIA パターン）） / Flutter=RangeSlider
+- Flutter: `RangeSlider`
+- 関連: slider, modal_bottom_sheet, chips
+
+**説明**: 2つのつまみで区間を選ぶ。価格帯・年齢層のフィルタでよく使われる。
+
+**使いどころ**: 検索フィルタの「価格：¥1,000〜¥5,000」のような範囲指定。
+
+**AI への伝え方（日本語）**: 価格帯を選ぶ Range Slider（つまみ2つ）を作って。0〜10,000 円で、上に「¥1,000 〜 ¥5,000」のように現在の範囲を表示して。
+
+**Prompt (English)**: Create a two-thumb Range Slider for a price range from 0 to 10,000 yen, showing the selected range above as "¥1,000 – ¥5,000".
+
+
+### Dropdown Menu / ドロップダウン（プルダウン）
+
+- id: `dropdown_menu`  URL: https://uizukan.dev/entry/dropdown_menu/
+- 種別: 表示 / Inputs & Selection
+- 別名: Select, Pulldown, Combo Box, Dropdown Button, Exposed Dropdown, Pop-up Button
+- 呼び名: Material 3=Menus（Exposed dropdown menu） / Material 2=Exposed dropdown menu / Android (Compose)=ExposedDropdownMenuBox + DropdownMenu / iOS (HIG)=Pop-up buttons / SwiftUI=Picker + .pickerStyle(.menu) / Menu / Web=<select> / Combobox（WAI-ARIA パターン） / Flutter=DropdownMenu / DropdownButtonFormField
+- Flutter: `DropdownMenu / DropdownButtonFormField`
+- 関連: radio_button, autocomplete, cupertino_picker, popup_menu
+
+**説明**: 入力欄の見た目で、タップするとメニューが展開する。Material 3 の DropdownMenu は文字入力で候補を絞ることもできる。
+
+**使いどころ**: 候補が 5〜15 個程度の単一選択（都道府県、カテゴリ）。候補が少なければ Radio/Segmented、多ければ検索付きの別画面。
+
+**AI への伝え方（日本語）**: カテゴリを選ぶ Material 3 の Dropdown Menu を作って。入力欄の見た目で、タップで候補が下に開くように。
+
+**Prompt (English)**: Create a Material 3 Dropdown Menu for choosing a category. It should look like a text field and open a list of options below when tapped.
+
+
+### Date Picker / 日付ピッカー（カレンダー選択）
+
+- id: `date_picker`  URL: https://uizukan.dev/entry/date_picker/
+- 種別: 表示 / Inputs & Selection
+- 別名: Calendar Picker, Date Dialog, Date Input
+- 呼び名: Material 3=Date pickers（Docked / Modal / Modal input） / Material 2=Date pickers / Android (Compose)=DatePicker / DatePickerDialog / iOS (HIG)=Pickers（Date picker） / SwiftUI=DatePicker / Web=<input type="date"> / Flutter=showDatePicker / CupertinoDatePicker
+- Flutter: `showDatePicker / CupertinoDatePicker`
+- 関連: time_picker, cupertino_picker, alert_dialog
+
+**説明**: showDatePicker で開く月カレンダー式のダイアログ。iOS ではドラム（wheel）で回して選ぶ CupertinoDatePicker がある。
+
+**使いどころ**: 予定・締切・誕生日の入力。過去／未来の制限は firstDate / lastDate で。
+
+**AI への伝え方（日本語）**: 「締切日」欄をタップすると Material の Date Picker（カレンダー）が開き、選んだ日付が欄に入るようにして。今日より前は選べないように。
+
+**Prompt (English)**: When the "Due date" field is tapped, open a Material Date Picker (calendar). Fill the field with the chosen date and disallow dates before today.
+
+
+### Time Picker / 時刻ピッカー
+
+- id: `time_picker`  URL: https://uizukan.dev/entry/time_picker/
+- 種別: 表示 / Inputs & Selection
+- 別名: Clock Picker, Time Dialog
+- 呼び名: Material 3=Time pickers（Dial / Input） / Material 2=Time pickers / Android (Compose)=TimePicker / TimeInput / iOS (HIG)=Pickers（Time picker） / SwiftUI=DatePicker(displayedComponents: .hourAndMinute) / Web=<input type="time"> / Flutter=showTimePicker / CupertinoDatePicker(mode: .time)
+- Flutter: `showTimePicker / CupertinoDatePicker(mode: .time)`
+- 関連: date_picker, cupertino_picker
+
+**説明**: Material は文字盤（dial）をなぞって選ぶ方式。iOS は時・分のドラムを回す方式。
+
+**使いどころ**: アラーム・リマインダー・予約時刻。
+
+**AI への伝え方（日本語）**: リマインダーの時刻を選ぶ Time Picker を作って。iOS では時・分のドラムを回す CupertinoDatePicker を Bottom Sheet で出して。
+
+**Prompt (English)**: Create a Time Picker for a reminder. On iOS, present a CupertinoDatePicker in time mode inside a bottom sheet with hour/minute wheels.
+
+
+### Wheel Picker / ドラム式ピッカー（ホイールピッカー）
+
+- id: `cupertino_picker`  URL: https://uizukan.dev/entry/cupertino_picker/
+- 種別: 表示 / Inputs & Selection
+- 別名: Cupertino Picker, Drum Roll Picker, Spinner Picker, Scroll Wheel
+- 呼び名: Material 3=該当なし（iOS 固有） / Material 2=該当なし（iOS 固有） / Android (Compose)=該当なし（自作の wheel） / iOS (HIG)=Pickers（wheel） / SwiftUI=Picker + .pickerStyle(.wheel) / Web=該当なし（iOS 固有） / Flutter=CupertinoPicker
+- Flutter: `CupertinoPicker`
+- 実機でのみ体験可（触覚など）
+- 関連: dropdown_menu, date_picker, haptic_selection
+
+**説明**: 縦に並んだ候補が円筒状に回転し、中央の行が選択される。行が切り替わるたびに「カチッ」という触覚（selection click）が鳴るのが iOS 流。
+
+**使いどころ**: 候補が 10〜100 程度で、iOS らしい操作感にしたいとき（都道府県、回数、年齢）。
+
+**AI への伝え方（日本語）**: iOS 風のドラム式ピッカー（CupertinoPicker）で 1〜60 分を選べるようにして。行が変わるたびに軽いカチッという触覚を鳴らして。
+
+**Prompt (English)**: Let the user choose 1–60 minutes with an iOS-style wheel picker (CupertinoPicker). Play a light selection-click haptic each time the highlighted row changes.
+
+
+### Quantity Stepper / 数量ステッパー（＋−ボタン）
+
+- id: `stepper_input`  URL: https://uizukan.dev/entry/stepper_input/
+- 種別: 表示 / Inputs & Selection
+- 別名: Stepper, Number Stepper, Plus-Minus Input, Counter Input
+- 呼び名: Material 3=該当なし（M3 に無い） / Material 2=該当なし（M2 に無い） / Android (Compose)=該当なし（IconButton ×2 + Text で自作） / iOS (HIG)=Steppers / SwiftUI=Stepper / Web=<input type="number">（Spinbutton） / Flutter=自作（IconButton ×2 + Text）
+- Flutter: `自作（IconButton ×2 + Text）`
+- 関連: slider, animated_counter, haptic_selection
+
+**説明**: 左右のボタンで値を増減させる。EC の数量選択・タイマーの分数などで定番。長押しで連続増減させる実装もある。
+
+**使いどころ**: 小さな整数（1〜10 程度）の選択。範囲が広いなら Slider や数値入力。
+
+**AI への伝え方（日本語）**: 商品数量を選ぶ Quantity Stepper（− 数字 ＋）を作って。1未満にならず、上限は在庫数。値が変わるたびに軽い触覚を鳴らして。
+
+**Prompt (English)**: Create a Quantity Stepper (− number +) for a product. Never go below 1; cap at stock count; play a light haptic on each change.
+
+
+### OTP / PIN Code Field / 認証コード入力（マス目入力）
+
+- id: `otp_field`  URL: https://uizukan.dev/entry/otp_field/
+- 種別: 表示 / Inputs & Selection
+- 別名: One-Time Code Input, Verification Code Field, PIN Input, Pinput
+- 呼び名: Material 3=該当なし（M3 に無い） / Material 2=該当なし（M2 に無い） / Android (Compose)=該当なし（BasicTextField + 分割描画で自作） / iOS (HIG)=Digit entry views / SwiftUI=該当なし（TextField + .textContentType(.oneTimeCode)） / Web=<input inputmode="numeric" autocomplete="one-time-code"> / Flutter=自作（TextField + Row of boxes）/ pinput
+- Flutter: `自作（TextField + Row of boxes）/ pinput`
+- 関連: text_field_outlined, shake, haptic_notification
+
+**説明**: SMS 認証などで使う、桁ごとに区切られた入力欄。実体は1つの隠し TextField で、見た目だけマス目に分ける実装が多い。
+
+**使いどころ**: SMS / メール認証コード、アプリロックの PIN。
+
+**AI への伝え方（日本語）**: SMS 認証用の 6 桁 OTP 入力欄を作って。1桁ずつマス目に表示され、入力中のマスが強調され、6桁揃ったら自動で送信して。間違っていたらマス全体が左右に揺れて赤くなるように。
+
+**Prompt (English)**: Create a 6-digit OTP field for SMS verification: each digit in its own box, the active box highlighted, auto-submit when all 6 are entered. On a wrong code, shake the row and turn the boxes red.
+
+
+### Autocomplete / オートコンプリート（入力候補）
+
+- id: `autocomplete`  URL: https://uizukan.dev/entry/autocomplete/
+- 種別: 表示 / Inputs & Selection
+- 別名: Typeahead, Suggest Input, Combobox with Suggestions
+- 呼び名: Material 3=該当なし（Search の suggestions で表現） / Material 2=該当なし（Exposed dropdown menu で近似） / Android (Compose)=該当なし（TextField + DropdownMenu で自作） / iOS (HIG)=該当なし（Search fields の suggestions） / SwiftUI=.searchable + .searchSuggestions / Web=<input list> + <datalist> / Combobox（WAI-ARIA パターン） / Flutter=Autocomplete / RawAutocomplete
+- Flutter: `Autocomplete / RawAutocomplete`
+- 関連: search_bar, dropdown_menu, chips
+
+**説明**: 入力文字列で候補を絞り込み、リストから選べる。検索の補助、住所・タグ入力で使う。Debounce（入力停止後に検索）と組み合わせることが多い。
+
+**使いどころ**: 候補が多く、自由入力も許したい場面（タグ、駅名、ユーザー名）。
+
+**AI への伝え方（日本語）**: 駅名を入力すると候補が下に出る Autocomplete 入力欄を作って。候補は入力の前方一致で絞り込み、タップで確定して。
+
+**Prompt (English)**: Create an Autocomplete field for station names: suggestions appear below as the user types, filtered by prefix match, and tapping one fills the field.
+
+
+## Navigation / ナビゲーション
+
+### Top App Bar / アプリバー（画面上部のバー）
+
+- id: `app_bar`  URL: https://uizukan.dev/entry/app_bar/
+- 種別: 表示 / Navigation
+- 別名: App Bar, Navigation Bar (iOS), Header Bar, Toolbar, Title Bar
+- 呼び名: Material 3=Top app bar（Small / Center-aligned / Medium / Large） / Material 2=Top app bar（Regular / Contextual action bar） / Android (Compose)=TopAppBar / CenterAlignedTopAppBar / iOS (HIG)=Navigation bars / SwiftUI=NavigationStack + .navigationTitle / .toolbar / Web=<header> + <nav> / Flutter=AppBar / SliverAppBar / CupertinoNavigationBar
+- Flutter: `AppBar / SliverAppBar / CupertinoNavigationBar`
+- 関連: large_title_app_bar, icon_button, collapsing_toolbar, tab_bar
+
+**説明**: 画面上端に固定され、左に戻るボタン（またはメニュー）、中央〜左にタイトル、右にアクション（検索・共有など）を持つ。Material 3 では高さ 64dp が標準。スクロールで色が変わる（surfaceTint）。
+
+**使いどころ**: ほぼ全ての画面。モーダル画面では左を「閉じる（×）」にする。
+
+**AI への伝え方（日本語）**: 左に戻る矢印、中央にタイトル、右に検索とその他（⋮）のアイコンがある Top App Bar を作って。
+
+**Prompt (English)**: Create a Top App Bar with a back arrow on the left, a title in the center, and search + overflow (⋮) icons on the right.
+
+
+### Large Title App Bar / 大見出しアプリバー（ラージタイトル）
+
+- id: `large_title_app_bar`  URL: https://uizukan.dev/entry/large_title_app_bar/
+- 種別: 表示 / Navigation
+- 別名: Large Title, Medium/Large Top App Bar, Collapsing Title
+- 呼び名: Material 3=Top app bar（Large） / Material 2=Top app bar（Prominent） / Android (Compose)=LargeTopAppBar / MediumTopAppBar / iOS (HIG)=Navigation bars（Large title） / SwiftUI=.navigationBarTitleDisplayMode(.large) / Web=該当なし（一般名なし） / Flutter=SliverAppBar.large / CupertinoSliverNavigationBar
+- Flutter: `SliverAppBar.large / CupertinoSliverNavigationBar`
+- 関連: app_bar, collapsing_toolbar, sticky_header
+
+**説明**: iOS の「設定」アプリのように、先頭では大きな見出しを表示し、スクロールすると通常サイズのタイトルに縮む。CustomScrollView + Sliver で作る。
+
+**使いどころ**: タブのルート画面（ホーム・設定・ライブラリ）。詳細画面では通常の App Bar。
+
+**AI への伝え方（日本語）**: iOS の設定アプリのような Large Title のアプリバーを作って。最初は大きな見出し、スクロールすると小さいタイトルに縮んで固定されるように。
+
+**Prompt (English)**: Create a Large Title app bar like the iOS Settings app: big heading at the top that shrinks into a compact title and pins as you scroll.
+
+
+### Bottom Navigation Bar / ボトムナビゲーション（下タブ）
+
+- id: `bottom_navigation_bar`  URL: https://uizukan.dev/entry/bottom_navigation_bar/
+- 種別: 表示 / Navigation
+- 別名: Navigation Bar (M3), Tab Bar (iOS), Bottom Tabs, Bottom Nav
+- 呼び名: Material 3=Navigation bar / Material 2=Bottom navigation / Android (Compose)=NavigationBar + NavigationBarItem / iOS (HIG)=Tab bars / SwiftUI=TabView / Web=<nav>（Bottom navigation） / Flutter=NavigationBar / BottomNavigationBar / CupertinoTabBar
+- Flutter: `NavigationBar / BottomNavigationBar / CupertinoTabBar`
+- 関連: navigation_rail, tab_bar, badge, scroll_to_hide_bar
+
+**説明**: 画面最下部に固定され、アイコン＋ラベルで主要セクションを切り替える。Material 3 では選択中のアイコンに pill 型のインジケータが付く。iOS では Tab Bar と呼ぶ。
+
+**使いどころ**: 対等な 3〜5 個のトップレベル画面（ホーム／検索／通知／マイページ）。
+
+**AI への伝え方（日本語）**: ホーム／検索／通知／マイページの 4 タブの Bottom Navigation Bar を作って。Material 3 の NavigationBar で、通知タブに未読数のバッジを出して。
+
+**Prompt (English)**: Create a 4-tab Bottom Navigation Bar (Home / Search / Notifications / Profile) using Material 3 NavigationBar, with an unread-count badge on the Notifications tab.
+
+
+### Navigation Rail / ナビゲーションレール（縦タブ）
+
+- id: `navigation_rail`  URL: https://uizukan.dev/entry/navigation_rail/
+- 種別: 表示 / Navigation
+- 別名: Side Rail, Vertical Tab Bar, Sidebar (compact)
+- 呼び名: Material 3=Navigation rail / Material 2=Navigation rail / Android (Compose)=NavigationRail + NavigationRailItem / iOS (HIG)=Sidebars（近い） / SwiftUI=NavigationSplitView（sidebar） / Web=該当なし（Vertical navigation） / Flutter=NavigationRail
+- Flutter: `NavigationRail`
+- 関連: bottom_navigation_bar, navigation_drawer
+
+**説明**: 横幅が広い画面向けに、Bottom Navigation の代わりとして左端に縦に並べるタブ。幅 80dp 程度。
+
+**使いどころ**: 幅 600dp 以上（タブレット・PC・Web）。幅で Bottom Navigation と切り替える。
+
+**AI への伝え方（日本語）**: 画面幅が 600dp 以上なら左に Navigation Rail、未満なら下に Navigation Bar を出すレスポンシブなナビゲーションにして。
+
+**Prompt (English)**: Make navigation responsive: show a Navigation Rail on the left when width ≥ 600dp, otherwise a bottom Navigation Bar.
+
+
+### Navigation Drawer / ナビゲーションドロワー（ハンバーガーメニュー）
+
+- id: `navigation_drawer`  URL: https://uizukan.dev/entry/navigation_drawer/
+- 種別: 表示 / Navigation
+- 別名: Side Drawer, Hamburger Menu, Side Menu, Sidebar
+- 呼び名: Material 3=Navigation drawer（Standard / Modal） / Material 2=Navigation drawer / Android (Compose)=ModalNavigationDrawer / PermanentNavigationDrawer / DismissibleNavigationDrawer / iOS (HIG)=Sidebars / SwiftUI=NavigationSplitView / Web=該当なし（Drawer / Off-canvas menu。<nav> + role="dialog"） / Flutter=NavigationDrawer / Drawer
+- Flutter: `NavigationDrawer / Drawer`
+- 関連: bottom_navigation_bar, navigation_rail, list_tile
+
+**説明**: ≡（ハンバーガー）アイコンや左端スワイプで開く、画面の左からスライドインするメニュー。項目が多いアプリで使う。
+
+**使いどころ**: トップレベルの項目が 6 個以上あるとき。5 個以下なら Bottom Navigation の方が発見されやすい。
+
+**AI への伝え方（日本語）**: App Bar 左の ≡ で開く Navigation Drawer を作って。上にユーザー情報、下にメニュー項目（アイコン付き）を並べて。
+
+**Prompt (English)**: Create a Navigation Drawer opened by the ≡ icon in the App Bar, with user info at the top and icon menu items below.
+
+
+### Tabs / タブ（上部タブ）
+
+- id: `tab_bar`  URL: https://uizukan.dev/entry/tab_bar/
+- 種別: 表示 / Navigation
+- 別名: Tab Bar, Top Tabs, Scrollable Tabs, Tab Layout
+- 呼び名: Material 3=Tabs（Primary / Secondary） / Material 2=Tabs（Fixed / Scrollable） / Android (Compose)=PrimaryTabRow / SecondaryTabRow / ScrollableTabRow + Tab / iOS (HIG)=該当なし（Segmented control で代替。iOS の Tab bar は画面下の別物） / SwiftUI=該当なし（Picker(.segmented) か TabView(.page)） / Web=Tabs（WAI-ARIA パターン。role="tablist"） / Flutter=TabBar + TabBarView + DefaultTabController
+- Flutter: `TabBar + TabBarView + DefaultTabController`
+- 関連: segmented_button, bottom_navigation_bar, page_view_swipe
+
+**説明**: 選択中のタブに下線インジケータが付き、内容を横スワイプで切り替えられる。タブが多いときは横スクロール（isScrollable）。
+
+**使いどころ**: 同じ画面内で内容のカテゴリを切り替える（プロフィールの「投稿／いいね」など）。アプリ全体の切替は Bottom Navigation。
+
+**AI への伝え方（日本語）**: App Bar の下に「投稿／いいね／保存済み」の Tabs を作って。下線インジケータ付きで、内容は横スワイプでも切り替えられるように。
+
+**Prompt (English)**: Add "Posts / Likes / Saved" Tabs under the App Bar with an underline indicator; content should also switch by horizontal swipe.
+
+
+### Bottom App Bar / ボトムアプリバー（下部ツールバー）
+
+- id: `bottom_app_bar`  URL: https://uizukan.dev/entry/bottom_app_bar/
+- 種別: 表示 / Navigation
+- 別名: Bottom Toolbar, Toolbar (iOS), Action Bar
+- 呼び名: Material 3=Bottom app bar / Material 2=Bottom app bar / Android (Compose)=BottomAppBar / iOS (HIG)=Toolbars（bottom） / SwiftUI=.toolbar { ToolbarItemGroup(placement: .bottomBar) } / Web=Toolbar（WAI-ARIA パターン）/ <footer> / Flutter=BottomAppBar
+- Flutter: `BottomAppBar`
+- 関連: fab, bottom_navigation_bar, bottom_action_bar
+
+**説明**: タブではなく「この画面での操作」（削除・共有・返信など）を下部にまとめるバー。Material では FAB を右端に埋め込める。
+
+**使いどころ**: メール詳細・写真閲覧など、画面固有のアクションが複数あるとき。
+
+**AI への伝え方（日本語）**: メール詳細画面の下部に、アーカイブ／削除／返信のアイコンと右端に FAB を持つ Bottom App Bar を作って。
+
+**Prompt (English)**: Add a Bottom App Bar to the email detail screen with archive / delete / reply icons and a FAB at the right end.
+
+
+### Breadcrumb / パンくずリスト
+
+- id: `breadcrumb`  URL: https://uizukan.dev/entry/breadcrumb/
+- 種別: 表示 / Navigation
+- 別名: Breadcrumbs, Path Navigation
+- 呼び名: Material 3=該当なし（M3 に無い） / Material 2=該当なし（M2 に無い） / Android (Compose)=該当なし（Row + TextButton で自作） / iOS (HIG)=Path controls（macOS のみ） / SwiftUI=該当なし（HStack + Button で自作） / Web=Breadcrumb（WAI-ARIA パターン。<nav aria-label="breadcrumb">） / Flutter=自作（Row + TextButton + Icon(chevron_right)）
+- Flutter: `自作（Row + TextButton + Icon(chevron_right)）`
+- 関連: app_bar, text_button
+
+**説明**: 階層構造の現在位置を「›」区切りで示し、各階層へ戻れるリンク列。主に Web・デスクトップ向け。
+
+**使いどころ**: Web 版の階層が深い画面。モバイルでは戻るボタンで十分なことが多い。
+
+**AI への伝え方（日本語）**: Web 版の商品ページ上部に「ホーム › メンズ › シューズ › 商品名」の Breadcrumb を作って。最後以外はリンクにして。
+
+**Prompt (English)**: Add a Breadcrumb "Home › Men › Shoes › Product" at the top of the web product page; all but the last are links.
+
+
+### Page Indicator / ページインジケータ（ドット）
+
+- id: `page_indicator`  URL: https://uizukan.dev/entry/page_indicator/
+- 種別: 表示 / Navigation
+- 別名: Dots Indicator, Page Control, Carousel Dots
+- 呼び名: Material 3=該当なし（Carousel の indicator として言及のみ） / Material 2=該当なし（M2 に無い） / Android (Compose)=該当なし（HorizontalPager + 自作の点） / iOS (HIG)=Page controls / SwiftUI=TabView(.page) の indicator / .indexViewStyle(.page) / Web=該当なし（Pagination dots） / Flutter=自作（Row of AnimatedContainer）/ smooth_page_indicator
+- Flutter: `自作（Row of AnimatedContainer）/ smooth_page_indicator`
+- 関連: carousel, page_view_swipe, snap_scrolling
+
+**説明**: 小さな点を横に並べ、現在ページの点だけ色や幅を変える。PageView の controller と連動させる。
+
+**使いどころ**: オンボーディング、画像カルーセル。ページ数が 10 を超えるなら数値表示。
+
+**AI への伝え方（日本語）**: オンボーディング 3 ページの下に Page Indicator（ドット）を置いて。現在ページのドットは横に伸びて primary 色になるアニメーション付きで。
+
+**Prompt (English)**: Add a Page Indicator (dots) under the 3-page onboarding. The active dot stretches horizontally and turns primary, animated.
+
+
+### Floating Toolbar / フローティングツールバー（浮かぶ操作の帯）
+
+- id: `floating_toolbar`  URL: https://uizukan.dev/entry/floating_toolbar/
+- 種別: 表示 / Navigation
+- 別名: Toolbar, Floating Action Bar, Contextual Toolbar, 浮いたツールバー
+- 呼び名: Material 3=Toolbars（Floating toolbar） / Material 2=該当なし（Material 2 に無い。近いのは Bottom app bar） / Android (Compose)=HorizontalFloatingToolbar / VerticalFloatingToolbar / iOS (HIG)=Toolbars / SwiftUI=.toolbar { ToolbarItemGroup(placement: .bottomBar) } / Web=Toolbar（WAI-ARIA パターン。role="toolbar"） / Flutter=Material + Row + IconButton（専用の部品は無く、これで自作する）
+- Flutter: `Material + Row + IconButton（専用の部品は無く、これで自作する）`
+- 関連: bottom_app_bar, app_bar, fab, scroll_to_hide_bar
+
+**説明**: 画面の端にくっつかず、内容の上に浮いて出るカプセル型の帯。いまの画面に関係する操作（書式・並べ替え・共有など）のアイコンが並ぶ。横向きと縦向きがあり、FAB と組にもできる。Material 3 Expressive で加わった。iOS 26 のツールバーも同じく浮いた形になった。
+
+**使いどころ**: 編集や閲覧の画面で、よく使う操作を 3〜5 個、手の届く所に出しておきたいとき。画面の行き先を切り替える用途には使わない（それは下のナビゲーションバー）。スクロール中は隠してもよい。
+
+**AI への伝え方（日本語）**: メモの編集画面の下に、太字・斜体・下線・箇条書きのアイコンが並ぶ Floating Toolbar を浮かせて。右端に完了のボタンを。
+
+**Prompt (English)**: Float a Floating Toolbar at the bottom of the note editor with bold, italic, underline and bullet-list icons, plus a done button at the trailing end.
+
+
+## Surfaces & Overlays / 面・オーバーレイ
+
+### Card / カード
+
+- id: `card`  URL: https://uizukan.dev/entry/card/
+- 種別: 表示 / Surfaces & Overlays
+- 別名: Elevated Card, Filled Card, Outlined Card, Tile
+- 呼び名: Material 3=Cards（Elevated / Filled / Outlined） / Material 2=Card（Elevated / Outlined） / Android (Compose)=Card / ElevatedCard / OutlinedCard / iOS (HIG)=該当なし（Lockups や grouped list で表現） / SwiftUI=GroupBox（近い）/ 自作 / Web=該当なし（Card。<article>） / Flutter=Card / Card.filled / Card.outlined
+- Flutter: `Card / Card.filled / Card.outlined`
+- 関連: list_tile, elevated_button, hero_transition
+
+**説明**: 画像・見出し・本文・アクションを角丸 12dp の面にまとめる。Material 3 では Elevated（影）／Filled（塗り）／Outlined（枠線）の 3 種類。
+
+**使いどころ**: フィードの投稿、商品、記事など「タップで詳細へ行く独立した塊」。単なる区切りには不要。
+
+**AI への伝え方（日本語）**: 上に画像、下に見出しと 2 行の説明、右下にテキストボタンがある Material 3 の Elevated Card を作って。タップで詳細に遷移するように。
+
+**Prompt (English)**: Create a Material 3 Elevated Card with an image on top, a headline and 2-line description below, and a text button at the bottom-right. Tapping the card navigates to the detail screen.
+
+
+### List Item / リスト項目（セル）
+
+- id: `list_tile`  URL: https://uizukan.dev/entry/list_tile/
+- 種別: 表示 / Surfaces & Overlays
+- 別名: List Tile, Cell, Row, Table View Cell, Settings Row
+- 呼び名: Material 3=Lists（List item：One-line / Two-line / Three-line） / Material 2=Lists（List item） / Android (Compose)=ListItem / iOS (HIG)=Lists and tables（Row） / SwiftUI=List + row（Label / LabeledContent） / Web=<li> / Listbox（WAI-ARIA パターン） / Flutter=ListTile / CupertinoListTile
+- Flutter: `ListTile / CupertinoListTile`
+- 関連: switch_toggle, expansion_tile, divider, swipe_actions
+
+**説明**: leading（アイコン・アバター）／title／subtitle／trailing（›・スイッチ・値）で構成される横一列。設定画面はこれの積み重ね。
+
+**使いどころ**: 設定・メニュー・連絡先など、縦に並ぶ同型の項目。
+
+**AI への伝え方（日本語）**: 設定画面の行を ListTile で作って。左にアイコン、タイトルとサブタイトル、右に「›」の矢印。タップで詳細画面へ。
+
+**Prompt (English)**: Create settings rows with ListTile: leading icon, title and subtitle, trailing "›" chevron. Tapping opens the detail screen.
+
+
+### Accordion / アコーディオン（展開パネル）
+
+- id: `expansion_tile`  URL: https://uizukan.dev/entry/expansion_tile/
+- 種別: 表示 / Surfaces & Overlays
+- 別名: Expansion Tile, Expansion Panel, Disclosure, Collapsible
+- 呼び名: Material 3=該当なし（M3 に無い） / Material 2=該当なし（Material 1 の Expansion panels。M2 では外れた） / Android (Compose)=該当なし（AnimatedVisibility で自作） / iOS (HIG)=Disclosure controls / SwiftUI=DisclosureGroup / Web=<details> + <summary> / Accordion（WAI-ARIA パターン） / Flutter=ExpansionTile / ExpansionPanelList
+- Flutter: `ExpansionTile / ExpansionPanelList`
+- 関連: list_tile, expand_collapse, card
+
+**説明**: 見出し行の右に「⌄」があり、タップで内容が展開する。FAQ・詳細設定・注文明細の内訳で定番。
+
+**使いどころ**: FAQ、長い説明の折りたたみ、階層のある設定。
+
+**AI への伝え方（日本語）**: FAQ を Accordion（ExpansionTile）で作って。質問をタップすると回答が下にアニメーションで展開し、右の矢印が回転するように。
+
+**Prompt (English)**: Build the FAQ as an Accordion (ExpansionTile): tapping a question animates the answer open below and rotates the chevron.
+
+
+### Bottom Sheet / ボトムシート（ハーフモーダル）
+
+- id: `modal_bottom_sheet`  URL: https://uizukan.dev/entry/modal_bottom_sheet/
+- 種別: 表示 / Surfaces & Overlays
+- 別名: Modal Bottom Sheet, Half Modal, Sheet, Drawer (bottom), Half Sheet
+- 呼び名: Material 3=Bottom sheets（Standard / Modal） / Material 2=Sheets: bottom（Standard / Modal） / Android (Compose)=ModalBottomSheet / BottomSheetScaffold / iOS (HIG)=Sheets / SwiftUI=.sheet + .presentationDetents([.medium, .large]) / Web=<dialog>（Bottom sheet） / Flutter=showModalBottomSheet / DraggableScrollableSheet
+- Flutter: `showModalBottomSheet / DraggableScrollableSheet`
+- 関連: action_sheet, alert_dialog, drag_to_dismiss_sheet, slide_up_modal
+
+**説明**: 画面下部から表示されるパネル。上端に「取っ手（drag handle）」が付き、下にドラッグして閉じる。Material の Modal Bottom Sheet、iOS の half sheet（detents）が該当。
+
+**使いどころ**: 共有メニュー、フィルタ設定、簡単な入力など「今の画面を離れずに済ませたい」操作。
+
+**AI への伝え方（日本語）**: フィルタボタンを押すと、下から Modal Bottom Sheet がせり上がって出るようにして。上に取っ手を付け、下にドラッグで閉じられるように。
+
+**Prompt (English)**: When the filter button is pressed, slide up a Modal Bottom Sheet from the bottom with a drag handle; dragging down dismisses it.
+
+
+### Alert Dialog / アラートダイアログ（確認ダイアログ）
+
+- id: `alert_dialog`  URL: https://uizukan.dev/entry/alert_dialog/
+- 種別: 表示 / Surfaces & Overlays
+- 別名: Dialog, Alert, Confirmation Dialog, Modal Dialog, Popup
+- 呼び名: Material 3=Dialogs（Basic dialog） / Material 2=Dialogs（Alert / Simple / Confirmation） / Android (Compose)=AlertDialog / iOS (HIG)=Alerts / SwiftUI=.alert() / Web=<dialog> / Alert and Message Dialogs（WAI-ARIA パターン） / Flutter=AlertDialog / CupertinoAlertDialog
+- Flutter: `AlertDialog / CupertinoAlertDialog`
+- 関連: action_sheet, modal_bottom_sheet, snackbar, full_screen_dialog
+
+**説明**: 背景を暗くして中央に表示し、タイトル・本文・1〜2 個のボタンで判断を求める。ユーザーの操作を止めるので多用しない。
+
+**使いどころ**: 取り消せない操作（削除・ログアウト）の確認、重要なエラー。軽い通知には Snackbar。
+
+**AI への伝え方（日本語）**: 削除ボタンを押したら「本当に削除しますか？」の Alert Dialog を出して。「キャンセル」と赤い「削除」の 2 ボタンで、iOS では iOS 風のアラートにして。
+
+**Prompt (English)**: When delete is pressed, show an Alert Dialog "Delete this item?" with "Cancel" and a red "Delete" button. Use the iOS-style alert on iOS.
+
+
+### Action Sheet / アクションシート
+
+- id: `action_sheet`  URL: https://uizukan.dev/entry/action_sheet/
+- 種別: 表示 / Surfaces & Overlays
+- 別名: iOS Action Sheet, Options Sheet, Bottom Action Menu
+- 呼び名: Material 3=該当なし（Bottom sheet の list で代替） / Material 2=該当なし（Modal bottom sheet で代替） / Android (Compose)=該当なし（ModalBottomSheet で代替） / iOS (HIG)=Action sheets / SwiftUI=.confirmationDialog() / Web=該当なし（Action sheet。<dialog> で自作） / Flutter=showCupertinoModalPopup + CupertinoActionSheet
+- Flutter: `showCupertinoModalPopup + CupertinoActionSheet`
+- 関連: modal_bottom_sheet, alert_dialog, popup_menu
+
+**説明**: 「写真を撮る／ライブラリから選ぶ／キャンセル」のように、少数の選択肢を下から提示する iOS 標準の部品。破壊的操作は赤字。
+
+**使いどころ**: 1 つの操作に対する 2〜5 個の選択肢（画像の取得元、共有先、削除確認）。
+
+**AI への伝え方（日本語）**: プロフィール画像をタップしたら「写真を撮る／ライブラリから選ぶ／削除（赤）／キャンセル」の iOS 風 Action Sheet を出して。
+
+**Prompt (English)**: When the profile picture is tapped, present an iOS-style Action Sheet: "Take Photo / Choose from Library / Delete (red) / Cancel".
+
+
+### Menu (Popup / Overflow) / ポップアップメニュー（⋮ メニュー）
+
+- id: `popup_menu`  URL: https://uizukan.dev/entry/popup_menu/
+- 種別: 表示 / Surfaces & Overlays
+- 別名: Overflow Menu, Kebab Menu, Dropdown Menu (action), Context Menu, More Menu, Pull-down Button
+- 呼び名: Material 3=Menus（Dropdown menu） / Material 2=Menus（Overflow / Popup menu） / Android (Compose)=DropdownMenu + DropdownMenuItem / iOS (HIG)=Menus（Pull-down buttons） / SwiftUI=Menu / Web=Menu Button（WAI-ARIA パターン。<button aria-haspopup="menu">） / Flutter=PopupMenuButton / MenuAnchor
+- Flutter: `PopupMenuButton / MenuAnchor`
+- 関連: app_bar, context_menu, action_sheet, dropdown_menu
+
+**説明**: ボタンのそばに浮かぶ選択肢の一覧。App Bar 右端の「⋮（ケバブ）」から出るものを Overflow Menu と呼ぶ。
+
+**使いどころ**: 画面に出しきれない補助操作（編集・複製・報告・削除）。
+
+**AI への伝え方（日本語）**: カード右上の ⋮ を押すと「編集／複製／削除（赤）」の Popup Menu が出るようにして。
+
+**Prompt (English)**: Tapping the ⋮ at the top-right of the card should open a Popup Menu with "Edit / Duplicate / Delete (red)".
+
+
+### Tooltip / ツールチップ
+
+- id: `tooltip`  URL: https://uizukan.dev/entry/tooltip/
+- 種別: 表示 / Surfaces & Overlays
+- 別名: Hint Bubble, Hover Label, Rich Tooltip
+- 呼び名: Material 3=Tooltips（Plain / Rich） / Material 2=Tooltips / Android (Compose)=TooltipBox + PlainTooltip / RichTooltip / iOS (HIG)=該当なし（iOS 標準には無い。macOS の help tag） / SwiftUI=.help(_:)（macOS） / Web=title 属性 / Tooltip（WAI-ARIA パターン） / Flutter=Tooltip
+- Flutter: `Tooltip`
+- 関連: icon_button, long_press
+
+**説明**: アイコンボタンの意味を補足する黒い小さな吹き出し。モバイルでは長押し、Web ではホバーで表示。スクリーンリーダーにも読まれる。
+
+**使いどころ**: アイコンのみのボタン全て（アクセシビリティ上も推奨）。
+
+**AI への伝え方（日本語）**: App Bar のアイコンボタン全てに Tooltip を付けて。Web ではホバー、モバイルでは長押しで表示されるように。
+
+**Prompt (English)**: Add a Tooltip to every icon button in the App Bar; show on hover on web and on long-press on mobile.
+
+
+### Divider / 区切り線
+
+- id: `divider`  URL: https://uizukan.dev/entry/divider/
+- 種別: 表示 / Surfaces & Overlays
+- 別名: Separator, Rule, Inset Divider
+- 呼び名: Material 3=Divider（Full width / Inset） / Material 2=Divider / Android (Compose)=HorizontalDivider / VerticalDivider / iOS (HIG)=該当なし（List の separator） / SwiftUI=Divider / Web=<hr> / Flutter=Divider / VerticalDivider / ListView.separated
+- Flutter: `Divider / VerticalDivider / ListView.separated`
+- 関連: list_tile, sticky_header
+
+**説明**: 1dp の薄い線。iOS の設定では左端をアイコン分空ける inset separator が標準。
+
+**使いどころ**: リスト項目の間、セクションの境目。カードの中では余白で区切る方が上品。
+
+**AI への伝え方（日本語）**: 設定リストの各行の間に、左端を 56dp 空けた inset Divider を入れて。
+
+**Prompt (English)**: Insert inset Dividers (56dp left indent) between the settings rows.
+
+
+### Full-screen Dialog / 全画面ダイアログ（モーダル画面）
+
+- id: `full_screen_dialog`  URL: https://uizukan.dev/entry/full_screen_dialog/
+- 種別: 表示 / Surfaces & Overlays
+- 別名: Modal Screen, Full-screen Modal, Sheet (large), Compose Screen
+- 呼び名: Material 3=Dialogs（Full-screen dialog） / Material 2=Dialogs（Full-screen dialog） / Android (Compose)=該当なし（Dialog(usePlatformDefaultWidth = false) で自作） / iOS (HIG)=Sheets（Full-screen modal） / SwiftUI=.fullScreenCover() / Web=<dialog>（全画面） / Flutter=MaterialPageRoute(fullscreenDialog: true)
+- Flutter: `MaterialPageRoute(fullscreenDialog: true)`
+- 関連: alert_dialog, modal_bottom_sheet, slide_up_modal, app_bar
+
+**説明**: 通常の push（右から）ではなく下から出てくる画面。App Bar の左が「×（閉じる）」、右が「保存／完了」になるのが作法。
+
+**使いどころ**: 新規作成・編集・複数項目の入力など「一連の作業を終えてから戻る」画面。
+
+**AI への伝え方（日本語）**: 「新規投稿」を Full-screen Dialog として開いて。下からせり上がるアニメーションで、左上に ×、右上に「投稿」ボタンを置いて。
+
+**Prompt (English)**: Open "New post" as a Full-screen Dialog: it slides up from the bottom, with an × at the top-left and a "Post" button at the top-right.
+
+
+### Sticky Bottom Action Bar / 下部固定 CTA バー
+
+- id: `bottom_action_bar`  URL: https://uizukan.dev/entry/bottom_action_bar/
+- 種別: 表示 / Surfaces & Overlays
+- 別名: Sticky Footer, Bottom CTA, Persistent Footer, Checkout Bar
+- 呼び名: Material 3=Docked toolbar（M3 Expressive） / Material 2=該当なし（Bottom app bar で代替） / Android (Compose)=該当なし（Scaffold(bottomBar:) で自作） / iOS (HIG)=Toolbars / SwiftUI=.toolbar(placement: .bottomBar) / .safeAreaInset(edge: .bottom) / Web=該当なし（Sticky footer / Action bar） / Flutter=Scaffold.bottomNavigationBar / persistentFooterButtons
+- Flutter: `Scaffold.bottomNavigationBar / persistentFooterButtons`
+- 関連: filled_button, bottom_app_bar, stepper_input
+
+**説明**: 本文はスクロールするが、価格と主要ボタンは画面下部に常に見えるバー。上に薄い影や線を付けて本文と区別する。
+
+**使いどころ**: 商品詳細、購入フロー、フォームの「次へ」など、主要操作を常に押せるようにしたい画面。
+
+**AI への伝え方（日本語）**: 商品ページの下部に、左に価格、右に「カートに入れる」の Filled Button を置いた Sticky Bottom Action Bar を固定して。SafeArea を考慮して。
+
+**Prompt (English)**: Pin a Sticky Bottom Action Bar to the product page: price on the left, a Filled "Add to cart" button on the right, respecting SafeArea.
+
+
+### Popover / ポップオーバー（矢印つきの小さな面）
+
+- id: `popover`  URL: https://uizukan.dev/entry/popover/
+- 種別: 表示 / Surfaces & Overlays
+- 別名: Popup, Callout, Flyout, 吹き出しメニュー
+- 呼び名: Material 3=該当なし（部品として無い。近いのは Menus と Rich tooltip） / Material 2=該当なし（部品として無い。Menus を使う） / Android (Compose)=Popup / iOS (HIG)=Popovers / SwiftUI=.popover(isPresented:) / Web=Popover API（<div popover>） / Flutter=OverlayPortal + CompositedTransformFollower（専用の部品は無く、これで自作する）
+- Flutter: `OverlayPortal + CompositedTransformFollower（専用の部品は無く、これで自作する）`
+- 関連: popup_menu, tooltip, modal_bottom_sheet, context_menu
+
+**説明**: ボタンなどを押すと、その場所を矢印で指しながら浮かぶ小さな面。少しの情報や、関連する 2〜3 個の操作を載せる。外側を押すか、中の項目を選ぶと閉じる。
+
+**使いどころ**: iPad や広い画面で、画面を移らずに少しだけ設定を変えたいとき。iPhone の縦持ちのような狭い画面では、Popover ではなくシートで出すのが Apple の方針。Popover の上に別の Popover を重ねない。
+
+**AI への伝え方（日本語）**: 「予定の色」ボタンを押すと、ボタンを矢印で指す Popover が出て、色を 3 つから選べるようにして。外を押したら閉じて。
+
+**Prompt (English)**: Tapping the "Event color" button should show a Popover with an arrow pointing at the button, offering three colors. Dismiss it on outside tap.
+
+
+### Share Sheet / 共有シート（送り先と操作の一覧）
+
+- id: `share_sheet`  URL: https://uizukan.dev/entry/share_sheet/
+- 種別: 表示 / Surfaces & Overlays
+- 別名: Activity View, Sharesheet, Share Menu, 共有メニュー
+- 呼び名: Material 3=該当なし（部品として無い。Android は OS の Sharesheet を呼ぶ） / Material 2=該当なし（部品として無い。Android は OS の Sharesheet を呼ぶ） / Android (Compose)=Intent.createChooser（Android Sharesheet） / iOS (HIG)=Activity views（Share sheet） / SwiftUI=ShareLink / Web=Web Share API（navigator.share） / Flutter=share_plus パッケージ（SharePlus.instance.share。標準の部品は無い）
+- Flutter: `share_plus パッケージ（SharePlus.instance.share。標準の部品は無い）`
+- 関連: modal_bottom_sheet, action_sheet, icon_button, popover
+
+**説明**: 共有ボタン（□ から矢印が出るアイコン）を押すと出る、OS が用意したシート。上に送り先のアプリ、下に「コピー」「プリント」などの操作が並ぶ。中身は OS と利用者の設定で決まり、アプリは「何を共有するか」を渡すだけ。
+
+**使いどころ**: 記事・写真・リンクなどを、ほかのアプリや人に渡したいとき。自前で送り先の一覧を作らず、OS のシートを呼ぶ。「コピー」など、シートに最初からある操作を自分で足して重複させない。
+
+**AI への伝え方（日本語）**: 記事の右上に共有ボタンを置いて、押すと OS の Share Sheet（共有シート）が開いて記事の URL を共有できるようにして。
+
+**Prompt (English)**: Add a share button at the top-right of the article that opens the system Share Sheet to share the article URL.
+
+
+### Edit Menu / 編集メニュー（コピー・ペーストの帯）
+
+- id: `edit_menu`  URL: https://uizukan.dev/entry/edit_menu/
+- 種別: 表示 / Surfaces & Overlays
+- 別名: Text Selection Toolbar, Selection Menu, Copy Paste Menu, コピペメニュー
+- 呼び名: Material 3=該当なし（部品として無い。Android は OS の Text selection toolbar） / Material 2=該当なし（部品として無い。Android は OS の Text selection toolbar） / Android (Compose)=SelectionContainer（テキスト選択ツールバー） / iOS (HIG)=Edit menus / SwiftUI=.textSelection(.enabled)（選ぶと自動で出る） / Web=該当なし（ブラウザと OS が出す。アプリ側は Selection API で選択を知るだけ） / Flutter=AdaptiveTextSelectionToolbar / contextMenuBuilder
+- Flutter: `AdaptiveTextSelectionToolbar / contextMenuBuilder`
+- 関連: context_menu, long_press, double_tap, popup_menu
+
+**説明**: 文字を長押しやダブルタップで選ぶと、選んだ所の上に出る小さな横長のメニュー。「カット・コピー・ペースト・調べる」などが並び、右端の › で続きが出る。OS が用意するもので、選んだ内容に合う操作だけが出る。
+
+**使いどころ**: 文字や画像を選んで編集する所すべて。同じ操作を載せた自前のメニューは作らず、OS のものを使う。アプリ独自の操作（引用・ハイライトなど）は、このメニューに項目として足す。
+
+**AI への伝え方（日本語）**: 本文の文字を選択できるようにして、選ぶと出る Edit Menu（編集メニュー）に「引用する」を足して。
+
+**Prompt (English)**: Make the body text selectable and add a "Quote" item to the Edit Menu that appears on selection.
+
+
+### Side Sheet / サイドシート（横から出る補助の面）
+
+- id: `side_sheet`  URL: https://uizukan.dev/entry/side_sheet/
+- 種別: 表示 / Surfaces & Overlays
+- 別名: Side Panel, Inspector, Filter Panel, End Drawer, 右から出るパネル
+- 呼び名: Material 3=Side sheets（Standard / Modal） / Material 2=Sheets: side / Android (Compose)=該当なし（Compose Material 3 に無い。ModalNavigationDrawer で代替。View は SideSheetDialog） / iOS (HIG)=該当なし（部品として無い。近いのは Sidebars と、SwiftUI の Inspector） / SwiftUI=.inspector(isPresented:) / Web=Dialog (Modal) パターン（<dialog>）/ <aside> / Flutter=Drawer（Scaffold の endDrawer）/ showGeneralDialog
+- Flutter: `Drawer（Scaffold の endDrawer）/ showGeneralDialog`
+- 関連: modal_bottom_sheet, navigation_drawer, popover, full_screen_dialog
+
+**説明**: 画面の右（または左）の端にくっついて出る、縦長の面。絞り込みの条件、詳細、設定など、いまの画面を補う内容を載せる。後ろを暗くして操作を止める Modal と、後ろの画面と並んで出しっぱなしにできる Standard の 2 種。
+
+**使いどころ**: タブレットやパソコンのような広い画面で、一覧を見ながら絞り込みや詳細を出したいとき。スマホの狭い画面では、下から出る Bottom Sheet の方が合う。行き先の切り替えには使わない（それは Navigation Drawer）。
+
+**AI への伝え方（日本語）**: 検索結果の右上の絞り込みボタンを押すと、右から Modal Side Sheet が出て「在庫あり／送料無料／セール中」を選べるようにして。
+
+**Prompt (English)**: Tapping the filter button at the top-right of the results should slide in a Modal Side Sheet from the right with "In stock / Free shipping / On sale" options.
+
+
+## Feedback & Status / フィードバック
+
+### Snackbar / スナックバー（トースト）
+
+- id: `snackbar`  URL: https://uizukan.dev/entry/snackbar/
+- 種別: 表示 / Feedback & Status
+- 別名: Toast, Bottom Notification, Transient Message
+- 呼び名: Material 3=Snackbar / Material 2=Snackbar / Android (Compose)=Snackbar / SnackbarHost / iOS (HIG)=該当なし（iOS 標準には無い。自作の toast） / SwiftUI=該当なし（overlay で自作） / Web=該当なし（Toast / Snackbar。role="status"） / Flutter=ScaffoldMessenger.showSnackBar / SnackBar
+- Flutter: `ScaffoldMessenger.showSnackBar / SnackBar`
+- 関連: banner, alert_dialog, snackbar_undo
+
+**説明**: 操作の結果（保存しました・削除しました）を画面下部に短時間表示する。Material の Snackbar は 1 つのアクション（元に戻す）を持てる。Toast は Android OS の簡易版で、アクションを持てない。
+
+**使いどころ**: 操作完了の軽い通知、取り消し可能な削除。判断が必要なら Dialog（モーダル）。違いは「手前に出るものの違い」。
+
+**AI への伝え方（日本語）**: 削除したら画面下に「削除しました」の Snackbar を 4 秒表示して。右に「元に戻す」アクションを付けて。フローティング（浮いた）スタイルで。
+
+**Prompt (English)**: After deleting, show a floating Snackbar "Deleted" for 4 seconds at the bottom with an "Undo" action on the right.
+
+
+### Banner / バナー（インライン通知）
+
+- id: `banner`  URL: https://uizukan.dev/entry/banner/
+- 種別: 表示 / Feedback & Status
+- 別名: Material Banner, Inline Alert, Notice Bar, Callout
+- 呼び名: Material 3=該当なし（M3 の部品一覧から外れた。Snackbar / Dialog を推奨） / Material 2=Banner / Android (Compose)=該当なし（自作） / iOS (HIG)=該当なし（iOS 標準には無い） / SwiftUI=該当なし（自作） / Web=該当なし（Alert bar。role="alert"） / Flutter=MaterialBanner
+- Flutter: `MaterialBanner`
+- 関連: snackbar, alert_dialog, empty_state
+
+**説明**: Snackbar と違い自動では消えず、対処を促す（オフライン・未認証・アップデート）。1〜2 個のアクションを持つ。
+
+**使いどころ**: ネットワーク切断、メール未確認、課金の期限切れなど「対応が必要な継続状態」。
+
+**AI への伝え方（日本語）**: オフラインになったら画面上部に「インターネットに接続されていません」の Banner を出して。閉じるまで消えず、「再試行」ボタン付きで。
+
+**Prompt (English)**: When offline, show a Banner at the top: "No internet connection", persistent until dismissed, with a "Retry" button.
+
+
+### Circular Progress Indicator / 円形プログレス（スピナー）
+
+- id: `circular_progress`  URL: https://uizukan.dev/entry/circular_progress/
+- 種別: 表示 / Feedback & Status
+- 別名: Spinner, Activity Indicator, Loading Spinner, Loader
+- 呼び名: Material 3=Circular progress indicator / Material 2=Circular progress indicator / Android (Compose)=CircularProgressIndicator / iOS (HIG)=Progress indicators（Activity indicator） / SwiftUI=ProgressView（.circular） / Web=該当なし（Spinner。role="progressbar"） / Flutter=CircularProgressIndicator / CupertinoActivityIndicator
+- Flutter: `CircularProgressIndicator / CupertinoActivityIndicator`
+- 関連: linear_progress, skeleton, loading_button
+
+**説明**: 終わりが分からない処理は回り続ける indeterminate、進捗が分かるなら弧が伸びる determinate を使う。
+
+**使いどころ**: 1〜10 秒程度の待ち。それ以上はスケルトンや進捗バー＋説明。
+
+**AI への伝え方（日本語）**: データ読み込み中は画面中央にスピナーを出して。iOS では CupertinoActivityIndicator、Android では CircularProgressIndicator になる adaptive にして。
+
+**Prompt (English)**: While loading, show a spinner centered on screen. Use CircularProgressIndicator.adaptive so it is native on iOS and Android.
+
+
+### Linear Progress Indicator / 進捗バー（プログレスバー）
+
+- id: `linear_progress`  URL: https://uizukan.dev/entry/linear_progress/
+- 種別: 表示 / Feedback & Status
+- 別名: Progress Bar, Loading Bar, Determinate Progress
+- 呼び名: Material 3=Linear progress indicator / Material 2=Linear progress indicator / Android (Compose)=LinearProgressIndicator / iOS (HIG)=Progress indicators（Progress bar） / SwiftUI=ProgressView(value:)（.linear） / Web=<progress> / Flutter=LinearProgressIndicator
+- Flutter: `LinearProgressIndicator`
+- 関連: circular_progress, stepper_progress, animated_counter
+
+**説明**: アップロード・ダウンロード・学習の達成率などを横棒で表す。値が分からなければ左右に流れる indeterminate。
+
+**使いどころ**: 進捗が数値で分かる処理、ステップ式フォームの進み具合。
+
+**AI への伝え方（日本語）**: アップロードの進捗を Linear Progress Indicator で表示して。値が変わるとバーが滑らかに伸びるアニメーション付きで、右に「45%」を出して。
+
+**Prompt (English)**: Show upload progress with a Linear Progress Indicator that animates smoothly when the value changes, with "45%" text on the right.
+
+
+### Skeleton Screen / スケルトンスクリーン
+
+- id: `skeleton`  URL: https://uizukan.dev/entry/skeleton/
+- 種別: 表示 / Feedback & Status
+- 別名: Skeleton Loader, Shimmer Placeholder, Content Placeholder, Ghost Element
+- 呼び名: Material 3=該当なし（Motion の Skeleton loaders として言及のみ） / Material 2=該当なし（M2 に無い） / Android (Compose)=該当なし（Brush + Modifier.background で自作） / iOS (HIG)=該当なし（iOS 標準には無い） / SwiftUI=.redacted(reason: .placeholder) / Web=該当なし（Skeleton screen） / Flutter=自作 / skeletonizer / shimmer パッケージ
+- Flutter: `自作 / skeletonizer / shimmer パッケージ`
+- 関連: shimmer, circular_progress, crossfade
+
+**説明**: テキストや画像の位置に灰色の四角を置く。止まった箱だけでもスケルトンだが、光が流れるシマー（Shimmer）と組み合わせることが多い。スピナーより「もうすぐ出る」感が強く、体感が速い。
+
+**使いどころ**: フィード・一覧・詳細画面の初回読み込み。短時間（300ms 未満）なら不要。
+
+**AI への伝え方（日本語）**: フィードの読み込み中は、カードと同じ形のグレーの Skeleton を 3 枚出して。左から右に光が流れる shimmer アニメーション付きで。
+
+**Prompt (English)**: While the feed loads, show 3 gray Skeleton cards shaped like the real cards, with a left-to-right shimmer animation.
+
+
+### Badge / バッジ（未読数・赤い点）
+
+- id: `badge`  URL: https://uizukan.dev/entry/badge/
+- 種別: 表示 / Feedback & Status
+- 別名: Notification Badge, Dot Badge, Count Badge, Red Dot
+- 呼び名: Material 3=Badge / Material 2=Badge / Android (Compose)=Badge / BadgedBox / iOS (HIG)=該当なし（Tab bar とアプリアイコンの badge として存在。独立部品名は無い） / SwiftUI=.badge(_:) / Web=該当なし（Badge。role="status"） / Flutter=Badge / Badge.count
+- Flutter: `Badge / Badge.count`
+- 関連: bottom_navigation_bar, icon_button, avatar
+
+**説明**: アイコンやタブの右上に重ねる小さな円。数字なしの点（dot）と、数字入り（label）がある。99 を超えたら「99+」。
+
+**使いどころ**: 未読・新着・カート内の点数など、注意を引きたい件数。
+
+**AI への伝え方（日本語）**: カートアイコンの右上に、商品点数の Badge を出して。0 のときは非表示、99 を超えたら「99+」で。
+
+**Prompt (English)**: Add a count Badge at the top-right of the cart icon: hidden when 0, "99+" above 99.
+
+
+### Empty State / 空状態（エンプティステート）
+
+- id: `empty_state`  URL: https://uizukan.dev/entry/empty_state/
+- 種別: 表示 / Feedback & Status
+- 別名: Zero State, Blank Slate, No Data View, Empty View
+- 呼び名: Material 3=該当なし（M3 に無い） / Material 2=該当なし（M2 に無い） / Android (Compose)=該当なし（Column + Icon + Text + Button） / iOS (HIG)=該当なし（iOS 標準には無い） / SwiftUI=ContentUnavailableView / Web=該当なし（Empty state） / Flutter=自作（Column + Icon + Text + FilledButton）
+- Flutter: `自作（Column + Icon + Text + FilledButton）`
+- 関連: filled_button, banner, circular_progress
+
+**説明**: データがゼロの画面で、ただ真っ白にせず「なぜ空か」「次に何をすればよいか」を示す。イラスト・見出し・説明・CTA で構成。
+
+**使いどころ**: 初回利用、検索結果ゼロ、エラーで取得できなかった時（それぞれ文言を変える）。
+
+**AI への伝え方（日本語）**: メモが 0 件のときに Empty State を出して。中央に大きなアイコン、「メモがありません」、説明文、「最初のメモを作る」ボタンで。
+
+**Prompt (English)**: Show an Empty State when there are no notes: a large centered icon, "No notes yet", a short description, and a "Create your first note" button.
+
+
+### Loading Indicator / ローディングインジケータ（形が変わる読み込み表示）
+
+- id: `loading_indicator`  URL: https://uizukan.dev/entry/loading_indicator/
+- 種別: 表示 / Feedback & Status
+- 別名: Expressive Loading Indicator, Shape Morph Loader, Loader, 形が変わるぐるぐる
+- 呼び名: Material 3=Loading indicator / Material 2=該当なし（Material 2 に無い。Circular progress indicator を使う） / Android (Compose)=LoadingIndicator / ContainedLoadingIndicator / iOS (HIG)=Progress indicators（Activity indicator） / SwiftUI=ProgressView() / Web=role="progressbar"（値なし） / Flutter=CustomPaint + AnimationController（専用の部品は無い。標準は CircularProgressIndicator）
+- Flutter: `CustomPaint + AnimationController（専用の部品は無い。標準は CircularProgressIndicator）`
+- 関連: circular_progress, linear_progress, skeleton, pull_to_refresh
+
+**説明**: 丸や花のような形が、回りながら次の形へ滑らかに変わり続ける読み込み表示。丸い容器に入れる形と、そのまま出す形の 2 種。Material 3 Expressive で加わり、5 秒未満の短い待ち時間では、ぐるぐる回る Circular Progress Indicator の代わりに使うとされている。
+
+**使いどころ**: 引っ張って更新や、画面を開いた直後のような、5 秒未満で終わる読み込み。それより長い処理や、進み具合が分かる処理には、進捗のバーや円（Progress Indicator）を使う。iOS らしい画面では Activity Indicator のまま。
+
+**AI への伝え方（日本語）**: 一覧を読み込んでいる間、画面の中央に Material 3 の Loading Indicator（形が変わりながら回るもの）を容器つきで出して。
+
+**Prompt (English)**: While the list loads, show a contained Material 3 Loading Indicator (the shape-morphing, rotating one) in the center of the screen.
+
+
+## Data Display / 表示
+
+### Avatar / アバター（丸いプロフィール画像）
+
+- id: `avatar`  URL: https://uizukan.dev/entry/avatar/
+- 種別: 表示 / Data Display
+- 別名: Profile Picture, User Icon, Circle Avatar, Avatar Group
+- 呼び名: Material 3=該当なし（List item の leading avatar として登場。独立部品ではない） / Material 2=該当なし（List item の avatar） / Android (Compose)=該当なし（Image + Modifier.clip(CircleShape)） / iOS (HIG)=該当なし（Image view を円形に） / SwiftUI=Image + .clipShape(Circle()) / Web=<img>（Avatar。alt 必須） / Flutter=CircleAvatar
+- Flutter: `CircleAvatar`
+- 関連: badge, list_tile, chat_bubble
+
+**説明**: 円形のユーザー画像。画像未設定時はイニシャルや人型アイコンを背景色付きで表示する。右下にオンライン状態の点を重ねることもある。
+
+**使いどころ**: ユーザーを表すあらゆる場所（コメント、チャット、メンバー一覧）。
+
+**AI への伝え方（日本語）**: 直径 40dp の Avatar を作って。画像があれば表示、なければ名前のイニシャルを primaryContainer 背景で。右下にオンラインの緑の点を重ねて。
+
+**Prompt (English)**: Create a 40dp Avatar: show the image if available, otherwise the name's initials on a primaryContainer background, with a green online dot at the bottom-right.
+
+
+### Carousel / カルーセル（横スワイプの画像送り）
+
+- id: `carousel`  URL: https://uizukan.dev/entry/carousel/
+- 種別: 表示 / Data Display
+- 別名: Image Slider, Slideshow, Horizontal Pager, Swiper
+- 呼び名: Material 3=Carousel（Multi-browse / Uncontained / Hero / Full-screen） / Material 2=該当なし（Image list が近い） / Android (Compose)=HorizontalMultiBrowseCarousel / HorizontalUncontainedCarousel / iOS (HIG)=該当なし（Scroll view のページング + Page control） / SwiftUI=TabView + .tabViewStyle(.page) / ScrollView + .scrollTargetBehavior(.paging) / Web=Carousel（WAI-ARIA パターン） / Flutter=PageView / CarouselView
+- Flutter: `PageView / CarouselView`
+- 関連: page_indicator, snap_scrolling, page_view_swipe
+
+**説明**: 横スクロールでカードを送る。1 枚ずつ吸着（snap）するタイプと、端が少し見える peek タイプがある。下にドットを付けることが多い。
+
+**使いどころ**: 商品画像、キャンペーンバナー、おすすめの横並び。
+
+**AI への伝え方（日本語）**: 商品画像の Carousel を作って。横スワイプで 1 枚ずつ吸着し、次の画像の端が少し見える peek 表示、下にドットの Page Indicator。
+
+**Prompt (English)**: Create a product image Carousel: horizontal swipe snapping one image at a time, with the next image peeking at the edge and dot indicators below.
+
+
+### Grid / グリッド（格子状の一覧）
+
+- id: `grid`  URL: https://uizukan.dev/entry/grid/
+- 種別: 表示 / Data Display
+- 別名: Photo Grid, Grid View, Collection View, Tile Grid
+- 呼び名: Material 3=該当なし（Layout の Grid。部品ではない） / Material 2=Image list（旧称 Grid list） / Android (Compose)=LazyVerticalGrid / iOS (HIG)=Collections / SwiftUI=LazyVGrid / Grid / Web=display: grid（CSS Grid）/ Grid（WAI-ARIA パターン） / Flutter=GridView / SliverGrid
+- Flutter: `GridView / SliverGrid`
+- 関連: card, list_tile, infinite_scroll, pinch_zoom
+
+**説明**: 同じ大きさのセルを格子状に並べる。列数は画面幅で変える（レスポンシブ）。高さがバラバラなら staggered grid。
+
+**使いどころ**: 写真・商品・アルバムなど、画像が主役の一覧。文字が主役ならリスト。
+
+**AI への伝え方（日本語）**: 写真の Grid を作って。スマホでは 3 列、タブレットでは 5 列、正方形セル、隙間 2dp。タップで拡大表示に遷移。
+
+**Prompt (English)**: Create a photo Grid: 3 columns on phones, 5 on tablets, square cells with 2dp gaps. Tapping opens a full-screen viewer.
+
+
+### Sticky Section Header / 固定セクションヘッダー
+
+- id: `sticky_header`  URL: https://uizukan.dev/entry/sticky_header/
+- 種別: 表示 / Data Display
+- 別名: Pinned Header, Section Header, Group Header, Sticky Header
+- 呼び名: Material 3=該当なし（List の section header。固定は規定なし） / Material 2=Subheader（Lists） / Android (Compose)=LazyColumn stickyHeader / iOS (HIG)=Lists and tables（section header） / SwiftUI=Section(header:) / LazyVStack(pinnedViews: [.sectionHeaders]) / Web=position: sticky / Flutter=SliverPersistentHeader(pinned: true) / sticky_headers パッケージ
+- Flutter: `SliverPersistentHeader(pinned: true) / sticky_headers パッケージ`
+- 関連: list_tile, large_title_app_bar, divider
+
+**説明**: リストのグループ見出しが、そのグループが画面内にある間、上端に固定される。次の見出しが来ると押し上げられる。
+
+**使いどころ**: 日付ごと・頭文字ごとにグループ化された長いリスト。
+
+**AI への伝え方（日本語）**: 取引履歴を日付ごとにグループ化して、日付の見出しがスクロールで上に張り付く Sticky Section Header にして。
+
+**Prompt (English)**: Group the transaction history by date and make each date heading a Sticky Section Header that pins to the top while scrolling.
+
+
+### Rating Bar / 星評価
+
+- id: `rating_bar`  URL: https://uizukan.dev/entry/rating_bar/
+- 種別: 表示 / Data Display
+- 別名: Star Rating, Rating Stars, Review Stars
+- 呼び名: Material 3=該当なし（M3 に無い） / Material 2=該当なし（M2 に無い） / Android (Compose)=該当なし（View 系の android.widget.RatingBar。Compose は自作） / iOS (HIG)=Rating indicators / SwiftUI=該当なし（Image(systemName: "star") の並びで自作） / Web=該当なし（role="radiogroup" で実装） / Flutter=自作（Row of Icon）/ flutter_rating_bar
+- Flutter: `自作（Row of Icon）/ flutter_rating_bar`
+- 関連: haptic_selection, like_burst
+
+**説明**: 5 つの星で評価を示す。表示専用（半分の星あり）と、タップやドラッグで入力できるものがある。
+
+**使いどころ**: レビューの表示・投稿、アプリ内の満足度アンケート。
+
+**AI への伝え方（日本語）**: レビュー投稿用の Rating Bar を作って。星 5 つをタップまたは横ドラッグで選べて、選ぶたびに軽い触覚を鳴らして。
+
+**Prompt (English)**: Create a Rating Bar for posting reviews: 5 stars selectable by tap or horizontal drag, with a light haptic on each change.
+
+
+### Progress Stepper / ステップ表示（手順の進捗）
+
+- id: `stepper_progress`  URL: https://uizukan.dev/entry/stepper_progress/
+- 種別: 表示 / Data Display
+- 別名: Stepper, Step Indicator, Wizard Steps, Progress Steps
+- 呼び名: Material 3=該当なし（M3 に無い） / Material 2=該当なし（Material 1 の Steppers。M2 では外れた） / Android (Compose)=該当なし（自作） / iOS (HIG)=該当なし（Progress indicators で代替） / SwiftUI=該当なし（自作） / Web=該当なし（Progress steps。<ol> + aria-current="step"） / Flutter=Stepper / 自作
+- Flutter: `Stepper / 自作`
+- 関連: linear_progress, filled_button, page_view_swipe
+
+**説明**: 番号付きの丸を線でつなぎ、完了済み・現在・未着手を色分けする。購入フローや登録手順で使う。
+
+**使いどころ**: 3〜5 ステップの手続き。2 ステップなら不要、6 以上なら分割を検討。
+
+**AI への伝え方（日本語）**: 購入フローの上部に「配送先／支払い／確認」の横並び Progress Stepper を作って。完了は✓、現在は primary の丸、未着手はグレー。
+
+**Prompt (English)**: Add a horizontal Progress Stepper "Shipping / Payment / Review" at the top of checkout: completed = ✓, current = primary circle, upcoming = gray.
+
+
+### Chat Bubble / チャットの吹き出し
+
+- id: `chat_bubble`  URL: https://uizukan.dev/entry/chat_bubble/
+- 種別: 表示 / Data Display
+- 別名: Message Bubble, Speech Bubble, Chat Message
+- 呼び名: Material 3=該当なし（M3 に無い） / Material 2=該当なし（M2 に無い） / Android (Compose)=該当なし（Box + RoundedCornerShape で自作） / iOS (HIG)=該当なし（iOS 標準には無い） / SwiftUI=該当なし（Text + .background(RoundedRectangle) で自作） / Web=該当なし（Chat bubble / Message bubble） / Flutter=自作（Align + Container）
+- Flutter: `自作（Align + Container）`
+- 関連: avatar, text_field_filled, staggered_list
+
+**説明**: 送信者で左右と色を変える角丸の吹き出し。連続メッセージは角を詰め、下に時刻や既読を小さく表示する。
+
+**使いどころ**: チャット・コメント・AI との対話画面。
+
+**AI への伝え方（日本語）**: チャット画面の Chat Bubble を作って。自分の発言は右寄せ primary 色・白文字、相手は左寄せ surfaceContainerHighest。角丸 18dp で、送信者側の下の角だけ小さく。
+
+**Prompt (English)**: Create Chat Bubbles: my messages right-aligned in primary with white text, theirs left-aligned in surfaceContainerHighest. 18dp radius, with a smaller radius on the sender-side bottom corner.
+
+
+### Stat Tile / 数値タイル（KPI カード）
+
+- id: `stat_tile`  URL: https://uizukan.dev/entry/stat_tile/
+- 種別: 表示 / Data Display
+- 別名: KPI Card, Metric Card, Stat Card, Summary Tile
+- 呼び名: Material 3=該当なし（Card で組む） / Material 2=該当なし（Card で組む） / Android (Compose)=該当なし（Card + Column） / iOS (HIG)=該当なし（Lockups / Widget が近い） / SwiftUI=該当なし（GroupBox / VStack で自作） / Web=該当なし（Stat card / KPI card） / Flutter=自作（Card + Column）
+- Flutter: `自作（Card + Column）`
+- 関連: card, animated_counter, linear_progress
+
+**説明**: ダッシュボードの先頭で使う、数値を主役にした小さなカード。前期比の矢印や色で増減を示す。
+
+**使いどころ**: ホーム画面のサマリー、家計簿・健康・学習アプリの実績表示。
+
+**AI への伝え方（日本語）**: ホームの上部に Stat Tile を 2 つ横に並べて。「今月の支出」「残り予算」で、大きな数字の下に小さなラベル、右上に前月比の緑／赤の矢印。
+
+**Prompt (English)**: Place two Stat Tiles side by side at the top of Home: "Spent this month" and "Remaining budget", a large number with a small label below and a green/red month-over-month arrow at the top-right.
+
+
+### Donut Chart / ドーナツグラフ
+
+- id: `donut_chart`  URL: https://uizukan.dev/entry/donut_chart/
+- 種別: 表示 / Data Display
+- 別名: Doughnut Chart, Ring Chart, Pie Chart, Sector Chart
+- 呼び名: Material 3=該当なし（Data visualization の指針のみで部品は無い） / Material 2=該当なし（Data visualization の指針のみ） / Android (Compose)=該当なし（Canvas.drawArc で自作） / iOS (HIG)=Charts（Swift Charts の扇形） / SwiftUI=Chart + SectorMark(angle:innerRadius:) / Web=該当なし（SVG の円弧や Chart.js の doughnut で自作） / Flutter=自作（CustomPainter + Canvas.drawArc）
+- Flutter: `自作（CustomPainter + Canvas.drawArc）`
+- 関連: chart_legend, stat_tile, circular_progress, animated_counter
+
+**説明**: 円グラフの真ん中をくり抜いた形。区分ごとに色を変えた弧を時計の 12 時から順に並べ、弧の長さで割合を示す。空いた真ん中に合計や使用率を大きく書けるのが円グラフとの違い。
+
+**使いどころ**: ストレージの使用量、支出の内訳、時間の使い方など「全体のうち何がどれだけか」を 2〜6 区分で見せるとき。区分が多い・値が近いときは棒グラフのほうが読みやすい。色だけで区別させず凡例（Chart Legend）を必ず添える。
+
+**AI への伝え方（日本語）**: ストレージ使用量を Donut Chart で見せて。写真・アプリ・書類・その他の 4 色の弧を 12 時から順に並べ、真ん中に「43.5 / 64 GB」。表示時に弧が伸びるアニメーション付きで。
+
+**Prompt (English)**: Show storage usage as a Donut Chart: four colored arcs (Photos, Apps, Documents, Other) starting at 12 o'clock, with "43.5 / 64 GB" in the center, and animate the arcs growing in on appear.
+
+
+### Chart Legend / 凡例（グラフの色と名前・値の一覧）
+
+- id: `chart_legend`  URL: https://uizukan.dev/entry/chart_legend/
+- 種別: 表示 / Data Display
+- 別名: Legend, Chart Key, Data Legend
+- 呼び名: Material 3=該当なし（Data visualization の指針のみで部品は無い） / Material 2=該当なし（Data visualization の指針のみ） / Android (Compose)=該当なし（Row + Box で自作） / iOS (HIG)=Charts の Legend / SwiftUI=.chartLegend(position:alignment:)（Swift Charts） / Web=該当なし（ul / dl で自作。Chart.js は legend オプション） / Flutter=自作（Row + Container + Text）
+- Flutter: `自作（Row + Container + Text）`
+- 関連: donut_chart, stat_tile, list_tile
+
+**説明**: グラフの横や下に置く、色の小さな印と区分名と値の行。色を見分けにくい人にも、名前と数字で内訳が伝わる。値は右に揃え、区分の並びはグラフの順と同じにする。
+
+**使いどころ**: Donut Chart・円グラフ・積み上げ棒グラフなど、色で区分を分けたグラフには必ず添える。区分が 1 つだけなら不要。
+
+**AI への伝え方（日本語）**: Donut Chart の右に Chart Legend を付けて。各行は色の小さな四角・区分名・値（右揃え）で、並びはグラフと同じ順に。
+
+**Prompt (English)**: Add a Chart Legend to the right of the Donut Chart: each row has a small color square, the category name and the value right-aligned, in the same order as the chart.
+
+
+# アクション (Actions)
+
+## Gestures / ジェスチャー
+
+### Tap / タップ
+
+- id: `tap`  URL: https://uizukan.dev/entry/tap/
+- 種別: アクション / Gestures
+- 別名: Click, Press, Single Tap
+- 呼び名: Material 3=Gestures（Tap） / Material 2=Gestures（Tap） / Android (Compose)=Modifier.clickable / detectTapGestures(onTap:) / iOS (HIG)=Tap / SwiftUI=.onTapGesture / TapGesture / Web=click / pointerup イベント / Flutter=GestureDetector(onTap:) / InkWell
+- Flutter: `GestureDetector(onTap:) / InkWell`
+- 関連: double_tap, long_press, ripple, press_scale
+
+**説明**: 触れて離した瞬間に発火する。押した瞬間（onTapDown）と離した瞬間（onTapUp）を分けて取れば、押している間の見た目変化が作れる。
+
+**使いどころ**: ほぼ全ての操作。ボタン部品は内部で処理済みなので、自作の面に付けるときに使う。
+
+**AI への伝え方（日本語）**: このカード全体をタップできるようにして。押している間は少し暗くなり、離したら詳細画面に遷移。
+
+**Prompt (English)**: Make the whole card tappable: dim slightly while pressed, and navigate to the detail screen on release.
+
+
+### Double Tap / ダブルタップ
+
+- id: `double_tap`  URL: https://uizukan.dev/entry/double_tap/
+- 種別: アクション / Gestures
+- 別名: Double Click, Two Taps
+- 呼び名: Material 3=該当なし（Gestures に個別名は無い） / Material 2=Gestures（two quick taps＝zoom） / Android (Compose)=Modifier.combinedClickable(onDoubleClick:) / detectTapGestures(onDoubleTap:) / iOS (HIG)=Double tap / SwiftUI=.onTapGesture(count: 2) / Web=dblclick イベント / Flutter=GestureDetector(onDoubleTap:)
+- Flutter: `GestureDetector(onDoubleTap:)`
+- 関連: tap, like_burst, pinch_zoom
+
+**説明**: 短い間隔で 2 回タップしたときに発火する。単タップと共存させると、単タップの反応が少し遅れる（2 回目を待つため）。
+
+**使いどころ**: 画像への「いいね」、地図や写真のズームイン。重要操作には向かない（発見されにくい）。
+
+**AI への伝え方（日本語）**: 投稿画像をダブルタップしたら「いいね」が付いて、画像の中央に大きなハートが一瞬ポンと出て消えるようにして。
+
+**Prompt (English)**: Double-tapping the post image should like it and pop a large heart in the center of the image that fades out.
+
+
+### Long Press / 長押し
+
+- id: `long_press`  URL: https://uizukan.dev/entry/long_press/
+- 種別: アクション / Gestures
+- 別名: Press and Hold, Touch and Hold, Long Tap
+- 呼び名: Material 3=Gestures（Long press） / Material 2=Gestures（Long press） / Android (Compose)=Modifier.combinedClickable(onLongClick:) / detectTapGestures(onLongPress:) / iOS (HIG)=Touch and hold / SwiftUI=.onLongPressGesture / LongPressGesture / Web=contextmenu イベント（標準の長押しイベントは無い。pointerdown + タイマー） / Flutter=GestureDetector(onLongPress:) / InkWell(onLongPress:)
+- Flutter: `GestureDetector(onLongPress:) / InkWell(onLongPress:)`
+- 関連: long_press_haptic_navigate, context_menu, drag_reorder, tooltip
+
+**説明**: 一定時間（Flutter 既定 500ms）押し続けると発火する。発火の瞬間に触覚を鳴らすと「認識された」ことが伝わる。
+
+**使いどころ**: コンテキストメニュー、複数選択モードへの切替、並べ替え開始、ツールチップ表示。
+
+**AI への伝え方（日本語）**: リストの行を長押ししたら、軽く振動してから複数選択モードに入るようにして。
+
+**Prompt (English)**: Long-pressing a list row should trigger a light haptic and enter multi-select mode.
+
+
+### Long Press → Haptic → Navigate / 長押し → 振動 → 画面遷移
+
+- id: `long_press_haptic_navigate`  URL: https://uizukan.dev/entry/long_press_haptic_navigate/
+- 種別: アクション / Gestures
+- 別名: Hold to Confirm, Press-and-hold Action, Haptic Long Press
+- 呼び名: Material 3=該当なし（Long press + Haptics + Transition の組み合わせ） / Material 2=該当なし（組み合わせ） / Android (Compose)=combinedClickable(onLongClick) + performHapticFeedback(LongPress) + NavController.navigate / iOS (HIG)=Touch and hold + Impact haptic + push / SwiftUI=.onLongPressGesture + .sensoryFeedback(.impact) + NavigationLink / Web=該当なし（pointer + navigator.vibrate() + History API） / Flutter=GestureDetector(onLongPress:) + HapticFeedback.mediumImpact() + Navigator.push
+- Flutter: `GestureDetector(onLongPress:) + HapticFeedback.mediumImpact() + Navigator.push`
+- 実機でのみ体験可（触覚など）
+- 関連: long_press, haptic_impact, push_slide, press_scale
+
+**説明**: 「長押し」「触覚フィードバック（Impact）」「画面遷移」の 3 つを組み合わせたパターン。誤タップで遷移したくない操作や、隠しショートカット的な入口に使う。Claude に伝えるときは 3 要素を分けて言うと確実。
+
+**使いどころ**: 重要だが誤操作を避けたい遷移（削除確認画面、管理モード）、上級者向けショートカット。
+
+**AI への伝え方（日本語）**: このボタンを長押し（約 0.5 秒）したら、HapticFeedback.mediumImpact() で端末を短く振動させてから、次の画面に push 遷移して。通常のタップでは何も起きないように。押している間はボタンを少し縮めて「溜め」を見せて。
+
+**Prompt (English)**: When this button is long-pressed (~0.5s), fire HapticFeedback.mediumImpact() and then push the next screen. A normal tap should do nothing. While pressed, scale the button down slightly to show the "charge".
+
+
+### Swipe to Dismiss / スワイプで削除
+
+- id: `swipe_to_dismiss`  URL: https://uizukan.dev/entry/swipe_to_dismiss/
+- 種別: アクション / Gestures
+- 別名: Swipe to Delete, Dismissible, Swipe Away
+- 呼び名: Material 3=該当なし（Gestures では Swipe の一般記述のみ） / Material 2=Gestures（Swipe to dismiss） / Android (Compose)=SwipeToDismissBox / iOS (HIG)=Swipe（dismiss） / SwiftUI=.swipeActions / .onDelete / Web=該当なし（Pointer Events で自作） / Flutter=Dismissible
+- Flutter: `Dismissible`
+- 関連: swipe_actions, snackbar_undo, list_tile
+
+**説明**: 行を端までドラッグすると画面外へ飛んで消える。背面に赤い背景とゴミ箱アイコンを出して「削除される」ことを予告する。
+
+**使いどころ**: メール・通知・タスクなど、削除やアーカイブが頻繁なリスト。
+
+**AI への伝え方（日本語）**: タスクの行を左にスワイプすると削除できるようにして。スワイプ中は背面に赤い背景とゴミ箱アイコン、削除後は Snackbar で「元に戻す」。
+
+**Prompt (English)**: Let users swipe a task row left to delete it. Show a red background with a trash icon behind while swiping, then a Snackbar with "Undo".
+
+
+### Swipe Actions / スワイプで操作ボタンを出す
+
+- id: `swipe_actions`  URL: https://uizukan.dev/entry/swipe_actions/
+- 種別: アクション / Gestures
+- 別名: Swipe to Reveal, Leading/Trailing Swipe Actions, Slidable, Swipe Menu
+- 呼び名: Material 3=該当なし（M3 に無い） / Material 2=該当なし（M2 に無い） / Android (Compose)=SwipeToDismissBox（背景に action） / iOS (HIG)=Swipe（reveal actions） / SwiftUI=.swipeActions(edge:) / Web=該当なし（Pointer Events で自作） / Flutter=flutter_slidable（Slidable + ActionPane）
+- Flutter: `flutter_slidable（Slidable + ActionPane）`
+- 関連: swipe_to_dismiss, list_tile, popup_menu
+
+**説明**: 行をスワイプすると隠れていたボタン群がスライドして出る。iOS メールの標準挙動。端まで引き切ると先頭のアクションが即実行される（full swipe）。
+
+**使いどころ**: 行ごとに 2〜3 個の操作がある一覧（メール、タスク、チャット一覧）。
+
+**AI への伝え方（日本語）**: メール一覧の行を左にスワイプすると「アーカイブ」「削除」のボタンが出る Swipe Actions にして。端まで引き切ったら削除が即実行されるように。
+
+**Prompt (English)**: Add Swipe Actions to the mail list: swiping a row left reveals "Archive" and "Delete" buttons; a full swipe immediately deletes.
+
+
+### Drag to Reorder / ドラッグで並べ替え
+
+- id: `drag_reorder`  URL: https://uizukan.dev/entry/drag_reorder/
+- 種別: アクション / Gestures
+- 別名: Drag and Drop Reorder, Reorderable List, Sortable
+- 呼び名: Material 3=Gestures（Drag） / Material 2=Gestures（Long press and drag to reorder） / Android (Compose)=該当なし（LazyColumn + Modifier.draggable で自作 / reorderable ライブラリ） / iOS (HIG)=Drag（Move a UI element） / SwiftUI=.onMove（EditMode） / Web=HTML Drag and Drop API（draggable） / Flutter=ReorderableListView / ReorderableDragStartListener
+- Flutter: `ReorderableListView / ReorderableDragStartListener`
+- 関連: long_press, list_tile, haptic_impact
+
+**説明**: 行を長押しすると浮き上がり（elevation）、ドラッグで他の行が避けて隙間を作る。離すと新しい位置に収まる。右端の ≡ ハンドルで掴む方式もある。
+
+**使いどころ**: お気に入り順、プレイリスト、タスクの優先順位など、ユーザーが順序を決めるリスト。
+
+**AI への伝え方（日本語）**: タスク一覧を Drag to Reorder できるようにして。右端の ≡ ハンドルを掴んで動かす方式で、持ち上げた行は影付きで浮き、離すと順番が保存されるように。
+
+**Prompt (English)**: Make the task list reorderable by dragging the ≡ handle at the right edge. The lifted row floats with a shadow, and the new order is saved on drop.
+
+
+### Pinch In / Pinch Out / ピンチイン／ピンチアウト
+
+- id: `pinch_zoom`  URL: https://uizukan.dev/entry/pinch_zoom/
+- 種別: アクション / Gestures
+- 別名: Pinch to Zoom, ピンチイン, ピンチアウト, Zoom In / Zoom Out, Pinch Zoom, Scale Gesture, Pan and Zoom
+- 呼び名: Material 3=Gestures（Pinch） / Material 2=Gestures（Pinch to zoom） / Android (Compose)=Modifier.transformable / detectTransformGestures / iOS (HIG)=Zoom（pinch） / SwiftUI=MagnifyGesture / Web=Pointer Events / touch-action: pinch-zoom / Flutter=InteractiveViewer
+- Flutter: `InteractiveViewer`
+- 関連: double_tap, grid, hero_transition
+
+**説明**: 画像や地図を 2 本指で拡大縮小し、1 本指でパンする。ダブルタップで段階ズームを併用することが多い。
+
+**使いどころ**: 写真ビューア、地図、図面、レシート画像。
+
+**AI への伝え方（日本語）**: 写真の拡大表示画面で、ピンチアウトで拡大・ピンチインで縮小（Pinch to Zoom。1 本指で移動）できるようにして。最大 4 倍、ダブルタップで 2 倍⇄等倍。
+
+**Prompt (English)**: In the photo viewer, support Pinch to Zoom (two-finger scale, one-finger pan), max 4x, and double-tap to toggle between 2x and 1x.
+
+
+### Context Menu (Long-press Preview) / コンテキストメニュー（長押しプレビュー）
+
+- id: `context_menu`  URL: https://uizukan.dev/entry/context_menu/
+- 種別: アクション / Gestures
+- 別名: Peek and Pop, Haptic Touch Menu, 3D Touch Menu, Long-press Menu
+- 呼び名: Material 3=Menus（Context menu） / Material 2=Menus（Context menu） / Android (Compose)=DropdownMenu を長押しで開く（View 系は ContextMenu） / iOS (HIG)=Context menus / SwiftUI=.contextMenu / Web=contextmenu イベント / Menu（WAI-ARIA パターン） / Flutter=CupertinoContextMenu
+- Flutter: `CupertinoContextMenu`
+- 実機でのみ体験可（触覚など）
+- 関連: long_press, popup_menu, haptic_impact
+
+**説明**: 長押しで背景がぼけ、対象が Hero のように拡大表示され、「共有・コピー・削除」などのメニューが下に並ぶ。触覚も同時に鳴る。
+
+**使いどころ**: リンク・画像・カードに対する補助操作を、画面を汚さずに提供したいとき。
+
+**AI への伝え方（日本語）**: 画像を長押しすると iOS 風の Context Menu が出るようにして。画像が浮き上がって拡大され、下に「共有／保存／削除」のメニュー。
+
+**Prompt (English)**: Long-pressing an image should open an iOS-style Context Menu: the image lifts and enlarges with a blurred background and "Share / Save / Delete" actions below.
+
+
+### Tap Outside to Dismiss Keyboard / 外側タップでキーボードを閉じる
+
+- id: `tap_outside_dismiss_keyboard`  URL: https://uizukan.dev/entry/tap_outside_dismiss_keyboard/
+- 種別: アクション / Gestures
+- 別名: Dismiss Keyboard on Tap, Unfocus on Tap, Keyboard Dismiss
+- 呼び名: Material 3=該当なし（M3 に無い） / Material 2=該当なし（M2 に無い） / Android (Compose)=LocalFocusManager.clearFocus() + Modifier.pointerInput / iOS (HIG)=該当なし（慣習。Virtual keyboards の dismiss） / SwiftUI=.scrollDismissesKeyboard / UIApplication.sendAction(#selector(resignFirstResponder)) / Web=blur() / document の click / Flutter=TextField(onTapOutside:) / GestureDetector + FocusScope
+- Flutter: `TextField(onTapOutside:) / GestureDetector + FocusScope`
+- 関連: text_field_outlined, tap
+
+**説明**: フォーム画面の余白をタップしたときにフォーカスを外し、キーボードを閉じる。Flutter は既定ではしないので明示的に付ける。スクロールで閉じる方式もある。
+
+**使いどころ**: ほぼ全てのフォーム画面。
+
+**AI への伝え方（日本語）**: フォーム画面で、入力欄の外をタップしたらキーボードが閉じるようにして。スクロールを始めたときも閉じて。
+
+**Prompt (English)**: On the form screen, dismiss the keyboard when tapping outside a text field, and also when the user starts scrolling.
+
+
+### Pull to Refresh / 引っ張って更新
+
+- id: `pull_to_refresh`  URL: https://uizukan.dev/entry/pull_to_refresh/
+- 種別: アクション / Gestures
+- 別名: Swipe to Refresh, Pull-down Refresh, Refresh Control
+- 呼び名: Material 3=Pull to refresh（Progress indicators の用法） / Material 2=Swipe to refresh（SwipeRefreshLayout） / Android (Compose)=PullToRefreshBox / iOS (HIG)=該当なし（慣習。UIKit の Refresh control） / SwiftUI=.refreshable / Web=該当なし（ブラウザ機能。overscroll-behavior で制御） / Flutter=RefreshIndicator / CupertinoSliverRefreshControl
+- Flutter: `RefreshIndicator / CupertinoSliverRefreshControl`
+- 関連: infinite_scroll, circular_progress, overscroll_bounce
+
+**説明**: リスト最上部で下方向にドラッグすると更新インジケータが現れ、離すと再取得する。Material は円形のスピナーが降りてくる、iOS は放射状インジケータが引き伸ばされる。
+
+**使いどころ**: フィード・受信箱・通知など、新着が発生する一覧。
+
+**AI への伝え方（日本語）**: フィードを Pull to Refresh で更新できるようにして。iOS では iOS 風のインジケータ（CupertinoSliverRefreshControl）にして。
+
+**Prompt (English)**: Add Pull to Refresh to the feed. On iOS use the native-style CupertinoSliverRefreshControl.
+
+
+### Drag to Dismiss / ドラッグで閉じる
+
+- id: `drag_to_dismiss_sheet`  URL: https://uizukan.dev/entry/drag_to_dismiss_sheet/
+- 種別: アクション / Gestures
+- 別名: Swipe Down to Close, Interactive Dismiss, Pull Down to Dismiss
+- 呼び名: Material 3=Bottom sheets（drag to dismiss） / Material 2=Sheets: bottom（drag to dismiss） / Android (Compose)=ModalBottomSheet（既定でドラッグで閉じる） / iOS (HIG)=Sheets（drag to dismiss） / SwiftUI=.sheet（.interactiveDismissDisabled で制御） / Web=該当なし（Pointer Events で自作） / Flutter=showModalBottomSheet(enableDrag: true) / 自作（GestureDetector + Transform）
+- Flutter: `showModalBottomSheet(enableDrag: true) / 自作（GestureDetector + Transform）`
+- 関連: modal_bottom_sheet, slide_up_modal, pinch_zoom
+
+**説明**: モーダルを指の動きに追従させて閉じる。途中で離すと戻る、一定距離を超えると閉じる。写真ビューアでは背景が徐々に透明になる。
+
+**使いどころ**: Bottom Sheet、全画面の画像ビューア、iOS 風の sheet。
+
+**AI への伝え方（日本語）**: 全画面の画像ビューアを、下にドラッグすると指に追従して縮みながら閉じられるようにして。背景は距離に応じて透明に。閾値未満で離したら元に戻る。
+
+**Prompt (English)**: Let the full-screen image viewer be dismissed by dragging down: the image follows the finger and shrinks, the background fades with distance, and it snaps back if released below the threshold.
+
+
+## Haptics / 触覚フィードバック
+
+### Selection Haptic / 選択の触覚（カチッ）
+
+- id: `haptic_selection`  URL: https://uizukan.dev/entry/haptic_selection/
+- 種別: アクション / Haptics
+- 別名: Selection Click, Selection Feedback, Tick Haptic
+- 呼び名: Material 3=該当なし（触覚は Android の指針。M3 部品には規定なし） / Material 2=該当なし（M2 に無い） / Android (Compose)=HapticFeedbackType.SegmentTick（View 系は HapticFeedbackConstants.CLOCK_TICK） / iOS (HIG)=Selection / SwiftUI=.sensoryFeedback(.selection) / Web=navigator.vibrate()（種類の区別なし） / Flutter=HapticFeedback.selectionClick()
+- Flutter: `HapticFeedback.selectionClick()`
+- 実機でのみ体験可（触覚など）
+- 関連: haptic_impact, cupertino_picker, segmented_button, slider
+
+**説明**: 選択肢が切り替わるたびに鳴らす、ごく短く軽い振動。ドラム式ピッカー、スライダーの目盛り、セグメント切替で使う。
+
+**使いどころ**: 連続して何度も鳴る可能性がある切替操作。重い Impact を連打すると不快になる。
+
+**AI への伝え方（日本語）**: セグメントを切り替えるたびに HapticFeedback.selectionClick()（軽い「カチッ」）を鳴らして。
+
+**Prompt (English)**: Fire HapticFeedback.selectionClick() (a light tick) every time the segment selection changes.
+
+
+### Impact Haptic (Light / Medium / Heavy) / 衝撃の触覚（軽・中・重の「ブルッ」）
+
+- id: `haptic_impact`  URL: https://uizukan.dev/entry/haptic_impact/
+- 種別: アクション / Haptics
+- 別名: Impact Feedback, Light Impact, Medium Impact, Heavy Impact, Bump
+- 呼び名: Material 3=該当なし（M3 部品には規定なし） / Material 2=該当なし（M2 に無い） / Android (Compose)=VibrationEffect.EFFECT_TICK / EFFECT_CLICK / EFFECT_HEAVY_CLICK / iOS (HIG)=Impact（Light / Medium / Heavy / Rigid / Soft） / SwiftUI=.sensoryFeedback(.impact(weight:)) / Web=navigator.vibrate()（種類の区別なし） / Flutter=HapticFeedback.lightImpact / mediumImpact / heavyImpact
+- Flutter: `HapticFeedback.lightImpact / mediumImpact / heavyImpact`
+- 実機でのみ体験可（触覚など）
+- 関連: haptic_selection, haptic_notification, long_press_haptic_navigate, drag_reorder
+
+**説明**: 物理的な衝突を模した振動。light は軽いタップの反応、medium はボタン確定やトグル、heavy はドラッグのドロップや重要な確定に使う。「ブルッ」と言いたいときは大抵これの medium。
+
+**使いどころ**: light：軽い ON/OFF・いいね／medium：長押し認識・確定・ドラッグ開始／heavy：ドロップ・大きな状態変化。
+
+**AI への伝え方（日本語）**: ボタンを確定したときに HapticFeedback.mediumImpact() で端末を短く「ブルッ」と振動させて。軽い操作は lightImpact、ドロップ時は heavyImpact を使い分けて。
+
+**Prompt (English)**: On confirm, call HapticFeedback.mediumImpact() for a short bump. Use lightImpact for minor toggles and heavyImpact for drops / major state changes.
+
+
+### Notification Haptic (Success / Warning / Error) / 結果通知の触覚（成功・警告・エラー）
+
+- id: `haptic_notification`  URL: https://uizukan.dev/entry/haptic_notification/
+- 種別: アクション / Haptics
+- 別名: Success Haptic, Error Haptic, Notification Feedback, Double Buzz
+- 呼び名: Material 3=該当なし（M3 部品には規定なし） / Material 2=該当なし（M2 に無い） / Android (Compose)=HapticFeedbackType.Confirm / Reject（View 系は HapticFeedbackConstants.CONFIRM / REJECT） / iOS (HIG)=Notification（Success / Warning / Error） / SwiftUI=.sensoryFeedback(.success / .warning / .error) / Web=navigator.vibrate()（種類の区別なし） / Flutter=HapticFeedback（組み合わせ）/ haptic_feedback パッケージ
+- Flutter: `HapticFeedback（組み合わせ）/ haptic_feedback パッケージ`
+- 実機でのみ体験可（触覚など）
+- 関連: haptic_impact, shake, otp_field, confetti
+
+**説明**: iOS が用意している 3 種のパターン振動。成功は軽い 2 連、警告は中 2 連、エラーは強い 3 連。Flutter 標準にはないので、impact を複数回組み合わせて模倣するか、プラグイン（haptic_feedback など）を使う。
+
+**使いどころ**: 決済完了、送信成功、認証コード誤り、フォームの送信失敗。
+
+**AI への伝え方（日本語）**: 決済が成功したら iOS の Success 通知触覚（軽い 2 連の振動）、失敗したら Error 触覚（強い 3 連の振動）を鳴らして。Flutter 標準にないので HapticFeedback の impact を組み合わせて模倣して。
+
+**Prompt (English)**: On successful payment play the iOS Success notification haptic (two light bumps); on failure play the Error haptic (three heavy bumps). Flutter has no built-in, so emulate them by sequencing HapticFeedback impacts.
+
+
+### Haptic on Toggle / スイッチ切替時の触覚
+
+- id: `haptic_on_toggle`  URL: https://uizukan.dev/entry/haptic_on_toggle/
+- 種別: アクション / Haptics
+- 別名: Switch Haptic, Toggle Feedback
+- 呼び名: Material 3=該当なし（M3 部品には規定なし） / Material 2=該当なし（M2 に無い） / Android (Compose)=HapticFeedbackType.ToggleOn / ToggleOff / iOS (HIG)=該当なし（Toggle の慣習。Impact / Selection の組み合わせ） / SwiftUI=Toggle（既定で触覚あり） / Web=該当なし（navigator.vibrate() で自作） / Flutter=Switch.onChanged + HapticFeedback.lightImpact()
+- Flutter: `Switch.onChanged + HapticFeedback.lightImpact()`
+- 実機でのみ体験可（触覚など）
+- 関連: switch_toggle, haptic_impact
+
+**説明**: iOS 標準のスイッチは自動で鳴るが、Material の Switch は鳴らないので onChanged で明示する。ON と OFF で強さを変える実装もある。
+
+**使いどころ**: 設定画面のスイッチ全般。
+
+**AI への伝え方（日本語）**: Material の Switch でも iOS のように切替時に軽い触覚が鳴るようにして。
+
+**Prompt (English)**: Make the Material Switch fire a light haptic on toggle, like iOS does natively.
+
+
+## Transitions / 画面遷移
+
+### Push Transition / プッシュ遷移（右からスライド）
+
+- id: `push_slide`  URL: https://uizukan.dev/entry/push_slide/
+- 種別: アクション / Transitions
+- 別名: Slide Transition, Push Navigation, Horizontal Push, Drill-down
+- 呼び名: Material 3=Shared axis（X）/ Forward and backward / Material 2=Shared axis / Android (Compose)=NavHost enterTransition = slideInHorizontally / iOS (HIG)=該当なし（Navigation bars の push。個別名は無い） / SwiftUI=NavigationStack + NavigationLink / Web=View Transitions API（cross-document） / Flutter=CupertinoPageRoute / go_router + CupertinoPage
+- Flutter: `CupertinoPageRoute / go_router + CupertinoPage`
+- 関連: slide_up_modal, hero_transition, fade_through, long_press_haptic_navigate
+
+**説明**: 階層を「深く進む」遷移。iOS では前の画面が 1/3 だけ左に動き、左端スワイプで戻れる。戻るときは逆再生。
+
+**使いどころ**: 一覧 → 詳細のように、階層を下る遷移。作成・編集は Full-screen Dialog（下から）。
+
+**AI への伝え方（日本語）**: 一覧から詳細への遷移を、iOS 風に右からスライドする Push 遷移にして。左端からのスワイプで戻れるように。Android でも同じ動きで統一して。
+
+**Prompt (English)**: Make list → detail an iOS-style Push transition sliding in from the right, with edge-swipe back. Use the same motion on Android for consistency.
+
+
+### Slide Up (Modal Presentation) / 下からせり上がる遷移（モーダル）
+
+- id: `slide_up_modal`  URL: https://uizukan.dev/entry/slide_up_modal/
+- 種別: アクション / Transitions
+- 別名: Present Modally, Bottom Slide, Cover Vertical, Sheet Presentation
+- 呼び名: Material 3=Dialogs（Full-screen dialog の遷移） / Material 2=Dialogs（Full-screen dialog の遷移） / Android (Compose)=NavHost enterTransition = slideInVertically / iOS (HIG)=Sheets（modal presentation） / SwiftUI=.sheet / .fullScreenCover / Web=<dialog> + CSS transition / Flutter=MaterialPageRoute(fullscreenDialog: true) / CupertinoPageRoute(fullscreenDialog: true)
+- Flutter: `MaterialPageRoute(fullscreenDialog: true) / CupertinoPageRoute(fullscreenDialog: true)`
+- 関連: full_screen_dialog, modal_bottom_sheet, push_slide, drag_to_dismiss_sheet
+
+**説明**: 横方向の push が「階層を進む」なのに対し、縦方向の slide up は「一時的な別作業」を意味する。iOS の pageSheet では背後の画面が少し縮んで奥に下がる。
+
+**使いどころ**: 新規作成、フィルタ、ログイン、設定変更などの一時タスク。
+
+**AI への伝え方（日本語）**: 「新規作成」画面を下からせり上がるモーダルとして表示して。iOS では背後の画面が少し縮む pageSheet 風にして。
+
+**Prompt (English)**: Present the "Create" screen as a modal sliding up from the bottom. On iOS mimic the pageSheet where the screen behind shrinks slightly.
+
+
+### Fade Through / フェードスルー（タブ切替の遷移）
+
+- id: `fade_through`  URL: https://uizukan.dev/entry/fade_through/
+- 種別: アクション / Transitions
+- 別名: Cross Fade, Fade Transition, Top-level Transition
+- 呼び名: Material 3=Fade through / Top level / Material 2=Fade through / Android (Compose)=AnimatedContent(fadeIn + scaleIn) / NavHost fadeIn / iOS (HIG)=該当なし（Cross-dissolve） / SwiftUI=.transition(.opacity) / Web=View Transitions API（既定の cross-fade） / Flutter=animations: PageTransitionSwitcher + FadeThroughTransition
+- Flutter: `animations: PageTransitionSwitcher + FadeThroughTransition`
+- 関連: bottom_navigation_bar, crossfade, push_slide
+
+**説明**: 階層関係のない画面同士（タブ切替など）の遷移。方向性を持たせないのが特徴。Material の animations パッケージに FadeThroughTransition がある。
+
+**使いどころ**: Bottom Navigation のタブ切替、ステップ間の内容差し替え。
+
+**AI への伝え方（日本語）**: Bottom Navigation のタブを切り替えるときに、Material の Fade Through（前がフェードアウト、次が少し拡大しつつフェードイン）を使って。
+
+**Prompt (English)**: When switching bottom navigation tabs, use Material Fade Through: the old page fades out and the new page fades in while scaling up slightly.
+
+
+### Hero Transition (Shared Element) / ヒーロー遷移（共有要素アニメーション）
+
+- id: `hero_transition`  URL: https://uizukan.dev/entry/hero_transition/
+- 種別: アクション / Transitions
+- 別名: Shared Element Transition, Container Transform, Zoom Transition, matchedGeometryEffect
+- 呼び名: Material 3=Container transform / Material 2=Container transform / Android (Compose)=SharedTransitionLayout + Modifier.sharedElement / iOS (HIG)=該当なし（Zoom transition＝iOS 18） / SwiftUI=.matchedGeometryEffect / .navigationTransition(.zoom)（iOS 18） / Web=View Transitions API（view-transition-name） / Flutter=Hero(tag:)
+- Flutter: `Hero(tag:)`
+- 関連: card, grid, push_slide, pinch_zoom
+
+**説明**: 2 つの画面に同じ tag を持つ要素があると、遷移中にその要素が位置・サイズを補間しながら移動する。画像・カードで使うと連続性が生まれる。
+
+**使いどころ**: 一覧 → 詳細で、画像やカードがそのまま主役になる遷移。
+
+**AI への伝え方（日本語）**: 一覧のサムネイル画像をタップすると、その画像が詳細画面の上部に拡大しながら飛んでいく Hero（Shared Element）遷移にして。
+
+**Prompt (English)**: When a thumbnail in the list is tapped, use a Hero (Shared Element) transition so the image flies and expands into the header of the detail screen.
+
+
+### Swipe Between Pages / 横スワイプでページ送り
+
+- id: `page_view_swipe`  URL: https://uizukan.dev/entry/page_view_swipe/
+- 種別: アクション / Transitions
+- 別名: Paging, Horizontal Paging, Swipe Navigation, Pager
+- 呼び名: Material 3=Lateral（Tabs の swipe） / Material 2=Lateral navigation / Android (Compose)=HorizontalPager / iOS (HIG)=Page controls（swipe between pages） / SwiftUI=TabView + .tabViewStyle(.page) / Web=CSS scroll-snap（Carousel） / Flutter=PageView + PageController
+- Flutter: `PageView + PageController`
+- 関連: page_indicator, carousel, tab_bar, snap_scrolling
+
+**説明**: ページ単位で吸着（snap）する横スクロール。オンボーディング、タブ内容、写真ビューアの基本。ドットや Tab と連動させる。
+
+**使いどころ**: オンボーディング、ストーリー形式のコンテンツ、Tab の内容切替。
+
+**AI への伝え方（日本語）**: オンボーディングを 3 ページの横スワイプ（PageView）にして。最後のページだけ「はじめる」ボタン、それ以外は「次へ」でプログラム的にページ送り。
+
+**Prompt (English)**: Build onboarding as 3 horizontally swipeable pages (PageView). Show "Get started" only on the last page; otherwise a "Next" button that advances programmatically.
+
+
+## Motion & Micro-interactions / マイクロインタラクション
+
+### Ripple (Ink Splash) / リップル（波紋）
+
+- id: `ripple`  URL: https://uizukan.dev/entry/ripple/
+- 種別: アクション / Motion & Micro-interactions
+- 別名: Ink Splash, Ink Ripple, Touch Ripple, Material Ripple
+- 呼び名: Material 3=State layer（ripple は Android の実装名） / Material 2=Ripple（Touch feedback） / Android (Compose)=Modifier.clickable の indication（ripple()） / iOS (HIG)=該当なし（Highlight のみ） / SwiftUI=該当なし（ButtonStyle の isPressed で表現） / Web=該当なし（CSS で自作） / Flutter=InkWell / Ink
+- Flutter: `InkWell / Ink`
+- 関連: tap, press_scale, elevated_button, cupertino_button
+
+**説明**: 押した点を中心に半透明の円が広がり、面全体を薄く覆う。Material Design の「触れた」フィードバック。Ink 系 widget は Material の上でしか描けない点に注意。
+
+**使いどころ**: Material 風アプリのタップ可能な面すべて。iOS 風にしたいなら使わない。
+
+**AI への伝え方（日本語）**: このカードをタップしたとき、押した位置から Material のリップル（波紋）が広がるようにして。角丸の中にクリップして。
+
+**Prompt (English)**: When this card is tapped, show a Material ripple expanding from the touch point, clipped to the rounded corners.
+
+
+### Press Scale (Spring Bounce) / 押すと縮んで弾むボタン
+
+- id: `press_scale`  URL: https://uizukan.dev/entry/press_scale/
+- 種別: アクション / Motion & Micro-interactions
+- 別名: Tap Scale, Squash and Stretch, Bouncy Button, Spring Animation, Scale on Press
+- 呼び名: Material 3=該当なし（M3 に無い） / Material 2=該当なし（M2 に無い） / Android (Compose)=Modifier.scale + animateFloatAsState（InteractionSource） / iOS (HIG)=該当なし（慣習。Button の pressed 状態） / SwiftUI=.scaleEffect + .animation / ButtonStyle（configuration.isPressed） / Web=CSS :active + transform: scale() / Flutter=AnimatedScale + GestureDetector(onTapDown / Up / Cancel)
+- Flutter: `AnimatedScale + GestureDetector(onTapDown / Up / Cancel)`
+- 関連: ripple, tap, like_burst, cupertino_button
+
+**説明**: Material のリップルとは別系統の、iOS 寄りのタップ反応。押下中に縮み、離すと overshoot して戻る（easeOutBack）。「気持ちいい」ボタンの定番。
+
+**使いどころ**: カード・大きなボタン・ゲーム風 UI。小さなアイコンには過剰。
+
+**AI への伝え方（日本語）**: このボタンを、押している間は 0.95 倍に縮み、離すと少しオーバーシュートして弾んで戻る Press Scale アニメーションにして。リップルは無しで。
+
+**Prompt (English)**: Give this button a Press Scale animation: shrink to 0.95 while pressed and spring back with a slight overshoot on release. No ripple.
+
+
+### Shake (Error Wiggle) / シェイク（エラー時の左右振動）
+
+- id: `shake`  URL: https://uizukan.dev/entry/shake/
+- 種別: アクション / Motion & Micro-interactions
+- 別名: Wiggle, Error Shake, Wrong Password Shake, Horizontal Shake
+- 呼び名: Material 3=該当なし（M3 に無い） / Material 2=該当なし（M2 に無い） / Android (Compose)=Animatable + keyframes / iOS (HIG)=該当なし（慣習。パスコード誤入力の揺れ） / SwiftUI=.keyframeAnimator / .offset + withAnimation / Web=CSS @keyframes / Flutter=AnimationController + Transform.translate（sin 波）
+- Flutter: `AnimationController + Transform.translate（sin 波）`
+- 関連: haptic_notification, otp_field, password_field
+
+**説明**: macOS のログイン画面で有名な、否定を表す左右の揺れ。±8dp 程度を 3〜4 往復、400ms 前後。エラー触覚と組み合わせると効果的。
+
+**使いどころ**: パスワード・PIN の誤り、必須項目未入力での送信、無効な操作。
+
+**AI への伝え方（日本語）**: パスワードが間違っていたら、入力欄が左右に小刻みに揺れる Shake アニメーション（±8dp、約 400ms）をして、同時にエラー触覚を鳴らして。
+
+**Prompt (English)**: If the password is wrong, play a horizontal Shake animation on the field (±8dp, ~400ms) and fire the error haptic at the same time.
+
+
+### Expand / Collapse / 展開・折りたたみアニメーション
+
+- id: `expand_collapse`  URL: https://uizukan.dev/entry/expand_collapse/
+- 種別: アクション / Motion & Micro-interactions
+- 別名: Animated Size, Reveal, Disclosure Animation, Accordion Animation
+- 呼び名: Material 3=該当なし（Motion に個別名は無い） / Material 2=該当なし（M2 に無い） / Android (Compose)=AnimatedVisibility / Modifier.animateContentSize / iOS (HIG)=Disclosure controls / SwiftUI=DisclosureGroup / withAnimation / Web=<details> / CSS grid-template-rows の transition / Flutter=AnimatedSize / AnimatedCrossFade
+- Flutter: `AnimatedSize / AnimatedCrossFade`
+- 関連: expansion_tile, crossfade
+
+**説明**: サイズの変化を補間して、内容が滑らかに現れる／消える動き。矢印アイコンの回転を添えると状態が伝わる。
+
+**使いどころ**: 「もっと見る」、詳細設定の開閉、FAQ、フィルタパネル。
+
+**AI への伝え方（日本語）**: 説明文を 3 行で省略し、「もっと見る」をタップすると全文が下に滑らかに伸びて表示される Expand / Collapse にして。矢印も 180° 回転させて。
+
+**Prompt (English)**: Truncate the description to 3 lines; tapping "Read more" smoothly expands to the full text. Rotate the chevron 180° as well.
+
+
+### Cross-fade Switch / クロスフェード切替
+
+- id: `crossfade`  URL: https://uizukan.dev/entry/crossfade/
+- 種別: アクション / Motion & Micro-interactions
+- 別名: Animated Switcher, Fade Swap, Content Transition
+- 呼び名: Material 3=Fade（transition pattern） / Material 2=Fade（Motion system） / Android (Compose)=Crossfade / AnimatedContent / iOS (HIG)=該当なし（Cross-dissolve） / SwiftUI=.transition(.opacity) / Web=CSS transition: opacity / View Transitions API / Flutter=AnimatedSwitcher
+- Flutter: `AnimatedSwitcher`
+- 関連: skeleton, loading_button, fade_through, expand_collapse
+
+**説明**: 古い child がフェードアウトしつつ新しい child がフェードインする。key を変えることで「別物になった」と Flutter に伝える。
+
+**使いどころ**: スケルトン→本文、ボタン内のラベル⇄スピナー、アイコンの状態変化。
+
+**AI への伝え方（日本語）**: 読み込み中はスピナー、完了したら内容、を AnimatedSwitcher でクロスフェード（200ms）させて。パッと切り替わらないように。
+
+**Prompt (English)**: Cross-fade (200ms) between the spinner while loading and the content when done using AnimatedSwitcher, instead of an abrupt swap.
+
+
+### Animated Counter / 数字のカウントアップ
+
+- id: `animated_counter`  URL: https://uizukan.dev/entry/animated_counter/
+- 種別: アクション / Motion & Micro-interactions
+- 別名: Count Up, Rolling Number, Odometer, Number Ticker
+- 呼び名: Material 3=該当なし（M3 に無い） / Material 2=該当なし（M2 に無い） / Android (Compose)=AnimatedContent + animateIntAsState / iOS (HIG)=該当なし（iOS 標準には無い） / SwiftUI=.contentTransition(.numericText()) / Web=該当なし（requestAnimationFrame で自作） / Flutter=TweenAnimationBuilder<int>
+- Flutter: `TweenAnimationBuilder<int>`
+- 関連: stat_tile, confetti, linear_progress
+
+**説明**: 数値を補間して表示する。単純なカウントアップと、各桁が縦にスロットのように回る「ローリング」がある。達成感・強調に使う。
+
+**使いどころ**: 合計金額、獲得ポイント、歩数、フォロワー数など、数字が主役の場面。
+
+**AI への伝え方（日本語）**: 獲得ポイントを表示するとき、0 から実際の値まで 800ms かけてカウントアップさせて（easeOut）。3 桁区切りで。
+
+**Prompt (English)**: When showing earned points, count up from 0 to the actual value over 800ms with easeOut, formatted with thousands separators.
+
+
+### Shimmer / シマー（光が流れるローディング）
+
+- id: `shimmer`  URL: https://uizukan.dev/entry/shimmer/
+- 種別: アクション / Motion & Micro-interactions
+- 別名: Shimmer Effect, Skeleton Animation, Loading Glow, Sweep Highlight
+- 呼び名: Material 3=該当なし（Skeleton loaders として言及のみ） / Material 2=該当なし（M2 に無い） / Android (Compose)=該当なし（Brush.linearGradient + rememberInfiniteTransition で自作） / iOS (HIG)=該当なし（iOS 標準には無い） / SwiftUI=該当なし（.redacted + 自作のグラデーション） / Web=CSS @keyframes（background-position） / Flutter=ShaderMask + AnimationController / shimmer パッケージ
+- Flutter: `ShaderMask + AnimationController / shimmer パッケージ`
+- 関連: skeleton, crossfade
+
+**説明**: スケルトンにかける斜めのグラデーションのループ。「読み込み中」を静止画より強く伝える。1.2〜1.5 秒周期。
+
+**使いどころ**: Skeleton Screen の上。ボタンの上を流して「押して」と誘導する演出にも使う。
+
+**AI への伝え方（日本語）**: Skeleton の上に、左から右へ白い光が 1.5 秒周期で流れる Shimmer をかけて。
+
+**Prompt (English)**: Overlay a Shimmer on the skeleton: a white highlight sweeping left to right on a 1.5s loop.
+
+
+### Confetti (Celebration) / 紙吹雪（達成演出）
+
+- id: `confetti`  URL: https://uizukan.dev/entry/confetti/
+- 種別: アクション / Motion & Micro-interactions
+- 別名: Celebration Effect, Particle Burst, Success Animation, Party Popper
+- 呼び名: Material 3=該当なし（M3 に無い） / Material 2=該当なし（M2 に無い） / Android (Compose)=該当なし（Canvas で自作） / iOS (HIG)=該当なし（iOS 標準には無い） / SwiftUI=該当なし（Canvas / SpriteKit で自作） / Web=該当なし（canvas-confetti 等） / Flutter=confetti: ConfettiWidget + ConfettiController
+- Flutter: `confetti: ConfettiWidget + ConfettiController`
+- 関連: haptic_notification, animated_counter, like_burst
+
+**説明**: 色とりどりの紙片が噴き出して落ちる演出。Success 触覚・チェックマークのアニメーションと組み合わせる。1〜2 秒で終わらせる。
+
+**使いどころ**: 初回タスク完了、連続記録の達成、決済完了、レベルアップ。多用すると価値が下がる。
+
+**AI への伝え方（日本語）**: 目標を達成したら、画面上部中央から紙吹雪が 2 秒噴き出す Confetti 演出を出して。同時に Success 触覚を鳴らして。
+
+**Prompt (English)**: When the goal is reached, burst Confetti from the top-center of the screen for 2 seconds and fire the success haptic.
+
+
+### Like Burst (Heart Pop) / いいねのポップ（ハートが弾ける）
+
+- id: `like_burst`  URL: https://uizukan.dev/entry/like_burst/
+- 種別: アクション / Motion & Micro-interactions
+- 別名: Heart Animation, Like Animation, Favorite Pop, Twitter Heart
+- 呼び名: Material 3=該当なし（M3 に無い） / Material 2=該当なし（M2 に無い） / Android (Compose)=該当なし（Animatable + scale で自作） / iOS (HIG)=該当なし（iOS 標準には無い） / SwiftUI=.symbolEffect(.bounce)（iOS 17） / Web=CSS @keyframes / Flutter=AnimatedScale + IconButton
+- Flutter: `AnimatedScale + IconButton`
+- 関連: icon_button, double_tap, press_scale, confetti
+
+**説明**: Twitter / Instagram の「いいね」。scale 0→1.3→1.0 のバネ動作、色の変化、周囲の粒子（任意）を 400ms 程度で。
+
+**使いどころ**: いいね・お気に入り・ブックマークなど、感情を伴う ON 操作。
+
+**AI への伝え方（日本語）**: いいねボタンをタップしたら、ハートが 1.3 倍に弾んでから戻りつつ赤くなる Like Burst アニメーションにして。軽い触覚付きで。
+
+**Prompt (English)**: On tapping the like button, play a Like Burst: the heart springs to 1.3x then settles while turning red, with a light haptic.
+
+
+### Undo Pattern / 「元に戻す」パターン
+
+- id: `snackbar_undo`  URL: https://uizukan.dev/entry/snackbar_undo/
+- 種別: アクション / Motion & Micro-interactions
+- 別名: Undo Snackbar, Optimistic Delete, Soft Delete with Undo
+- 呼び名: Material 3=Snackbar（action: Undo） / Material 2=Snackbar（Undo action） / Android (Compose)=SnackbarHostState.showSnackbar(actionLabel = "Undo") / iOS (HIG)=該当なし（Shake to undo / Undo ボタン） / SwiftUI=該当なし（自作の toast + Undo） / Web=該当なし（Toast with Undo。role="status"） / Flutter=ScaffoldMessenger + SnackBarAction + Timer
+- Flutter: `ScaffoldMessenger + SnackBarAction + Timer`
+- 関連: snackbar, swipe_to_dismiss, alert_dialog
+
+**説明**: 確認ダイアログを出す代わりに、先に消して（楽観的更新）Snackbar で取り消しを提供する。数秒後に本当に削除する。
+
+**使いどころ**: 取り消しが容易な削除・アーカイブ。決済のような不可逆操作には使わない。
+
+**AI への伝え方（日本語）**: 削除は確認ダイアログを出さず、即座にリストから消して「削除しました／元に戻す」の Snackbar を 4 秒出す Undo パターンにして。元に戻すで同じ位置に復元。
+
+**Prompt (English)**: Use the Undo pattern for delete: remove from the list immediately (no confirm dialog) and show a "Deleted / Undo" Snackbar for 4s; Undo restores it at the same index.
+
+
+### Staggered Entrance / 順番に現れるリスト（スタッガー）
+
+- id: `staggered_list`  URL: https://uizukan.dev/entry/staggered_list/
+- 種別: アクション / Motion & Micro-interactions
+- 別名: Staggered Animation, Cascade Animation, List Entrance Animation, Fade-in Slide-up
+- 呼び名: Material 3=該当なし（Motion に個別名は無い） / Material 2=Motion（Stagger） / Android (Compose)=AnimatedVisibility + delay / iOS (HIG)=該当なし（iOS 標準には無い） / SwiftUI=.animation(.delay) / PhaseAnimator / Web=CSS animation-delay / Flutter=flutter_staggered_animations: AnimationLimiter + AnimationConfiguration.staggeredList
+- Flutter: `flutter_staggered_animations: AnimationLimiter + AnimationConfiguration.staggeredList`
+- 関連: crossfade, card, chat_bubble
+
+**説明**: 各要素の開始を 50〜80ms ずつずらして、画面が「生きて」見えるようにする。初回表示だけに使い、スクロール中には使わない。
+
+**使いどころ**: 画面の初回表示、検索結果の表示、ダッシュボードのカード群。
+
+**AI への伝え方（日本語）**: 画面を開いたとき、リストの各行が上から順に 60ms ずつ遅れて、下から 20dp スライドしながらフェードインする Staggered Entrance にして。
+
+**Prompt (English)**: On screen open, animate list rows in with a Staggered Entrance: each row fades in while sliding up 20dp, delayed 60ms after the previous one.
+
+
+## Scrolling Behaviors / スクロール挙動
+
+### Collapsing Toolbar / 縮むヘッダー（コラプシングツールバー）
+
+- id: `collapsing_toolbar`  URL: https://uizukan.dev/entry/collapsing_toolbar/
+- 種別: アクション / Scrolling Behaviors
+- 別名: Collapsing App Bar, Flexible Space, Expandable Header, Sliver App Bar
+- 呼び名: Material 3=Top app bar（scroll behavior: exit until collapsed） / Material 2=Collapsing toolbar（CollapsingToolbarLayout） / Android (Compose)=TopAppBarDefaults.exitUntilCollapsedScrollBehavior + LargeTopAppBar / iOS (HIG)=Navigation bars（Large title が縮む） / SwiftUI=.navigationBarTitleDisplayMode(.large)（自動） / Web=position: sticky + scroll-driven animations / Flutter=CustomScrollView + SliverAppBar
+- Flutter: `CustomScrollView + SliverAppBar`
+- 関連: large_title_app_bar, parallax_header, app_bar, hero_transition
+
+**説明**: 先頭に画像や大きなタイトルを置き、上スクロールで高さが減っていき、最終的に App Bar だけが残って固定される。引っ張ると画像が伸びる stretch も付けられる。
+
+**使いどころ**: プロフィール、商品詳細、記事など、ヘッダー画像がある画面。
+
+**AI への伝え方（日本語）**: 商品詳細の上に高さ 240 の画像ヘッダーを置き、スクロールすると縮んで App Bar に収まる Collapsing Toolbar にして。タイトルは縮んだときだけ表示。下に引っ張ると画像が伸びるように。
+
+**Prompt (English)**: Put a 240dp image header above the product detail that collapses into the App Bar on scroll (Collapsing Toolbar). Show the title only when collapsed, and stretch the image on overscroll.
+
+
+### Parallax Scrolling / パララックス（視差スクロール）
+
+- id: `parallax_header`  URL: https://uizukan.dev/entry/parallax_header/
+- 種別: アクション / Scrolling Behaviors
+- 別名: Parallax Effect, Parallax Header, Depth Scrolling
+- 呼び名: Material 3=該当なし（M3 に無い） / Material 2=該当なし（M2 に無い） / Android (Compose)=Modifier.graphicsLayer + scroll offset / iOS (HIG)=該当なし（iOS 標準には無い） / SwiftUI=GeometryReader / .scrollTransition / Web=background-attachment: fixed / scroll-driven animations / Flutter=Flow + FlowDelegate / Transform.translate
+- Flutter: `Flow + FlowDelegate / Transform.translate`
+- 関連: collapsing_toolbar, card, carousel
+
+**説明**: スクロール量の半分だけ背景をずらすなど、レイヤーごとに移動速度を変えて立体感を出す。ヘッダーやカード内画像で使う。
+
+**使いどころ**: ヒーロー画像付きの記事、旅行・不動産などビジュアル重視の一覧。
+
+**AI への伝え方（日本語）**: リストの各カード内の画像を、スクロールに合わせて少し遅れて動く Parallax 効果にして（画像はカードの高さより大きくして、はみ出しをクリップ）。
+
+**Prompt (English)**: Give each card image in the list a Parallax effect: the image moves slightly slower than the scroll (image taller than the card, overflow clipped).
+
+
+### Infinite Scroll (Pagination) / 無限スクロール（追加読み込み）
+
+- id: `infinite_scroll`  URL: https://uizukan.dev/entry/infinite_scroll/
+- 種別: アクション / Scrolling Behaviors
+- 別名: Load More, Endless Scroll, Lazy Loading, Paging
+- 呼び名: Material 3=該当なし（M3 に無い） / Material 2=該当なし（M2 に無い） / Android (Compose)=LazyColumn + LazyListState（末尾検知）/ Paging 3 / iOS (HIG)=該当なし（iOS 標準には無い） / SwiftUI=List + .onAppear（末尾で読み込み） / Web=IntersectionObserver / Feed（WAI-ARIA パターン） / Flutter=ListView.builder + ScrollController / infinite_scroll_pagination
+- Flutter: `ListView.builder + ScrollController / infinite_scroll_pagination`
+- 関連: pull_to_refresh, skeleton, circular_progress, empty_state
+
+**説明**: スクロール位置が末尾から一定距離に入ったら次ページを取得し、末尾にローディング行を出す。重複取得の防止と「これ以上ない」の表示が必要。
+
+**使いどころ**: SNS のフィード、検索結果、商品一覧など、件数が多い一覧。
+
+**AI への伝え方（日本語）**: フィードを Infinite Scroll にして。末尾の 200px 手前で次ページを取得し、末尾にスピナー行を出す。読み込み中の二重取得を防ぎ、最後まで来たら「以上です」を表示。
+
+**Prompt (English)**: Make the feed Infinite Scroll: fetch the next page when within 200px of the end, show a spinner row at the bottom, guard against duplicate fetches, and show "That's all" at the end.
+
+
+### Hide on Scroll / スクロールでバーを隠す
+
+- id: `scroll_to_hide_bar`  URL: https://uizukan.dev/entry/scroll_to_hide_bar/
+- 種別: アクション / Scrolling Behaviors
+- 別名: Scroll-aware Bar, Auto-hide Navigation, Quick Return, Floating App Bar
+- 呼び名: Material 3=Top app bar（scroll behavior: enter always） / Material 2=Top app bar（scroll flags: scroll|enterAlways） / Android (Compose)=TopAppBarDefaults.enterAlwaysScrollBehavior / iOS (HIG)=Navigation bars / Tab bars（hidesBarsOnSwipe） / SwiftUI=.toolbarVisibility を scroll で切替 / Web=該当なし（scroll イベントで自作） / Flutter=SliverAppBar(floating: true, snap: true) / userScrollDirection
+- Flutter: `SliverAppBar(floating: true, snap: true) / userScrollDirection`
+- 関連: fab, extended_fab, app_bar, bottom_navigation_bar
+
+**説明**: スクロール方向を監視し、下方向で隠し上方向で出す。読む場所が広がり、本文に集中できる。SNS のタイムライン・ニュースの記事・ブラウザのアドレスバーでよく見る。下のタブ（Bottom Navigation Bar）は、いつでも切り替えられるよう隠さないのが一般的。
+
+**使いどころ**: 長い記事、フィード、写真一覧など、読むことが主目的の画面。設定画面や短い画面では隠さない。
+
+**AI への伝え方（日本語）**: フィード画面で、下にスクロールすると上の App Bar と FAB が隠れ、少しでも上にスクロールすると戻ってくる Hide on Scroll にして。App Bar は floating + snap、下のタブ（Bottom Navigation Bar）は隠さず固定のまま。
+
+**Prompt (English)**: On the feed, hide the top App Bar and the FAB when scrolling down and bring them back as soon as the user scrolls up (Hide on Scroll). Make the App Bar floating + snap, and keep the Bottom Navigation Bar always visible.
+
+
+### Overscroll Bounce (Rubber Band) / バウンス（端で跳ね返る）
+
+- id: `overscroll_bounce`  URL: https://uizukan.dev/entry/overscroll_bounce/
+- 種別: アクション / Scrolling Behaviors
+- 別名: Rubber Band Effect, Bouncing Scroll, Elastic Scroll, Overscroll Glow (Android)
+- 呼び名: Material 3=該当なし（Android は Stretch overscroll） / Material 2=該当なし（Edge glow） / Android (Compose)=OverscrollEffect（stretch） / iOS (HIG)=Scroll views（bounce） / SwiftUI=ScrollView（既定で bounce）/ .scrollBounceBehavior / Web=overscroll-behavior / Flutter=ScrollPhysics（BouncingScrollPhysics）
+- Flutter: `ScrollPhysics（BouncingScrollPhysics）`
+- 関連: pull_to_refresh, collapsing_toolbar, snap_scrolling
+
+**説明**: iOS はバウンス、Android は端で光る（glow）か伸びる（stretch）。Flutter は platform で自動切替するが、physics を指定して統一もできる。
+
+**使いどころ**: iOS らしさを保ちたい一覧。Pull to Refresh（iOS 風）や stretch ヘッダーには必須。
+
+**AI への伝え方（日本語）**: この一覧を Android でも iOS と同じバウンス（Rubber Band）挙動にして。端で光る Android の glow は出さないで。
+
+**Prompt (English)**: Make this list bounce at the edges (Rubber Band) on Android too, exactly like iOS, instead of the Android overscroll glow.
+
+
+### Snap Scrolling / スナップ（要素に吸着するスクロール）
+
+- id: `snap_scrolling`  URL: https://uizukan.dev/entry/snap_scrolling/
+- 種別: アクション / Scrolling Behaviors
+- 別名: Paging Scroll, Snap to Item, Scroll Snapping, Magnetic Scroll
+- 呼び名: Material 3=Carousel（snap） / Material 2=該当なし（M2 に無い） / Android (Compose)=LazyRow + rememberSnapFlingBehavior / HorizontalPager / iOS (HIG)=Scroll views（paging） / SwiftUI=.scrollTargetBehavior(.viewAligned / .paging) / Web=CSS scroll-snap-type / Flutter=PageView(viewportFraction:) / SnapScrollPhysics（自作）
+- Flutter: `PageView(viewportFraction:) / SnapScrollPhysics（自作）`
+- 関連: carousel, page_view_swipe, cupertino_picker, page_indicator
+
+**説明**: 自由なスクロールではなく、要素の境界で必ず止まる。カルーセル、時間選択、カード送りで使う。PageView は 1 画面ずつ、ListWheelScrollView は行ごとに吸着。
+
+**使いどころ**: カルーセル、横並びカード、ドラム式ピッカー、ストーリー UI。
+
+**AI への伝え方（日本語）**: 横に並んだカード（幅 280、隙間 16）を、指を離すと最寄りのカードの左端に吸着する Snap Scrolling にして。
+
+**Prompt (English)**: Make the horizontal row of cards (width 280, gap 16) snap so that on release it settles on the nearest card's left edge.
+
+
+### Scroll to Top / 先頭へ戻る
+
+- id: `scroll_to_top`  URL: https://uizukan.dev/entry/scroll_to_top/
+- 種別: アクション / Scrolling Behaviors
+- 別名: Back to Top, Tap Status Bar to Scroll, Tap Tab to Scroll Top
+- 呼び名: Material 3=該当なし（M3 に無い） / Material 2=該当なし（M2 に無い） / Android (Compose)=LazyListState.animateScrollToItem(0) / iOS (HIG)=該当なし（慣習。Status bar タップで先頭へ） / SwiftUI=ScrollViewReader + proxy.scrollTo / Web=window.scrollTo({ top: 0, behavior: "smooth" }) / Flutter=ScrollController.animateTo / PrimaryScrollController
+- Flutter: `ScrollController.animateTo / PrimaryScrollController`
+- 関連: bottom_navigation_bar, fab, infinite_scroll
+
+**説明**: iOS はステータスバーのタップで先頭へ戻るのが OS 標準（Flutter は PrimaryScrollController を使えば自動）。選択中タブの再タップで戻すのも定番。長い一覧では「↑」ボタンを出す。
+
+**使いどころ**: 長いフィード・一覧すべて。
+
+**AI への伝え方（日本語）**: 選択中のタブをもう一度タップしたら一覧の先頭へ滑らかにスクロールする Scroll to Top を付けて。iOS のステータスバーのタップでも戻れるように PrimaryScrollController を使って。
+
+**Prompt (English)**: Tapping the already-selected tab should smoothly Scroll to Top of the list. Use PrimaryScrollController so tapping the iOS status bar also works.
+
+

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tooltip（ツールチップ） — UI図鑑</title>
+<meta name="description" content="アイコンに長押し・ホバーすると出る小さな説明ラベル。">
+<link rel="canonical" href="https://uizukan.dev/entry/tooltip/">
+<meta property="og:title" content="Tooltip（ツールチップ） — UI図鑑">
+<meta property="og:description" content="アイコンに長押し・ホバーすると出る小さな説明ラベル。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/tooltip/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/tooltip.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Tooltip</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Surfaces &amp; Overlays · 08 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Tooltip</h1>
+  <p class="lead" style="margin-top:6px">ツールチップ</p>
+  <div class="demo-plate">
+    <div class="head"><code>tooltip</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-tooltip" role="group" aria-label="Tooltip のデモ"><div class="sf-col"><div class="sf-cap">アイコンを長押し（Web はホバー）</div>
+<div class="sf-rw">
+<button class="m-icon-btn" data-tip="共有" aria-label="共有"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e593.png);width:24px;height:24px" aria-hidden="true"></i></button>
+<button class="m-icon-btn" data-tip="お気に入り" aria-label="お気に入り"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e25c.png);width:24px;height:24px" aria-hidden="true"></i></button>
+<button class="m-icon-btn" data-tip="その他" aria-label="その他"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e404.png);width:24px;height:24px" aria-hidden="true"></i></button>
+<div class="sf-tip" role="tooltip" aria-hidden="true"></div>
+</div><div class="sf-sp"></div></div></div><style>#wd-tooltip .sf-col{display:flex;flex-direction:column;align-items:center}
+#wd-tooltip .sf-cap{font-size:11px;line-height:1.65;color:var(--ink)}
+#wd-tooltip .sf-rw{position:relative;display:flex;margin-top:6px}
+#wd-tooltip .sf-rw .m-icon-btn{-webkit-touch-callout:none}
+#wd-tooltip .sf-sp{height:44px}
+#wd-tooltip .sf-tip{position:absolute;top:48px;left:0;display:flex;align-items:center;min-height:32px;padding:4px 16px;border-radius:6px;background:var(--ink);color:var(--surface);font-size:12px;font-weight:500;line-height:1.2;letter-spacing:.2px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity 75ms cubic-bezier(.4,0,.2,1)}
+#wd-tooltip .sf-tip.sf-show{opacity:1;transition-duration:150ms}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const row = root.querySelector('.sf-rw'), tip = root.querySelector('.sf-tip');
+let hideT = 0, pressT = 0;
+const show = (b) => {
+  clearTimeout(hideT);
+  tip.textContent = b.dataset.tip;
+  const x = b.offsetLeft + b.offsetWidth / 2;
+  tip.style.left = (x - tip.offsetWidth / 2) + 'px';
+  tip.classList.add('sf-show');
+};
+const hide = (ms) => { clearTimeout(hideT); hideT = setTimeout(() => tip.classList.remove('sf-show'), ms); };
+row.querySelectorAll('[data-tip]').forEach((b) => {
+  b.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') show(b); });
+  b.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') hide(100); });
+  b.addEventListener('pointerdown', (e) => {
+    if (e.pointerType === 'mouse') return;
+    clearTimeout(pressT);
+    pressT = setTimeout(() => { pressT = 0; show(b); }, 500);
+  });
+  const up = (e) => {
+    if (e.pointerType === 'mouse') return;
+    if (pressT) { clearTimeout(pressT); pressT = 0; return; }
+    if (tip.classList.contains('sf-show')) hide(1500);
+  };
+  b.addEventListener('pointerup', up);
+  b.addEventListener('pointercancel', up);
+  b.addEventListener('contextmenu', (e) => e.preventDefault());
+});})(document.getElementById("wd-tooltip"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Hint Bubble</span><span class="tag">Hover Label</span><span class="tag">Rich Tooltip</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Tooltips（Plain / Rich）</dd></div><div><dt>Material 2</dt><dd class="">Tooltips</dd></div><div><dt>Android (Compose)</dt><dd class="">TooltipBox + PlainTooltip / RichTooltip</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（iOS 標準には無い。macOS の help tag）</dd></div><div><dt>SwiftUI</dt><dd class="">.help(_:)（macOS）</dd></div><div><dt>Web</dt><dd class="">title 属性 / Tooltip（WAI-ARIA パターン）</dd></div><div><dt>Flutter</dt><dd class="mono">Tooltip</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>アイコンボタンの意味を補足する黒い小さな吹き出し。モバイルでは長押し、Web では<a class="term" href="/glossary/hover/">ホバー</a>で表示。<a class="term" href="/glossary/accessibility/">スクリーンリーダー</a>にも読まれる。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>アイコンのみのボタン全て（<a class="term" href="/glossary/accessibility/">アクセシビリティ</a>上も推奨）。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/icon_button/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Icon Button</a><a class="chip" href="/entry/long_press/"><i class="ic s" style="--i:url(/assets/icons/action.png)" aria-hidden="true"></i>Long Press</a><a class="chip" href="/glossary/hover/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>ホバー</a><a class="chip" href="/glossary/accessibility/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>アクセシビリティ</a></div></section>
+  
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="App Bar のアイコンボタン全てに Tooltip を付けて。Web ではホバー、モバイルでは長押しで表示されるように。" data-en="Add a Tooltip to every icon button in the App Bar; show on hover on web and on long-press on mobile.">App Bar のアイコンボタン全てに Tooltip を付けて。Web ではホバー、モバイルでは長押しで表示されるように。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Tooltip / ツールチップ
+
+- id: `tooltip`  URL: https://uizukan.dev/entry/tooltip/
+- 種別: 表示 / Surfaces &amp; Overlays
+- 別名: Hint Bubble, Hover Label, Rich Tooltip
+- 呼び名: Material 3=Tooltips（Plain / Rich） / Material 2=Tooltips / Android (Compose)=TooltipBox + PlainTooltip / RichTooltip / iOS (HIG)=該当なし（iOS 標準には無い。macOS の help tag） / SwiftUI=.help(_:)（macOS） / Web=title 属性 / Tooltip（WAI-ARIA パターン） / Flutter=Tooltip
+- Flutter: `Tooltip`
+- 関連: icon_button, long_press
+
+**説明**: アイコンボタンの意味を補足する黒い小さな吹き出し。モバイルでは長押し、Web ではホバーで表示。スクリーンリーダーにも読まれる。
+
+**使いどころ**: アイコンのみのボタン全て（アクセシビリティ上も推奨）。
+
+**AI への伝え方（日本語）**: App Bar のアイコンボタン全てに Tooltip を付けて。Web ではホバー、モバイルでは長押しで表示されるように。
+
+**Prompt (English)**: Add a Tooltip to every icon button in the App Bar; show on hover on web and on long-press on mobile.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Badge（バッジ（未読数・赤い点）） — UI図鑑</title>
+<meta name="description" content="アイコンの右上に付く赤い点や未読数。">
+<link rel="canonical" href="https://uizukan.dev/entry/badge/">
+<meta property="og:title" content="Badge（バッジ（未読数・赤い点）） — UI図鑑">
+<meta property="og:description" content="アイコンの右上に付く赤い点や未読数。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://uizukan.dev/entry/badge/">
+<meta property="og:image" content="https://uizukan.dev/assets/demos/badge.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.png?v=1fm9520">
+<link rel="apple-touch-icon" href="/icons/Icon-192.png?v=14b5do8">
+<link rel="stylesheet" href="/assets/site.css">
+<script>(function(){try{var t=localStorage.getItem('uz_theme');if(t&&t!=='system')document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGNCEQ2KN3"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-ZGNCEQ2KN3',{allow_google_signals:false,allow_ad_personalization_signals:false});</script>
+</head>
+<body data-base="">
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a>
+  <nav class="crumbs" aria-label="現在地"><span class="sep">/</span><a href="/components/">表示</a><span class="sep">/</span><span class="here">Badge</span></nav>
+  <span class="spacer"></span>
+  <nav class="nav" aria-label="行き先"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></nav>
+  <div class="menu"><button class="iconbtn" title="メニュー" aria-label="メニュー"><i class="ic " style="--i:url(/assets/icons/menu.png)" aria-hidden="true"></i></button><div class="menu-list"><a href="/components" data-path="/components">表示</a><a href="/actions" data-path="/actions">アクション</a><a href="/scenes" data-path="/scenes">シーン</a><a href="/library" data-path="/library">ライブラリ</a></div></div>
+  <a class="iconbtn" href="/search/" title="検索" aria-label="検索"><i class="ic " style="--i:url(/assets/icons/search.png)" aria-hidden="true"></i></a>
+  <button class="iconbtn" id="theme" title="テーマ" aria-label="テーマを切り替える"><i class="ic " style="--i:url(/assets/icons/theme.png)" aria-hidden="true"></i></button>
+</div></header>
+<main>
+<div class="wrap"><div class="entry">
+<div class="left">
+  <div class="eyebrow" style="margin-top:8px">Feedback &amp; Status · 06 · 表示</div>
+  <h1 class="display" style="margin-top:10px">Badge</h1>
+  <p class="lead" style="margin-top:6px">バッジ（未読数・赤い点）</p>
+  <div class="demo-plate">
+    <div class="head"><code>badge</code><span>デモ</span></div>
+    <div class="stage"><div class="wd" id="wd-badge" role="group" aria-label="Badge のデモ"><div class="fb-bd"><div class="fb-icons"><span class="fb-ib"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f37f.png);width:28px;height:28px" aria-hidden="true"></i><span class="fb-lg fb-cnt">3</span></span><span class="fb-ib"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-f237.png);width:28px;height:28px" aria-hidden="true"></i><span class="fb-smd"></span></span><span class="fb-ib"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e3c4.png);width:28px;height:28px" aria-hidden="true"></i><span class="fb-lg">NEW</span></span></div><div class="fb-ctl"><button class="m-icon-btn fb-dn" aria-label="減らす"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e516.png);width:24px;height:24px" aria-hidden="true"></i></button><span class="fb-n">3</span><button class="m-icon-btn fb-up" aria-label="増やす"><i class="mi" style="--i:url(/assets/icons/mi-materialicons-e047.png);width:24px;height:24px" aria-hidden="true"></i></button></div></div></div><style>#wd-badge .fb-bd{display:flex;flex-direction:column;align-items:center}
+#wd-badge .fb-icons{display:flex;gap:32px;padding:10px 28px 0 0}
+#wd-badge .fb-ib{position:relative;width:28px;height:28px;color:var(--ink)}
+#wd-badge .fb-ib .mi{display:block}
+#wd-badge .fb-lg{position:absolute;left:16px;top:-4px;min-width:16px;height:16px;padding:0 4px;border-radius:8px;background:var(--danger);color:#fff;font-size:12px;font-weight:500;line-height:16px;letter-spacing:.2px;text-align:center;white-space:nowrap}
+#wd-badge .fb-lg[hidden]{display:none}
+#wd-badge .fb-smd{position:absolute;left:22px;top:0;width:6px;height:6px;border-radius:3px;background:var(--danger)}
+#wd-badge .fb-ctl{display:flex;align-items:center;margin-top:12px}</style><script>window.UZ=window.UZ||{
+  haptic:function(k){try{if(navigator.userActivation&&!navigator.userActivation.hasBeenActive)return;if(navigator.vibrate)navigator.vibrate({light:10,medium:20,heavy:35,selection:5,vibrate:[0,200]}[k]||10);}catch(e){}},
+  wait:function(ms){return new Promise(function(r){setTimeout(r,ms);});},
+  result:function(slot,icon,msg){slot.innerHTML='<div class="wd-result">'+icon+'<span>'+msg+'</span></div>';}
+};
+(function(root,UZ){"use strict";const cnt = root.querySelector('.fb-cnt'), n = root.querySelector('.fb-n');
+let c = 3;
+function set(v) { c = Math.min(Math.max(v, 0), 999); n.textContent = c; cnt.textContent = c; /* Badge.count は 999 まで数字のまま */ cnt.hidden = c <= 0; }
+root.querySelector('.fb-dn').addEventListener('click', function () { set(c - 1); });
+root.querySelector('.fb-up').addEventListener('click', function () { set(c + 1); });})(document.getElementById("wd-badge"),window.UZ);</script></div>
+    
+  </div>
+  <section class="section" style="margin-top:0"><h2 class="heading">ほかの呼び名</h2>
+    <div class="chips" style="gap:6px"><span class="tag">Notification Badge</span><span class="tag">Dot Badge</span><span class="tag">Count Badge</span><span class="tag">Red Dot</span></div>
+    <dl class="names"><div><dt>Material 3</dt><dd class="">Badge</dd></div><div><dt>Material 2</dt><dd class="">Badge</dd></div><div><dt>Android (Compose)</dt><dd class="">Badge / BadgedBox</dd></div><div><dt>iOS (HIG)</dt><dd class="na">該当なし（Tab bar とアプリアイコンの badge として存在。独立部品名は無い）</dd></div><div><dt>SwiftUI</dt><dd class="">.badge(_:)</dd></div><div><dt>Web</dt><dd class="na">該当なし（Badge。role="status"）</dd></div><div><dt>Flutter</dt><dd class="mono">Badge / Badge.count</dd></div></dl>
+  </section>
+  <section class="section"><h2 class="heading">概要</h2><p>アイコンや<a class="term" href="/glossary/tab/">タブ</a>の右上に重ねる小さな円。数字なしの点（dot）と、数字入り（label）がある。99 を超えたら「99+」。</p></section>
+  <section class="section"><h2 class="heading">使いどころ</h2><p>未読・新着・カート内の点数など、注意を引きたい件数。</p></section>
+  <section class="section"><h2 class="heading">関連</h2><div class="chips"><a class="chip" href="/entry/bottom_navigation_bar/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Bottom Navigation Bar</a><a class="chip" href="/entry/icon_button/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Icon Button</a><a class="chip" href="/entry/avatar/"><i class="ic s" style="--i:url(/assets/icons/component.png)" aria-hidden="true"></i>Avatar</a><a class="chip" href="/glossary/tab/"><i class="ic s" style="--i:url(/assets/icons/term.png)" aria-hidden="true"></i>タブ</a></div></section>
+  <section class="section"><h2 class="heading">シーン</h2><div class="chips"><a class="chip" href="/scenes/feed/"><span class="ic s" style="--i:url(/assets/icons/scene-feed.png)"></span>フィード</a><a class="chip" href="/scenes/product/"><span class="ic s" style="--i:url(/assets/icons/scene-product.png)"></span>商品と購入</a></div></section>
+</div>
+<aside class="right" data-panel>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="prompt" aria-selected="true">プロンプト</button>
+    <button type="button" role="tab" data-tab="markdown" aria-selected="false">Markdown</button>
+    <button type="button" role="tab" data-tab="detailed" aria-selected="false">詳細プロンプト <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+    <button type="button" role="tab" data-tab="code" aria-selected="false">Flutter <i class="ic s" style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i></button>
+  </div>
+  <div class="panel-bar"><span class="sm" data-notes data-prompt="口頭で頼むときの言い方。そのままチャットに貼れる。" data-markdown="公開している全文。llms-full.txt に載っているものと同じ。" data-detailed="要件・寸法・状態・動き・触覚・API を固定見出しで並べた仕様書。" data-code="貼れば動く最小コード。プロンプトに添えると再現度が上がる。"></span>
+    <span class="seg"><button type="button" data-lang="ja" aria-pressed="true">日本語</button><button type="button" data-lang="en" aria-pressed="false">EN</button></span>
+    <button type="button" class="copybtn"><i class="ic s" style="--i:url(/assets/icons/copy.png)" aria-hidden="true"></i><span>コピー</span></button></div>
+  <div class="panel-body">
+    <div data-tab-body="prompt"><pre class="note" data-ja="カートアイコンの右上に、商品点数の Badge を出して。0 のときは非表示、99 を超えたら「99+」で。" data-en="Add a count Badge at the top-right of the cart icon: hidden when 0, &quot;99+&quot; above 99.">カートアイコンの右上に、商品点数の Badge を出して。0 のときは非表示、99 を超えたら「99+」で。</pre></div>
+    <div data-tab-body="markdown" class="hidden"><pre class="note"># Badge / バッジ（未読数・赤い点）
+
+- id: `badge`  URL: https://uizukan.dev/entry/badge/
+- 種別: 表示 / Feedback &amp; Status
+- 別名: Notification Badge, Dot Badge, Count Badge, Red Dot
+- 呼び名: Material 3=Badge / Material 2=Badge / Android (Compose)=Badge / BadgedBox / iOS (HIG)=該当なし（Tab bar とアプリアイコンの badge として存在。独立部品名は無い） / SwiftUI=.badge(_:) / Web=該当なし（Badge。role="status"） / Flutter=Badge / Badge.count
+- Flutter: `Badge / Badge.count`
+- 関連: bottom_navigation_bar, icon_button, avatar
+
+**説明**: アイコンやタブの右上に重ねる小さな円。数字なしの点（dot）と、数字入り（label）がある。99 を超えたら「99+」。
+
+**使いどころ**: 未読・新着・カート内の点数など、注意を引きたい件数。
+
+**AI への伝え方（日本語）**: カートアイコンの右上に、商品点数の Badge を出して。0 のときは非表示、99 を超えたら「99+」で。
+
+**Prompt (English)**: Add a count Badge at the top-right of the cart icon: hidden when 0, "99+" above 99.
+
+</pre></div>
+    <div data-tab-body="detailed" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>詳細プロンプト は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+    <div data-tab-body="code" class="hidden"><div class="locked"><i class="ic " style="--i:url(/assets/icons/lock.png)" aria-hidden="true"></i><h3>Flutter コード は Pro</h3><p class="sm">開発者向け Pro（準備中）で、AI が MCP から直接取りに行けるようになります。名前・デモ・プロンプト・Markdown は無料のままです。</p><p style="margin-top:18px"><a class="btn primary" href="/pro/">Pro の案内を見る</a></p></div></div>
+  </div>
+</aside>
+</div></div>
+</main>
+<footer><div class="wrap"><div class="cols">
+  <div class="brandcol"><a class="brand" href="/"><i class="ic " style="--i:url(/assets/icons/brand.png)" aria-hidden="true"></i>UI図鑑</a><p class="sm">UI の部品と動きに、標準の名前を。
+触って確かめて、そのまま AI に渡す。</p><span class="label">© 2026 UI図鑑</span></div>
+  <div class="group"><div class="eyebrow">図鑑</div>
+    <a href="/components/">表示 75</a><a href="/actions/">アクション 39</a><a href="/scenes/">シーン 9</a><a href="/glossary/">用語集 76</a></div>
+  <div class="group"><div class="eyebrow">AI に読ませる</div>
+    <a href="/llms.txt">llms.txt</a><a href="/llms-full.txt">llms-full.txt</a><a href="/catalog.json">catalog.json</a><a href="/ai/">Claude Code スキル</a></div>
+  <div class="group"><div class="eyebrow">アプリ</div>
+    <a href="https://apps.apple.com/jp/app/id6808997175" rel="noopener">iOS アプリ（振動を体験）</a><a href="/pro/">UI図鑑 Pro（開発者向け・準備中）</a><a href="https://murakami-kaito-dev.github.io/uizukan-legal/" rel="noopener">サポート・規約</a><a href="/legal/tokushoho/">特定商取引法に基づく表記</a></div>
+</div></div></footer>
+<script src="/assets/site.js" defer></script>
+</body>
+</html>
